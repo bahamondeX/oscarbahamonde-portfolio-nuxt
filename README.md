@@ -1,2 +1,39 @@
-# oscarbahamonde-portfolio-nuxt
-Portfolio personal en Nuxt: IA, datos y cloud. Código fuente y configuración de consultoría.
+# Oscar Bahamonde · Nuxt portfolio
+
+Independent source repository, rebuilt from scratch on 2026-11-13. Nuxt 4, Vue, TypeScript and responsive CSS. This repository does not replace the older React/Vite repository.
+
+## Development
+
+Requires Node 22.21+ and npm.
+
+```sh
+npm install
+npm test
+npm run dev
+npm run build
+npm run preview
+```
+
+Nuxt renders the portfolio on the server and prerenders the home page. SEO files are in `public/`. CSS respects reduced-motion preferences. No API credentials are needed for the current site.
+
+## Booking and payment
+
+- Calendar: https://calendar.app.google/kDqLmVtrnZ8nWfgKA
+- Mercado Pago: https://mpago.la/1PGrFn1
+- PEN 20 / 20 minutes, weekdays 09:00–13:00 and 14:00–17:00 in America/Lima.
+- Google Calendar handles availability, booking and Meet invitations.
+- The two links are independent. Payment verification is manual. This repository does not claim automatic payment validation.
+
+For a future paid booking flow, implement Checkout Pro with server-side payment lookup, signature validation, amount/currency checks, persistent booking state, slot holds and idempotent Calendar event creation. Never trust checkout return parameters as proof of payment. Store all secrets only in deployment environment variables.
+
+## Deployment
+
+Import this repository into Vercel with framework Nuxt and build command `npm run build`. Connecting it to the existing production project is a separate operation. This repository has not been deployed automatically by its creation.
+
+## Validation status
+
+The dependency-free source checks can run locally with `npm test`. A full Nuxt build requires network access to npm. The Lighthouse scores from the previous portfolio do not apply to this rebuild.
+
+## Portrait
+
+The current design uses a monogram while a user-provided portrait is prepared. Do not substitute a generated face for Oscar's real photograph.

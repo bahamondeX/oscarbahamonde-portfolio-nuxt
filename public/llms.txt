@@ -1,0 +1,15 @@
+# Oscar Bahamonde
+
+> Software, AI, data and cloud engineer based in Peru. This is his personal portfolio and consulting website.
+
+## Main pages
+- [Portfolio](https://oscarbahamonde.com/): Projects, services and experience.
+- [Consulting](https://oscarbahamonde.com/#reservar): Twenty-minute consultations for PEN 20; booking and payment are separate, and payment verification is manual.
+
+## Projects
+- [VOZ](https://voz.oscarbahamonde.com/): Voice AI platform in development.
+- [Quipubase](https://github.com/bahamondeX/quipubase): AI-native data API.
+- [aiofauna](https://github.com/obahamonde/aiofauna): Python backend framework.
+
+## Contact
+- [Email](mailto:oscar.bahamonde.dev@gmail.com): Consulting inquiries.
