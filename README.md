@@ -36,4 +36,4 @@ The dependency-free source checks can run locally with `npm test`. A full Nuxt b
 
 ## Portrait
 
-The current design uses a monogram while a user-provided portrait is prepared. Do not substitute a generated face for Oscar's real photograph.
+The portrait in `public/images/oscar-portrait.jpg` is an AI-assisted retouch of Oscar's photograph: lighting, color and subtle skin cleanup. It is included with the owner's authorization.
