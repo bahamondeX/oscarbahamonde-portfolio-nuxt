@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       { property: 'og:url', content: 'https://oscarbahamonde.com' },
       { name: 'twitter:card', content: 'summary' }
     ],
-    link: [{ rel: 'canonical', href: 'https://oscarbahamonde.com/' }, { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }]
+    link: [{ rel: 'canonical', href: 'https://oscarbahamonde.com/' }, { rel: 'icon', href: 'https://avatars.githubusercontent.com/u/202902192?v=4&s=64', type: 'image/png' }]
   } },
   routeRules: { '/': { prerender: true } }
 })
