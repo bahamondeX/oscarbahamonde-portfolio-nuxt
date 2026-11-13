@@ -37,3 +37,7 @@ The dependency-free source checks can run locally with `npm test`. A full Nuxt b
 ## Portrait
 
 The portrait in `public/images/oscar-portrait.jpg` is an AI-assisted retouch of Oscar's photograph: lighting, color and subtle skin cleanup. It is included with the owner's authorization.
+
+## Mercado Pago Checkout Pro
+
+Set `NUXT_MERCADO_PAGO_ACCESS_TOKEN` as a sensitive production environment variable in Vercel, then redeploy. Without it, `/api/checkout` redirects to the existing S/20 payment link and verification remains manual. With it, the server creates a PEN 20 preference and verifies the payment through Mercado Pago, matching a browser order cookie, currency, amount, live mode and approved state. `/pago` never trusts query-string status. Calendar reservations still occur through Google Calendar; no webhook or automatic event creation has been implemented. Do not claim a fully automated paid booking flow.
