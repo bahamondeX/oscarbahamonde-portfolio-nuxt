@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-11-14T23:01:04.126519+00:00",
+  "localMocks": {
+    "executed": true,
+    "files": [
+      "tests/booking-cleanup.test.mjs",
+      "tests/booking-runtime.test.mjs",
+      "tests/payment-webhook.test.mjs"
+    ],
+    "providerSandbox": false,
+    "productionTransaction": false,
+    "rootSuite": {
+      "passed": 25,
+      "failed": 0,
+      "log": "docs/audit/after/payments/local-tests.log"
+    },
+    "typecheck": {
+      "passed": true,
+      "log": "docs/audit/after/payments/typecheck.log"
+    }
+  },
+  "sandbox": {
+    "status": "blocked",
+    "reason": "No MercadoPago test credentials, test webhook configuration or isolated Google Calendar identified in Vercel variable metadata reviewed by root. Production intentionally rejects live_mode=false."
+  },
+  "realPayment": {
+    "status": "pending_explicit_transaction_approval",
+    "chargesCreated": 0,
+    "calendarEventsCreated": 0
+  },
+  "expiredHoldProduction": {
+    "status": "pending_deployment_and_observation",
+    "method": "Conditional cancellation on availability requests; selected day, up to five eligible holds"
+  },
+  "webhookHmacProduction": {
+    "status": "pending_secret_configuration_and_provider_signature_test"
+  }
+}

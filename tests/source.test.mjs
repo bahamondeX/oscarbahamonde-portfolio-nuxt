@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import ts from 'typescript'
-test('booking API runtime is identical to the pre-redesign baseline', () => {
+test('booking API runtime matches the reviewed baseline (changes documented in docs/payment-validation.md)', () => {
   const hashes = JSON.parse(readFileSync(new URL('booking-runtime.sha256.json', import.meta.url), 'utf8'))
   for (const [file, expected] of Object.entries(hashes)) {
     const source = readFileSync(new URL('../' + file, import.meta.url), 'utf8')

@@ -2,8 +2,17 @@ import {createHash,randomUUID} from 'node:crypto'
 import {createError} from 'h3'
 import {calendar,eventsBetween} from './calendar'
 import {allowedSlot,blocks,overlaps,DURATION,HOLD_MS,approvedPayment} from '../../shared/booking.mjs'
+import {cleanupExpiredHolds,reusableExpiredHold} from '../../shared/booking-cleanup.mjs'
 export const props=(e:any)=>e.extendedProperties?.private||{}
 export const slotID=(start:string)=>'b'+createHash('sha256').update(start).digest('hex')
+export async function cleanExpiredHolds(events:any[]) {
+ const result=await cleanupExpiredHolds(events,{
+  get:(id:string)=>calendar('/'+id),
+  cancel:(record:any)=>calendar('/'+record.id,{method:'PATCH',headers:{'If-Match':record.etag},query:{sendUpdates:'none'},body:{status:'cancelled',transparency:'transparent',extendedProperties:{private:{...props(record),state:'expired'}}}})
+ })
+ if(result.counts.cancelled||result.counts.raced||result.counts.failed)console.info(JSON.stringify({event:'booking_hold_cleanup',...result.counts}))
+ return result.events
+}
 export async function free(start:string,ignore='') {
  const end=new Date(Date.parse(start)+DURATION).toISOString()
  return !(await eventsBetween(start,end)).some(e=>e.id!==ignore&&blocks(e)&&overlaps(e,Date.parse(start),Date.parse(end)))
@@ -13,7 +22,7 @@ export async function hold(start:string,name:string,email:string) {
  const id=slotID(start),order=randomUUID()
  let existing:any
  try{existing=await calendar('/'+id)}catch(e:any){if(e.statusCode!==404)throw e}
- if(existing&&(props(existing).app!=='oscar-booking'||props(existing).state!=='hold'||Number(props(existing).expires)>Date.now()))throw createError({statusCode:409,message:'Este horario ya fue reservado. Elige otro.'})
+ if(existing&&!reusableExpiredHold(existing))throw createError({statusCode:409,message:'Este horario ya fue reservado. Elige otro.'})
  if(!await free(start,id))throw createError({statusCode:409,message:'Este horario está ocupado en Calendar.'})
  const record={summary:'Reserva temporal · consultoría 1:1',start:{dateTime:start,timeZone:'America/Lima'},end:{dateTime:new Date(Date.parse(start)+DURATION).toISOString(),timeZone:'America/Lima'},status:'tentative',transparency:'opaque',visibility:'private',extendedProperties:{private:{app:'oscar-booking',state:'hold',expires:String(Date.now()+HOLD_MS),order,name,email}}}
  let saved:any

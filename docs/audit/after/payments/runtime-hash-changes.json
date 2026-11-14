@@ -1,0 +1,38 @@
+{
+  "reason": "Authorized expired app hold cleanup and optional signed webhook validation; checkout and payment-return handlers unchanged.",
+  "changes": [
+    {
+      "file": "server/api/availability.get.ts",
+      "before": "203b9042f2d19b5eb0a1c51e033465a9fd0027bb728d3870749d2bae1d133647",
+      "after": "b607b0994e6623402f13d0b97ed879c397137a3762981b02ae18150e825b07c0"
+    },
+    {
+      "file": "server/utils/booking.ts",
+      "before": "5a8dc4969943c0295f3486076ab1c8974a13ae626d2ca4b54668b9db0e9eaf82",
+      "after": "48ff3bdaf3ecef6020cb81c95cc5df821449bc297a2b74a39d15932626431880"
+    },
+    {
+      "file": "server/api/payment-webhook.post.ts",
+      "before": "f7a1de5b3ef8ff24733ff669d3f46e735ec19bb774ed526c5911ad3e7d611f52",
+      "after": "6e09f239717bac17d41b661373cb99b3ba1329a1e7e4c88327eecfd306492ded"
+    },
+    {
+      "file": "shared/booking.mjs",
+      "before": null,
+      "after": "d8c5b411aea63f3dfb53e4cdb55c8771b6ea82e4b739de7234ca59b00c93a565",
+      "reason": "New coverage of shared booking logic in runtime baseline"
+    },
+    {
+      "file": "shared/booking-cleanup.mjs",
+      "before": null,
+      "after": "3e5772caf26d665108a103829d1f639be5299d0c04c495dacf4ae4de5bdab055",
+      "reason": "New coverage of shared booking logic in runtime baseline"
+    },
+    {
+      "file": "shared/payment-webhook.mjs",
+      "before": null,
+      "after": "6deb4d881e926f2e86d2e2e8f676f4b95d698a502ec695a265e067d4f4fd064e",
+      "reason": "New coverage of shared booking logic in runtime baseline"
+    }
+  ]
+}

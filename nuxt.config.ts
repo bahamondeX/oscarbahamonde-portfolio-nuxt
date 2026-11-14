@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   css: ['~/assets/main.css'], devtools: { enabled: false },
   nitro: { compressPublicAssets: true, vercel: { functions: { maxDuration: 60 } } },
   runtimeConfig: {
-    mercadoPagoAccessToken: '', googleClientId: '', googleClientSecret: '', googleRefreshToken: '', googleCalendarId: 'primary', bookingSecret: '',
+    mercadoPagoAccessToken: '', mercadoPagoWebhookSecret: '', googleClientId: '', googleClientSecret: '', googleRefreshToken: '', googleCalendarId: 'primary', bookingSecret: '',
     databaseUrl: '', databaseSsl: 'require', chatSessionSecret: '',
     llmBaseUrl: 'https://api.openai.com/v1', llmApiKey: '', llmModel: '',
     transcriptionBaseUrl: 'https://api.openai.com/v1', transcriptionApiKey: '', transcriptionModel: 'whisper-1',
