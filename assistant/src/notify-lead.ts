@@ -115,4 +115,5 @@ export async function processRecords(event: DynamoDBStreamEvent, deps = defaults
   }
   return { batchItemFailures: failures }
 }
-export const handler = processRecords
+// Lambda passes Context as argument two; do not interpret it as injected test dependencies.
+export const handler = (event: DynamoDBStreamEvent) => processRecords(event)
