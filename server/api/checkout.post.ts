@@ -15,7 +15,7 @@ export default defineEventHandler(async event => {
       method: 'POST', timeout: 15000, retry: 0,
       headers: { Authorization: `Bearer ${config.mercadoPagoAccessToken}`, 'X-Idempotency-Key': order },
       body: {
-        items: [{ id: 'consultoria-20min', title: 'Consultoría 1:1 con Oscar — 20 minutos', quantity: 1, currency_id: 'PEN', unit_price: 20 }],
+        items: [{ id: 'consultoria-30min', title: 'Consultoría 1:1 con Oscar — 30 minutos', quantity: 1, currency_id: 'PEN', unit_price: 20 }],
         external_reference: order,
         back_urls: { success: `${site}/pago`, pending: `${site}/pago`, failure: `${site}/pago` },
         auto_return: 'approved',

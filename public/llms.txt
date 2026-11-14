@@ -4,7 +4,7 @@
 
 ## Main pages
 - [Portfolio](https://oscarbahamonde.com/): Projects, services and experience.
-- [Consulting](https://oscarbahamonde.com/#reservar): Twenty-minute consultations for PEN 20; booking and payment are separate, and payment verification is manual.
+- [Consulting](https://oscarbahamonde.com/#reservar): Thirty-minute consultations for PEN 20; booking and payment are separate, and payment verification is manual.
 
 ## Projects
 - [VOZ](https://voz.oscarbahamonde.com/): Voice AI platform in development.

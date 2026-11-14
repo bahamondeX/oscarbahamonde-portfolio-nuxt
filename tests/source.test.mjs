@@ -7,7 +7,7 @@ test('booking clearly separates reservation from payment verification', () => {
   assert.match(page, /calendar\.app\.google\/kDqLmVtrnZ8nWfgKA/)
   assert.match(page, /action="\/api\/checkout"/)
   assert.match(read('server/api/checkout.post.ts'), /mpago\.la\/1PGrFn1/)
-  assert.match(page, /aún no valida pagos automáticamente/)
+  assert.match(page, /asociación entre pago y cita aún se revisa por separado/)
   assert.match(page, /9:00–13:00 y 14:00–17:00/)
 })
 test('search engines can discover canonical sitemap', () => {

@@ -20,7 +20,7 @@ Nuxt renders the portfolio on the server and prerenders the home page. SEO files
 
 - Calendar: https://calendar.app.google/kDqLmVtrnZ8nWfgKA
 - Mercado Pago: https://mpago.la/1PGrFn1
-- PEN 20 / 20 minutes, weekdays 09:00–13:00 and 14:00–17:00 in America/Lima.
+- PEN 20 / 30 minutes, weekdays 09:00–13:00 and 14:00–17:00 in America/Lima.
 - Google Calendar handles availability, booking and Meet invitations.
 - The two links are independent. Payment verification is manual. This repository does not claim automatic payment validation.
 
@@ -41,3 +41,6 @@ The portrait in `public/images/oscar-portrait.jpg` is an AI-assisted retouch of 
 ## Mercado Pago Checkout Pro
 
 Set `NUXT_MERCADO_PAGO_ACCESS_TOKEN` as a sensitive production environment variable in Vercel, then redeploy. Without it, `/api/checkout` redirects to the existing S/20 payment link and verification remains manual. With it, the server creates a PEN 20 preference and verifies the payment through Mercado Pago, matching a browser order cookie, currency, amount, live mode and approved state. `/pago` never trusts query-string status. Calendar reservations still occur through Google Calendar; no webhook or automatic event creation has been implemented. Do not claim a fully automated paid booking flow.
+
+## Booking flow (current)
+The home page embeds the real Google Calendar appointment schedule (30 minutes, weekdays 09–13 and 14–17, Lima). Guests complete a Calendar booking before using the separate checkout. A client-side checkbox acknowledges booking but does not verify it. A paid order is NOT automatically associated with a Calendar event. Do not describe this as an atomic paid booking system. Full coupling requires dedicated Calendar API authorization, persistent booking records, slot holds and idempotent payment/event handling.
