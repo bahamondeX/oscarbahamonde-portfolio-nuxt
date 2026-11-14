@@ -1,0 +1,13 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> typecheck
+> tsc --noEmit
+
+src/grounding.ts(1,64): error TS2307: Cannot find module './retrieval.js' or its corresponding type declarations.
+src/grounding.ts(33,70): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/grounding.ts(59,38): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/grounding.ts(60,43): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/grounding.ts(75,36): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/grounding.ts(78,50): error TS2345: Argument of type 'string' is not assignable to parameter of type 'never'.
+src/grounding.ts(85,88): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/grounding.ts(86,38): error TS7006: Parameter 'r' implicitly has an 'any' type.

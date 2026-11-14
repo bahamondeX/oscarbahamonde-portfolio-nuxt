@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { recorderMime, normalizeAudioMime, audioFormat } from '../../shared/audio'
 import { Send, Paperclip, Mic, Square, X, LoaderCircle, Bot, Mail, ShieldCheck, Check, ArrowUpRight } from 'lucide-vue-next'
 const { locale } = useI18n(), localePath = useLocalePath(), runtime = useRuntimeConfig()
 const es = computed(() => locale.value === 'es'), panel = useAssistantPanel()
@@ -6,12 +7,14 @@ const base = String(runtime.public.assistantUrl).replace(/\/$/, '')
 type Message = { role: 'user' | 'assistant'; content: string }
 type Uploaded = { id: string; name: string; processed?: boolean; transcription?: string; status?: 'awaiting_upload'|'processing'|'completed'|'failed'; error?: string }
 const messages = ref<Message[]>([]), files = ref<Uploaded[]>([]), cards = ref<any[]>([])
+const captchaFailed = ref(false), captureStarting = ref(false)
 const started = ref(false), closed = ref(false), busy = ref(false), consent = ref(false), privacyOpen = ref(false), captcha = ref(''), error = ref(''), draft = ref(''), dragging = ref(false), contactOpen = ref(false)
 const pending = ref<any>(null), emailDraft = ref(''), confirmedEmail = ref(''), audioUrl = ref(''), audioBlob = shallowRef<Blob | null>(null), recording = ref(false), seconds = ref(0)
 const input = ref<HTMLTextAreaElement>(), log = ref<HTMLElement>(), fileInput = ref<HTMLInputElement>(), captchaEl = ref<HTMLElement>()
 const uid = useId()
+let disposed = false
 let bearer = '', widget: string | undefined, recorder: MediaRecorder | undefined, media: MediaStream | undefined, timer: ReturnType<typeof setInterval> | undefined, greetingQueued = false, retryAfterConsent = false, deferred: (() => Promise<unknown>) | undefined, lastMessage = ''
-const acceptedTypes = 'application/pdf,image/png,image/jpeg,image/webp,application/zip,application/vnd.openxmlformats-officedocument.wordprocessingml.document,audio/webm,audio/ogg,audio/mp4'
+const acceptedTypes = 'audio/x-m4a,audio/m4a,application/pdf,image/png,image/jpeg,image/webp,application/zip,application/vnd.openxmlformats-officedocument.wordprocessingml.document,audio/webm,audio/ogg,audio/mp4'
 const suggestions = computed(() => es.value ? ['¿Qué servicios ofreces?', '¿Cuánto cuesta una landing?', 'Cuéntame sobre tu experiencia', 'Agendar una reunión'] : ['What services do you offer?', 'How much is a landing page?', 'Tell me about your experience', 'Schedule a meeting'])
 const fallback = () => es.value ? 'No pude completar la solicitud. Puedes intentarlo de nuevo o contactar a Oscar.' : 'I couldn’t complete that request. Try again or contact Oscar.'
 function history(source = messages.value) {
@@ -38,18 +41,36 @@ function removeCaptcha() {
   captcha.value = ''
   if (id !== undefined) (window as any).turnstile?.remove(id)
 }
+function captchaFailure() {
+  captcha.value=''; captchaFailed.value=true; greetingQueued=false
+  error.value=es.value?'No se pudo verificar la conexión. Reintenta la verificación o escribe a Oscar por correo.':'The connection could not be verified. Retry verification or email Oscar.'
+}
+async function retryCaptcha() {
+  captchaFailed.value=false; error.value=''; captcha.value=''
+  const api=(window as any).turnstile
+  if(widget!==undefined && api) api.reset(widget)
+  else await initCaptcha()
+}
 async function initCaptcha() {
   if (started.value || !base || !runtime.public.turnstileSiteKey) return
   await nextTick()
   try {
     if (!(window as any).turnstile) await new Promise<void>((resolve,reject) => {
-      const existing = document.querySelector<HTMLScriptElement>('script[data-oscar-turnstile]')
-      if (existing) { existing.addEventListener('load',()=>resolve(),{once:true}); existing.addEventListener('error',reject,{once:true}); return }
-      const script=document.createElement('script');script.dataset.oscarTurnstile='true';script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;script.onload=()=>resolve();script.onerror=reject;document.head.appendChild(script)
+      let script = document.querySelector<HTMLScriptElement>('script[data-oscar-turnstile]')
+      const fresh = !script
+      if (!script) { script=document.createElement('script');script.dataset.oscarTurnstile='true';script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true }
+      const target=script
+      const timeout=setTimeout(failed,15000)
+      function cleanup(){clearTimeout(timeout);target.removeEventListener('load',loaded);target.removeEventListener('error',failed)}
+      function loaded(){cleanup();resolve()}
+      function failed(){cleanup();target.remove();reject(Error('captcha_script'))}
+      target.addEventListener('load',loaded,{once:true});target.addEventListener('error',failed,{once:true})
+      if(fresh)document.head.appendChild(target)
     })
+    if(disposed || !captchaEl.value)return
     const api=(window as any).turnstile;removeCaptcha()
-    widget=api.render(captchaEl.value,{sitekey:runtime.public.turnstileSiteKey,action:'lead-chat',language:locale.value,theme:'auto',size:'flexible',callback:(value:string)=>{captcha.value=value;if(greetingQueued){greetingQueued=false;void send()}},'expired-callback':()=>{captcha.value=''},'error-callback':()=>{error.value=fallback()}})
-  } catch { error.value=fallback() }
+    widget=api.render(captchaEl.value,{sitekey:runtime.public.turnstileSiteKey,action:'lead-chat',language:locale.value,theme:'auto',size:'flexible',callback:(value:string)=>{captcha.value=value;captchaFailed.value=false;error.value='';if(greetingQueued){greetingQueued=false;void send()}},'expired-callback':captchaFailure,'timeout-callback':captchaFailure,'error-callback':captchaFailure,'unsupported-callback':captchaFailure})
+  } catch { if(!disposed)captchaFailure() }
 }
 async function ensureSession() {
   if(started.value)return true
@@ -89,27 +110,59 @@ async function upload(file:File,kind='file'){
   if(file.size>Number(runtime.public.assistantMaxBytes)||files.value.length>=5){error.value=es.value?'Máximo 5 archivos, de hasta 5 MB cada uno.':'Up to 5 files, at most 5 MB each.';return false}
   if(!consent.value){requireConsent(()=>upload(file,kind));return false}
   busy.value=true;error.value=''
-  try{const type=file.type.split(';')[0]!,mime=type==='video/webm'?'audio/webm':type;if(!acceptedTypes.split(',').includes(mime))throw Error('mime')
+  try{const mime=normalizeAudioMime(file.type);if(!acceptedTypes.split(',').includes(mime))throw Error('mime')
     const r=await request('/upload',{name:file.name,mime,size:file.size,kind});const form=new FormData();for(const[k,v]of Object.entries(r.post.fields))form.append(k,String(v));form.append('file',file)
     const uploaded=await fetch(r.post.url,{method:'POST',body:form});if(!uploaded.ok)throw Error('upload');await request('/upload/complete',{id:r.id});files.value.push({id:r.id,name:file.name});await scroll()
     for(let i=0;i<24;i++){await new Promise(r=>setTimeout(r,5000));await restore();const current=files.value.find(f=>f.id===r.id);if(current?.status==='failed'){error.value=es.value?'No se pudo procesar el archivo o transcribir el audio. Puedes escribir tu mensaje o subir otro archivo.':'The file could not be processed or the audio transcribed. You can type your message or upload another file.';return false}if(current?.processed)return true}throw Error('processing_timeout')
   }catch{error.value=fallback();return false}finally{busy.value=false}
 }
-async function onFile(event:Event){const el=event.target as HTMLInputElement;const f=el.files?.[0];if(f)await upload(f,f.type.startsWith('audio/')?'audio':'file');el.value=''}
+async function onFile(event:Event){const el=event.target as HTMLInputElement;const f=el.files?.[0];if(f)await upload(f,normalizeAudioMime(f.type).startsWith('audio/')?'audio':'file');el.value=''}
 function attach(){requireConsent(async()=>{fileInput.value?.click()})}
-async function onDrop(event:DragEvent){dragging.value=false;const f=event.dataTransfer?.files[0];if(!busy.value&&!closed.value&&f)await upload(f,f.type.startsWith('audio/')?'audio':'file')}
+async function onDrop(event:DragEvent){dragging.value=false;const f=event.dataTransfer?.files[0];if(!busy.value&&!closed.value&&f)await upload(f,normalizeAudioMime(f.type).startsWith('audio/')?'audio':'file')}
 async function download(id:string){try{const r=await request('/download',{id});window.location.assign(r.url)}catch{error.value=fallback()}}
 function clearAudio(){if(audioUrl.value)URL.revokeObjectURL(audioUrl.value);audioUrl.value='';audioBlob.value=null;seconds.value=0}
 function stop(){if(recorder?.state==='recording')recorder.stop();media?.getTracks().forEach(t=>t.stop());recording.value=false;clearInterval(timer)}
-async function record(){if(recording.value){stop();return}requireConsent(async()=>{clearAudio();try{media=await navigator.mediaDevices.getUserMedia({audio:true});const type=['audio/webm;codecs=opus','audio/mp4','audio/ogg;codecs=opus'].find(x=>MediaRecorder.isTypeSupported(x));recorder=new MediaRecorder(media,type?{mimeType:type}:undefined);const chunks:BlobPart[]=[];let bytes=0;recorder.ondataavailable=e=>{chunks.push(e.data);bytes+=e.data.size;if(bytes>Number(runtime.public.assistantMaxBytes))stop()};recorder.onstop=()=>{audioBlob.value=new Blob(chunks,{type:recorder?.mimeType||'audio/webm'});audioUrl.value=URL.createObjectURL(audioBlob.value);media?.getTracks().forEach(t=>t.stop())};recorder.start(1000);recording.value=true;timer=setInterval(()=>{seconds.value++;if(seconds.value>=60)stop()},1000)}catch{media?.getTracks().forEach(t=>t.stop());error.value=es.value?'No se pudo acceder al micrófono. Puedes escribir o adjuntar un audio.':'Microphone unavailable. You can type or attach an audio file.'}})}
-async function sendAudio(){if(!audioBlob.value)return;const blob=audioBlob.value,ext=blob.type.includes('mp4')?'m4a':blob.type.includes('ogg')?'ogg':'webm';if(await upload(new File([blob],'audio.'+ext,{type:blob.type}),'audio')){clearAudio();draft.value=es.value?'Responde a mi mensaje de audio, por favor.':'Please respond to my audio message.';await send()}}
+async function record(){
+  if(recording.value){stop();return}
+  if(captureStarting.value)return
+  requireConsent(async()=>{
+    captureStarting.value=true;error.value='';clearAudio()
+    try{
+      if(!window.isSecureContext || !navigator.mediaDevices?.getUserMedia || typeof MediaRecorder==='undefined')throw Error('unsupported')
+      const type=recorderMime(mime=>MediaRecorder.isTypeSupported(mime))
+      if(!type)throw Error('unsupported')
+      const stream=await navigator.mediaDevices.getUserMedia({audio:true})
+      if(disposed){stream.getTracks().forEach(t=>t.stop());return}
+      media=stream
+      const current=new MediaRecorder(stream,{mimeType:type});recorder=current
+      const chunks:BlobPart[]=[];let bytes=0,failed=false
+      current.ondataavailable=e=>{if(e.data.size){chunks.push(e.data);bytes+=e.data.size}if(bytes>Number(runtime.public.assistantMaxBytes)){failed=true;error.value=es.value?'El audio superó el tamaño permitido. Graba un mensaje más corto.':'Audio exceeded the size limit. Record a shorter message.';stop()}}
+      current.onerror=()=>{failed=true;stop();error.value=es.value?'La grabación se interrumpió. Puedes adjuntar un audio o escribir.':'Recording was interrupted. You can attach an audio file or type.'}
+      current.onstop=()=>{
+        stream.getTracks().forEach(t=>t.stop());recording.value=false;clearInterval(timer)
+        if(disposed||failed||!bytes)return
+        const mime=normalizeAudioMime(current.mimeType||type)
+        if(!audioFormat(mime))return
+        audioBlob.value=new Blob(chunks,{type:mime});audioUrl.value=URL.createObjectURL(audioBlob.value)
+      }
+      current.start(1000);recording.value=true
+      timer=setInterval(()=>{seconds.value++;if(seconds.value>=60)stop()},1000)
+    }catch(e:any){
+      media?.getTracks().forEach(t=>t.stop())
+      error.value=e?.name==='NotAllowedError'
+        ?(es.value?'Permiso de micrófono denegado. Habilítalo en los ajustes del sitio o adjunta un archivo de audio.':'Microphone permission was denied. Enable it in site settings or attach an audio file.')
+        :(es.value?'Este navegador no pudo grabar audio. Puedes adjuntar un archivo MP4/M4A, WebM u Ogg o escribir.':'This browser could not record audio. Attach an MP4/M4A, WebM or Ogg file, or type instead.')
+    }finally{captureStarting.value=false}
+  })
+}
+async function sendAudio(){if(!audioBlob.value)return;const blob=audioBlob.value,ext=audioFormat(blob.type);if(!ext)return;if(await upload(new File([blob],'audio.'+ext,{type:normalizeAudioMime(blob.type)}),'audio')){clearAudio();draft.value=es.value?'Responde a mi mensaje de audio, por favor.':'Please respond to my audio message.';await send()}}
 function finish(){requireConsent(async()=>{busy.value=true;try{await request('/close',{});closed.value=true}catch{error.value=fallback()}finally{busy.value=false}})}
 async function remove(){busy.value=true;try{if(bearer)await request('/session',undefined,'DELETE');sessionStorage.removeItem('oscar-aws-chat');sessionStorage.removeItem('oscar-chat-history');bearer='';started.value=false;closed.value=false;messages.value=[];files.value=[];cards.value=[];consent.value=false;pending.value=null;confirmedEmail.value='';await initCaptcha()}catch{error.value=fallback()}finally{busy.value=false}}
 function choose(text:string){draft.value=text;void send()}
 watch(()=>panel.contextVersion.value,()=>{if(panel.context.value){draft.value=(es.value?'Me interesa: ':'I’m interested in: ')+panel.context.value;nextTick(()=>{resize();input.value?.focus()})}})
 onMounted(async()=>{try{const saved=JSON.parse(sessionStorage.getItem('oscar-chat-history')||'{}');messages.value=Array.isArray(saved.messages)?saved.messages:[];cards.value=Array.isArray(saved.cards)?saved.cards:[]}catch{}bearer=sessionStorage.getItem('oscar-aws-chat')||'';if(bearer)try{await restore()}catch{sessionStorage.removeItem('oscar-aws-chat');bearer=''}if(!started.value)await initCaptcha();if(panel.context.value)draft.value=(es.value?'Me interesa: ':'I’m interested in: ')+panel.context.value;await scroll()})
 defineExpose({focus:()=>nextTick(()=>input.value?.focus()),pauseRecording:stop})
-onBeforeUnmount(()=>{stop();clearAudio();removeCaptcha()})
+onBeforeUnmount(()=>{disposed=true;stop();clearAudio();removeCaptcha()})
 const actionTitle=(name:string)=>name==='send_email'?(es.value?'Vista previa de correo':'Email preview'):(es.value?'Confirmar reunión':'Confirm meeting')
 const cardUrl=(card:any)=>{const u=card.paymentUrl||card.payment_url||card.url||card.bookingUrl||card.booking_url;try{const parsed=new URL(u);return parsed.protocol==='https:'&&['oscarbahamonde.com','www.mercadopago.com.pe','www.mercadopago.com'].includes(parsed.hostname)?u:''}catch{return ''}}
 </script>
@@ -125,14 +178,14 @@ const cardUrl=(card:any)=>{const u=card.paymentUrl||card.payment_url||card.url||
       <article v-if="privacyOpen" class="privacy-card" role="region" :aria-label="es?'Permiso para guardar datos':'Permission to store data'"><ShieldCheck :size="21"/><strong>{{es?'Tú decides qué compartir':'You choose what to share'}}</strong><p>{{es?'Para guardar tu contacto, conversación o archivos y enviarlos a Oscar, necesitamos tu permiso. Conservación: 90 días.':'We need your permission to store your contact, conversation or files and send them to Oscar. Retention: 90 days.'}} <NuxtLink :to="localePath('/privacy')">{{es?'Privacidad':'Privacy'}}</NuxtLink></p><div class="action-buttons"><button class="approve" :disabled="busy" @click="allowConsent">{{es?'Acepto y continúo':'Agree and continue'}}</button><button @click="dismissConsent">{{es?'Ahora no':'Not now'}}</button></div></article>
       <form v-if="contactOpen&&!confirmedEmail" class="privacy-card" @submit.prevent="confirmEmail"><label :for="uid+'email'">{{es?'Tu correo de contacto':'Your contact email'}}</label><input :id="uid+'email'" v-model="emailDraft" type="email" autocomplete="email" maxlength="254" required/><p>{{es?'Confirma que este es el correo al que podemos responder.':'Confirm this is the address where we may reply.'}}</p><div class="action-buttons"><button class="approve" :disabled="busy">{{es?'Confirmo mi correo':'I confirm my email'}}</button><button type="button" @click="contactOpen=false">{{es?'Cancelar':'Cancel'}}</button></div></form>
       <p v-if="closed" class="closed-notice">{{es?'Conversación guardada para enviar a Oscar. Gracias por compartir tu idea.':'Conversation saved for delivery to Oscar. Thanks for sharing your idea.'}}</p>
-      <p v-if="error" class="assistant-error" role="alert">{{error}} <a href="mailto:oscar.bahamonde.dev@gmail.com">Email</a></p>
+      <p v-if="error" class="assistant-error" role="alert">{{error}} <a href="mailto:oscar.bahamonde.dev@gmail.com">Email</a> <button v-if="captchaFailed&&!started" type="button" @click="retryCaptcha">{{es?'Reintentar verificación':'Retry verification'}}</button></p>
     </div>
     <div v-if="dragging" class="drop-overlay">{{es?'Suelta tu archivo aquí':'Drop your file here'}}</div>
     <div class="conversation-bottom">
       <div v-if="!started" ref="captchaEl" class="captcha-widget"/>
       <div v-if="recording" class="recording-strip"><span class="wave" aria-hidden="true"><i v-for="n in 16" :key="n" :style="{'--delay':`${n*-.12}s`}"/></span><span>{{String(Math.floor(seconds/60)).padStart(2,'0')}}:{{String(seconds%60).padStart(2,'0')}}</span><button :aria-label="es?'Detener grabación':'Stop recording'" @click="stop"><Square :size="16"/></button></div>
       <div v-if="audioUrl" class="audio-preview"><audio :src="audioUrl" controls :aria-label="es?'Vista previa del audio':'Audio preview'"/><button :disabled="busy" @click="sendAudio">{{es?'Enviar audio':'Send audio'}}</button><button :aria-label="es?'Descartar audio':'Discard audio'" @click="clearAudio"><X :size="16"/></button></div>
-      <form v-if="!closed" class="assistant-composer" @submit.prevent="send()"><label :for="uid+'message'" class="sr-only">{{es?'Escribe tu mensaje':'Type your message'}}</label><textarea :id="uid+'message'" ref="input" v-model="draft" maxlength="4000" rows="1" :placeholder="es?'Pregunta, imagina, conversemos…':'Ask, imagine, let’s talk…'" :disabled="busy||recording" @input="resize" @keydown.enter.exact.prevent="send()"/><div class="composer-actions"><div><button type="button" :aria-label="es?'Adjuntar archivo':'Attach file'" :disabled="busy||recording" @click="attach"><Paperclip :size="19"/></button><input ref="fileInput" type="file" hidden :accept="acceptedTypes" @change="onFile"/><button type="button" :aria-label="es?'Grabar audio':'Record audio'" :disabled="busy" @click="record"><Mic :size="19"/></button><button type="button" :aria-label="es?'Compartir correo de contacto':'Share contact email'" :disabled="busy" @click="contactOpen=!contactOpen"><Mail :size="18"/></button></div><button class="send" type="submit" :disabled="busy||recording||!draft.trim()" :aria-label="es?'Enviar mensaje':'Send message'"><LoaderCircle v-if="busy" :size="18" class="spin"/><Send v-else :size="17"/></button></div></form>
+      <form v-if="!closed" class="assistant-composer" @submit.prevent="send()"><label :for="uid+'message'" class="sr-only">{{es?'Escribe tu mensaje':'Type your message'}}</label><textarea :id="uid+'message'" ref="input" v-model="draft" maxlength="4000" rows="1" :placeholder="es?'Pregunta, imagina, conversemos…':'Ask, imagine, let’s talk…'" :disabled="busy||recording" @input="resize" @keydown.enter.exact.prevent="send()"/><div class="composer-actions"><div><button type="button" :aria-label="es?'Adjuntar archivo':'Attach file'" :disabled="busy||recording" @click="attach"><Paperclip :size="19"/></button><input ref="fileInput" type="file" hidden :accept="acceptedTypes" @change="onFile"/><button type="button" :aria-label="es?'Grabar audio':'Record audio'" :disabled="busy||captureStarting" @click="record"><Mic :size="19"/></button><button type="button" :aria-label="es?'Compartir correo de contacto':'Share contact email'" :disabled="busy" @click="contactOpen=!contactOpen"><Mail :size="18"/></button></div><button class="send" type="submit" :disabled="busy||recording||!draft.trim()" :aria-label="es?'Enviar mensaje':'Send message'"><LoaderCircle v-if="busy" :size="18" class="spin"/><Send v-else :size="17"/></button></div></form>
       <div class="conversation-footer"><span>{{consent?(es?'Datos protegidos · 90 días':'Protected data · 90 days'):(es?'IA · Habla sin dejar tus datos':'AI · Chat without sharing contact details')}}</span><button v-if="started&&!closed" :disabled="busy||recording" @click="finish">{{es?'Enviar a Oscar':'Send to Oscar'}}</button><button v-if="started" :disabled="busy||recording" @click="remove">{{es?'Borrar':'Delete'}}</button></div>
       <p v-if="!consent" class="privacy-note">{{es?'No guardamos la conversación en el servidor hasta que aceptes. Evita compartir datos personales por ahora.':'We do not store the conversation on the server until you agree. Avoid sharing personal details for now.'}} <NuxtLink :to="localePath('/privacy')">{{es?'Privacidad':'Privacy'}}</NuxtLink></p>
     </div>

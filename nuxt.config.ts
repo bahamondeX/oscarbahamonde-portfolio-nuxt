@@ -38,6 +38,7 @@ export default defineNuxtConfig({
     ]
   } },
   routeRules: {
+    '/**': { headers: { 'Permissions-Policy': 'microphone=(self)' } },
     '/es': { isr: 3600 }, '/en': { isr: 3600 },
     '/es/blog/**': { isr: 3600 }, '/en/blog/**': { isr: 3600 },
     '/api/chat/**': { headers: { 'cache-control': 'private, no-store', 'x-content-type-options': 'nosniff' } },

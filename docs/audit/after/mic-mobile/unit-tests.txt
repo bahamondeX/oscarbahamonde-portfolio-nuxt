@@ -1,0 +1,11 @@
+✔ negotiates only advertised recording containers for Safari and Chromium (0.391791ms)
+✔ M4A file signature maps to the MP4 upload contract and Transcribe container (1.036875ms)
+✔ codec parameters normalize consistently without accepting arbitrary file formats (0.0645ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 162.783917

@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-11-14T23:00:15.455320+00:00",
+  "target": "https://oscarbahamonde.com/es",
+  "status": "blocked-real-device-validation",
+  "productionAudioClaim": false,
+  "environmentDiscovery": {
+    "browserStackConnectorAvailable": false,
+    "browserStackCredentialsInEnvironment": false,
+    "adbAvailable": false,
+    "ideviceIdAvailable": false,
+    "remoteDesktopDevices": {
+      "online": 0,
+      "offline": 1,
+      "mobileConnectionsExposed": 0
+    }
+  },
+  "devices": [
+    {
+      "browser": "iOS Safari",
+      "device": null,
+      "osVersion": null,
+      "browserVersion": null,
+      "permission": null,
+      "recording": null,
+      "preview": null,
+      "upload": null,
+      "transcription": null,
+      "ownerEmail": null,
+      "status": "not-run",
+      "reason": "No controllable physical iOS device or authenticated real-device cloud session exposed."
+    },
+    {
+      "browser": "Android Chrome",
+      "device": null,
+      "osVersion": null,
+      "browserVersion": null,
+      "permission": null,
+      "recording": null,
+      "preview": null,
+      "upload": null,
+      "transcription": null,
+      "ownerEmail": null,
+      "status": "not-run",
+      "reason": "No controllable physical Android device or authenticated real-device cloud session exposed."
+    }
+  ],
+  "productionHeadersBeforeChange": {
+    "httpsStatus": 200,
+    "permissionsPolicyPresent": false
+  },
+  "localVerification": {
+    "audioUnitTests": 3,
+    "realMicrophoneUsed": false,
+    "syntheticM4AHeaderUsed": true,
+    "scope": "Container negotiation and MIME/Transcribe mapping only. No browser, Transcribe job or Gmail delivery claimed."
+  },
+  "fallback": "Attach an existing MP4/M4A, WebM or Ogg audio file, or type a message. Audio upload requires consent."
+}

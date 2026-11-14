@@ -7,6 +7,7 @@ import {
 import { fileTypeFromBuffer } from 'file-type'
 import { cfg, ttlActive, metric } from './config.js'
 import { get, update, message } from './store.js'
+import { normalizeAudioMime, audioFormat } from '../../shared/audio.js'
 const s3 = new S3Client({}),
   transcribe = new TranscribeClient({})
 export async function validateObject(file: any) {
@@ -23,15 +24,9 @@ export async function validateObject(file: any) {
     ),
     bytes = await obj.Body!.transformToByteArray()
   const found = await fileTypeFromBuffer(bytes)
-  const mime =
-    found?.mime === 'video/webm'
-      ? 'audio/webm'
-      : found?.mime === 'video/mp4'
-        ? 'audio/mp4'
-        : found?.mime === 'application/ogg'
-          ? 'audio/ogg'
-          : found?.mime
+  const mime = normalizeAudioMime(found?.mime)
   if (mime !== file.mime) throw Error('mime_mismatch')
+  return found
 }
 export async function handler(event: { sessionId: string; fileId: string }) {
   const s = await get(cfg.table, event.sessionId)
@@ -41,7 +36,7 @@ export async function handler(event: { sessionId: string; fileId: string }) {
   const attempt = Number(file.attempts || 0) + 1
   file.attempts = attempt
   try {
-    await validateObject({ ...file, sessionId: s!.id })
+    const detected = await validateObject({ ...file, sessionId: s!.id })
     file.validated = true
     if (file.kind === 'audio') {
       const job = 'oscar-' + event.fileId,
@@ -51,6 +46,7 @@ export async function handler(event: { sessionId: string; fileId: string }) {
           new StartTranscriptionJobCommand({
             TranscriptionJobName: job,
             IdentifyLanguage: true,
+            MediaFormat: audioFormat(file.mime, detected?.ext),
             LanguageOptions: ['es-US', 'en-US'],
             Media: { MediaFileUri: `s3://${cfg.bucket}/${file.key}` },
             OutputBucketName: cfg.bucket,
