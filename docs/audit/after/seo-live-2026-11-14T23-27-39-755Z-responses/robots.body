@@ -1,0 +1,18 @@
+# START nuxt-robots (indexable)
+User-agent: *
+Allow: /
+Allow: /es
+Allow: /en
+Disallow: /api/
+Disallow: /es/api/
+Disallow: /en/api/
+Disallow: /pago
+Disallow: /es/pago
+Disallow: /en/pago
+Disallow: /conectar
+Disallow: /es/conectar
+Disallow: /en/conectar
+
+Sitemap: https://oscarbahamonde.com/sitemap.xml
+Sitemap: https://oscarbahamonde.com/sitemap_index.xml
+# END nuxt-robots

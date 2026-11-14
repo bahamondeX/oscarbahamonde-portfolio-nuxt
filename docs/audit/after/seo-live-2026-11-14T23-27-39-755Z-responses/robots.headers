@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+date: Sat, 14 Nov 2026 23:27:47 GMT
+
+HTTP/2 200 
+age: 0
+cache-control: max-age=14400, must-revalidate
+content-type: text/plain; charset=utf-8
+date: Sat, 14 Nov 2026 23:27:48 GMT
+permissions-policy: microphone=(self)
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: gru1::iad1::f6xwb-1794698867729-72be921812b7
+content-length: 371
+

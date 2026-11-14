@@ -1,0 +1,10 @@
+{
+  "stack": "oscar-assistant",
+  "region": "us-east-1",
+  "awsCalls": 0,
+  "stages": [
+    "--capture: read stack/template/parameters, current Lambda configurations, aliases, URLs and download private ZIP backups; publish immutable versions with revision/hash preconditions",
+    "--prepare <snapshot-directory>: create a CloudFormation UPDATE change set from the captured SAM template and parameter values; do not execute it",
+    "Review replacements/deletions and execute only the intended code/config rollback; verify hashes, URL binding and acceptance tests afterward"
+  ]
+}

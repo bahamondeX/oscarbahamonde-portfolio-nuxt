@@ -13,3 +13,14 @@ reports/
 assistant/dist/
 assistant/.aws-sam/
 assistant/packaged.yaml
+
+# Private QA conversation/mail/calendar receipts; delivered privately, never published.
+docs/audit/after/gmail-final.json
+docs/audit/after/gmail-final-transcript.txt
+docs/audit/after/chat-final-es-en.txt
+docs/audit/after/chat-final-sent.jpg
+docs/audit/after/consent-final.jpg
+docs/audit/after/turnstile-fresh-en.jpg
+docs/audit/after/turnstile-fresh-en.txt
+docs/audit/after/turnstile-fresh.json
+docs/audit/after/payments/hold-cleanup-live.json

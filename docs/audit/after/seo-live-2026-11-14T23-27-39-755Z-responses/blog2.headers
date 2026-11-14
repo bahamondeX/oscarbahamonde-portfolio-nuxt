@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+date: Sat, 14 Nov 2026 23:27:47 GMT
+
+HTTP/2 200 
+age: 0
+cache-control: public, max-age=0, must-revalidate
+content-type: application/json
+date: Sat, 14 Nov 2026 23:27:49 GMT
+etag: W/"42zXC7nD8Z"
+last-modified: Sat, 14 Nov 2026 23:27:49 GMT
+permissions-policy: microphone=(self)
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: gru1::iad1::bhmjr-1794698867732-406cf0835095
+content-length: 3358
+

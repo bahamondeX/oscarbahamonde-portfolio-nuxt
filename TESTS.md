@@ -66,3 +66,98 @@ Consultar `AUDIT.md` para capturas y mediciones antes/después. Logo/contraste, 
 - Dock **9/9** destinos, expansión de credenciales **6 → 29**, blog **6 → 10**, CTA de servicio con contexto, borrador persistente, foco visible y Escape con devolución del foco: aprobados en el navegador de producción. Consola sin errores ni advertencias durante esos flujos. Evidencia: `docs/audit/after/manual-flows.json`.
 - Se observó aparte una advertencia de limpieza de Turnstile al iniciar el chat; se corrigió el desmontaje del widget antes de retirar su contenedor. Su verificación tras el despliegue final se registra en `AUDIT.md`.
 - La captura numérica de contraste de logos con recortes del navegador resultó desalineada y fue descartada. `docs/audit/after/logo-contrast.json` declara **no verificado**; el preflight de Sharp no sustituye esa prueba visual.
+
+
+## Causa raíz — nueva fase de cierre
+
+# Causa raíz del grounding — 14 noviembre 2026
+
+Diagnóstico escrito antes de los cambios de esta fase. Fuente: `assistant/evaluation-results.json` (36 casos, 34 útiles), `evaluation-followup.json`, `src/agent.ts`, `knowledge.ts`, `pricing.ts`, `scripts/evaluate.mjs`.
+
+## Fallos exactos
+
+### es-rag
+
+Pregunta: Explica RAG y cuándo conviene usarlo en una pyme.
+
+Respuesta completa conservada en el JSON; fragmentos materiales:
+
+- «RAG: Recuperación Aumentada por Generación»: expande el acrónimo al revés. Debe ser Retrieval-Augmented Generation, generación aumentada por recuperación.
+- «el modelo cita fuentes reales de tu empresa, no alucina»: una fuente recuperada puede estar incompleta o ser interpretada incorrectamente; RAG reduce algunos errores, no garantiza eliminarlos.
+
+Clasificación: alucinación/generalización de generación técnica. No hay tool calls que suministren esas afirmaciones y Guardrails no las valida.
+
+### en-lambda
+
+Pregunta: When should I choose Lambda over Kubernetes for a small API?
+
+Respuesta completa conservada en el JSON; fragmentos materiales:
+
+- «No cluster management, patching, monitoring infrastructure, or security hardening. Lambda handles that.»: mezcla gestión de servidores con obligaciones de IAM, configuración, código, dependencias, datos y monitorización del cliente.
+- «Containers stay warm; no cold-start penalty.»: Kubernetes puede introducir demoras por scheduling, descarga de imágenes, inicialización y escalado.
+
+Clasificación: alucinación/generalización de generación técnica. No hay tool calls que suministren esas afirmaciones y Guardrails no las valida.
+
+## Arquitectura observada
+
+No existe un recuperador vectorial ni chunking/top-k actualmente: `knowledgeContexts` inserta todo el conocimiento verificado del repositorio en el system prompt por idioma. No hubo un fallo de ranking o un documento fuera del top-k. La base tiene datos comerciales y biográficos, no documentación técnica actualizada de todos los proveedores. El modelo completa las explicaciones con su conocimiento paramétrico.
+
+El prompt acumula reglas específicas, pero esas reglas no prueban la veracidad de la salida. `pricing.ts` solo filtra cantidades monetarias; no valida fechas, asociación cargo/empresa, certificaciones o aseveraciones técnicas. El streaming publica cada línea antes de comprobar una respuesta completa. El runner anterior llama Converse directo con herramientas simuladas; **no prueba el endpoint Lambda desplegado** y sus resultados no deben etiquetarse como producción.
+
+`evaluation-followup.json` demuestra que el problema técnico persiste con el código nuevo: RAG ya explica que las alucinaciones no se eliminan, pero Lambda todavía cita facturación de 100 ms y ausencia de observabilidad por configurar. No es únicamente desfase de despliegue. La comparación de hashes/versión y reproducción HTTP real se registrará por separado; no se presupone que el código local sea el publicado.
+
+## Corrección general propuesta
+
+1. Recuperar registros indivisibles con ID/tipo/idioma/fuente y sinónimos ES/EN; no separar un precio de su servicio ni una fecha de su empleo. Mantener el catálogo completo en contexto para evitar omisiones comerciales.
+2. Validar antes de emitir: referencias de fuente, fechas y cifras asociadas, empresas/certificaciones presentes y estado vigente. Reintento limitado con problemas concretos y fuentes; si no se puede sostener una afirmación, omitirla y ofrecer la fuente verificada. Registrar categorías/IDs de correcciones, nunca texto del visitante ni PII en CloudWatch.
+3. Evaluar calidad del modelo configurable para explicación técnica general; una lista creciente de excepciones por pregunta no resuelve este problema. No usar respuestas fijas de los casos fallidos.
+4. Mantener todos los intentos, separar la batería de ajuste de held-out y no convertir comprobaciones léxicas en aprobación semántica.
+
+
+La comparación con el artefacto desplegado y las reproducciones del endpoint aún se están realizando; no se confunden las llamadas Converse de las evaluaciones anteriores con producción HTTP.
+
+## Cierre adicional — implementación y límites reales
+
+### Reproducción en el endpoint publicado
+
+`docs/audit/after/endpoint-diagnosis/reproduction.md` conserva las dos respuestas completas visibles en el panel conectado a Lambda: `es-rag` y `en-lambda`. RAG ya explica correctamente el acrónimo, pero añade tarifas de vectorización/LLM no respaldadas; Lambda sigue afirmando «Zero ops», tarifas en soles sin fuente y umbrales/garantías no verificadas. Son reproducciones reales en una sesión existente, no una batería aislada de36 casos. No se creó lead, correo, evento ni pago en ellas.
+
+La comprobación `sts:GetCallerIdentity` falló con sesión expirada; evidencia en `docs/audit/after/aws-access.json`. No fue posible comparar hashes del ZIP publicado ni crear versión/alias de reversión. Por tanto, el desfase exacto de `agent.ts`, `knowledge.ts` y `pricing.ts` continúa sin confirmación de artefacto. La evidencia local anterior ya demuestra que el problema no se limita al despliegue.
+
+### Grounding y revisión independiente
+
+Los hechos del portfolio se recuperan como registros completos con tipo, ID y fuente. El catálogo conserva sus precios y «desde». Los slots de referencia se renderizan determinísticamente; se validan asociaciones de fechas, roles y credenciales antes de emitir la respuesta completa por bloques SSE. Las correcciones registran categorías/IDs, no PII. Esto aumenta la espera al primer contenido; no se presenta como streaming inmediato de cada token.
+
+La revisión independiente descubrió escapes y sobrebloqueos: años asociados al logro equivocado, empresas/certificaciones desconocidas, confirmaciones sin tool, promesas de entrega y nombres genéricos confundidos con marcas. Se conservaron los intentos fallidos 02/03 y sus respuestas completas en `docs/audit/after/grounding-review/`; el intento 04 pasa 8/8 probes deterministas. No son llamadas al modelo ni held-out. Las 57 pruebas del backend, TypeScript y build pasan; logs en `docs/audit/after/regression/backend-*.txt`. El validador tiene alcance acotado y no garantiza verdad universal de prosa técnica.
+
+### Evaluación nueva sin resultados inventados
+
+Se sellaron 44 preguntas held-out ES/EN antes del ajuste, SHA-256 `498945f082c34c1c4f9387f7faf3780441f7960001bf09e8a6e2a59130775512`, con criterios requeridos/prohibidos. No se compartieron con la implementación ni se ejecutaron. El runner local llama `runAgent`/Bedrock real con tools externas simuladas y lo etiqueta así; el runner HTTP requiere sesiones reales de Turnstile y conserva SSE/respuestas completas y fallos. Cada ejecución tiene nombre nuevo y el held-out impide repetición por fase.
+
+`assistant/evaluation-final.json` es **un informe de bloqueo**, no de aprobación: 36+44 pendientes, 0 llamadas nuevas, puntuaciones null. El histórico34/36 permanece enlazado y no se convierte en éxito desplegado. No se cambió de modelo ni se desplegó Lambda sin pasar la evaluación local exigida.
+
+El archivo `evaluation-focused.json` publicado en5b1a664 contenía un carácter de control sin escapar; su copia exacta se conserva en `assistant/evaluations/history/5b1a664-evaluation-focused.json`. La copia local serializada válidamente conserva el mismo intento/timestamp, no es una nueva llamada ni una selección de resultados favorables.
+
+### Audio, pagos y fuentes
+
+- Frontend: 27/27 pruebas (incluidos los dos nuevos tests del parser SEO), TypeScript y build aprobados; logs en `docs/audit/after/regression/frontend-*.txt`. Los hashes modificados de reservas están explicados en `docs/audit/after/payments/runtime-hash-changes.json`.
+- Limpieza de holds: mocks comprueban vencimiento, ETag, carreras con pago/renovación, idempotencia y reutilización. Webhook mantiene consulta API y pago aprobado PEN20; HMAC opcional está listo para el secreto del proveedor. No hay compra sandbox ni cobro real: faltan credenciales de prueba/calendario aislado y aprobación de transacción. Después de publicar, dos holds existentes se cancelaron al consultar disponibilidad; lecturas Calendar antes/después y slots recuperados están en payments/hold-cleanup-summary.json. Checklist/reembolso en `docs/payment-validation.md`.
+- Audio: selección `isTypeSupported`, MP4/M4A/WebM, normalización MIME/Transcribe, liberación de tracks, error de permiso y fallback de archivo.3 tests de formato pasan, sin micrófono real. `docs/audit/after/mic-mobile/` contiene el inventario de bloqueo y resultadosnull por iOS/Android; no se inventan versiones de dispositivos.
+- Turnstile: mensajes de error/reintento/timeout añadidos. Una sesión nueva tras publicar validó Turnstile automáticamente y respondió ES/EN sin consentimiento previo. El consentimiento se pidió al enviar; Gmail recibió los cuatro mensajes y transcript.txt de1231 bytes. Hay ocho logs ofuscados del iframe de Cloudflare y cero warnings/errores de aplicación, conservados en turnstile-fresh-summary.json. Falta forzar un error del desafío y comprobar reintento.
+- Fechas: `node scripts/verify-experience.mjs` compara16/16 puestos con la captura pública de LinkedIn, con SHA y extractos por puesto. No equivale a confirmación independiente del empleador. Freelance e Indra tienen campos faltantes explícitos.
+- Medium: propuesta de exportación/índice manual versionado en `docs/medium-history-proposal.md`; sin implementar por requerir OK.
+
+
+### Playwright y regresión publicada
+
+Chromium local159 se instaló, pero abortó antes de navegar por Mach/crashpad. Docker no fue accesible y GitHub Actions43651325476 ni siquiera asignó runner: cuenta bloqueada por facturación. Esos errores no cuentan como tests aprobados.
+
+La alternativa fue un sandbox Linux efímero de Vercel (Ubuntu26.04, Node24, Chromium159), sin secretos. Se preservan todos los intentos: importación JSON incompatible con Node24; capturas correctamente recortadas pero ocluidas por el dock; corrección de centrado y verificación de cinco puntos; fallo NETCOR real; precondición de scroll del formulario; servidor hijo anterior detectado y descartado. No se usaron esos recortes inválidos para declarar contraste.
+
+La ejecución final integra el código publicado en ba8ff885: **24/24 Playwright y112/112 recortes válidos** (ES/EN × claro/oscuro × desktop/móvil). Cada captura usa locator.screenshot y máscara de primer plano; el criterio es el percentil10 del contraste, mínimo global3,800:1 (Bluetab). NETCOR7,038:1, Data&Analytics5,174:1, Valtx6,476:1. No se afirma que cada píxel antialias tenga3:1. El mapa, manifiesto y archivo completo de intentos están en docs/audit/after; el sandbox/túnel se detuvieron tras verificar todos los hashes.
+
+Frontend desplegado: Vercel **dpl_CVRFf4bD2sx2jaM28fFkQbfGHzZq**, commit **ba8ff885b09dfb403e98114eafd9c81fd62046c3**, READY en raíz y www. `scripts/seo-check.mjs` ejecutó54/54 comprobaciones sobre producción, con12 respuestas originales y hashes. Informe nuevo: `docs/audit/after/seo-live-2026-11-14T23-27-39-755Z.json`.
+
+Lighthouse posterior a esta publicación: **97/100/100/100 móvil,100/100/100/100 escritorio, CLS0**. Evidencia `lighthouse-final.json`, capturas y texto de PageSpeed; informe https://pagespeed.web.dev/analysis/https-oscarbahamonde-com-es/iigb3kev5o. Una medición por dispositivo de la carga inicial /es; no sustituye todos los estados interactivos.
+
+La nueva cabecera `Permissions-Policy: microphone=(self)` se comprobó por HTTPS. La prueba de notificación `QA-CIERRE-1411` llegó a INBOX tras consentimiento, con2 mensajes de visitante y2 respuestas completas en transcript.txt (1231 bytes); `notification-smoke-summary.json`; la transcripción y comprobantes se conservan en privado. Es un smoke test del frontend nuevo con **el backend anterior todavía desplegado**, no la aceptación del grounding nuevo.

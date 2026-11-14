@@ -86,3 +86,27 @@ Pendientes explícitos: contraste renderizado/Playwright, grabación desde micr�
 
 Pruebas manuales complementarias en `docs/audit/after/manual-flows.json`:9/9 enlaces del dock,29 credenciales al expandir,10 posts al cargar más, servicio precargado en el panel, borrador conservado al cerrar/reabrir, Tab con foco visible y Escape devolviendo el foco al disparador. No sustituyen la suite Playwright.
 
+
+
+## Cierre posterior — 14 noviembre 2026, 23:28 UTC
+
+Esta sección actualiza el estado anterior, sin sustituir ni borrar intentos fallidos. Frontend ba8ff885 publicado en Vercel dpl_CVRFf4bD2sx2jaM28fFkQbfGHzZq; AWS no redesplegado por autenticación expirada y evaluación real pendiente.
+
+| Área | Evidencia final de esta fase |
+|---|---|
+| Playwright |24/24 en Linux efímero; CI GitHub configurado pero bloqueado por facturación; todos los intentos archivados |
+| Logos |112/112 recortes válidos, p10 mínimo3,800:1. NETCOR oficial corregido por CSS; Rayke/freelance permanecen como monogramas neutrales |
+| Regresión local |27/27 tests frontend,57/57 backend; TypeScript y builds aprobados. Hashes de reservas modificados deliberadamente y justificados |
+| SEO y Lighthouse |54/54 HTTPS tras publicar; móvil97 y escritorio100 de performance, resto100, CLS0; informes nuevos lighthouse-final y seo-live |
+| Hold vencido real |Dos eventos existentes de17nov pasaron tentative→cancelled;09:00 y16:30 Lima disponibles, sin crear eventos ni cobrar. JSON antes/después en payments/hold-cleanup-summary.json |
+| Turnstile/chat/correo |Sesión nueva validada automáticamente, EN→ES mantiene conversación, consentimiento al enviar, correo final recibido con transcript.txt1231bytes. Sin errores de aplicación;8 logs internos ofuscados de Cloudflare conservados |
+| Grounding |Registros deterministas y validador previo a SSE implementados;8/8 probes de revisión. Evaluación36+44 bloqueada, scoresnull; no afirmar≥95% ni nueva versión Lambda |
+| Audio |Compatibilidad MP4/M4A/WebM y fallback implementados; header publicado. Sin iOS/Android físicos o nube autenticada disponibles, sin afirmar transcripción nueva |
+| Pagos |Mocks y limpieza real comprobados. Sandbox y compra real S/20 siguen pendientes; procedimiento de devolución documentado, sin transacción autorizada todavía |
+| Fuentes |16/16 fechas cotejadas con captura LinkedIn; no corroboración independiente. Propuesta de histórico Medium documentada sin implementación |
+
+![Lighthouse móvil después del despliegue](docs/audit/after/lighthouse-final-mobile.jpg)
+![Lighthouse escritorio después del despliegue](docs/audit/after/lighthouse-final-desktop.jpg)
+El consentimiento al enviar se verificó en una sesión nueva; sus capturas y conversación se conservan en la entrega privada.
+
+La aceptación completa sigue abierta por AWS/evaluaciones, sandbox/pago real, micrófonos reales y prueba forzada de error Turnstile. TODO.md enumera los bloqueos concretos, sin presentar mocks como producción.

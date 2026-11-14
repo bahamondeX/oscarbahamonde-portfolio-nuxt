@@ -41,3 +41,18 @@ Playwright (`npx playwright install chromium`, `npm run test:e2e`) y Lighthouse 
 Los tests fijan hashes del JavaScript ejecutable de los handlers críticos. No se ejecuta un cobro real en la batería automática. Los holds vencidos pueden seguir visibles en Calendar hasta reutilizar el horario, limitación previa documentada.
 
 Los endpoints históricos `server/api/chat`/Postgres permanecen en código por compatibilidad; el panel de producción usa únicamente la URL AWS. Su configuración antigua no es necesaria para el asistente actual.
+
+
+## Validación y estado de cierre
+
+Frontend publicado en Vercel: `ba8ff885`, despliegue `dpl_CVRFf4bD2sx2jaM28fFkQbfGHzZq`. Pruebas y límites actuales: [TESTS.md](TESTS.md), [AUDIT.md](AUDIT.md), [TODO.md](TODO.md).
+
+```sh
+npm test && npm run typecheck && npm run build
+npm --prefix assistant test && npm --prefix assistant run typecheck
+node scripts/seo-check.mjs --revision COMMIT_PUBLICADO
+npx playwright install chromium
+npm run test:e2e
+```
+
+AWS requiere renovar autenticación y pasar la evaluación real antes de `npm --prefix assistant run deploy`. El informe `assistant/evaluation-final.json` registra el bloqueo, no una aprobación. Preparación de respaldo/reversión: [docs/assistant-rollback.md](docs/assistant-rollback.md). Los artefactos completos de Playwright se extraen con `tar -xf docs/audit/after/playwright-artifacts.tar.xz` desde la raíz del repositorio.

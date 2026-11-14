@@ -1,0 +1,10 @@
+{
+  "test": "Expired app-owned holds cleaned by production availability endpoint",
+  "beforeCount": 2,
+  "afterCancelledCount": 2,
+  "slotsAvailableAgain": 2,
+  "createdEvents": 0,
+  "charges": 0,
+  "evidenceMethod": "Private before/after Calendar reads and public availability response/UI",
+  "privateReceipt": "Calendar records retained separately; no event identifiers or event details published"
+}

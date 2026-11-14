@@ -1,0 +1,110 @@
+[
+  {
+    "name": "es",
+    "url": "https://oscarbahamonde.com/es",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 113646,
+    "sha256": "1828f1ae94539801f4a061d984aa97f68662c91437ad0371ede18f8f814820e8",
+    "error": null
+  },
+  {
+    "name": "en",
+    "url": "https://oscarbahamonde.com/en",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 115165,
+    "sha256": "2054b72f324c445eaed8a486cd04cbbddf496b5b380fd5441dc94a85448798c6",
+    "error": null
+  },
+  {
+    "name": "robots",
+    "url": "https://oscarbahamonde.com/robots.txt",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 371,
+    "sha256": "5a5e575941612aa668f9c912b8a25368565b6d6295afebc5491de1a583e21c6c",
+    "error": null
+  },
+  {
+    "name": "sitemap",
+    "url": "https://oscarbahamonde.com/sitemap.xml",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 471,
+    "sha256": "5f1f6e3a20ac4c71c4905246c4825f56dfcd3d1e9d4c099acbd3d80980fa4ff5",
+    "error": null
+  },
+  {
+    "name": "llms",
+    "url": "https://oscarbahamonde.com/llms.txt",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 7079,
+    "sha256": "3c5ac4a5b2ec44341e9f89bdab1c425acc00762d8de1ecc9d4d75309ab7ea42e",
+    "error": null
+  },
+  {
+    "name": "llms-full",
+    "url": "https://oscarbahamonde.com/llms-full.txt",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 11838,
+    "sha256": "62ae008fa4fb84bc674ade066a293bd70a7b59cffb97c9d0fb07d7ee0fd8052a",
+    "error": null
+  },
+  {
+    "name": "blog1",
+    "url": "https://oscarbahamonde.com/api/blog?page=1",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 5548,
+    "sha256": "44af01e2e42c2ddbf68edb25a2b9675342f0c93025e31cf7f383da9549adff7d",
+    "error": null
+  },
+  {
+    "name": "blog2",
+    "url": "https://oscarbahamonde.com/api/blog?page=2",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 3358,
+    "sha256": "ac8bea2c49b735d5459edb06b6e98c88d8539417f31cc5bd9ce482092516dad8",
+    "error": null
+  },
+  {
+    "name": "sitemap-child-0",
+    "url": "https://oscarbahamonde.com/__sitemap__/es-PE.xml",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 8305,
+    "sha256": "a71dcc2016cbdf518d9e39d30a17d2e4335ae4ffddfeaa364410a04ab74bbd2b",
+    "error": null
+  },
+  {
+    "name": "sitemap-child-1",
+    "url": "https://oscarbahamonde.com/__sitemap__/en-US.xml",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 8305,
+    "sha256": "2bf6ca5c2e2217a50964b31c49f884b10fd6a4bce7d9486f4a04b03fa6cc3efa",
+    "error": null
+  },
+  {
+    "name": "article-es",
+    "url": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 28892,
+    "sha256": "6865109b5b472a70e2d208809f702d373a067f28ee637de1a1089067d8bdd58a",
+    "error": null
+  },
+  {
+    "name": "article-en",
+    "url": "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+    "httpStatus": "200",
+    "curlExit": 0,
+    "bytes": 28870,
+    "sha256": "94d47e15f747c206029d212db965b7c3cb6850c8ec43334369aa275ee04755d7",
+    "error": null
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-11-14T23:23:57.422Z",
+  "syntaxCheck": "passed",
+  "offlinePlan": "passed",
+  "awsCalls": 0,
+  "captureExecuted": false,
+  "rollbackPrepared": false,
+  "rollbackExecuted": false,
+  "scriptSha256": "4975cbe264c12439c6cd9e22ea9aa00e0e50c0e8a09c59ce4a5473646e69403d"
+}

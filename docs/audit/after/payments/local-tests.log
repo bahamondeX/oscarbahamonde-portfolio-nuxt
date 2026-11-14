@@ -1,0 +1,39 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> test
+> node --test tests/*.test.mjs
+
+✔ cleanup only selects expired unpaid application holds without guests or Meet (1.14725ms)
+✔ cleanup is bounded, cancels expired holds and cancellation frees availability (0.26925ms)
+✔ fresh payment or renewed hold before cleanup is never cancelled (0.114208ms)
+✔ ETag conflict preserves the winning confirmed event and never retries cancellation (0.377125ms)
+✔ an already removed hold is tolerated; transient errors are counted without deleting anything (0.169375ms)
+{"event":"booking_hold_cleanup","cancelled":1,"raced":0,"failed":0}
+✔ actual finalizer requires approved API payment; pending/rejected/test/wrong amount never writes Calendar (1.056708ms)
+✔ approved payment confirms Meet once and duplicate webhook is idempotent (0.45275ms)
+✔ late approved payment and order mismatch require review, never revive an expired/cancelled hold (0.14075ms)
+✔ cleanup uses conditional silent cancellation and the same slot can be held again (1.279542ms)
+✔ 30 minute Lima schedule rejects lunch, nights, weekends and non-grid times (1.863709ms)
+✔ Calendar conflicts include all-day and recurring instances, allow adjacent slots (0.136584ms)
+✔ only expired application holds are ignored; ordinary tentative events still block (0.125584ms)
+✔ return URL or pending/sandbox/wrong-amount/wrong-order payments cannot confirm (0.094458ms)
+✔ lead extraction only keeps bounded, allowed fields and valid email (0.799334ms)
+✔ attachment names and archive entries reject traversal, scripts and bombs (0.782208ms)
+✔ Medium rejects XML entities and external hosts, strips HTML and limits excerpts (3.295791ms)
+✔ WCAG contrast has known endpoints (0.444334ms)
+✔ rendered test detects poor brand foreground despite large opaque white backing (7.071458ms)
+✔ transparent logo measurement includes the actual rendered theme filter (7.072708ms)
+✔ Medium publication posts use verified guid and skip tracking pixels for real covers (3.671584ms)
+✔ publication links cannot bypass host or guid validation (0.427709ms)
+✔ excerpts remove embeds, image captions and media links without removing article prose (0.349666ms)
+✔ signed MercadoPago notification validates seconds and milliseconds timestamps (1.151625ms)
+✔ signature rejects tampering, stale replay, duplicate/array fields and missing secret (0.696917ms)
+✔ booking API runtime matches the reviewed baseline (changes documented in docs/payment-validation.md) (55.533875ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 414.506875

@@ -3,7 +3,7 @@
   "reportKind": "blocked-status-not-evaluation-result",
   "status": "blocked",
   "generatedAt": "2026-11-14T23:15:18.973435+00:00",
-  "sourceState": "Working tree under review; no final source freeze or deployed revision asserted.",
+  "sourceState": "Grounding source committed in fd52d4ef6a9e3029d6178409f05cbd9a9469fa0c; frontend ba8ff885 published separately. AWS grounding has not been deployed or model-evaluated.",
   "acceptanceSatisfied": false,
   "newEvaluationCalls": 0,
   "scores": {

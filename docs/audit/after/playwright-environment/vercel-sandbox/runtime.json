@@ -1,0 +1,13 @@
+{
+  "sessionId": "sbx_SiMaERBxZoiPc2IEt8dJpFNyFqGF",
+  "sourceCommit": "6f3c38a38907f44f7edfb22b17ea3ddd1de88af6",
+  "sourceRepository": "https://github.com/bahamondeX/oscarbahamonde-portfolio-nuxt",
+  "os": "Ubuntu26.04.1LTS",
+  "node": "24.22.3",
+  "vcpus": 1,
+  "memoryMB": 2048,
+  "timeoutMs": 1200000,
+  "persistent": false,
+  "publicPorts": [],
+  "purpose": "Isolated localbuild Playwright; no productionsecrets or externalactions"
+}

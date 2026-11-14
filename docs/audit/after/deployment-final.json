@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-11-14T23:27:40.408Z",
+  "frontend": {
+    "id": "dpl_CVRFf4bD2sx2jaM28fFkQbfGHzZq",
+    "commit": "ba8ff885b09dfb403e98114eafd9c81fd62046c3",
+    "url": "oscarbahamonde-premium-nuxt-nh5aw9rba.vercel.app",
+    "status": "READY",
+    "aliases": [
+      "oscarbahamonde.com",
+      "oscarbahamonde-premium-nuxt.vercel.app",
+      "www.oscarbahamonde.com",
+      "oscarbahamonde-git-3c49a6-oscarbahamondedev-gmailcoms-projects.vercel.app",
+      "oscarbahamonde-premium-nux-oscarbahamondedev-gmailcoms-projects.vercel.app"
+    ],
+    "previousDeployment": "dpl_Doc4vDVBvokqFzGR4Cf7za7ChwBX"
+  },
+  "aws": {
+    "deployed": false,
+    "reason": "Session expired; local model evaluation required before deployment",
+    "rollbackPrepared": true,
+    "rollbackSnapshotCreated": false
+  }
+}

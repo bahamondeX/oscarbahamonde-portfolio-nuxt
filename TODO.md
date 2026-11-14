@@ -1,30 +1,32 @@
-# Pendientes verificables · 14 noviembre 2026
+# Pendientes verificables · cierre del 14 noviembre 2026
 
-## Aceptación que requiere evidencia adicional
+Este documento distingue implementación, pruebas con mocks y comprobaciones en producción. El historial de intentos está en TESTS.md y docs/audit/after/.
 
-- [x] Lighthouse remoto en producción `/es`: móvil97/100/100/100 y desktop100/100/100/100, CLS0. Informes y capturas en AUDIT.md. El ejecutor local sigue bloqueado por crashpad/Mach; la medición no cubre todas las rutas/estados.
-- [ ] Suite Playwright completa: los tests están implementados; el mismo bloqueo de Chromium impide ejecutar el navegador. Las comprobaciones manuales y capturas se registran en `AUDIT.md` y no se presentan como una ejecución automatizada.
-- [ ] Transacción real S/20 → webhook → invitación Meet. Se preservó el runtime de reservas y sus tests; no se realizó un cobro real en esta fase.
-- [ ] Grabación desde un micrófono y gesto de cierre en dispositivo móvil físico. La transcripción/adjuntos AWS se habían probado en la fase anterior; esto no verifica automáticamente la nueva interfaz.
-- [ ] Nueva sesión tras corregir el desmontaje de Turnstile: Cloudflare solicita desafío humano en el navegador de prueba. El chat real ES/EN y envío a Gmail sí se comprobaron antes de esa corrección; no se omite el captcha para repetirlo.
+## Bloqueos de aceptación
 
-## Contenido y fuentes
+- [ ] **AWS y evaluación real:** sesión CLI caducada. Es necesario renovar el acceso a la cuenta414135856271 con `aws login`; el intento remoto anterior se canceló sin completarse. Falta comparar artefactos desplegados, conservar versión/alias de reversión, evaluar el código ajustado localmente con Bedrock, desplegar y ejecutar36+44 casos contra Lambda. El34/36 anterior no es una evaluación HTTP de producción ni alcanza95%.
+- [ ] **Micrófono físico:** no hay iOS Safari/Android Chrome controlables ni sesión BrowserStack configurada. Selección MP4/M4A/WebM y fallback de archivo implementados; ningún micrófono físico, Transcribe o correo nuevo se afirma probado. Evidencia y procedimiento: docs/audit/after/mic-mobile/.
+- [ ] **MercadoPago sandbox:** faltan credenciales/usuarios de prueba y Calendar aislado. Los25 tests locales usan mocks; producción rechaza live_mode=false. No introducir credenciales de prueba en producción.
+- [ ] **Pago real S/20:** requiere aprobación explícita de la transacción concreta, después de sandbox. Checklist, reembolso y destinatarios/evento en docs/payment-validation.md. Ningún cobro/evento real creado en esta fase.
+- [ ] **Firma de webhook:** HMAC disponible, pendiente configurar secreto en Vercel/MercadoPago y probar notificación del proveedor. La consulta API del pago aprobado sigue siendo obligatoria, nunca el retorno del navegador.
+- [ ] **CI GitHub:** el job reproducible está añadido, pero la cuenta bloquea runners por facturación. El fallback Linux sí pasó 24/24 y 112/112 contrastes; reactivar GitHub requiere resolver ese bloqueo de cuenta.
 
-- [x] 16 puestos de LinkedIn con fechas y descripciones disponibles; 29 credenciales con emisión, vencimiento y enlaces disponibles; vencidas identificadas.
-- [x] Skills verificadas agrupadas, proyectos con capturas reales, catálogo con los nueve precios conservados.
-- [ ] Logos oficiales ausentes de Rayke y NETCORPERU; no se fabrican. Freelance se presenta por nombre.
-- [ ] Descripción no publicada de la etapa freelance y ubicación de Indra; enlaces públicos permanentes AZ-900/AWS Solutions Architect. Detalles en `docs/content-pending.md`.
-- [ ] Logos transparentes/alta resolución de algunos emisores. Los fondos intrínsecos originales se conservan cuando eliminarlos degradaría la marca; revisar mediciones de contraste, no solo media de luminancia.
-- [ ] Helm, Prometheus y Grafana no aparecen en la evidencia capturada; incorporarlos cuando exista una fuente verificable.
-- [ ] Evidencias públicas de primer puesto PUCP2007/hackathon2023/AWS Speaker: hechos proporcionados por Oscar, conservados sin inventar certificados.
-- [ ] Histórico completo de Medium más allá de los10 artículos disponibles en RSS. Todos los10 se muestran; un feed no garantiza toda la cuenta. Usar archivo verificable para ampliar.
+- [ ] **Turnstile, fallo forzado:** sesión nueva y chat ES/EN verificados en producción; falta provocar controladamente un fallo del proveedor y comprobar el reintento. Hay mensajes/reintento implementados. Logs internos de Cloudflare conservados, sin warnings de aplicación.
 
-## Límites operativos documentados
+## Datos y contenidos que no se inventan
 
-- Gmail no dispone de transacción conjunta con DynamoDB: tras aceptación remota y timeout ambiguo puede haber duplicados. Lease, hitos y Message-ID reducen repetición; no se promete exactamente una vez bajo cualquier caída.
-- TTL90d es eventual y los correos ya entregados tienen retención propia. La app rechaza sesiones vencidas; S3 expira objetos según ciclo de vida.
-- PDF/DOCX/ZIP se validan, almacenan y adjuntan; no se interpreta automáticamente su contenido. Audio sí se transcribe en servidor.
-- Sitemaps: URLs externas de Medium no se incluyen como `<loc>` porque no pertenecen a este host; aparecen en llms.txt/llms-full.txt y en las páginas locales bilingües indexadas.
-- Holds Calendar vencidos pueden quedar visibles hasta reutilizar horario; la API los ignora para disponibilidad. Comportamiento previo conservado.
-- Revisar requisitos de publicación OAuth Google y caducidad de tokens de apps en Testing. Secretos permanecen en Secrets Manager/Vercel.
-- Los límites de60 turnos y120000 tokens son independientes: conocimiento y contexto consumen el presupuesto y pueden terminar antes una sesión.
+- [ ] Rayke: no se encontró logo oficial verificable; se mantiene monograma neutro con nombre. NETCOR sí tiene asset verificable de LinkedIn; su contraste pertenece a la suite visual.
+- [ ] Descripción de la etapa freelance y ubicación/modalidad de Indra: no publicadas en la evidencia disponible; consultar a Oscar. Las16 fechas coinciden con la captura de LinkedIn (docs/experience-verification.json); no se afirma corroboración independiente por empleadores ni empleo actual no publicado.
+- [ ] Enlaces públicos permanentes AZ-900/AWS Solutions Architect y logos de emisores con transparencia/resolución suficiente: docs/content-pending.md.
+- [ ] Helm, Prometheus y Grafana no aparecen en la evidencia capturada; no añadir experiencia sin fuente.
+- [ ] Primer puesto PUCP2007, hackathon2023 y AWS Speaker: conservar hechos proporcionados por Oscar; falta evidencia pública adicional, no fabricar certificados.
+- [ ] Histórico de Medium: RSS ofrece10 entradas. Propuesta de exportación o índice manual versionado en docs/medium-history-proposal.md; no implementada sin OK.
+
+## Límites operativos
+
+- Gmail y DynamoDB no comparten transacción: lease/hitos/Message-ID reducen duplicados, pero aceptación remota seguida de timeout ambiguo impide prometer exactamente una vez.
+- TTL90d es eventual; correos ya entregados tienen retención propia. S3 usa ciclo de vida.
+- PDF/DOCX/ZIP se validan, almacenan y adjuntan; no se interpreta automáticamente su contenido. Audio sí usa transcripción en servidor.
+- Medium externo aparece en llms y enlaces de posts; no como loc de sitemap del dominio propio.
+- El post-validador protege el ámbito de hechos del portfolio; no es un verificador universal de explicaciones técnicas. La salida se valida completa antes de emitir bloques SSE: aumenta latencia hasta primer contenido.
+- Revisar vigencia de OAuth Google y publicación de apps en Testing. Secretos permanecen fuera del repo.

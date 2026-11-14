@@ -1,0 +1,10 @@
+{
+  "archive": "docs/audit/after/playwright-artifacts.tar.xz",
+  "bytes": 3769568,
+  "sha256": "f71dacbc5dcd1178bf37b44283696896608d01035b1dfad975fca61cd498f401",
+  "manifest": "docs/audit/after/playwright-manifest.json",
+  "verifiedFiles": 730,
+  "extraction": "tar -xf docs/audit/after/playwright-artifacts.tar.xz",
+  "transport": "Temporary public Cloudflare tunnel serving only the archive; stopped with sandbox immediately after verified download",
+  "sandboxStopped": true
+}

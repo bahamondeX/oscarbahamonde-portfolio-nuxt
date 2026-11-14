@@ -1,0 +1,19 @@
+HTTP/1.1 200 OK
+date: Sat, 14 Nov 2026 23:27:57 GMT
+
+HTTP/2 200 
+age: 0
+cache-control: public, max-age=600
+content-type: text/xml; charset=UTF-8
+date: Sat, 14 Nov 2026 23:27:58 GMT
+permissions-policy: microphone=(self)
+server: Vercel
+strict-transport-security: max-age=63072000
+x-sitemap-cache-duration: 600s
+x-sitemap-cache-expires: 2026-11-14T23:37:58.376Z
+x-sitemap-cache-remaining: 600s
+x-sitemap-generated: 2026-11-14T23:27:58.376Z
+x-vercel-cache: MISS
+x-vercel-id: gru1::iad1::hz4x7-1794698878263-2b3b7d39d331
+content-length: 8305
+

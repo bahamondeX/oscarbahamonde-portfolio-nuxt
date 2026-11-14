@@ -12,7 +12,7 @@
     "rootSuite": {
       "passed": 25,
       "failed": 0,
-      "log": "docs/audit/after/payments/local-tests.log"
+      "log": "docs/audit/after/regression/frontend-unit-tests.txt"
     },
     "typecheck": {
       "passed": true,
@@ -29,8 +29,9 @@
     "calendarEventsCreated": 0
   },
   "expiredHoldProduction": {
-    "status": "pending_deployment_and_observation",
-    "method": "Conditional cancellation on availability requests; selected day, up to five eligible holds"
+    "status": "verified-two-existing-holds-cancelled",
+    "method": "Availability request for 2026-11-17; before/after Calendar read + API slots",
+    "evidence": "hold-cleanup-summary.json"
   },
   "webhookHmacProduction": {
     "status": "pending_secret_configuration_and_provider_signature_test"

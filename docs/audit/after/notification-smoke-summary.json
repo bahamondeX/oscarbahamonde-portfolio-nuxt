@@ -1,0 +1,10 @@
+{
+  "test": "Authorized site QA notification to owner",
+  "status": "delivered",
+  "transcriptAttachmentPresent": true,
+  "userMessages": 2,
+  "assistantMessages": 2,
+  "backendRedeployed": false,
+  "privateReceipt": "Retained separately; mailbox identifiers, subject, content and screenshots excluded from public repository",
+  "limitation": "One smoke test; not exactly-once transport proof"
+}

@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-11-14T23:28:06Z",
+  "target": "https://oscarbahamonde.com/es",
+  "frontendCommit": "ba8ff885b09dfb403e98114eafd9c81fd62046c3",
+  "report": "https://pagespeed.web.dev/analysis/https-oscarbahamonde-com-es/iigb3kev5o",
+  "source": "PageSpeed Insights visible report, captured screenshots and page text",
+  "lighthouseVersion": "13.6.0",
+  "mobile": {"performance":97,"accessibility":100,"bestPractices":100,"seo":100,"CLS":0,"LCPms":1951,"TBTms":30},
+  "desktop": {"performance":100,"accessibility":100,"bestPractices":100,"seo":100,"CLS":0,"LCPms":421,"TBTms":33},
+  "scope": "Initial /es page load; not all routes, chat states, or exhaustive WCAG conformance."
+}

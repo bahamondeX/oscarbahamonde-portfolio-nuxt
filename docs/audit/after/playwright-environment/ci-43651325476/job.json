@@ -1,0 +1,29 @@
+{
+  "id": 132620217787,
+  "run_id": 43651325476,
+  "workflow_name": "Portfolio browser checks",
+  "head_branch": "main",
+  "run_url": "https://api.github.com/repos/bahamondeX/oscarbahamonde-portfolio-nuxt/actions/runs/43651325476",
+  "run_attempt": 1,
+  "node_id": "CR_kwDOVtmwh88AAAAe4Mftuw",
+  "head_sha": "6f3c38a38907f44f7edfb22b17ea3ddd1de88af6",
+  "url": "https://api.github.com/repos/bahamondeX/oscarbahamonde-portfolio-nuxt/actions/jobs/132620217787",
+  "html_url": "https://github.com/bahamondeX/oscarbahamonde-portfolio-nuxt/actions/runs/43651325476/job/132620217787",
+  "status": "completed",
+  "conclusion": "failure",
+  "created_at": "2026-11-14T23:04:02Z",
+  "started_at": "2026-11-14T23:04:02Z",
+  "completed_at": "2026-11-14T23:04:03Z",
+  "name": "playwright",
+  "steps": [
+
+  ],
+  "check_run_url": "https://api.github.com/repos/bahamondeX/oscarbahamonde-portfolio-nuxt/check-runs/132620217787",
+  "labels": [
+    "ubuntu-latest"
+  ],
+  "runner_id": 0,
+  "runner_name": "",
+  "runner_group_id": 0,
+  "runner_group_name": ""
+}

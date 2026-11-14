@@ -1,0 +1,2922 @@
+{
+  "docs/audit/after/browser-heroes/desktop-en-dark-hero.png": {
+    "bytes": 591013,
+    "sha256": "ab3f9c58ef4d158ac2797868cf984174c4cd2648ab2e6f3410702e34088a3a01"
+  },
+  "docs/audit/after/browser-heroes/desktop-en-light-hero.png": {
+    "bytes": 610416,
+    "sha256": "724d00cd4e9e448bd868a9fdcbc3b75d2463f585b003ce497715c51554e1f8dd"
+  },
+  "docs/audit/after/browser-heroes/desktop-es-dark-hero.png": {
+    "bytes": 595686,
+    "sha256": "f7a312f3123d6bd35cb0d8ef627d41dd69c589ee6931837f5129621686fa25cb"
+  },
+  "docs/audit/after/browser-heroes/desktop-es-light-hero.png": {
+    "bytes": 616224,
+    "sha256": "b6e2a17c34c953722b06a48ad51dcc128d3300c846703ad9c8500d70b528b030"
+  },
+  "docs/audit/after/browser-heroes/mobile-en-dark-hero.png": {
+    "bytes": 194825,
+    "sha256": "5e1a80bdb5ce79531bc4e18a26e6a8cd1d19b9f0ef7f2910a8ddb786f1bbd89e"
+  },
+  "docs/audit/after/browser-heroes/mobile-en-light-hero.png": {
+    "bytes": 201410,
+    "sha256": "c104a412553bda59ced46d1a4357ef5508ee78ca3b9d60976f6e3739bf5f93d4"
+  },
+  "docs/audit/after/browser-heroes/mobile-es-dark-hero.png": {
+    "bytes": 206102,
+    "sha256": "0bbdde0a7a89577af995233a3c91f0d5cad618e82298845faaaf77911c58fc0e"
+  },
+  "docs/audit/after/browser-heroes/mobile-es-light-hero.png": {
+    "bytes": 211718,
+    "sha256": "04e4ad32477c4786ca72bfb3e86ec9f515cd6a78b3fc1aed50131b8e11e9baf6"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/globant.png": {
+    "bytes": 4526,
+    "sha256": "210dcea380351faa603c4b6a53684bc4390911695a87983d278525534ca2c079"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/indra.png": {
+    "bytes": 2422,
+    "sha256": "7028a4c91ea05d05113edac2d66e55da9402779a2899404df6ba898b13f06141"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/netcor.png": {
+    "bytes": 10531,
+    "sha256": "50c2e4b484a6557b1c2fb6ca35aeff53e7125e34a67221c29fb7b15e34816ac9"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/results.json": {
+    "bytes": 7705,
+    "sha256": "0dd28e6ad9ab2854e93f7477217a0e67f35eeca25a88e3ec990ee51431c98671"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/telefonica-trainee.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/en-dark-desktop/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/globant.png": {
+    "bytes": 4524,
+    "sha256": "be719bdf7e36fea4422dd61f634ca4d5f334d18b3e1dbb869be70938611bfd94"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/huawei-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/huawei.png": {
+    "bytes": 4013,
+    "sha256": "1a1db413eadda729406e1407577d035898ae4e8c9d146f25af55ad23052b8b8e"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/netcor.png": {
+    "bytes": 10531,
+    "sha256": "50c2e4b484a6557b1c2fb6ca35aeff53e7125e34a67221c29fb7b15e34816ac9"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/plainenglish-background.png": {
+    "bytes": 173,
+    "sha256": "00c5481e1fe3d393fc3bfaa4d1dd8ec61897de6970c986e811e16515bb57561e"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/plainenglish.png": {
+    "bytes": 3557,
+    "sha256": "ea2da0451eb9c6293db99545fea1ff08b03c56f25730a8f1bea9ac9619d3bc78"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/pronti.png": {
+    "bytes": 3593,
+    "sha256": "414e177ae2146160c2f8a238399b48cf7f2b30389c1ab2dcbe6890fa93bc93b5"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/results.json": {
+    "bytes": 7658,
+    "sha256": "3703d9c862836c3b5c1ee5add472fcf8e849ed8ace7629aa67f76bf29124ed24"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/telefonica-trainee.png": {
+    "bytes": 4607,
+    "sha256": "943a14f0fd85b58d3b064d093208566fc4c04ffd9790947d9da74b2295309229"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/en-dark-mobile/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/globant.png": {
+    "bytes": 4526,
+    "sha256": "210dcea380351faa603c4b6a53684bc4390911695a87983d278525534ca2c079"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/indra.png": {
+    "bytes": 2422,
+    "sha256": "7028a4c91ea05d05113edac2d66e55da9402779a2899404df6ba898b13f06141"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/netcor.png": {
+    "bytes": 10531,
+    "sha256": "50c2e4b484a6557b1c2fb6ca35aeff53e7125e34a67221c29fb7b15e34816ac9"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/results.json": {
+    "bytes": 7720,
+    "sha256": "9bfa30fc1e8882e91e5259e8bea5e6af7fbc495d5566cfd5e882aab082a1cc9a"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/telefonica-trainee.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/en-light-desktop/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/globant.png": {
+    "bytes": 4524,
+    "sha256": "be719bdf7e36fea4422dd61f634ca4d5f334d18b3e1dbb869be70938611bfd94"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/huawei-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/huawei.png": {
+    "bytes": 4013,
+    "sha256": "1a1db413eadda729406e1407577d035898ae4e8c9d146f25af55ad23052b8b8e"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/netcor.png": {
+    "bytes": 10531,
+    "sha256": "50c2e4b484a6557b1c2fb6ca35aeff53e7125e34a67221c29fb7b15e34816ac9"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/plainenglish-background.png": {
+    "bytes": 173,
+    "sha256": "00c5481e1fe3d393fc3bfaa4d1dd8ec61897de6970c986e811e16515bb57561e"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/plainenglish.png": {
+    "bytes": 3557,
+    "sha256": "ea2da0451eb9c6293db99545fea1ff08b03c56f25730a8f1bea9ac9619d3bc78"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/pronti.png": {
+    "bytes": 3593,
+    "sha256": "414e177ae2146160c2f8a238399b48cf7f2b30389c1ab2dcbe6890fa93bc93b5"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/results.json": {
+    "bytes": 7673,
+    "sha256": "816f87b75b23bfe50b29b7a384f9671ebdde9808bc7a040fdfc7fbaaebf7b9b5"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/telefonica-trainee.png": {
+    "bytes": 4607,
+    "sha256": "943a14f0fd85b58d3b064d093208566fc4c04ffd9790947d9da74b2295309229"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/en-light-mobile/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/cotener.png": {
+    "bytes": 7945,
+    "sha256": "be416e9acf654b3fef6db770ba53f92a763a0e57c3cff3b996a15a7261372c7d"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/data-analytics.png": {
+    "bytes": 4722,
+    "sha256": "aa2e306a97c0a2deeffdaacd731cc78ede79510452dd361b6d2a8a312baeb711"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/globant.png": {
+    "bytes": 4519,
+    "sha256": "dd731311c74dbee47dff3d9a94da0dd2851f5c543157c58fb1273b0de4b54e80"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/netcor.png": {
+    "bytes": 10220,
+    "sha256": "f42e0d44d3b8c5ead7ed211086b10362686717ac0a7087b662ced558e8ed2cbb"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/results.json": {
+    "bytes": 7687,
+    "sha256": "d6b072087c2123a916bf52badf4d9f4a5dd43fb7f1aea896302daee3cc5537d1"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/telefonica-trainee.png": {
+    "bytes": 4506,
+    "sha256": "09f00ef5ccb36d6ade6ea3d4734ddd95dc4bbcc1ad89864f6a8eca30306523f9"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/es-dark-desktop/valtx.png": {
+    "bytes": 2496,
+    "sha256": "1411333ad16514e32ca387cc024db44c57a23e1f1b566924acdf4a69851c96e5"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/dynata.png": {
+    "bytes": 4250,
+    "sha256": "43bfeafcea9dbe985b627f5edb7bb757fced162f55d0ed3e67cd5ce04da0779a"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/globant.png": {
+    "bytes": 4472,
+    "sha256": "6e499461b25408de39f2fc6f0fddf22a0395ed811acc57ce488ae623f5b77094"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/huawei.png": {
+    "bytes": 4015,
+    "sha256": "4e2faf2fc27e7f402999e3d6f1c6fab372e0baf467cc3f535cc6d064b779a644"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/netcor.png": {
+    "bytes": 10220,
+    "sha256": "f42e0d44d3b8c5ead7ed211086b10362686717ac0a7087b662ced558e8ed2cbb"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/results.json": {
+    "bytes": 7677,
+    "sha256": "7e1ebd7d6b8d64cf38252b30388e98143da423a5f69a7fc2d97b8c3e2b51431d"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/telefonica-trainee.png": {
+    "bytes": 4605,
+    "sha256": "885b0e99ddba47b6c2ff9e347333045e20f7f6038e5989290c30d8b00fc38c30"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/es-dark-mobile/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/cotener.png": {
+    "bytes": 7945,
+    "sha256": "be416e9acf654b3fef6db770ba53f92a763a0e57c3cff3b996a15a7261372c7d"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/data-analytics.png": {
+    "bytes": 4722,
+    "sha256": "aa2e306a97c0a2deeffdaacd731cc78ede79510452dd361b6d2a8a312baeb711"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/globant.png": {
+    "bytes": 4519,
+    "sha256": "dd731311c74dbee47dff3d9a94da0dd2851f5c543157c58fb1273b0de4b54e80"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/netcor.png": {
+    "bytes": 10220,
+    "sha256": "f42e0d44d3b8c5ead7ed211086b10362686717ac0a7087b662ced558e8ed2cbb"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/results.json": {
+    "bytes": 7702,
+    "sha256": "97d941760f937160539e0fdca0619a1256259766bf4c534cf869984a13fe8f93"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/telefonica-trainee.png": {
+    "bytes": 4506,
+    "sha256": "09f00ef5ccb36d6ade6ea3d4734ddd95dc4bbcc1ad89864f6a8eca30306523f9"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/es-light-desktop/valtx.png": {
+    "bytes": 2496,
+    "sha256": "1411333ad16514e32ca387cc024db44c57a23e1f1b566924acdf4a69851c96e5"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/dynata.png": {
+    "bytes": 4250,
+    "sha256": "43bfeafcea9dbe985b627f5edb7bb757fced162f55d0ed3e67cd5ce04da0779a"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/globant.png": {
+    "bytes": 4472,
+    "sha256": "6e499461b25408de39f2fc6f0fddf22a0395ed811acc57ce488ae623f5b77094"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/huawei.png": {
+    "bytes": 4015,
+    "sha256": "4e2faf2fc27e7f402999e3d6f1c6fab372e0baf467cc3f535cc6d064b779a644"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/netcor.png": {
+    "bytes": 10220,
+    "sha256": "f42e0d44d3b8c5ead7ed211086b10362686717ac0a7087b662ced558e8ed2cbb"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/results.json": {
+    "bytes": 7692,
+    "sha256": "0abfdf420648eefa654ac8f4ea31c54c431a8285db443c4904f44dd0cda3fbe5"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/telefonica-trainee.png": {
+    "bytes": 4605,
+    "sha256": "885b0e99ddba47b6c2ff9e347333045e20f7f6038e5989290c30d8b00fc38c30"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/logo-captures/es-light-mobile/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/logo-contrast-rendered.json": {
+    "bytes": 71768,
+    "sha256": "c7df60cfa03b6529523fe3596d232065dbe26ab1fb1077b07633421bffa823f2"
+  },
+  "docs/audit/after/netcor-filter-experiment.json": {
+    "bytes": 528,
+    "sha256": "f14370f8b0f7e59a7f5b9935bba4ae55bd272e9d1a160be0b30613e2a9452c82"
+  },
+  "docs/audit/after/playwright-attempts/01-node24-json-import/playwright.log": {
+    "bytes": 159,
+    "sha256": "2f4a41c0c68200435b4860c91e4a1c2f392238c42e19f626b51c797560ba3d26"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/invalidated.md": {
+    "bytes": 310,
+    "sha256": "409b9de43af2231d0579edc69b2f36b6eb53f10c81a9c0408bbbfb6035a4a0a9"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/globant.png": {
+    "bytes": 4526,
+    "sha256": "210dcea380351faa603c4b6a53684bc4390911695a87983d278525534ca2c079"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/huawei-background.png": {
+    "bytes": 179,
+    "sha256": "a5bed676fa52c263d1345e09dc5e1fd3d97bd0f190df6325149efca1aa6904f4"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/huawei.png": {
+    "bytes": 4020,
+    "sha256": "713719a1b5abafd97b55721af5c7c0081786dd79e9c1c8a3ee60e9a891823f70"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/indra.png": {
+    "bytes": 2422,
+    "sha256": "7028a4c91ea05d05113edac2d66e55da9402779a2899404df6ba898b13f06141"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/netcor.png": {
+    "bytes": 11185,
+    "sha256": "3a91dc894d3183a2347e2dac6824f8ac78f433d4722ec6b7f7f3dd07f3fee431"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/pronti-background.png": {
+    "bytes": 2071,
+    "sha256": "9a43b39e098e8e9772e60dfbb0c885127b0b816163c2a94704cac20bfa861aa4"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/pronti.png": {
+    "bytes": 2407,
+    "sha256": "26f945bd06636667b4d3e8a7dd38ecb6f3b4e74b4a977429f00711ad6d91d475"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/results.json": {
+    "bytes": 7679,
+    "sha256": "6f4b048062f6d6abe92706e0641914c20a16b0c3776357b808ffceffa84d9b09"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/telefonica-trainee.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/valtx-background.png": {
+    "bytes": 1889,
+    "sha256": "127dd2d1cee42c3062b0375c09e3039ce31ee0dabd1401f602bac3851977ffe6"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-desktop/valtx.png": {
+    "bytes": 2035,
+    "sha256": "33f65aa483dc1df6dc4531e6e59e1d6f7c5f064ea6d71b3f1fa2b7d204fdeac9"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/globant.png": {
+    "bytes": 4524,
+    "sha256": "be719bdf7e36fea4422dd61f634ca4d5f334d18b3e1dbb869be70938611bfd94"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/huawei-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/huawei.png": {
+    "bytes": 4013,
+    "sha256": "1a1db413eadda729406e1407577d035898ae4e8c9d146f25af55ad23052b8b8e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/netcor.png": {
+    "bytes": 11185,
+    "sha256": "3a91dc894d3183a2347e2dac6824f8ac78f433d4722ec6b7f7f3dd07f3fee431"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/plainenglish-background.png": {
+    "bytes": 173,
+    "sha256": "00c5481e1fe3d393fc3bfaa4d1dd8ec61897de6970c986e811e16515bb57561e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/plainenglish.png": {
+    "bytes": 3557,
+    "sha256": "ea2da0451eb9c6293db99545fea1ff08b03c56f25730a8f1bea9ac9619d3bc78"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/pronti-background.png": {
+    "bytes": 2881,
+    "sha256": "b6c283422b790e0ce4c1506244281634bec5b4538ae7d920c9651afc3957ea19"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/pronti.png": {
+    "bytes": 3267,
+    "sha256": "4a21f356738bdd1e965887fecca360cfed660ac3d548e174048f2dae1f43ef6a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/results.json": {
+    "bytes": 7614,
+    "sha256": "624cafcefa83ac1ae13705b66f412f065c7fc20bb16930111fcbab29bf9fe267"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/telefonica-trainee.png": {
+    "bytes": 4607,
+    "sha256": "943a14f0fd85b58d3b064d093208566fc4c04ffd9790947d9da74b2295309229"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/valtx-background.png": {
+    "bytes": 2889,
+    "sha256": "a0b14b95d67868dc05fe61540945e7f75c3ba23b1e611f065bd28337f38a0ae3"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-dark-mobile/valtx.png": {
+    "bytes": 3035,
+    "sha256": "1977e03f2f5b1ce00fc350f55bd095e9bfab9aaed2bc8ddf145646ee58ef302b"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/globant.png": {
+    "bytes": 4526,
+    "sha256": "210dcea380351faa603c4b6a53684bc4390911695a87983d278525534ca2c079"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/indra.png": {
+    "bytes": 2422,
+    "sha256": "7028a4c91ea05d05113edac2d66e55da9402779a2899404df6ba898b13f06141"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/netcor.png": {
+    "bytes": 11185,
+    "sha256": "3a91dc894d3183a2347e2dac6824f8ac78f433d4722ec6b7f7f3dd07f3fee431"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/pronti-background.png": {
+    "bytes": 2049,
+    "sha256": "dee6c71c2898e8e4758d3cdc0075f83a627e210aa33c52d136e8108f4f44af8a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/pronti.png": {
+    "bytes": 2359,
+    "sha256": "3cb1885e31d9427de5e1fe3f76c040faa26b6e89a9afe258b8d70919c75a7fac"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/results.json": {
+    "bytes": 7679,
+    "sha256": "94a1572e12716673a3a473852b0bf6021e4ba55fd6ebeef9cdacdbed4624361f"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/telefonica-trainee.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/valtx-background.png": {
+    "bytes": 1905,
+    "sha256": "2b66c15f14ba98fe240b057155ba1b146b7f05f3465c38bb4fb20a588f47228b"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-desktop/valtx.png": {
+    "bytes": 2118,
+    "sha256": "0b5be16856dd3fe787e7da7ecc5f92c1e25805b5d2df4de8c966fd7bac0b3d3c"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/globant.png": {
+    "bytes": 4524,
+    "sha256": "be719bdf7e36fea4422dd61f634ca4d5f334d18b3e1dbb869be70938611bfd94"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/huawei-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/huawei.png": {
+    "bytes": 4013,
+    "sha256": "1a1db413eadda729406e1407577d035898ae4e8c9d146f25af55ad23052b8b8e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/netcor.png": {
+    "bytes": 11185,
+    "sha256": "3a91dc894d3183a2347e2dac6824f8ac78f433d4722ec6b7f7f3dd07f3fee431"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/plainenglish-background.png": {
+    "bytes": 173,
+    "sha256": "00c5481e1fe3d393fc3bfaa4d1dd8ec61897de6970c986e811e16515bb57561e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/plainenglish.png": {
+    "bytes": 3557,
+    "sha256": "ea2da0451eb9c6293db99545fea1ff08b03c56f25730a8f1bea9ac9619d3bc78"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/pronti-background.png": {
+    "bytes": 2847,
+    "sha256": "4c1bacb522732e5f20951f6187d7b8270b6b61f0fdc3fd4ea7e58eef0f317ef9"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/pronti.png": {
+    "bytes": 3209,
+    "sha256": "3d68c60aaa8a4440f4d1c50e562b435803425148bd572e89b48e8c7636f24003"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/results.json": {
+    "bytes": 7632,
+    "sha256": "6dd87ac0ddaf47dcbe28c6d70d719fe5d98fead1996b29577523cfb512a82014"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/telefonica-trainee.png": {
+    "bytes": 4607,
+    "sha256": "943a14f0fd85b58d3b064d093208566fc4c04ffd9790947d9da74b2295309229"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/valtx-background.png": {
+    "bytes": 2833,
+    "sha256": "e422f6f1eb6fdc7ae47af0701141ce48b650094a79998669f9fcd6eeeafe4bbd"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/en-light-mobile/valtx.png": {
+    "bytes": 3024,
+    "sha256": "8e22ec1b1da8cf5f59b62696fca33eb1d0938d21806afeb3a35c6cc5f712ba07"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/cotener-background.png": {
+    "bytes": 1847,
+    "sha256": "cdce771322a663877f97f0ba6a27c440d5559b427f595a41c1ce79da9c7cdf41"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/cotener.png": {
+    "bytes": 3978,
+    "sha256": "b4ac34d3532bdc27e9fdd9636d28a38eccb374f031212ab759554ef923aa86a1"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/data-analytics.png": {
+    "bytes": 4722,
+    "sha256": "aa2e306a97c0a2deeffdaacd731cc78ede79510452dd361b6d2a8a312baeb711"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/globant.png": {
+    "bytes": 4519,
+    "sha256": "dd731311c74dbee47dff3d9a94da0dd2851f5c543157c58fb1273b0de4b54e80"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/indra-background.png": {
+    "bytes": 179,
+    "sha256": "a5bed676fa52c263d1345e09dc5e1fd3d97bd0f190df6325149efca1aa6904f4"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/indra.png": {
+    "bytes": 2429,
+    "sha256": "c6dd7d5052952d1689689f27000c2349a95b9923ae450820864562942793933c"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/netcor-background.png": {
+    "bytes": 1434,
+    "sha256": "a4f4c15e245715364336deef86e17840b1896f37417ba2264125c5957dca0c46"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/netcor.png": {
+    "bytes": 5067,
+    "sha256": "407c1c6c8b06d46880e8d272fd8b9a9b997240d78b36e0266fd7f0b2515847d2"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/pronti-background.png": {
+    "bytes": 2071,
+    "sha256": "9a43b39e098e8e9772e60dfbb0c885127b0b816163c2a94704cac20bfa861aa4"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/pronti.png": {
+    "bytes": 2407,
+    "sha256": "26f945bd06636667b4d3e8a7dd38ecb6f3b4e74b4a977429f00711ad6d91d475"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/results.json": {
+    "bytes": 7613,
+    "sha256": "5a53b1a6946bb542310b8be151e4ea9190fc72b95d12761db0433b7e1a5f276c"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/telefonica-trainee-background.png": {
+    "bytes": 3118,
+    "sha256": "2466ae4e6f24cb0c0cfa9990665cc19e65e301b11eaa03cb806feb40cb22c345"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/telefonica-trainee.png": {
+    "bytes": 3794,
+    "sha256": "88cfc53c67620b439f46ee8517ac3884f977c4972954109e070590ce87b6d501"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/valtx-background.png": {
+    "bytes": 2090,
+    "sha256": "30b267001bed1c0cfc5eaa856f62dc2764db90e4fd792f6bfe561a9dd56cbc39"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-desktop/valtx.png": {
+    "bytes": 2213,
+    "sha256": "5a0d73a002347e53ed09af47194d0017569d6d97407851b1e7439d1ac56ca5fa"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/dynata.png": {
+    "bytes": 4250,
+    "sha256": "43bfeafcea9dbe985b627f5edb7bb757fced162f55d0ed3e67cd5ce04da0779a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/globant.png": {
+    "bytes": 4472,
+    "sha256": "6e499461b25408de39f2fc6f0fddf22a0395ed811acc57ce488ae623f5b77094"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/huawei.png": {
+    "bytes": 4015,
+    "sha256": "4e2faf2fc27e7f402999e3d6f1c6fab372e0baf467cc3f535cc6d064b779a644"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/netcor.png": {
+    "bytes": 10976,
+    "sha256": "0f830a087a5d6fe35a0b0cb6e19faa98fb0ebcfbdbad7082eea71b4e3632bfa5"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/pronti-background.png": {
+    "bytes": 2884,
+    "sha256": "482d16cdeccf23cc8ce9b0c2a509babd338fba15e275e66a8c9400fcbe27456a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/pronti.png": {
+    "bytes": 3275,
+    "sha256": "e3f303ca716c955963017d002cbb85e7f1355dfb286b94d8620b1be5f3861cb8"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/results.json": {
+    "bytes": 7634,
+    "sha256": "f0914335ae5151f50659c2d1ae1858703035943157886356c59ca00aa20aeae9"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/telefonica-trainee.png": {
+    "bytes": 4605,
+    "sha256": "885b0e99ddba47b6c2ff9e347333045e20f7f6038e5989290c30d8b00fc38c30"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/valtx-background.png": {
+    "bytes": 2889,
+    "sha256": "a0b14b95d67868dc05fe61540945e7f75c3ba23b1e611f065bd28337f38a0ae3"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-dark-mobile/valtx.png": {
+    "bytes": 3035,
+    "sha256": "1977e03f2f5b1ce00fc350f55bd095e9bfab9aaed2bc8ddf145646ee58ef302b"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/cotener-background.png": {
+    "bytes": 1859,
+    "sha256": "adaed83d9afc921db3809e99bb3c0158530fb24852e6cf2399743709eb689767"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/cotener.png": {
+    "bytes": 4049,
+    "sha256": "fafa419ef9bb92164c2e29e4742bdb9082141f58313e41f7703e5cb142500d48"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/data-analytics.png": {
+    "bytes": 4722,
+    "sha256": "aa2e306a97c0a2deeffdaacd731cc78ede79510452dd361b6d2a8a312baeb711"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/globant.png": {
+    "bytes": 4519,
+    "sha256": "dd731311c74dbee47dff3d9a94da0dd2851f5c543157c58fb1273b0de4b54e80"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/netcor-background.png": {
+    "bytes": 1452,
+    "sha256": "f3c4199508f3ee17986bd717d8ade608d5e31390a1796c48cc41af3a2222450d"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/netcor.png": {
+    "bytes": 5197,
+    "sha256": "10c9c60a0872cd0d51dae5ade691260302894d2897c955263c8b73800e591515"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/pronti-background.png": {
+    "bytes": 2049,
+    "sha256": "dee6c71c2898e8e4758d3cdc0075f83a627e210aa33c52d136e8108f4f44af8a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/pronti.png": {
+    "bytes": 2359,
+    "sha256": "3cb1885e31d9427de5e1fe3f76c040faa26b6e89a9afe258b8d70919c75a7fac"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/results.json": {
+    "bytes": 7606,
+    "sha256": "a18af74c1bb6f50bd28252060ff5375892c6626bf38c19599bca2702ae0f399f"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/telefonica-trainee-background.png": {
+    "bytes": 3088,
+    "sha256": "8526d1769f304fbbac51123d1d93eb3c7a8188d0ea0c27bebae1ba86fe3d0b2a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/telefonica-trainee.png": {
+    "bytes": 3965,
+    "sha256": "09a9fa1d29bc672e0fd423a85435c0901afcf33a4f868ac217f0e331a53d541d"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/valtx-background.png": {
+    "bytes": 2028,
+    "sha256": "872cb6b55f068525f7eaecba143da38bd6ce46d1afba90985d9205766a03a335"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-desktop/valtx.png": {
+    "bytes": 2205,
+    "sha256": "2c72d07f1f70f913a3500e695c3ede70808aa41831fa7118d2a12fb24af28013"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/dynata.png": {
+    "bytes": 4250,
+    "sha256": "43bfeafcea9dbe985b627f5edb7bb757fced162f55d0ed3e67cd5ce04da0779a"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/globant.png": {
+    "bytes": 4472,
+    "sha256": "6e499461b25408de39f2fc6f0fddf22a0395ed811acc57ce488ae623f5b77094"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/huawei.png": {
+    "bytes": 4015,
+    "sha256": "4e2faf2fc27e7f402999e3d6f1c6fab372e0baf467cc3f535cc6d064b779a644"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/netcor.png": {
+    "bytes": 10976,
+    "sha256": "0f830a087a5d6fe35a0b0cb6e19faa98fb0ebcfbdbad7082eea71b4e3632bfa5"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/pronti-background.png": {
+    "bytes": 2848,
+    "sha256": "cd3f9b9d9504f81651dc384080ab0da7439bc7aaabb2124d9a03d618f1908efa"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/pronti.png": {
+    "bytes": 3243,
+    "sha256": "4c9d815413e01aa4c80d7472626db9dcb4e39786832a14408b752e9976e6d15d"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/results.json": {
+    "bytes": 7651,
+    "sha256": "ee96b00ad36ab7878a678ca76dff1ec1580102672a5a8e4e3bad92d409e768fd"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/telefonica-trainee.png": {
+    "bytes": 4605,
+    "sha256": "885b0e99ddba47b6c2ff9e347333045e20f7f6038e5989290c30d8b00fc38c30"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/valtx-background.png": {
+    "bytes": 2833,
+    "sha256": "e422f6f1eb6fdc7ae47af0701141ce48b650094a79998669f9fcd6eeeafe4bbd"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-captures/es-light-mobile/valtx.png": {
+    "bytes": 3024,
+    "sha256": "8e22ec1b1da8cf5f59b62696fca33eb1d0938d21806afeb3a35c6cc5f712ba07"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/logo-contrast-rendered.json": {
+    "bytes": 84584,
+    "sha256": "1c7c2add5b3c2c8d00c1d4ada41a24f1a4794f34f0c4c96ca3211698abd9e9cc"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/playwright.log": {
+    "bytes": 47767,
+    "sha256": "20a53ef6f3ad6a7946aab5d7bed69088a87e0c0c68da99c7b5331fc3d17ba8dd"
+  },
+  "docs/audit/after/playwright-attempts/02-dock-occluded/results.json": {
+    "bytes": 800809,
+    "sha256": "4b1e3942158c2d5a694dd68b46e33c81523491b3c155d3a96aa677682ede7675"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/globant.png": {
+    "bytes": 4526,
+    "sha256": "210dcea380351faa603c4b6a53684bc4390911695a87983d278525534ca2c079"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/indra.png": {
+    "bytes": 2422,
+    "sha256": "7028a4c91ea05d05113edac2d66e55da9402779a2899404df6ba898b13f06141"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/netcor.png": {
+    "bytes": 11185,
+    "sha256": "3a91dc894d3183a2347e2dac6824f8ac78f433d4722ec6b7f7f3dd07f3fee431"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/results.json": {
+    "bytes": 7707,
+    "sha256": "72ef9d0ad4f4a5b127e8e924aa8846dd3f6becd756b9b56512453f911d70101b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/telefonica-trainee.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-desktop/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/globant.png": {
+    "bytes": 4524,
+    "sha256": "be719bdf7e36fea4422dd61f634ca4d5f334d18b3e1dbb869be70938611bfd94"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/huawei-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/huawei.png": {
+    "bytes": 4013,
+    "sha256": "1a1db413eadda729406e1407577d035898ae4e8c9d146f25af55ad23052b8b8e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/netcor.png": {
+    "bytes": 11185,
+    "sha256": "3a91dc894d3183a2347e2dac6824f8ac78f433d4722ec6b7f7f3dd07f3fee431"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/plainenglish-background.png": {
+    "bytes": 173,
+    "sha256": "00c5481e1fe3d393fc3bfaa4d1dd8ec61897de6970c986e811e16515bb57561e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/plainenglish.png": {
+    "bytes": 3557,
+    "sha256": "ea2da0451eb9c6293db99545fea1ff08b03c56f25730a8f1bea9ac9619d3bc78"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/pronti.png": {
+    "bytes": 3593,
+    "sha256": "414e177ae2146160c2f8a238399b48cf7f2b30389c1ab2dcbe6890fa93bc93b5"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/results.json": {
+    "bytes": 7660,
+    "sha256": "c977224bd6c88a265a0db472180a46f57a8c100fff247993c0a7bfacf365fb9c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/telefonica-trainee.png": {
+    "bytes": 4607,
+    "sha256": "943a14f0fd85b58d3b064d093208566fc4c04ffd9790947d9da74b2295309229"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-dark-mobile/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/globant.png": {
+    "bytes": 4526,
+    "sha256": "210dcea380351faa603c4b6a53684bc4390911695a87983d278525534ca2c079"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/indra.png": {
+    "bytes": 2422,
+    "sha256": "7028a4c91ea05d05113edac2d66e55da9402779a2899404df6ba898b13f06141"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/netcor.png": {
+    "bytes": 11185,
+    "sha256": "3a91dc894d3183a2347e2dac6824f8ac78f433d4722ec6b7f7f3dd07f3fee431"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/results.json": {
+    "bytes": 7722,
+    "sha256": "3e7d5a0ca2f56594e4e61a4c3942c391565c972c523a1c235b48fcfee53ecc99"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/telefonica-trainee.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-desktop/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/globant.png": {
+    "bytes": 4524,
+    "sha256": "be719bdf7e36fea4422dd61f634ca4d5f334d18b3e1dbb869be70938611bfd94"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/huawei-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/huawei.png": {
+    "bytes": 4013,
+    "sha256": "1a1db413eadda729406e1407577d035898ae4e8c9d146f25af55ad23052b8b8e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/netcor.png": {
+    "bytes": 11185,
+    "sha256": "3a91dc894d3183a2347e2dac6824f8ac78f433d4722ec6b7f7f3dd07f3fee431"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/plainenglish-background.png": {
+    "bytes": 173,
+    "sha256": "00c5481e1fe3d393fc3bfaa4d1dd8ec61897de6970c986e811e16515bb57561e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/plainenglish.png": {
+    "bytes": 3557,
+    "sha256": "ea2da0451eb9c6293db99545fea1ff08b03c56f25730a8f1bea9ac9619d3bc78"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/pronti.png": {
+    "bytes": 3593,
+    "sha256": "414e177ae2146160c2f8a238399b48cf7f2b30389c1ab2dcbe6890fa93bc93b5"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/results.json": {
+    "bytes": 7675,
+    "sha256": "80665d832eb1e4d19a8723cf8a06ab6b47164b59ea995581b8ea74caad7f03d8"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/telefonica-trainee.png": {
+    "bytes": 4607,
+    "sha256": "943a14f0fd85b58d3b064d093208566fc4c04ffd9790947d9da74b2295309229"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/en-light-mobile/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/cotener.png": {
+    "bytes": 7945,
+    "sha256": "be416e9acf654b3fef6db770ba53f92a763a0e57c3cff3b996a15a7261372c7d"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/data-analytics.png": {
+    "bytes": 4722,
+    "sha256": "aa2e306a97c0a2deeffdaacd731cc78ede79510452dd361b6d2a8a312baeb711"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/globant.png": {
+    "bytes": 4519,
+    "sha256": "dd731311c74dbee47dff3d9a94da0dd2851f5c543157c58fb1273b0de4b54e80"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/netcor.png": {
+    "bytes": 10976,
+    "sha256": "0f830a087a5d6fe35a0b0cb6e19faa98fb0ebcfbdbad7082eea71b4e3632bfa5"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/results.json": {
+    "bytes": 7687,
+    "sha256": "cd1687c0fd19b8300d382656d4615b580f1d2a69c5f7cea23437ddac017172fa"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/telefonica-trainee.png": {
+    "bytes": 4506,
+    "sha256": "09f00ef5ccb36d6ade6ea3d4734ddd95dc4bbcc1ad89864f6a8eca30306523f9"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-desktop/valtx.png": {
+    "bytes": 2496,
+    "sha256": "1411333ad16514e32ca387cc024db44c57a23e1f1b566924acdf4a69851c96e5"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/dynata.png": {
+    "bytes": 4250,
+    "sha256": "43bfeafcea9dbe985b627f5edb7bb757fced162f55d0ed3e67cd5ce04da0779a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/globant.png": {
+    "bytes": 4472,
+    "sha256": "6e499461b25408de39f2fc6f0fddf22a0395ed811acc57ce488ae623f5b77094"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/huawei.png": {
+    "bytes": 4015,
+    "sha256": "4e2faf2fc27e7f402999e3d6f1c6fab372e0baf467cc3f535cc6d064b779a644"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/netcor.png": {
+    "bytes": 10976,
+    "sha256": "0f830a087a5d6fe35a0b0cb6e19faa98fb0ebcfbdbad7082eea71b4e3632bfa5"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/results.json": {
+    "bytes": 7677,
+    "sha256": "2ec7003c493d753814d765cd7cafcb72f1a75194e856db173b391aa9d1028a8e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/telefonica-trainee.png": {
+    "bytes": 4605,
+    "sha256": "885b0e99ddba47b6c2ff9e347333045e20f7f6038e5989290c30d8b00fc38c30"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-dark-mobile/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "6a217eb850ddd84740757ac2bec9e58bdf861ed402198818fa548725b37de5de"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/cotener.png": {
+    "bytes": 7945,
+    "sha256": "be416e9acf654b3fef6db770ba53f92a763a0e57c3cff3b996a15a7261372c7d"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/data-analytics.png": {
+    "bytes": 4722,
+    "sha256": "aa2e306a97c0a2deeffdaacd731cc78ede79510452dd361b6d2a8a312baeb711"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/dynata.png": {
+    "bytes": 4247,
+    "sha256": "5c1f6cb0383e1878ffcd2d6bf482b52ab52eacbe0d878ad1f0096b23612ff1cd"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/globant.png": {
+    "bytes": 4519,
+    "sha256": "dd731311c74dbee47dff3d9a94da0dd2851f5c543157c58fb1273b0de4b54e80"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/huawei.png": {
+    "bytes": 4016,
+    "sha256": "b97302a2dc3ffde3c4bc00f2909f1c90c7a689b4d50d6d9a7602fd1aac24bc54"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/netcor.png": {
+    "bytes": 10976,
+    "sha256": "0f830a087a5d6fe35a0b0cb6e19faa98fb0ebcfbdbad7082eea71b4e3632bfa5"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/osc-background.png": {
+    "bytes": 169,
+    "sha256": "2940e11193a2c003f7c3c1cd8fd64c3feb1e0e102739a77da2f8b60879786c2a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/osc.png": {
+    "bytes": 6112,
+    "sha256": "58e282bed239c71b3c796a744d753ce359deba60e536438f7b6b288b8170371a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/results.json": {
+    "bytes": 7702,
+    "sha256": "23eb9770e21f2073b9a6727fd6cf1d9b22f6adc9fe46c579eb07dcd640ffef08"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/telefonica-trainee.png": {
+    "bytes": 4506,
+    "sha256": "09f00ef5ccb36d6ade6ea3d4734ddd95dc4bbcc1ad89864f6a8eca30306523f9"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "5a94792888502672a155a11f3c1f95040b85341fda18a934956b10c1f9d5d6d9"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-desktop/valtx.png": {
+    "bytes": 2496,
+    "sha256": "1411333ad16514e32ca387cc024db44c57a23e1f1b566924acdf4a69851c96e5"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/bluetab-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/bluetab.png": {
+    "bytes": 3329,
+    "sha256": "feea854cf9d2b2f74d39ff6052bae3910c5761aa18cca67e35dca9bcc4110334"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/cotener-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/cotener.png": {
+    "bytes": 7943,
+    "sha256": "7b0da858c7c96e17ecbab4d0e76407c8fad22e030f8e982fe3a6b3936931195b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/data-analytics-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/data-analytics.png": {
+    "bytes": 4725,
+    "sha256": "87f3e87efbfc833e3be2d62cc182077229f40f7f399cc96d452a2c55d52d5e8d"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/dynata-background.png": {
+    "bytes": 191,
+    "sha256": "a628e9fbcd02a43162fa038382dc4225c81d072e37422ae0cfab172e34b1e167"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/dynata.png": {
+    "bytes": 4250,
+    "sha256": "43bfeafcea9dbe985b627f5edb7bb757fced162f55d0ed3e67cd5ce04da0779a"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/globant-background.png": {
+    "bytes": 178,
+    "sha256": "15f9b49cbf7c0e0f0d3f9866fbeb9587b064cbc59e462b41fa90fe1296099cf0"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/globant.png": {
+    "bytes": 4472,
+    "sha256": "6e499461b25408de39f2fc6f0fddf22a0395ed811acc57ce488ae623f5b77094"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/huawei-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/huawei.png": {
+    "bytes": 4015,
+    "sha256": "4e2faf2fc27e7f402999e3d6f1c6fab372e0baf467cc3f535cc6d064b779a644"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/indra-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/indra.png": {
+    "bytes": 2428,
+    "sha256": "29218bc2478cf632aef4e36b09bafaf961fb8fd5993fc9f4da12d2894056eb62"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/netcor-background.png": {
+    "bytes": 197,
+    "sha256": "90e2a9a5a16678a0fd2622c68026cb642cb634cba62245b2de94ca249c8f441e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/netcor.png": {
+    "bytes": 10976,
+    "sha256": "0f830a087a5d6fe35a0b0cb6e19faa98fb0ebcfbdbad7082eea71b4e3632bfa5"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/osc-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/osc.png": {
+    "bytes": 6118,
+    "sha256": "2ed151d58fdd94b2bfe7dc60e971205b450f12a5ff13affee4537497b4223e74"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/plainenglish-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/plainenglish.png": {
+    "bytes": 3563,
+    "sha256": "8f9b87cf98f8f7cffaf9d33530eb857c940fe32cbeb528a1fb00f520f318d9a1"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/pronti-background.png": {
+    "bytes": 171,
+    "sha256": "b9f2e8d72d97159561802ecc7e9a4ae2110dfd8f18f2155fc549ac9bb7d94084"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/pronti.png": {
+    "bytes": 3597,
+    "sha256": "84fef4d945dac73e2efe1ea8e72e72994686a360a65b97ba4c6ebd7079fcbe3b"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/results.json": {
+    "bytes": 7692,
+    "sha256": "ad2420a1bdef92c5b9a0070b0e5c610819960a204bd588b0474b5292bc1bd89c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/telefonica-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/telefonica-trainee-background.png": {
+    "bytes": 229,
+    "sha256": "10e80daae8bf9b74b874efdfd8de4c98aee77c77a2d72610a9e39beaa1e9696e"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/telefonica-trainee.png": {
+    "bytes": 4605,
+    "sha256": "885b0e99ddba47b6c2ff9e347333045e20f7f6038e5989290c30d8b00fc38c30"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/telefonica.png": {
+    "bytes": 4509,
+    "sha256": "6f01f22c06db4e67d50cd3c3f634d746cdba80553c8e5ad293cab2ccd5e39106"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/valtx-background.png": {
+    "bytes": 176,
+    "sha256": "c9d0008ecaf1eecbf39f61ee4be939f5265b90f584176d6f9a7cce83616fcf6c"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-captures/es-light-mobile/valtx.png": {
+    "bytes": 2494,
+    "sha256": "ddd6c6b541dd44f4e26ca1c2c0ef5a90f5f557ad8eef6de27a93a52c02d3f494"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/logo-contrast-rendered.json": {
+    "bytes": 76038,
+    "sha256": "5f40ef8fd7883ffe59b6803451db2dbf8ed1c2dfe5536d0177218415a45c7e13"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/playwright.log": {
+    "bytes": 23745,
+    "sha256": "9a04fce12e829f2b88c08c94e945a4bedcaea34a1a479b59eedcc3714d7da51f"
+  },
+  "docs/audit/after/playwright-attempts/03-centered-before-netcor-filter/results.json": {
+    "bytes": 790429,
+    "sha256": "64d805c7734913a234dfdbe25774f40baf2b799d3abc7e7d8f6ccb480c5745b6"
+  },
+  "docs/audit/after/playwright-attempts/04-server-restart-invalidated/invalidated.md": {
+    "bytes": 316,
+    "sha256": "8aa13001cc57ef5b577e51b4494cf082acfc8b685b7e4888faff424312c90a27"
+  },
+  "docs/audit/after/playwright-attempts/04-server-restart-invalidated/playwright.log": {
+    "bytes": 32350,
+    "sha256": "30fb23870111e94f03ae5839a0deeaf198e9e1c738b3e32a57dfcf1336896d03"
+  },
+  "docs/audit/after/playwright-attempts/04-server-restart-invalidated/results.json": {
+    "bytes": 442712,
+    "sha256": "5e5bff22a150d7c4be34a53781832ff31d9fda4806defb39de139c309f7efdd3"
+  },
+  "docs/audit/after/playwright-attempts/04-server-restart-invalidated/server.log": {
+    "bytes": 395,
+    "sha256": "d58cfb3895c851f9e916c6d4d9b8dad172d44ee437adee8bdd87877fce5e89a8"
+  },
+  "docs/audit/after/playwright-attempts/05-integrated-final/playwright.log": {
+    "bytes": 3281,
+    "sha256": "dab94e8be0644db58b2c3614649f342610399a07f7716a70e7279e95037591ae"
+  },
+  "docs/audit/after/playwright-attempts/05-integrated-final/results.json": {
+    "bytes": 756417,
+    "sha256": "046c536b9e43d8b90d1a6ffaf78911d5b3854bf3552e869471f7ba0b43f5161a"
+  },
+  "docs/audit/after/playwright-environment/vercel-sandbox/apt-update.log": {
+    "bytes": 1503,
+    "sha256": "7e42467213c5bf9eb5ac9b1085c53de77937de6cfd4475b3c8b278f25a177e69"
+  },
+  "docs/audit/after/playwright-environment/vercel-sandbox/build-filtered.log": {
+    "bytes": 13148,
+    "sha256": "22988da53686433f02631a58faf97a49d66dda5b457c055cb993d90ea22fc1ae"
+  },
+  "docs/audit/after/playwright-environment/vercel-sandbox/build-integrated.log": {
+    "bytes": 13503,
+    "sha256": "0a43e8d5d4deebca3fdc24570c75363683179ff2a5c388bdf663e423d63b137f"
+  },
+  "docs/audit/after/playwright-environment/vercel-sandbox/build.log": {
+    "bytes": 13146,
+    "sha256": "682bcc9cc7694dcb5d35bcb74ae5b6e3c8d15a9340354e35c39a24d641f6f9b9"
+  },
+  "docs/audit/after/playwright-environment/vercel-sandbox/git-fetch-final.log": {
+    "bytes": 111,
+    "sha256": "0ef4a3b59a27b1b07bf89fbd9f71ffd0fa737b117d3fe8d02b3cdc63cb9d7d57"
+  },
+  "docs/audit/after/playwright-environment/vercel-sandbox/npm-ci.log": {
+    "bytes": 1103,
+    "sha256": "f74dfb2be8acba6cc2fe85de3b7acffb732573001debf3596664f29f42f78ed4"
+  },
+  "docs/audit/after/playwright-environment/vercel-sandbox/playwright-install.log": {
+    "bytes": 44617,
+    "sha256": "ab74964d1000b1e27540b2e8733588780b25fddeb9fab4a8dd46e5f1390d09e0"
+  },
+  "docs/audit/after/playwright-environment/vercel-sandbox/source-diff.patch": {
+    "bytes": 116945,
+    "sha256": "6a3fd814d5ef6d2c3a57c0ca3ffa6eb4468bb8c5fa9b75349bcc5739a26ff2ea"
+  },
+  "docs/audit/after/playwright-environment/vercel-sandbox/source-provenance.json": {
+    "bytes": 1377,
+    "sha256": "5e2a42849bba321b36022c2c39a28fc982e4c6fe4e2204b84bfb1520ab410e4e"
+  },
+  "docs/audit/after/playwright-summary.json": {
+    "bytes": 1155,
+    "sha256": "2228f6087516ac955f3abbbdc46a3d6b5231181190d36dc17ac7cc373dcec002"
+  }
+}

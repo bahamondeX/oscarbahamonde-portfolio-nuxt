@@ -1,0 +1,769 @@
+{
+  "checkedAtUtc": "2026-11-14T23:27:58.776Z",
+  "target": "https://oscarbahamonde.com",
+  "expectedDeploymentRevision": "ba8ff885b09dfb403e98114eafd9c81fd62046c3 (provided by deployment owner; not independently exposed in HTTP)",
+  "method": "curl HTTPS GET with normal certificate verification; no state-changing requests",
+  "evidenceMode": "live-http",
+  "rawResponseDirectory": "/private/tmp/oscar-portfolio-bedrock/docs/audit/after/seo-live-2026-11-14T23-27-39-755Z-responses",
+  "scriptSha256": "26663f70f08ce52dcbd94f3061d1025e7ead324cb8fa579c6f80f22999acaa89",
+  "fetches": [
+    {
+      "name": "es",
+      "url": "https://oscarbahamonde.com/es",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 113646,
+      "sha256": "1828f1ae94539801f4a061d984aa97f68662c91437ad0371ede18f8f814820e8",
+      "error": null
+    },
+    {
+      "name": "en",
+      "url": "https://oscarbahamonde.com/en",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 115165,
+      "sha256": "2054b72f324c445eaed8a486cd04cbbddf496b5b380fd5441dc94a85448798c6",
+      "error": null
+    },
+    {
+      "name": "robots",
+      "url": "https://oscarbahamonde.com/robots.txt",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 371,
+      "sha256": "5a5e575941612aa668f9c912b8a25368565b6d6295afebc5491de1a583e21c6c",
+      "error": null
+    },
+    {
+      "name": "sitemap",
+      "url": "https://oscarbahamonde.com/sitemap.xml",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 471,
+      "sha256": "5f1f6e3a20ac4c71c4905246c4825f56dfcd3d1e9d4c099acbd3d80980fa4ff5",
+      "error": null
+    },
+    {
+      "name": "llms",
+      "url": "https://oscarbahamonde.com/llms.txt",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 7079,
+      "sha256": "3c5ac4a5b2ec44341e9f89bdab1c425acc00762d8de1ecc9d4d75309ab7ea42e",
+      "error": null
+    },
+    {
+      "name": "llms-full",
+      "url": "https://oscarbahamonde.com/llms-full.txt",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 11838,
+      "sha256": "62ae008fa4fb84bc674ade066a293bd70a7b59cffb97c9d0fb07d7ee0fd8052a",
+      "error": null
+    },
+    {
+      "name": "blog1",
+      "url": "https://oscarbahamonde.com/api/blog?page=1",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 5548,
+      "sha256": "44af01e2e42c2ddbf68edb25a2b9675342f0c93025e31cf7f383da9549adff7d",
+      "error": null
+    },
+    {
+      "name": "blog2",
+      "url": "https://oscarbahamonde.com/api/blog?page=2",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 3358,
+      "sha256": "ac8bea2c49b735d5459edb06b6e98c88d8539417f31cc5bd9ce482092516dad8",
+      "error": null
+    },
+    {
+      "name": "sitemap-child-0",
+      "url": "https://oscarbahamonde.com/__sitemap__/es-PE.xml",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 8305,
+      "sha256": "a71dcc2016cbdf518d9e39d30a17d2e4335ae4ffddfeaa364410a04ab74bbd2b",
+      "error": null
+    },
+    {
+      "name": "sitemap-child-1",
+      "url": "https://oscarbahamonde.com/__sitemap__/en-US.xml",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 8305,
+      "sha256": "2bf6ca5c2e2217a50964b31c49f884b10fd6a4bce7d9486f4a04b03fa6cc3efa",
+      "error": null
+    },
+    {
+      "name": "article-es",
+      "url": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 28892,
+      "sha256": "6865109b5b472a70e2d208809f702d373a067f28ee637de1a1089067d8bdd58a",
+      "error": null
+    },
+    {
+      "name": "article-en",
+      "url": "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "bytes": 28870,
+      "sha256": "94d47e15f747c206029d212db965b7c3cb6850c8ec43334369aa275ee04755d7",
+      "error": null
+    }
+  ],
+  "pages": {
+    "es": {
+      "htmlLang": "es-PE",
+      "canonical": [
+        "https://oscarbahamonde.com/es"
+      ],
+      "hreflang": {
+        "x-default": "https://oscarbahamonde.com/es",
+        "es": "https://oscarbahamonde.com/es",
+        "es-PE": "https://oscarbahamonde.com/es",
+        "en": "https://oscarbahamonde.com/en",
+        "en-US": "https://oscarbahamonde.com/en"
+      },
+      "openGraph": {
+        "og:title": "Oscar Bahamonde — Ingeniería de IA, datos y cloud",
+        "og:description": "Ingeniero de software en Perú. IA aplicada, plataformas de datos, arquitectura cloud y consultoría 1:1. Conoce mi trabajo y construyamos tu próximo proyecto.",
+        "og:type": "website",
+        "og:url": "https://oscarbahamonde.com/es",
+        "og:image": "https://oscarbahamonde.com/images/og.png",
+        "og:locale": "es_PE"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": null,
+        "twitter:description": null,
+        "twitter:image": "https://oscarbahamonde.com/images/og.png"
+      },
+      "themeColors": [
+        {
+          "content": "#f5f6f8",
+          "media": "(prefers-color-scheme: light)"
+        },
+        {
+          "content": "#0b1118",
+          "media": "(prefers-color-scheme: dark)"
+        }
+      ],
+      "schemaTypes": {
+        "Person": 1,
+        "Service": 9,
+        "Offer": 9
+      },
+      "jsonLdValid": true,
+      "ssrBlogCards": 6,
+      "sections": 9
+    },
+    "en": {
+      "htmlLang": "en-US",
+      "canonical": [
+        "https://oscarbahamonde.com/en"
+      ],
+      "hreflang": {
+        "x-default": "https://oscarbahamonde.com/es",
+        "es": "https://oscarbahamonde.com/es",
+        "es-PE": "https://oscarbahamonde.com/es",
+        "en": "https://oscarbahamonde.com/en",
+        "en-US": "https://oscarbahamonde.com/en"
+      },
+      "openGraph": {
+        "og:title": "Oscar Bahamonde — AI, Data & Cloud Engineering",
+        "og:description": "Software engineer based in Peru. Applied AI, data platforms, cloud architecture and 1:1 consulting. Explore my work and let’s build your next project.",
+        "og:type": "website",
+        "og:url": "https://oscarbahamonde.com/en",
+        "og:image": "https://oscarbahamonde.com/images/og.png",
+        "og:locale": "en_US"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": null,
+        "twitter:description": null,
+        "twitter:image": "https://oscarbahamonde.com/images/og.png"
+      },
+      "themeColors": [
+        {
+          "content": "#f5f6f8",
+          "media": "(prefers-color-scheme: light)"
+        },
+        {
+          "content": "#0b1118",
+          "media": "(prefers-color-scheme: dark)"
+        }
+      ],
+      "schemaTypes": {
+        "Person": 1,
+        "Service": 9,
+        "Offer": 9
+      },
+      "jsonLdValid": true,
+      "ssrBlogCards": 6,
+      "sections": 9
+    },
+    "article-es": {
+      "htmlLang": "es-PE",
+      "canonical": [
+        "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7"
+      ],
+      "hreflang": {
+        "x-default": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+        "es": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+        "es-PE": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+        "en": "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+        "en-US": "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7"
+      },
+      "openGraph": {
+        "og:title": "Quipubase: Una base de datos semántica inspirada en el quipu andino",
+        "og:description": "“El futuro de los datos puede aprender del pasado.” Vivimos en una era donde los datos están en todas partes: APIs, bases vectoriales, LLMs, flujos JSON, modelos multimodales… pero ¿y si pensáramos nuestras estructuras de datos como redes vivas, narrativas, jerárquicas y culturalmente conscientes? De esa intuición nace Quipubase , una plataforma documental y semántica…",
+        "og:type": "article",
+        "og:url": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+        "og:image": "https://oscarbahamonde.com/images/og.png",
+        "og:locale": "es_PE"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": null,
+        "twitter:description": null,
+        "twitter:image": "https://oscarbahamonde.com/images/og.png"
+      },
+      "themeColors": [
+        {
+          "content": "#f5f6f8",
+          "media": "(prefers-color-scheme: light)"
+        },
+        {
+          "content": "#0b1118",
+          "media": "(prefers-color-scheme: dark)"
+        }
+      ],
+      "schemaTypes": {
+        "BlogPosting": 1,
+        "Person": 1,
+        "BreadcrumbList": 1,
+        "ListItem": 3
+      },
+      "jsonLdValid": true,
+      "ssrBlogCards": 0,
+      "sections": 0
+    },
+    "article-en": {
+      "htmlLang": "en-US",
+      "canonical": [
+        "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7"
+      ],
+      "hreflang": {
+        "x-default": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+        "es": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+        "es-PE": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+        "en": "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+        "en-US": "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7"
+      },
+      "openGraph": {
+        "og:title": "Quipubase: Una base de datos semántica inspirada en el quipu andino",
+        "og:description": "“El futuro de los datos puede aprender del pasado.” Vivimos en una era donde los datos están en todas partes: APIs, bases vectoriales, LLMs, flujos JSON, modelos multimodales… pero ¿y si pensáramos nuestras estructuras de datos como redes vivas, narrativas, jerárquicas y culturalmente conscientes? De esa intuición nace Quipubase , una plataforma documental y semántica…",
+        "og:type": "article",
+        "og:url": "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+        "og:image": "https://oscarbahamonde.com/images/og.png",
+        "og:locale": "en_US"
+      },
+      "twitter": {
+        "twitter:card": "summary_large_image",
+        "twitter:title": null,
+        "twitter:description": null,
+        "twitter:image": "https://oscarbahamonde.com/images/og.png"
+      },
+      "themeColors": [
+        {
+          "content": "#f5f6f8",
+          "media": "(prefers-color-scheme: light)"
+        },
+        {
+          "content": "#0b1118",
+          "media": "(prefers-color-scheme: dark)"
+        }
+      ],
+      "schemaTypes": {
+        "BlogPosting": 1,
+        "Person": 1,
+        "BreadcrumbList": 1,
+        "ListItem": 3
+      },
+      "jsonLdValid": true,
+      "ssrBlogCards": 0,
+      "sections": 0
+    }
+  },
+  "robots": "# START nuxt-robots (indexable)\nUser-agent: *\nAllow: /\nAllow: /es\nAllow: /en\nDisallow: /api/\nDisallow: /es/api/\nDisallow: /en/api/\nDisallow: /pago\nDisallow: /es/pago\nDisallow: /en/pago\nDisallow: /conectar\nDisallow: /es/conectar\nDisallow: /en/conectar\n\nSitemap: https://oscarbahamonde.com/sitemap.xml\nSitemap: https://oscarbahamonde.com/sitemap_index.xml\n# END nuxt-robots",
+  "sitemaps": [
+    {
+      "url": "https://oscarbahamonde.com/__sitemap__/es-PE.xml",
+      "entries": [
+        {
+          "loc": "https://oscarbahamonde.com/es",
+          "lastmod": null,
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es",
+            "es-PE": "https://oscarbahamonde.com/es",
+            "en-US": "https://oscarbahamonde.com/en"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/es/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13",
+          "lastmod": "2024-12-14T11:21:26Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13",
+            "es-PE": "https://oscarbahamonde.com/es/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13",
+            "en-US": "https://oscarbahamonde.com/en/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/es/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177",
+          "lastmod": "2024-06-24T10:37:33Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177",
+            "es-PE": "https://oscarbahamonde.com/es/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177",
+            "en-US": "https://oscarbahamonde.com/en/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/es/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375",
+          "lastmod": "2024-11-07T05:37:23Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375",
+            "es-PE": "https://oscarbahamonde.com/es/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375",
+            "en-US": "https://oscarbahamonde.com/en/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/es/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90",
+          "lastmod": "2024-06-22T12:33:06Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90",
+            "es-PE": "https://oscarbahamonde.com/es/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90",
+            "en-US": "https://oscarbahamonde.com/en/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/es/blog/introduction-to-language-model-merging-2e88b80e190b",
+          "lastmod": "2024-08-18T19:14:35Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/introduction-to-language-model-merging-2e88b80e190b",
+            "es-PE": "https://oscarbahamonde.com/es/blog/introduction-to-language-model-merging-2e88b80e190b",
+            "en-US": "https://oscarbahamonde.com/en/blog/introduction-to-language-model-merging-2e88b80e190b"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/es/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a",
+          "lastmod": "2025-03-26T04:45:41Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a",
+            "es-PE": "https://oscarbahamonde.com/es/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a",
+            "en-US": "https://oscarbahamonde.com/en/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/es/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6",
+          "lastmod": "2025-04-05T05:46:02Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6",
+            "es-PE": "https://oscarbahamonde.com/es/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6",
+            "en-US": "https://oscarbahamonde.com/en/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+          "lastmod": "2025-08-04T08:33:37Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+            "es-PE": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+            "en-US": "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/es/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624",
+          "lastmod": "2023-12-08T22:22:43Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624",
+            "es-PE": "https://oscarbahamonde.com/es/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624",
+            "en-US": "https://oscarbahamonde.com/en/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/es/blog/the-plain-text-team-cb06429f196d",
+          "lastmod": "2023-10-14T11:32:04Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/the-plain-text-team-cb06429f196d",
+            "es-PE": "https://oscarbahamonde.com/es/blog/the-plain-text-team-cb06429f196d",
+            "en-US": "https://oscarbahamonde.com/en/blog/the-plain-text-team-cb06429f196d"
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://oscarbahamonde.com/__sitemap__/en-US.xml",
+      "entries": [
+        {
+          "loc": "https://oscarbahamonde.com/en",
+          "lastmod": null,
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es",
+            "es-PE": "https://oscarbahamonde.com/es",
+            "en-US": "https://oscarbahamonde.com/en"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/en/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13",
+          "lastmod": "2024-12-14T11:21:26Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13",
+            "es-PE": "https://oscarbahamonde.com/es/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13",
+            "en-US": "https://oscarbahamonde.com/en/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/en/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177",
+          "lastmod": "2024-06-24T10:37:33Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177",
+            "es-PE": "https://oscarbahamonde.com/es/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177",
+            "en-US": "https://oscarbahamonde.com/en/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/en/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375",
+          "lastmod": "2024-11-07T05:37:23Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375",
+            "es-PE": "https://oscarbahamonde.com/es/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375",
+            "en-US": "https://oscarbahamonde.com/en/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/en/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90",
+          "lastmod": "2024-06-22T12:33:06Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90",
+            "es-PE": "https://oscarbahamonde.com/es/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90",
+            "en-US": "https://oscarbahamonde.com/en/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/en/blog/introduction-to-language-model-merging-2e88b80e190b",
+          "lastmod": "2024-08-18T19:14:35Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/introduction-to-language-model-merging-2e88b80e190b",
+            "es-PE": "https://oscarbahamonde.com/es/blog/introduction-to-language-model-merging-2e88b80e190b",
+            "en-US": "https://oscarbahamonde.com/en/blog/introduction-to-language-model-merging-2e88b80e190b"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/en/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a",
+          "lastmod": "2025-03-26T04:45:41Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a",
+            "es-PE": "https://oscarbahamonde.com/es/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a",
+            "en-US": "https://oscarbahamonde.com/en/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/en/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6",
+          "lastmod": "2025-04-05T05:46:02Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6",
+            "es-PE": "https://oscarbahamonde.com/es/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6",
+            "en-US": "https://oscarbahamonde.com/en/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+          "lastmod": "2025-08-04T08:33:37Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+            "es-PE": "https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+            "en-US": "https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/en/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624",
+          "lastmod": "2023-12-08T22:22:43Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624",
+            "es-PE": "https://oscarbahamonde.com/es/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624",
+            "en-US": "https://oscarbahamonde.com/en/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624"
+          }
+        },
+        {
+          "loc": "https://oscarbahamonde.com/en/blog/the-plain-text-team-cb06429f196d",
+          "lastmod": "2023-10-14T11:32:04Z",
+          "alternates": {
+            "x-default": "https://oscarbahamonde.com/es/blog/the-plain-text-team-cb06429f196d",
+            "es-PE": "https://oscarbahamonde.com/es/blog/the-plain-text-team-cb06429f196d",
+            "en-US": "https://oscarbahamonde.com/en/blog/the-plain-text-team-cb06429f196d"
+          }
+        }
+      ]
+    }
+  ],
+  "blog": {
+    "page1Count": 6,
+    "page2Count": 4,
+    "total": 10,
+    "stale": false,
+    "realCoverCount": 5,
+    "languageCounts": {
+      "es": 2,
+      "en": 8
+    }
+  },
+  "llms": {
+    "llms": {
+      "localPostUrls": 20,
+      "canonicalMediumUrls": 10,
+      "allOriginalPublicationUrlsPresent": true,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    "llms-full": {
+      "localPostUrls": 20,
+      "canonicalMediumUrls": 10,
+      "allOriginalPublicationUrlsPresent": true,
+      "contentType": "text/plain; charset=utf-8"
+    }
+  },
+  "checks": [
+    {
+      "name": "HTTP es",
+      "passed": true
+    },
+    {
+      "name": "HTTP en",
+      "passed": true
+    },
+    {
+      "name": "HTTP robots",
+      "passed": true
+    },
+    {
+      "name": "HTTP sitemap",
+      "passed": true
+    },
+    {
+      "name": "HTTP llms",
+      "passed": true
+    },
+    {
+      "name": "HTTP llms-full",
+      "passed": true
+    },
+    {
+      "name": "HTTP blog1",
+      "passed": true
+    },
+    {
+      "name": "HTTP blog2",
+      "passed": true
+    },
+    {
+      "name": "HTTP sitemap-child-0",
+      "passed": true
+    },
+    {
+      "name": "HTTP sitemap-child-1",
+      "passed": true
+    },
+    {
+      "name": "HTTP article-es",
+      "passed": true
+    },
+    {
+      "name": "HTTP article-en",
+      "passed": true
+    },
+    {
+      "name": "es canonical",
+      "passed": true
+    },
+    {
+      "name": "es hreflang es/en",
+      "passed": true
+    },
+    {
+      "name": "es dual theme-color",
+      "passed": true
+    },
+    {
+      "name": "es Open Graph",
+      "passed": true
+    },
+    {
+      "name": "es Twitter card/image",
+      "passed": true
+    },
+    {
+      "name": "es JSON-LD",
+      "passed": true
+    },
+    {
+      "name": "es Person and Service",
+      "passed": true
+    },
+    {
+      "name": "es SSR6 blogcards +9 sections",
+      "passed": true
+    },
+    {
+      "name": "en canonical",
+      "passed": true
+    },
+    {
+      "name": "en hreflang es/en",
+      "passed": true
+    },
+    {
+      "name": "en dual theme-color",
+      "passed": true
+    },
+    {
+      "name": "en Open Graph",
+      "passed": true
+    },
+    {
+      "name": "en Twitter card/image",
+      "passed": true
+    },
+    {
+      "name": "en JSON-LD",
+      "passed": true
+    },
+    {
+      "name": "en Person and Service",
+      "passed": true
+    },
+    {
+      "name": "en SSR6 blogcards +9 sections",
+      "passed": true
+    },
+    {
+      "name": "article-es canonical",
+      "passed": true
+    },
+    {
+      "name": "article-es hreflang es/en",
+      "passed": true
+    },
+    {
+      "name": "article-es dual theme-color",
+      "passed": true
+    },
+    {
+      "name": "article-es Open Graph",
+      "passed": true
+    },
+    {
+      "name": "article-es Twitter card/image",
+      "passed": true
+    },
+    {
+      "name": "article-es JSON-LD",
+      "passed": true
+    },
+    {
+      "name": "article-es BlogPosting and BreadcrumbList",
+      "passed": true
+    },
+    {
+      "name": "article-en canonical",
+      "passed": true
+    },
+    {
+      "name": "article-en hreflang es/en",
+      "passed": true
+    },
+    {
+      "name": "article-en dual theme-color",
+      "passed": true
+    },
+    {
+      "name": "article-en Open Graph",
+      "passed": true
+    },
+    {
+      "name": "article-en Twitter card/image",
+      "passed": true
+    },
+    {
+      "name": "article-en JSON-LD",
+      "passed": true
+    },
+    {
+      "name": "article-en BlogPosting and BreadcrumbList",
+      "passed": true
+    },
+    {
+      "name": "robots allows crawling",
+      "passed": true
+    },
+    {
+      "name": "robots blocks APIs and private routes",
+      "passed": true
+    },
+    {
+      "name": "robots points at sitemap",
+      "passed": true
+    },
+    {
+      "name": "sitemap has20 local post routes",
+      "passed": true
+    },
+    {
+      "name": "sitemap post lastmod",
+      "passed": true
+    },
+    {
+      "name": "sitemap post language alternatives",
+      "passed": true
+    },
+    {
+      "name": "sitemap single owned host",
+      "passed": true
+    },
+    {
+      "name": "blog pages6+4 all10 distinct",
+      "passed": true
+    },
+    {
+      "name": "blog metadata",
+      "passed": true
+    },
+    {
+      "name": "blog excerpts free of author/media URLs",
+      "passed": true
+    },
+    {
+      "name": "llms local20+Medium10+originals",
+      "passed": true
+    },
+    {
+      "name": "llms-full local20+Medium10+originals",
+      "passed": true
+    }
+  ],
+  "warnings": [],
+  "summary": {
+    "passed": 54,
+    "failed": 0
+  },
+  "notMeasured": [
+    "Lighthouse scores",
+    "browser console",
+    "CLS",
+    "rendered contrast",
+    "interactive flows"
+  ]
+}

@@ -54,5 +54,12 @@
     "syntheticM4AHeaderUsed": true,
     "scope": "Container negotiation and MIME/Transcribe mapping only. No browser, Transcribe job or Gmail delivery claimed."
   },
-  "fallback": "Attach an existing MP4/M4A, WebM or Ogg audio file, or type a message. Audio upload requires consent."
+  "fallback": "Attach an existing MP4/M4A, WebM or Ogg audio file, or type a message. Audio upload requires consent.",
+  "productionHeadersAfterChange": {
+    "httpsStatus": 200,
+    "permissionsPolicy": "microphone=(self)",
+    "evidence": "../regression/production-headers.txt",
+    "frontendCommit": "ba8ff885b09dfb403e98114eafd9c81fd62046c3"
+  },
+  "backendMimeChangesDeployed": false
 }

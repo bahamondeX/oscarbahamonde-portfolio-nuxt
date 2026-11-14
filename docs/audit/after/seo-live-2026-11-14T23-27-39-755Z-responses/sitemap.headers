@@ -1,0 +1,30 @@
+HTTP/1.1 200 OK
+date: Sat, 14 Nov 2026 23:27:47 GMT
+
+HTTP/2 307 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/plain
+date: Sat, 14 Nov 2026 23:27:47 GMT
+location: /sitemap_index.xml
+permissions-policy: microphone=(self)
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-id: gru1::gbwb8-1794698867739-5c579cfed479
+
+HTTP/2 200 
+age: 0
+cache-control: public, max-age=600
+content-type: text/xml; charset=UTF-8
+date: Sat, 14 Nov 2026 23:27:48 GMT
+permissions-policy: microphone=(self)
+server: Vercel
+strict-transport-security: max-age=63072000
+x-robots-tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+x-sitemap-cache-duration: 600s
+x-sitemap-cache-expires: 2026-11-14T23:37:48.953Z
+x-sitemap-cache-remaining: 600s
+x-sitemap-generated: 2026-11-14T23:27:48.953Z
+x-vercel-cache: MISS
+x-vercel-id: gru1::iad1::jsh7f-1794698868023-27a9f367ae56
+content-length: 471
+

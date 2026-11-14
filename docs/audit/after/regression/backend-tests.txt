@@ -1,0 +1,92 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> test
+> node --import tsx --test test/*.test.ts
+
+{"_aws":{"Timestamp":1794698218947,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"Tokens","Unit":"Count"}]}]},"Tokens":30}
+{"_aws":{"Timestamp":1794698218956,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"Tokens","Unit":"Count"}]}]},"Tokens":0}
+{"_aws":{"Timestamp":1794698218957,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"Tokens","Unit":"Count"}]}]},"Tokens":0}
+{"_aws":{"Timestamp":1794698218969,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"Tokens","Unit":"Count"}]}]},"Tokens":0}
+{"_aws":{"Timestamp":1794698218982,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"Tokens","Unit":"Count"}]}]},"Tokens":0}
+{"_aws":{"Timestamp":1794698218985,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"Tokens","Unit":"Count"}]}]},"Tokens":0}
+{"_aws":{"Timestamp":1794698218987,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"Tokens","Unit":"Count"}]}]},"Tokens":321}
+✔ ConverseStream forwards guarded chunks and persists both observable messages (44.958209ms)
+✔ email tool request becomes a pending confirmation and never executes on model instruction alone (7.43275ms)
+✔ partial Bedrock stream errors cannot appear as successfully completed responses (0.776583ms)
+✔ anonymous chat answers without persisting messages or personal tool arguments (12.49025ms)
+✔ current Lima time is outside the reusable knowledge prefix (11.244042ms)
+✔ every model request includes exact catalog pricing policy without restricting technical explanations (1.283042ms)
+✔ aggregate token budget can stop before the independent 60-turn cap without invoking Bedrock (1.4785ms)
+✔ usage from a completed round is retained when the following model call fails (1.780291ms)
+✔ negotiates only advertised recording containers for Safari and Chromium (0.74175ms)
+✔ M4A file signature maps to the MP4 upload contract and Transcribe container (2.125084ms)
+✔ codec parameters normalize consistently without accepting arbitrary file formats (0.085125ms)
+✔ Google freebusy applies buffers and never treats provider error as free (3.503209ms)
+✔ consent and the complete authorized history commit atomically or fail together (2.000125ms)
+✔ SSE evaluation preserves UTF-8 and events at every byte boundary (7.918041ms)
+✔ incomplete SSE or transport errors cannot count as evaluation pass (0.362292ms)
+{"_aws":{"Timestamp":1794698218979,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"GroundingCorrections","Unit":"Count"}]}]},"GroundingCorrections":1}
+{"event":"grounding","corrections":[{"reason":"unbound_biographical_claim_replaced","sourceIds":["employment:dynata"]}]}
+{"_aws":{"Timestamp":1794698218979,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"Tokens","Unit":"Count"}]}]},"Tokens":0}
+✔ record references are rendered from source including scope, exact dates and expired status (69.264917ms)
+✔ wrong role/date/company and certification claims cannot override their source records (1.906208ms)
+✔ forged source references and source-adjacent false claims are replaced before display (0.229292ms)
+✔ unknown facts remain unknown and technical examples retain their content (0.950291ms)
+✔ no unvalidated date/credential delta leaks through the Lambda stream or stored history (2.979708ms)
+✔ code formatting and unrelated negation cannot bypass biography checks (0.429125ms)
+✔ achievement dates stay associated with the achievement, not any year in the corpus (0.309083ms)
+✔ omitted subjects, inverted employer claims and fabricated booking confirmation are checked (0.392708ms)
+✔ multiple services on one line keep their separate exact starting prices and scopes (2.762041ms)
+✔ ambiguous source names in ordinary technical advice do not become career claims (0.510458ms)
+✔ a quoted service does not authorize delivery guarantees or fictitious email receipts (0.778375ms)
+✔ lead stream has durable failures and TTL/KMS storage is enabled (2.257875ms)
+✔ lead validation can query only the message table (2.188ms)
+✔ conversational knowledge keeps source facts and only the requested language without UI/RSS payloads (0.636875ms)
+✔ closed employment cannot become current during context projection and all service floors remain exact (0.127916ms)
+✔ identity, job dates and commercial grounding follow the knowledge and stay in the last uncached block (28.218167ms)
+{"_aws":{"Timestamp":1794698219059,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"LeadEmails","Unit":"Count"}]}]},"LeadEmails":1}
+{"_aws":{"Timestamp":1794698219061,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"LeadEmails","Unit":"Count"}]}]},"LeadEmails":1}
+{"_aws":{"Timestamp":1794698219061,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"NotificationErrors","Unit":"Count"}]}]},"NotificationErrors":1}
+{"_aws":{"Timestamp":1794698219061,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"LeadEmails","Unit":"Count"}]}]},"LeadEmails":1}
+{"_aws":{"Timestamp":1794698219062,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"LeadEmails","Unit":"Count"}]}]},"LeadEmails":1}
+{"_aws":{"Timestamp":1794698219062,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"NotificationErrors","Unit":"Count"}]}]},"NotificationErrors":1}
+{"_aws":{"Timestamp":1794698219062,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"NotificationErrors","Unit":"Count"}]}]},"NotificationErrors":1}
+{"_aws":{"Timestamp":1794698219062,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"NotificationErrors","Unit":"Count"}]}]},"NotificationErrors":1}
+{"_aws":{"Timestamp":1794698219062,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"LeadEmails","Unit":"Count"}]}]},"LeadEmails":1}
+✔ INSERT immediate delivery, duplicate stream records idempotent after successful send (31.112042ms)
+✔ MODIFY qualification sends final transcript, summary and audio exactly once per completed milestone (0.543208ms)
+✔ Gmail failure returns sequence number for retries and DLQ, never acknowledges dropped lead (0.261917ms)
+✔ TTL deletes never send notifications (0.059334ms)
+✔ AWS Lambda Context cannot replace notification dependencies (0.254083ms)
+✔ failed media cannot block final lead delivery or drop valid originals and transcript (0.412417ms)
+✔ recent pending media retries finitely then delivers valid originals with an explicit processing note (0.505833ms)
+✔ abandoned uploads expire from the processing wait and failed files are terminal (0.081125ms)
+{"_aws":{"Timestamp":1794698219154,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"GroundingCorrections","Unit":"Count"}]}]},"GroundingCorrections":2}
+{"event":"grounding","corrections":[{"reason":"service_quote_replaced_from_catalog","sourceIds":["service:ai"]},{"reason":"unverified_currency_removed","sourceIds":[]}]}
+{"_aws":{"Timestamp":1794698219155,"CloudWatchMetrics":[{"Namespace":"OscarAssistant","Dimensions":[[]],"Metrics":[{"Name":"Tokens","Unit":"Count"}]}]},"Tokens":0}
+✔ unsupported vendor currency amounts and complete ranges are replaced without losing technical guidance (3.8235ms)
+✔ only the matching published service price is preserved, including headings and formatted prices (0.610458ms)
+✔ an explicitly visitor-supplied budget may be repeated, but is not an authorized quote (0.279833ms)
+✔ code and shell variables are preserved rather than mistaken for financial claims (0.131208ms)
+✔ every possible delta boundary has identical safe output and never releases partial currency claims (3.335625ms)
+✔ Lambda SSE and saved assistant history contain only the same sanitized answer (21.302ms)
+✔ indivisible source records preserve every service price/scope and employer/credential date (6.59625ms)
+✔ service synonyms and typographical errors retrieve the matching intact record in top three in both languages (76.000416ms)
+✔ entity/date and credential queries preserve source provenance and scope rather than substitute a similar record (13.634375ms)
+✔ explicit commercial intent cannot rank an ITIL service-management credential above services (0.497875ms)
+✔ strict tools reject injected fields, arbitrary recipients, overlong emails and unbounded durations (2.85025ms)
+✔ Lima windows enforce lunch, four hour notice, weekends and boundaries (0.445792ms)
+✔ confirmation cannot be forged by adding arbitrary tool fields or sending two payload types (1.105125ms)
+✔ MIME rejects header injection and escapes HTML; audit never logs PII values (0.229375ms)
+✔ versioned catalog uses existing prices, no invented services (0.320708ms)
+✔ updating a saved lead preserves its primary key and creation timestamp (3.220292ms)
+✔ summary accepts exact evidence and rejects invented claims (1.786208ms)
+✔ anonymous history is bounded and cannot carry system roles or tool instructions (1.27475ms)
+ℹ tests 57
+ℹ suites 0
+ℹ pass 57
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1058.418416

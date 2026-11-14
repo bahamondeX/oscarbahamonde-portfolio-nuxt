@@ -1,0 +1,17 @@
+{
+  "newSession": true,
+  "automaticallyValidated": true,
+  "manualCaptchaSolved": false,
+  "englishReplyReceived": true,
+  "spanishReplyReceived": true,
+  "conversationSurvivedLocaleChange": true,
+  "consentRequiredBeforeChat": false,
+  "consentRequestedOnSend": true,
+  "sendAccepted": true,
+  "applicationErrors": 0,
+  "applicationWarnings": 0,
+  "thirdPartyObfuscatedCloudflareLogs": 8,
+  "backendRedeployed": false,
+  "failureRetry": "Implemented; forced provider failure not exercised",
+  "privateReceipt": "Conversation/screenshots/full logs retained privately"
+}

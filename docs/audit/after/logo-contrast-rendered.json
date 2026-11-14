@@ -1,22 +1,2470 @@
 {
-  "generatedAt": "2026-11-14T23:00:02.914Z",
-  "status": "incomplete",
+  "generatedAt": "2026-11-14T23:25:28.026Z",
+  "status": "passed",
   "threshold": 3,
   "statistic": "p10 of eroded solid foreground pixels",
   "expectedVariants": 8,
   "expectedLogosPerVariant": 14,
-  "missingVariants": [
-    "es-light-desktop",
-    "es-light-mobile",
-    "es-dark-desktop",
-    "es-dark-mobile",
-    "en-light-desktop",
-    "en-light-mobile",
-    "en-dark-desktop",
-    "en-dark-mobile"
-  ],
-  "measuredLogos": 0,
+  "missingVariants": [],
+  "measuredLogos": 112,
   "failures": [],
   "limitation": "Brand contrast metric is not an exhaustive WCAG conformance audit. Missing variants never count as passed.",
-  "variants": []
+  "variants": [
+    {
+      "checkedAt": "2026-11-14T23:24:03.889Z",
+      "url": "http://127.0.0.1:3188/en",
+      "variant": "en-dark-desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "browser": "chromium",
+      "measurement": "10th percentile of eroded solid brand foreground against rendered backing; minimum and fractionAbove3 also recorded",
+      "results": [
+        {
+          "id": "dynata",
+          "name": "Dynata",
+          "src": "/logos/dynata.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 120.59375,
+            "y": 529.53125,
+            "width": 160,
+            "height": 41.1875
+          },
+          "foregroundPixels": 837,
+          "backing": "rendered chip",
+          "minimum": 2.9565496654872394,
+          "p10": 12.207549972429357,
+          "median": 12.207549972429357,
+          "fractionAbove3": 0.984468339307049,
+          "pass": true
+        },
+        {
+          "id": "globant",
+          "name": "Globant",
+          "src": "/logos/globant.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 533.71875,
+            "width": 160,
+            "height": 32.796875
+          },
+          "foregroundPixels": 964,
+          "backing": "rendered chip",
+          "minimum": 7.971840915606686,
+          "p10": 10.966107248157252,
+          "median": 17.73971700407407,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "plainenglish",
+          "name": "In Plain English",
+          "src": "/logos/plainenglish.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.109375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 268,
+          "backing": "opaque source rectangle",
+          "minimum": 2.2591788528237444,
+          "p10": 10.766895568999011,
+          "median": 17.274212673404794,
+          "fractionAbove3": 0.996268656716418,
+          "pass": true
+        },
+        {
+          "id": "pronti",
+          "name": "Pronti AI",
+          "src": "/logos/pronti.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.265625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.1865407704882842,
+          "p10": 9.39825391113492,
+          "median": 14.318942112058078,
+          "fractionAbove3": 0.9405391786344167,
+          "pass": true
+        },
+        {
+          "id": "bluetab",
+          "name": "Bluetab América, an IBM Company",
+          "src": "/logos/bluetab.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.1875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 285,
+          "backing": "opaque source rectangle",
+          "minimum": 1.3126439739759503,
+          "p10": 3.8028104605876716,
+          "median": 3.999852949407121,
+          "fractionAbove3": 0.968421052631579,
+          "pass": true
+        },
+        {
+          "id": "indra",
+          "name": "Indra",
+          "src": "/logos/indra.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 517.640625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0006122113242268,
+          "p10": 15.569066459097224,
+          "median": 15.94365961192309,
+          "fractionAbove3": 0.9599395313681028,
+          "pass": true
+        },
+        {
+          "id": "data-analytics",
+          "name": "DATA & ANALYTICS",
+          "src": "/logos/data-analytics.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 517.578125,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 467,
+          "backing": "opaque source rectangle",
+          "minimum": 1.3326388232838635,
+          "p10": 5.174296115465296,
+          "median": 11.201788790415135,
+          "fractionAbove3": 0.9571734475374732,
+          "pass": true
+        },
+        {
+          "id": "valtx",
+          "name": "Valtx Perú",
+          "src": "/logos/valtx.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.390625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 170,
+          "backing": "opaque source rectangle",
+          "minimum": 1.1082420382099691,
+          "p10": 6.530442901721,
+          "median": 17.73971700407407,
+          "fractionAbove3": 0.9352941176470588,
+          "pass": true
+        },
+        {
+          "id": "telefonica",
+          "name": "Telefónica",
+          "src": "/logos/telefonica.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 120.59375,
+            "y": 521.59375,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 11.041994707416007,
+          "p10": 13.570129287134204,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "cotener",
+          "name": "COTENER",
+          "src": "/logos/cotener.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 517.640625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0360733872824854,
+          "p10": 5.034167702189759,
+          "median": 9.904369122687998,
+          "fractionAbove3": 0.9531368102796675,
+          "pass": true
+        },
+        {
+          "id": "huawei",
+          "name": "Huawei Technologies",
+          "src": "/logos/huawei.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.109375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 794,
+          "backing": "rendered chip",
+          "minimum": 4.626569286998451,
+          "p10": 5.883276112656104,
+          "median": 5.883276112656104,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "netcor",
+          "name": "NETCORPERU",
+          "src": "/logos/netcor.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 527.421875,
+            "width": 160,
+            "height": 44.28125
+          },
+          "foregroundPixels": 977,
+          "backing": "opaque source rectangle",
+          "minimum": 2.336711627456066,
+          "p10": 7.285320429865515,
+          "median": 20.818163441541376,
+          "fractionAbove3": 0.9856704196519959,
+          "pass": true
+        },
+        {
+          "id": "osc",
+          "name": "OSC Telecoms & Security Solutions",
+          "src": "/logos/osc.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 131,
+          "backing": "opaque source rectangle",
+          "minimum": 1.867666997049572,
+          "p10": 4.087700677325476,
+          "median": 7.949471726382409,
+          "fractionAbove3": 0.9847328244274809,
+          "pass": true
+        },
+        {
+          "id": "telefonica-trainee",
+          "name": "Telefónica",
+          "src": "/logos/telefonica-trainee.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 521.25,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 12.950210332627359,
+          "p10": 15.901776782707145,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-11-14T23:25:04.705Z",
+      "url": "http://127.0.0.1:3188/en",
+      "variant": "en-dark-mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "chromium",
+      "measurement": "10th percentile of eroded solid brand foreground against rendered backing; minimum and fractionAbove3 also recorded",
+      "results": [
+        {
+          "id": "dynata",
+          "name": "Dynata",
+          "src": "/logos/dynata.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 457.765625,
+            "width": 160,
+            "height": 41.1875
+          },
+          "foregroundPixels": 837,
+          "backing": "rendered chip",
+          "minimum": 2.9565496654872394,
+          "p10": 12.207549972429357,
+          "median": 12.207549972429357,
+          "fractionAbove3": 0.984468339307049,
+          "pass": true
+        },
+        {
+          "id": "globant",
+          "name": "Globant",
+          "src": "/logos/globant.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 461.28125,
+            "width": 160,
+            "height": 32.796875
+          },
+          "foregroundPixels": 964,
+          "backing": "rendered chip",
+          "minimum": 8.839712783277891,
+          "p10": 10.966107248157252,
+          "median": 17.73971700407407,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "plainenglish",
+          "name": "In Plain English",
+          "src": "/logos/plainenglish.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 264,
+          "backing": "opaque source rectangle",
+          "minimum": 3.2655025325483544,
+          "p10": 11.43790550018171,
+          "median": 17.30501249474423,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "pronti",
+          "name": "Pronti AI",
+          "src": "/logos/pronti.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.984375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.1865407704882842,
+          "p10": 9.537822162537985,
+          "median": 14.613604036096925,
+          "fractionAbove3": 0.9405391786344167,
+          "pass": true
+        },
+        {
+          "id": "bluetab",
+          "name": "Bluetab América, an IBM Company",
+          "src": "/logos/bluetab.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.609375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 285,
+          "backing": "opaque source rectangle",
+          "minimum": 1.8367364585953398,
+          "p10": 3.8000256361933675,
+          "median": 3.999852949407121,
+          "fractionAbove3": 0.9754385964912281,
+          "pass": true
+        },
+        {
+          "id": "indra",
+          "name": "Indra",
+          "src": "/logos/indra.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.203125,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0006122113242268,
+          "p10": 15.797323834295177,
+          "median": 15.94365961192309,
+          "fractionAbove3": 0.9599395313681028,
+          "pass": true
+        },
+        {
+          "id": "data-analytics",
+          "name": "DATA & ANALYTICS",
+          "src": "/logos/data-analytics.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.859375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 467,
+          "backing": "opaque source rectangle",
+          "minimum": 1.3326388232838635,
+          "p10": 5.174296115465296,
+          "median": 11.201788790415135,
+          "fractionAbove3": 0.9571734475374732,
+          "pass": true
+        },
+        {
+          "id": "valtx",
+          "name": "Valtx Perú",
+          "src": "/logos/valtx.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.171875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 170,
+          "backing": "opaque source rectangle",
+          "minimum": 1.1082420382099691,
+          "p10": 6.530442901721,
+          "median": 17.73971700407407,
+          "fractionAbove3": 0.9352941176470588,
+          "pass": true
+        },
+        {
+          "id": "telefonica",
+          "name": "Telefónica",
+          "src": "/logos/telefonica.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 449.53125,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 11.041994707416007,
+          "p10": 13.570129287134204,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "cotener",
+          "name": "COTENER",
+          "src": "/logos/cotener.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.71875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0360733872824854,
+          "p10": 5.034167702189759,
+          "median": 9.904369122687998,
+          "fractionAbove3": 0.9531368102796675,
+          "pass": true
+        },
+        {
+          "id": "huawei",
+          "name": "Huawei Technologies",
+          "src": "/logos/huawei.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 767,
+          "backing": "rendered chip",
+          "minimum": 4.949817392193102,
+          "p10": 5.883276112656104,
+          "median": 5.883276112656104,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "netcor",
+          "name": "NETCORPERU",
+          "src": "/logos/netcor.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 456.34375,
+            "width": 160,
+            "height": 44.28125
+          },
+          "foregroundPixels": 977,
+          "backing": "opaque source rectangle",
+          "minimum": 2.336711627456066,
+          "p10": 7.285320429865515,
+          "median": 20.818163441541376,
+          "fractionAbove3": 0.9856704196519959,
+          "pass": true
+        },
+        {
+          "id": "osc",
+          "name": "OSC Telecoms & Security Solutions",
+          "src": "/logos/osc.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 128,
+          "backing": "opaque source rectangle",
+          "minimum": 2.7070665772985674,
+          "p10": 4.165241945692868,
+          "median": 8.408909354851092,
+          "fractionAbove3": 0.9921875,
+          "pass": true
+        },
+        {
+          "id": "telefonica-trainee",
+          "name": "Telefónica",
+          "src": "/logos/telefonica-trainee.png",
+          "locale": "en",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 449.34375,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 13.065132652907232,
+          "p10": 16.04307584760188,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-11-14T23:23:54.597Z",
+      "url": "http://127.0.0.1:3188/en",
+      "variant": "en-light-desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "browser": "chromium",
+      "measurement": "10th percentile of eroded solid brand foreground against rendered backing; minimum and fractionAbove3 also recorded",
+      "results": [
+        {
+          "id": "dynata",
+          "name": "Dynata",
+          "src": "/logos/dynata.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 120.59375,
+            "y": 529.53125,
+            "width": 160,
+            "height": 41.1875
+          },
+          "foregroundPixels": 837,
+          "backing": "rendered chip",
+          "minimum": 2.9565496654872394,
+          "p10": 12.207549972429357,
+          "median": 12.207549972429357,
+          "fractionAbove3": 0.984468339307049,
+          "pass": true
+        },
+        {
+          "id": "globant",
+          "name": "Globant",
+          "src": "/logos/globant.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 533.71875,
+            "width": 160,
+            "height": 32.796875
+          },
+          "foregroundPixels": 964,
+          "backing": "rendered chip",
+          "minimum": 7.971840915606686,
+          "p10": 10.966107248157252,
+          "median": 17.73971700407407,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "plainenglish",
+          "name": "In Plain English",
+          "src": "/logos/plainenglish.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.109375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 268,
+          "backing": "opaque source rectangle",
+          "minimum": 2.2591788528237444,
+          "p10": 10.766895568999011,
+          "median": 17.274212673404794,
+          "fractionAbove3": 0.996268656716418,
+          "pass": true
+        },
+        {
+          "id": "pronti",
+          "name": "Pronti AI",
+          "src": "/logos/pronti.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.265625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.1865407704882842,
+          "p10": 9.39825391113492,
+          "median": 14.318942112058078,
+          "fractionAbove3": 0.9405391786344167,
+          "pass": true
+        },
+        {
+          "id": "bluetab",
+          "name": "Bluetab América, an IBM Company",
+          "src": "/logos/bluetab.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.1875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 285,
+          "backing": "opaque source rectangle",
+          "minimum": 1.3126439739759503,
+          "p10": 3.8028104605876716,
+          "median": 3.999852949407121,
+          "fractionAbove3": 0.968421052631579,
+          "pass": true
+        },
+        {
+          "id": "indra",
+          "name": "Indra",
+          "src": "/logos/indra.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 517.640625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0006122113242268,
+          "p10": 15.569066459097224,
+          "median": 15.94365961192309,
+          "fractionAbove3": 0.9599395313681028,
+          "pass": true
+        },
+        {
+          "id": "data-analytics",
+          "name": "DATA & ANALYTICS",
+          "src": "/logos/data-analytics.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 517.578125,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 467,
+          "backing": "opaque source rectangle",
+          "minimum": 1.3326388232838635,
+          "p10": 5.174296115465296,
+          "median": 11.201788790415135,
+          "fractionAbove3": 0.9571734475374732,
+          "pass": true
+        },
+        {
+          "id": "valtx",
+          "name": "Valtx Perú",
+          "src": "/logos/valtx.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.390625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 170,
+          "backing": "opaque source rectangle",
+          "minimum": 1.1082420382099691,
+          "p10": 6.530442901721,
+          "median": 17.73971700407407,
+          "fractionAbove3": 0.9352941176470588,
+          "pass": true
+        },
+        {
+          "id": "telefonica",
+          "name": "Telefónica",
+          "src": "/logos/telefonica.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 120.59375,
+            "y": 521.59375,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 11.041994707416007,
+          "p10": 13.570129287134204,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "cotener",
+          "name": "COTENER",
+          "src": "/logos/cotener.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 517.640625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0360733872824854,
+          "p10": 5.034167702189759,
+          "median": 9.904369122687998,
+          "fractionAbove3": 0.9531368102796675,
+          "pass": true
+        },
+        {
+          "id": "huawei",
+          "name": "Huawei Technologies",
+          "src": "/logos/huawei.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.109375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 794,
+          "backing": "rendered chip",
+          "minimum": 4.626569286998451,
+          "p10": 5.883276112656104,
+          "median": 5.883276112656104,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "netcor",
+          "name": "NETCORPERU",
+          "src": "/logos/netcor.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 527.421875,
+            "width": 160,
+            "height": 44.28125
+          },
+          "foregroundPixels": 977,
+          "backing": "opaque source rectangle",
+          "minimum": 2.336711627456066,
+          "p10": 7.285320429865515,
+          "median": 20.818163441541376,
+          "fractionAbove3": 0.9856704196519959,
+          "pass": true
+        },
+        {
+          "id": "osc",
+          "name": "OSC Telecoms & Security Solutions",
+          "src": "/logos/osc.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 131,
+          "backing": "opaque source rectangle",
+          "minimum": 1.867666997049572,
+          "p10": 4.087700677325476,
+          "median": 7.949471726382409,
+          "fractionAbove3": 0.9847328244274809,
+          "pass": true
+        },
+        {
+          "id": "telefonica-trainee",
+          "name": "Telefónica",
+          "src": "/logos/telefonica-trainee.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 521.25,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 12.950210332627359,
+          "p10": 15.901776782707145,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-11-14T23:24:57.124Z",
+      "url": "http://127.0.0.1:3188/en",
+      "variant": "en-light-mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "chromium",
+      "measurement": "10th percentile of eroded solid brand foreground against rendered backing; minimum and fractionAbove3 also recorded",
+      "results": [
+        {
+          "id": "dynata",
+          "name": "Dynata",
+          "src": "/logos/dynata.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 457.765625,
+            "width": 160,
+            "height": 41.1875
+          },
+          "foregroundPixels": 837,
+          "backing": "rendered chip",
+          "minimum": 2.9565496654872394,
+          "p10": 12.207549972429357,
+          "median": 12.207549972429357,
+          "fractionAbove3": 0.984468339307049,
+          "pass": true
+        },
+        {
+          "id": "globant",
+          "name": "Globant",
+          "src": "/logos/globant.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 461.28125,
+            "width": 160,
+            "height": 32.796875
+          },
+          "foregroundPixels": 964,
+          "backing": "rendered chip",
+          "minimum": 8.839712783277891,
+          "p10": 10.966107248157252,
+          "median": 17.73971700407407,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "plainenglish",
+          "name": "In Plain English",
+          "src": "/logos/plainenglish.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 264,
+          "backing": "opaque source rectangle",
+          "minimum": 3.2655025325483544,
+          "p10": 11.43790550018171,
+          "median": 17.30501249474423,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "pronti",
+          "name": "Pronti AI",
+          "src": "/logos/pronti.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.984375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.1865407704882842,
+          "p10": 9.537822162537985,
+          "median": 14.613604036096925,
+          "fractionAbove3": 0.9405391786344167,
+          "pass": true
+        },
+        {
+          "id": "bluetab",
+          "name": "Bluetab América, an IBM Company",
+          "src": "/logos/bluetab.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.609375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 285,
+          "backing": "opaque source rectangle",
+          "minimum": 1.8367364585953398,
+          "p10": 3.8000256361933675,
+          "median": 3.999852949407121,
+          "fractionAbove3": 0.9754385964912281,
+          "pass": true
+        },
+        {
+          "id": "indra",
+          "name": "Indra",
+          "src": "/logos/indra.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.203125,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0006122113242268,
+          "p10": 15.797323834295177,
+          "median": 15.94365961192309,
+          "fractionAbove3": 0.9599395313681028,
+          "pass": true
+        },
+        {
+          "id": "data-analytics",
+          "name": "DATA & ANALYTICS",
+          "src": "/logos/data-analytics.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.859375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 467,
+          "backing": "opaque source rectangle",
+          "minimum": 1.3326388232838635,
+          "p10": 5.174296115465296,
+          "median": 11.201788790415135,
+          "fractionAbove3": 0.9571734475374732,
+          "pass": true
+        },
+        {
+          "id": "valtx",
+          "name": "Valtx Perú",
+          "src": "/logos/valtx.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.171875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 170,
+          "backing": "opaque source rectangle",
+          "minimum": 1.1082420382099691,
+          "p10": 6.530442901721,
+          "median": 17.73971700407407,
+          "fractionAbove3": 0.9352941176470588,
+          "pass": true
+        },
+        {
+          "id": "telefonica",
+          "name": "Telefónica",
+          "src": "/logos/telefonica.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 449.53125,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 11.041994707416007,
+          "p10": 13.570129287134204,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "cotener",
+          "name": "COTENER",
+          "src": "/logos/cotener.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.71875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0360733872824854,
+          "p10": 5.034167702189759,
+          "median": 9.904369122687998,
+          "fractionAbove3": 0.9531368102796675,
+          "pass": true
+        },
+        {
+          "id": "huawei",
+          "name": "Huawei Technologies",
+          "src": "/logos/huawei.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 767,
+          "backing": "rendered chip",
+          "minimum": 4.949817392193102,
+          "p10": 5.883276112656104,
+          "median": 5.883276112656104,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "netcor",
+          "name": "NETCORPERU",
+          "src": "/logos/netcor.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 456.34375,
+            "width": 160,
+            "height": 44.28125
+          },
+          "foregroundPixels": 977,
+          "backing": "opaque source rectangle",
+          "minimum": 2.336711627456066,
+          "p10": 7.285320429865515,
+          "median": 20.818163441541376,
+          "fractionAbove3": 0.9856704196519959,
+          "pass": true
+        },
+        {
+          "id": "osc",
+          "name": "OSC Telecoms & Security Solutions",
+          "src": "/logos/osc.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 128,
+          "backing": "opaque source rectangle",
+          "minimum": 2.7070665772985674,
+          "p10": 4.165241945692868,
+          "median": 8.408909354851092,
+          "fractionAbove3": 0.9921875,
+          "pass": true
+        },
+        {
+          "id": "telefonica-trainee",
+          "name": "Telefónica",
+          "src": "/logos/telefonica-trainee.png",
+          "locale": "en",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 449.34375,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 13.065132652907232,
+          "p10": 16.04307584760188,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-11-14T23:23:44.866Z",
+      "url": "http://127.0.0.1:3188/es",
+      "variant": "es-dark-desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "browser": "chromium",
+      "measurement": "10th percentile of eroded solid brand foreground against rendered backing; minimum and fractionAbove3 also recorded",
+      "results": [
+        {
+          "id": "dynata",
+          "name": "Dynata",
+          "src": "/logos/dynata.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 120.59375,
+            "y": 529.625,
+            "width": 160,
+            "height": 41.1875
+          },
+          "foregroundPixels": 837,
+          "backing": "rendered chip",
+          "minimum": 2.9565496654872394,
+          "p10": 12.207549972429357,
+          "median": 12.207549972429357,
+          "fractionAbove3": 0.984468339307049,
+          "pass": true
+        },
+        {
+          "id": "globant",
+          "name": "Globant",
+          "src": "/logos/globant.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 533.828125,
+            "width": 160,
+            "height": 32.796875
+          },
+          "foregroundPixels": 964,
+          "backing": "rendered chip",
+          "minimum": 7.971840915606686,
+          "p10": 10.966107248157252,
+          "median": 17.73971700407407,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "plainenglish",
+          "name": "In Plain English",
+          "src": "/logos/plainenglish.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.25,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 268,
+          "backing": "opaque source rectangle",
+          "minimum": 2.2591788528237444,
+          "p10": 10.766895568999011,
+          "median": 17.274212673404794,
+          "fractionAbove3": 0.996268656716418,
+          "pass": true
+        },
+        {
+          "id": "pronti",
+          "name": "Pronti AI",
+          "src": "/logos/pronti.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.40625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.1865407704882842,
+          "p10": 9.39825391113492,
+          "median": 14.318942112058078,
+          "fractionAbove3": 0.9405391786344167,
+          "pass": true
+        },
+        {
+          "id": "bluetab",
+          "name": "Bluetab América, an IBM Company",
+          "src": "/logos/bluetab.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.359375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 285,
+          "backing": "opaque source rectangle",
+          "minimum": 1.3126439739759503,
+          "p10": 3.8028104605876716,
+          "median": 3.999852949407121,
+          "fractionAbove3": 0.968421052631579,
+          "pass": true
+        },
+        {
+          "id": "indra",
+          "name": "Indra",
+          "src": "/logos/indra.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.171875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0006122113242268,
+          "p10": 15.797323834295177,
+          "median": 15.94365961192309,
+          "fractionAbove3": 0.9599395313681028,
+          "pass": true
+        },
+        {
+          "id": "data-analytics",
+          "name": "DATA & ANALYTICS",
+          "src": "/logos/data-analytics.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.46875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 467,
+          "backing": "opaque source rectangle",
+          "minimum": 1.192138863609936,
+          "p10": 6.484186114084169,
+          "median": 11.201788790415135,
+          "fractionAbove3": 0.9571734475374732,
+          "pass": true
+        },
+        {
+          "id": "valtx",
+          "name": "Valtx Perú",
+          "src": "/logos/valtx.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 517.625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 170,
+          "backing": "opaque source rectangle",
+          "minimum": 1.1082420382099691,
+          "p10": 6.476007094976916,
+          "median": 17.73971700407407,
+          "fractionAbove3": 0.9352941176470588,
+          "pass": true
+        },
+        {
+          "id": "telefonica",
+          "name": "Telefónica",
+          "src": "/logos/telefonica.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 120.59375,
+            "y": 521.5,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 11.041994707416007,
+          "p10": 13.570129287134204,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "cotener",
+          "name": "COTENER",
+          "src": "/logos/cotener.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.234375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0360733872824854,
+          "p10": 5.013444581239202,
+          "median": 9.89484643559247,
+          "fractionAbove3": 0.9531368102796675,
+          "pass": true
+        },
+        {
+          "id": "huawei",
+          "name": "Huawei Technologies",
+          "src": "/logos/huawei.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.046875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 794,
+          "backing": "rendered chip",
+          "minimum": 4.626569286998451,
+          "p10": 5.883276112656104,
+          "median": 5.883276112656104,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "netcor",
+          "name": "NETCORPERU",
+          "src": "/logos/netcor.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 528.046875,
+            "width": 160,
+            "height": 44.28125
+          },
+          "foregroundPixels": 977,
+          "backing": "opaque source rectangle",
+          "minimum": 2.2855967563093658,
+          "p10": 7.038022252931712,
+          "median": 20.844042578122526,
+          "fractionAbove3": 0.9795291709314228,
+          "pass": true
+        },
+        {
+          "id": "osc",
+          "name": "OSC Telecoms & Security Solutions",
+          "src": "/logos/osc.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 128,
+          "backing": "opaque source rectangle",
+          "minimum": 2.7070665772985674,
+          "p10": 4.165241945692868,
+          "median": 8.408909354851092,
+          "fractionAbove3": 0.9921875,
+          "pass": true
+        },
+        {
+          "id": "telefonica-trainee",
+          "name": "Telefónica",
+          "src": "/logos/telefonica-trainee.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 521.546875,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 11.041994707416007,
+          "p10": 13.570129287134204,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-11-14T23:24:48.972Z",
+      "url": "http://127.0.0.1:3188/es",
+      "variant": "es-dark-mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "chromium",
+      "measurement": "10th percentile of eroded solid brand foreground against rendered backing; minimum and fractionAbove3 also recorded",
+      "results": [
+        {
+          "id": "dynata",
+          "name": "Dynata",
+          "src": "/logos/dynata.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 457.109375,
+            "width": 160,
+            "height": 41.1875
+          },
+          "foregroundPixels": 837,
+          "backing": "rendered chip",
+          "minimum": 3.317346998415083,
+          "p10": 12.207549972429357,
+          "median": 12.207549972429357,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "globant",
+          "name": "Globant",
+          "src": "/logos/globant.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 461.671875,
+            "width": 160,
+            "height": 32.796875
+          },
+          "foregroundPixels": 964,
+          "backing": "rendered chip",
+          "minimum": 8.646274423480323,
+          "p10": 10.966107248157252,
+          "median": 17.73971700407407,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "plainenglish",
+          "name": "In Plain English",
+          "src": "/logos/plainenglish.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.109375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 268,
+          "backing": "opaque source rectangle",
+          "minimum": 2.2591788528237444,
+          "p10": 10.766895568999011,
+          "median": 17.274212673404794,
+          "fractionAbove3": 0.996268656716418,
+          "pass": true
+        },
+        {
+          "id": "pronti",
+          "name": "Pronti AI",
+          "src": "/logos/pronti.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.09375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.1865407704882842,
+          "p10": 9.39825391113492,
+          "median": 14.318942112058078,
+          "fractionAbove3": 0.9405391786344167,
+          "pass": true
+        },
+        {
+          "id": "bluetab",
+          "name": "Bluetab América, an IBM Company",
+          "src": "/logos/bluetab.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.78125,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 285,
+          "backing": "opaque source rectangle",
+          "minimum": 1.8367364585953398,
+          "p10": 3.8000256361933675,
+          "median": 3.999852949407121,
+          "fractionAbove3": 0.9754385964912281,
+          "pass": true
+        },
+        {
+          "id": "indra",
+          "name": "Indra",
+          "src": "/logos/indra.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.40625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0006122113242268,
+          "p10": 15.797323834295177,
+          "median": 15.94365961192309,
+          "fractionAbove3": 0.9599395313681028,
+          "pass": true
+        },
+        {
+          "id": "data-analytics",
+          "name": "DATA & ANALYTICS",
+          "src": "/logos/data-analytics.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.78125,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 467,
+          "backing": "opaque source rectangle",
+          "minimum": 1.3326388232838635,
+          "p10": 5.174296115465296,
+          "median": 11.201788790415135,
+          "fractionAbove3": 0.9571734475374732,
+          "pass": true
+        },
+        {
+          "id": "valtx",
+          "name": "Valtx Perú",
+          "src": "/logos/valtx.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.09375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 170,
+          "backing": "opaque source rectangle",
+          "minimum": 1.1082420382099691,
+          "p10": 6.530442901721,
+          "median": 17.73971700407407,
+          "fractionAbove3": 0.9352941176470588,
+          "pass": true
+        },
+        {
+          "id": "telefonica",
+          "name": "Telefónica",
+          "src": "/logos/telefonica.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 449.125,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 12.950210332627359,
+          "p10": 15.901776782707145,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "cotener",
+          "name": "COTENER",
+          "src": "/logos/cotener.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.671875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0360733872824854,
+          "p10": 5.034167702189759,
+          "median": 9.904369122687998,
+          "fractionAbove3": 0.9531368102796675,
+          "pass": true
+        },
+        {
+          "id": "huawei",
+          "name": "Huawei Technologies",
+          "src": "/logos/huawei.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.96875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 794,
+          "backing": "rendered chip",
+          "minimum": 4.626569286998451,
+          "p10": 5.883276112656104,
+          "median": 5.883276112656104,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "netcor",
+          "name": "NETCORPERU",
+          "src": "/logos/netcor.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 456,
+            "width": 160,
+            "height": 44.28125
+          },
+          "foregroundPixels": 977,
+          "backing": "opaque source rectangle",
+          "minimum": 2.2855967563093658,
+          "p10": 7.038022252931712,
+          "median": 20.844042578122526,
+          "fractionAbove3": 0.9795291709314228,
+          "pass": true
+        },
+        {
+          "id": "osc",
+          "name": "OSC Telecoms & Security Solutions",
+          "src": "/logos/osc.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.328125,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 131,
+          "backing": "opaque source rectangle",
+          "minimum": 1.867666997049572,
+          "p10": 4.087700677325476,
+          "median": 7.949471726382409,
+          "fractionAbove3": 0.9847328244274809,
+          "pass": true
+        },
+        {
+          "id": "telefonica-trainee",
+          "name": "Telefónica",
+          "src": "/logos/telefonica-trainee.png",
+          "locale": "es",
+          "theme": "dark",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 449.359375,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 13.065132652907232,
+          "p10": 16.04307584760188,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-11-14T23:23:35.667Z",
+      "url": "http://127.0.0.1:3188/es",
+      "variant": "es-light-desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "browser": "chromium",
+      "measurement": "10th percentile of eroded solid brand foreground against rendered backing; minimum and fractionAbove3 also recorded",
+      "results": [
+        {
+          "id": "dynata",
+          "name": "Dynata",
+          "src": "/logos/dynata.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 120.59375,
+            "y": 529.625,
+            "width": 160,
+            "height": 41.1875
+          },
+          "foregroundPixels": 837,
+          "backing": "rendered chip",
+          "minimum": 2.9565496654872394,
+          "p10": 12.207549972429357,
+          "median": 12.207549972429357,
+          "fractionAbove3": 0.984468339307049,
+          "pass": true
+        },
+        {
+          "id": "globant",
+          "name": "Globant",
+          "src": "/logos/globant.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 533.828125,
+            "width": 160,
+            "height": 32.796875
+          },
+          "foregroundPixels": 964,
+          "backing": "rendered chip",
+          "minimum": 7.971840915606686,
+          "p10": 10.966107248157252,
+          "median": 17.73971700407407,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "plainenglish",
+          "name": "In Plain English",
+          "src": "/logos/plainenglish.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.25,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 268,
+          "backing": "opaque source rectangle",
+          "minimum": 2.2591788528237444,
+          "p10": 10.766895568999011,
+          "median": 17.274212673404794,
+          "fractionAbove3": 0.996268656716418,
+          "pass": true
+        },
+        {
+          "id": "pronti",
+          "name": "Pronti AI",
+          "src": "/logos/pronti.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.40625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.1865407704882842,
+          "p10": 9.39825391113492,
+          "median": 14.318942112058078,
+          "fractionAbove3": 0.9405391786344167,
+          "pass": true
+        },
+        {
+          "id": "bluetab",
+          "name": "Bluetab América, an IBM Company",
+          "src": "/logos/bluetab.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.359375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 285,
+          "backing": "opaque source rectangle",
+          "minimum": 1.3126439739759503,
+          "p10": 3.8028104605876716,
+          "median": 3.999852949407121,
+          "fractionAbove3": 0.968421052631579,
+          "pass": true
+        },
+        {
+          "id": "indra",
+          "name": "Indra",
+          "src": "/logos/indra.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.171875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0006122113242268,
+          "p10": 15.797323834295177,
+          "median": 15.94365961192309,
+          "fractionAbove3": 0.9599395313681028,
+          "pass": true
+        },
+        {
+          "id": "data-analytics",
+          "name": "DATA & ANALYTICS",
+          "src": "/logos/data-analytics.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.46875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 467,
+          "backing": "opaque source rectangle",
+          "minimum": 1.192138863609936,
+          "p10": 6.484186114084169,
+          "median": 11.201788790415135,
+          "fractionAbove3": 0.9571734475374732,
+          "pass": true
+        },
+        {
+          "id": "valtx",
+          "name": "Valtx Perú",
+          "src": "/logos/valtx.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 517.625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 170,
+          "backing": "opaque source rectangle",
+          "minimum": 1.1082420382099691,
+          "p10": 6.476007094976916,
+          "median": 17.73971700407407,
+          "fractionAbove3": 0.9352941176470588,
+          "pass": true
+        },
+        {
+          "id": "telefonica",
+          "name": "Telefónica",
+          "src": "/logos/telefonica.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 120.59375,
+            "y": 521.5,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 11.041994707416007,
+          "p10": 13.570129287134204,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "cotener",
+          "name": "COTENER",
+          "src": "/logos/cotener.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 840.59375,
+            "y": 518.234375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0360733872824854,
+          "p10": 5.013444581239202,
+          "median": 9.89484643559247,
+          "fractionAbove3": 0.9531368102796675,
+          "pass": true
+        },
+        {
+          "id": "huawei",
+          "name": "Huawei Technologies",
+          "src": "/logos/huawei.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518.046875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 794,
+          "backing": "rendered chip",
+          "minimum": 4.626569286998451,
+          "p10": 5.883276112656104,
+          "median": 5.883276112656104,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "netcor",
+          "name": "NETCORPERU",
+          "src": "/logos/netcor.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 528.046875,
+            "width": 160,
+            "height": 44.28125
+          },
+          "foregroundPixels": 977,
+          "backing": "opaque source rectangle",
+          "minimum": 2.2855967563093658,
+          "p10": 7.038022252931712,
+          "median": 20.844042578122526,
+          "fractionAbove3": 0.9795291709314228,
+          "pass": true
+        },
+        {
+          "id": "osc",
+          "name": "OSC Telecoms & Security Solutions",
+          "src": "/logos/osc.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 168.59375,
+            "y": 518,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 128,
+          "backing": "opaque source rectangle",
+          "minimum": 2.7070665772985674,
+          "p10": 4.165241945692868,
+          "median": 8.408909354851092,
+          "fractionAbove3": 0.9921875,
+          "pass": true
+        },
+        {
+          "id": "telefonica-trainee",
+          "name": "Telefónica",
+          "src": "/logos/telefonica-trainee.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "desktop",
+          "box": {
+            "x": 792.59375,
+            "y": 521.546875,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 11.041994707416007,
+          "p10": 13.570129287134204,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-11-14T23:24:40.839Z",
+      "url": "http://127.0.0.1:3188/es",
+      "variant": "es-light-mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "chromium",
+      "measurement": "10th percentile of eroded solid brand foreground against rendered backing; minimum and fractionAbove3 also recorded",
+      "results": [
+        {
+          "id": "dynata",
+          "name": "Dynata",
+          "src": "/logos/dynata.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 457.109375,
+            "width": 160,
+            "height": 41.1875
+          },
+          "foregroundPixels": 837,
+          "backing": "rendered chip",
+          "minimum": 3.317346998415083,
+          "p10": 12.207549972429357,
+          "median": 12.207549972429357,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "globant",
+          "name": "Globant",
+          "src": "/logos/globant.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 461.671875,
+            "width": 160,
+            "height": 32.796875
+          },
+          "foregroundPixels": 964,
+          "backing": "rendered chip",
+          "minimum": 8.646274423480323,
+          "p10": 10.966107248157252,
+          "median": 17.73971700407407,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "plainenglish",
+          "name": "In Plain English",
+          "src": "/logos/plainenglish.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.109375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 268,
+          "backing": "opaque source rectangle",
+          "minimum": 2.2591788528237444,
+          "p10": 10.766895568999011,
+          "median": 17.274212673404794,
+          "fractionAbove3": 0.996268656716418,
+          "pass": true
+        },
+        {
+          "id": "pronti",
+          "name": "Pronti AI",
+          "src": "/logos/pronti.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.09375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.1865407704882842,
+          "p10": 9.39825391113492,
+          "median": 14.318942112058078,
+          "fractionAbove3": 0.9405391786344167,
+          "pass": true
+        },
+        {
+          "id": "bluetab",
+          "name": "Bluetab América, an IBM Company",
+          "src": "/logos/bluetab.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.78125,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 285,
+          "backing": "opaque source rectangle",
+          "minimum": 1.8367364585953398,
+          "p10": 3.8000256361933675,
+          "median": 3.999852949407121,
+          "fractionAbove3": 0.9754385964912281,
+          "pass": true
+        },
+        {
+          "id": "indra",
+          "name": "Indra",
+          "src": "/logos/indra.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.40625,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0006122113242268,
+          "p10": 15.797323834295177,
+          "median": 15.94365961192309,
+          "fractionAbove3": 0.9599395313681028,
+          "pass": true
+        },
+        {
+          "id": "data-analytics",
+          "name": "DATA & ANALYTICS",
+          "src": "/logos/data-analytics.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.78125,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 467,
+          "backing": "opaque source rectangle",
+          "minimum": 1.3326388232838635,
+          "p10": 5.174296115465296,
+          "median": 11.201788790415135,
+          "fractionAbove3": 0.9571734475374732,
+          "pass": true
+        },
+        {
+          "id": "valtx",
+          "name": "Valtx Perú",
+          "src": "/logos/valtx.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.09375,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 170,
+          "backing": "opaque source rectangle",
+          "minimum": 1.1082420382099691,
+          "p10": 6.530442901721,
+          "median": 17.73971700407407,
+          "fractionAbove3": 0.9352941176470588,
+          "pass": true
+        },
+        {
+          "id": "telefonica",
+          "name": "Telefónica",
+          "src": "/logos/telefonica.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 449.125,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 12.950210332627359,
+          "p10": 15.901776782707145,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "cotener",
+          "name": "COTENER",
+          "src": "/logos/cotener.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.671875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 3969,
+          "backing": "rendered chip",
+          "minimum": 1.0360733872824854,
+          "p10": 5.034167702189759,
+          "median": 9.904369122687998,
+          "fractionAbove3": 0.9531368102796675,
+          "pass": true
+        },
+        {
+          "id": "huawei",
+          "name": "Huawei Technologies",
+          "src": "/logos/huawei.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 445.96875,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 794,
+          "backing": "rendered chip",
+          "minimum": 4.626569286998451,
+          "p10": 5.883276112656104,
+          "median": 5.883276112656104,
+          "fractionAbove3": 1,
+          "pass": true
+        },
+        {
+          "id": "netcor",
+          "name": "NETCORPERU",
+          "src": "/logos/netcor.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 456,
+            "width": 160,
+            "height": 44.28125
+          },
+          "foregroundPixels": 977,
+          "backing": "opaque source rectangle",
+          "minimum": 2.2855967563093658,
+          "p10": 7.038022252931712,
+          "median": 20.844042578122526,
+          "fractionAbove3": 0.9795291709314228,
+          "pass": true
+        },
+        {
+          "id": "osc",
+          "name": "OSC Telecoms & Security Solutions",
+          "src": "/logos/osc.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 146.796875,
+            "y": 446.328125,
+            "width": 64,
+            "height": 64
+          },
+          "foregroundPixels": 131,
+          "backing": "opaque source rectangle",
+          "minimum": 1.867666997049572,
+          "p10": 4.087700677325476,
+          "median": 7.949471726382409,
+          "fractionAbove3": 0.9847328244274809,
+          "pass": true
+        },
+        {
+          "id": "telefonica-trainee",
+          "name": "Telefónica",
+          "src": "/logos/telefonica-trainee.png",
+          "locale": "es",
+          "theme": "light",
+          "device": "mobile",
+          "box": {
+            "x": 98.796875,
+            "y": 449.359375,
+            "width": 160,
+            "height": 57.1875
+          },
+          "foregroundPixels": 223,
+          "backing": "rendered chip",
+          "minimum": 13.065132652907232,
+          "p10": 16.04307584760188,
+          "median": 16.185145507635436,
+          "fractionAbove3": 1,
+          "pass": true
+        }
+      ]
+    }
+  ]
 }

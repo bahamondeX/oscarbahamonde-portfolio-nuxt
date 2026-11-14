@@ -1,0 +1,8 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> typecheck
+> nuxt typecheck
+
+
+[@nuxt/robots]  WARN  You have disallowed robots accessing /api/**, this may prevent your site from being indexed correctly.
+

@@ -1,0 +1,20 @@
+[
+  {
+    "filter": "brightness(.55) contrast(4)",
+    "foregroundPixels": 977,
+    "backing": "opaque source rectangle",
+    "minimum": 2.2855967563093658,
+    "p10": 7.038022252931712,
+    "median": 20.844042578122526,
+    "fractionAbove3": 0.9795291709314228
+  },
+  {
+    "filter": "grayscale(1) brightness(.6) contrast(4)",
+    "foregroundPixels": 977,
+    "backing": "opaque source rectangle",
+    "minimum": 1.3979461525490338,
+    "p10": 5.024865064757633,
+    "median": 21,
+    "fractionAbove3": 0.9477993858751279
+  }
+]

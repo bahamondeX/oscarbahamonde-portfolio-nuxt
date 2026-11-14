@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/__sitemap__/style.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://oscarbahamonde.com/en</loc>
+        <xhtml:link rel="alternate" href="https://oscarbahamonde.com/es" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://oscarbahamonde.com/es" hreflang="es-PE" />
+        <xhtml:link rel="alternate" href="https://oscarbahamonde.com/en" hreflang="en-US" />
+    </url>
+    <url>
+        <loc>https://oscarbahamonde.com/en/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13</loc>
+        <lastmod>2024-12-14T11:21:26Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oscarbahamonde.com/es/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13" />
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://oscarbahamonde.com/es/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://oscarbahamonde.com/en/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13" />
+    </url>
+    <url>
+        <loc>https://oscarbahamonde.com/en/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177</loc>
+        <lastmod>2024-06-24T10:37:33Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oscarbahamonde.com/es/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177" />
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://oscarbahamonde.com/es/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://oscarbahamonde.com/en/blog/file-like-objects-across-languages-a-deep-dive-into-python-rust-and-c-512cb2035177" />
+    </url>
+    <url>
+        <loc>https://oscarbahamonde.com/en/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375</loc>
+        <lastmod>2024-11-07T05:37:23Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oscarbahamonde.com/es/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375" />
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://oscarbahamonde.com/es/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://oscarbahamonde.com/en/blog/genai-101-building-a-streaming-responses-chatbot-with-openai-client-gradio-and-g-e8fd267e2375" />
+    </url>
+    <url>
+        <loc>https://oscarbahamonde.com/en/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90</loc>
+        <lastmod>2024-06-22T12:33:06Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oscarbahamonde.com/es/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90" />
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://oscarbahamonde.com/es/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://oscarbahamonde.com/en/blog/how-apple-is-redefining-ai-with-on-device-intelligence-0a98add6de90" />
+    </url>
+    <url>
+        <loc>https://oscarbahamonde.com/en/blog/introduction-to-language-model-merging-2e88b80e190b</loc>
+        <lastmod>2024-08-18T19:14:35Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oscarbahamonde.com/es/blog/introduction-to-language-model-merging-2e88b80e190b" />
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://oscarbahamonde.com/es/blog/introduction-to-language-model-merging-2e88b80e190b" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://oscarbahamonde.com/en/blog/introduction-to-language-model-merging-2e88b80e190b" />
+    </url>
+    <url>
+        <loc>https://oscarbahamonde.com/en/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a</loc>
+        <lastmod>2025-03-26T04:45:41Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oscarbahamonde.com/es/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a" />
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://oscarbahamonde.com/es/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://oscarbahamonde.com/en/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a" />
+    </url>
+    <url>
+        <loc>https://oscarbahamonde.com/en/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6</loc>
+        <lastmod>2025-04-05T05:46:02Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oscarbahamonde.com/es/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6" />
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://oscarbahamonde.com/es/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://oscarbahamonde.com/en/blog/openai-in-a-box-oss-technical-design-of-the-silicon-valley-behemoth-1b0754aaace6" />
+    </url>
+    <url>
+        <loc>https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7</loc>
+        <lastmod>2025-08-04T08:33:37Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7" />
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7" />
+    </url>
+    <url>
+        <loc>https://oscarbahamonde.com/en/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624</loc>
+        <lastmod>2023-12-08T22:22:43Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oscarbahamonde.com/es/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624" />
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://oscarbahamonde.com/es/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://oscarbahamonde.com/en/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624" />
+    </url>
+    <url>
+        <loc>https://oscarbahamonde.com/en/blog/the-plain-text-team-cb06429f196d</loc>
+        <lastmod>2023-10-14T11:32:04Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oscarbahamonde.com/es/blog/the-plain-text-team-cb06429f196d" />
+        <xhtml:link rel="alternate" hreflang="es-PE" href="https://oscarbahamonde.com/es/blog/the-plain-text-team-cb06429f196d" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://oscarbahamonde.com/en/blog/the-plain-text-team-cb06429f196d" />
+    </url>
+</urlset>
+<!-- XML Sitemap generated by @nuxtjs/sitemap v9.1.0 at 2026-11-14T23:27:58.408Z -->

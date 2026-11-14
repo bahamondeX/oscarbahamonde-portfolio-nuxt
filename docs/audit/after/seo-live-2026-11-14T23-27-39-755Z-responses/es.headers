@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+date: Sat, 14 Nov 2026 23:27:47 GMT
+
+HTTP/2 200 
+age: 0
+cache-control: public, max-age=0, must-revalidate
+content-type: text/html;charset=utf-8
+date: Sat, 14 Nov 2026 23:27:49 GMT
+permissions-policy: microphone=(self)
+server: Vercel
+set-cookie: portfolio_language=es; Path=/; Expires=Sun, 14 Nov 2027 23:27:49 GMT; SameSite=Lax
+strict-transport-security: max-age=63072000
+x-powered-by: Nuxt
+x-robots-tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+x-vercel-cache: MISS
+x-vercel-id: gru1::iad1::mf4nw-1794698867739-0c91a84d707b
+content-length: 113646
+
