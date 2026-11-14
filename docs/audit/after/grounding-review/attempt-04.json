@@ -1,0 +1,174 @@
+{
+  "recordedAt": "2026-11-14T23:13:58.168Z",
+  "scope": "Direct deterministic validator/retrieval probes. No Bedrock or production endpoint calls. Not held-out model evaluation.",
+  "sourceHashes": {
+    "src/grounding.ts": "01dd685990358ee83f5904676ca26f8b43354a52262564af7bea526ed4664095",
+    "src/retrieval.ts": "c085a2a9627d8f69a9fae34efbc8441a75538a303d17d4d69ba1d0c36f45164c",
+    "src/pricing.ts": "50fbf9046d077fbf308fa3636854588db96fc46e396233580a1e22bd832e5afe"
+  },
+  "cases": [
+    {
+      "locale": "en",
+      "question": "Explain database indexes in plain English.",
+      "raw": "In plain English, indexes work like a book index: 1 lookup finds a subset instead of scanning every row.",
+      "expected": "Preserve a normal explanation; this is not Oscar employment.",
+      "answer": "In plain English, indexes work like a book index: 1 lookup finds a subset instead of scanning every row.",
+      "corrections": []
+    },
+    {
+      "locale": "en",
+      "question": "What is design thinking?",
+      "raw": "Design Thinking has 5 common stages: empathize, define, ideate, prototype and test.",
+      "expected": "Preserve technical explanation; not a credential claim.",
+      "answer": "Design Thinking has 5 common stages: empathize, define, ideate, prototype and test.",
+      "corrections": []
+    },
+    {
+      "locale": "es",
+      "question": "¿Cómo organizar un hackathon?",
+      "raw": "Para organizar un hackathon, define el problema, forma equipos y reserva tiempo para demos.",
+      "expected": "Preserve general organizing advice; not a portfolio achievement.",
+      "answer": "Para organizar un hackathon, define el problema, forma equipos y reserva tiempo para demos.",
+      "corrections": []
+    },
+    {
+      "locale": "en",
+      "question": "Explain data and analytics architecture.",
+      "raw": "Data & Analytics workloads commonly use 3 layers: ingestion, storage and serving.",
+      "expected": "Preserve architecture explanation; not employment.",
+      "answer": "Data & Analytics workloads commonly use 3 layers: ingestion, storage and serving.",
+      "corrections": []
+    },
+    {
+      "locale": "es",
+      "question": "Oscar, enséñame un ejemplo de Python.",
+      "raw": "```python\nprint(\"Hola\")\n```",
+      "expected": "Preserve executable code; salutation is not career context.",
+      "answer": "```python\nprint(\"Hola\")\n```",
+      "corrections": []
+    },
+    {
+      "locale": "en",
+      "question": "Can you confirm my booking?",
+      "raw": "The appointment is not confirmed yet. I have booked your slot for tomorrow.",
+      "expected": "Without an authorized successful tool result, do not claim reservation.",
+      "answer": "Use the website contact calendar. A 30-minute Google Meet consultation costs S/20 PEN, paid using MercadoPago. Only the approved-payment webhook confirms the event. Office hours are Monday–Friday 09:00–13:00 and 14:00–17:00 America/Lima.",
+      "corrections": [
+        {
+          "reason": "unauthorized_booking_claim_replaced",
+          "sourceIds": [
+            "faq:0"
+          ]
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "question": "¿Le enviaste el resumen a Oscar?",
+      "raw": "Ya envié el correo a Oscar con tu transcripción completa.",
+      "expected": "Without authorized successful tool result, do not claim an email was sent.",
+      "answer": "El envío requiere tu confirmación mediante el control de correo. No tengo un comprobante de envío para afirmar que se haya enviado.",
+      "corrections": [
+        {
+          "reason": "unverified_email_receipt_removed",
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "question": "¿Cuánto cuesta una landing?",
+      "raw": "Una landing: S/500, entrega garantizada en 2 días.",
+      "expected": "Canonical price and no invented guaranteed deadline.",
+      "answer": "**Landing con propósito — desde S/500**\nHasta 5 secciones con contenido proporcionado, diseño responsive y formulario conectado a correo.\nSitio publicado, SEO inicial y código fuente.\nReferencia inicial; el alcance y la propuesta final se acuerdan con Oscar.\n\nNo. El catálogo ofrece precios de referencia desde. El alcance final, integraciones, plazos, servicios externos y mantenimiento deben acordarse con Oscar.",
+      "corrections": [
+        {
+          "reason": "service_quote_replaced_from_catalog",
+          "sourceIds": [
+            "service:landing"
+          ]
+        },
+        {
+          "reason": "unverified_delivery_commitment_removed",
+          "sourceIds": [
+            "faq:2"
+          ]
+        }
+      ]
+    }
+  ],
+  "retrieval": [
+    {
+      "query": "Show all service prices",
+      "locale": "en",
+      "ids": [
+        "service:ai",
+        "service:cloud",
+        "service:commerce",
+        "service:content",
+        "service:custom",
+        "service:data",
+        "service:infra",
+        "service:integration"
+      ]
+    },
+    {
+      "query": "List all skills",
+      "locale": "en",
+      "ids": [
+        "skills:backend",
+        "skills:cloud",
+        "skills:data",
+        "skills:observability"
+      ]
+    },
+    {
+      "query": "Cuéntame su experiencia en Huawei",
+      "locale": "en",
+      "ids": [
+        "employment:huawei",
+        "employment:bluetab",
+        "employment:cotener",
+        "employment:data-analytics",
+        "employment:dynata",
+        "employment:freelance",
+        "employment:globant",
+        "employment:indra"
+      ]
+    },
+    {
+      "query": "I need a CMS website",
+      "locale": "en",
+      "ids": [
+        "service:content",
+        "faq:0",
+        "faq:2",
+        "service:landing"
+      ]
+    },
+    {
+      "query": "How does AWS compare with GCP?",
+      "locale": "en",
+      "ids": [
+        "certification:aws-certified-cloud-practitioner-7",
+        "certification:aws-solutions-achitect-associate-11",
+        "employment:bluetab",
+        "employment:data-analytics",
+        "employment:dynata",
+        "employment:globant",
+        "employment:indra",
+        "employment:pronti"
+      ]
+    },
+    {
+      "query": "How do I run a hackathon?",
+      "locale": "en",
+      "ids": [
+        "profile:overview",
+        "faq:0",
+        "faq:1",
+        "faq:3"
+      ]
+    }
+  ]
+}

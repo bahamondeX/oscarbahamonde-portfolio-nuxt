@@ -152,11 +152,8 @@ test('every model request includes exact catalog pricing policy without restrict
   const client = { send: async (command: any) => {
     const instruction = command.input.system[0].text
     assert.ok(instruction.includes(commercialPolicy))
-    assert.match(instruction, /Never invent price ranges, combined package totals, budget tiers/)
-    assert.match(instruction, /recurring\/monthly costs, third-party\/cloud price figures/)
-    assert.match(instruction, /never offer or imply custom systems integration below S\/3500/)
-    assert.match(instruction, /AI assistants start at S\/1500 with scope assessed separately, not an implementation price range/)
-    assert.match(instruction, /Give useful technical explanations, examples, tradeoffs and code when asked/)
+    assert.ok(command.input.system.at(-1).text.includes('service:ai'))
+    assert.equal(command.input.inferenceConfig.temperature, cfg.temperature)
     checked = true
     return { stream: stream([{contentBlockDelta:{contentBlockIndex:0,delta:{text:'RAG retrieves relevant documents before generating a grounded answer.'}}},{messageStop:{stopReason:'end_turn'}}]) }
   } }

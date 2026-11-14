@@ -1,0 +1,189 @@
+{
+  "recordedAt": "2026-11-14T23:11:30.564Z",
+  "scope": "Direct deterministic validator/retrieval probes. No Bedrock or production endpoint calls. Not held-out model evaluation.",
+  "sourceHashes": {
+    "src/grounding.ts": "52d58b93234b7ce100ed889eab9c89be144a4e5e3fc4ee094c906f7c65301944",
+    "src/retrieval.ts": "916fd942504752031749a737f040b1d2ae6a709f6a8f157c977daf62e90e8bcc",
+    "src/pricing.ts": "50fbf9046d077fbf308fa3636854588db96fc46e396233580a1e22bd832e5afe"
+  },
+  "cases": [
+    {
+      "locale": "en",
+      "question": "Explain database indexes in plain English.",
+      "raw": "In plain English, indexes work like a book index: 1 lookup finds a subset instead of scanning every row.",
+      "expected": "Preserve a normal explanation; this is not Oscar employment.",
+      "answer": "**In Plain English · Freelance Technical Writer**\nJune 2023 – November 2024\nTechnical writer on Python, AI and Javascript publications.",
+      "corrections": [
+        {
+          "reason": "unbound_biographical_claim_replaced",
+          "sourceIds": [
+            "employment:plainenglish"
+          ]
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "question": "What is design thinking?",
+      "raw": "Design Thinking has 5 common stages: empathize, define, ideate, prototype and test.",
+      "expected": "Preserve technical explanation; not a credential claim.",
+      "answer": "**Design Thinking · Instituto Europeo de Posgrado - IEP**\nIssued: December 2020\n[Verify credential](https://drive.google.com/file/d/1D-X6Jff2fW8yJZfauOgF6KioHGkPs0CK/view?usp=sharing)",
+      "corrections": [
+        {
+          "reason": "unbound_biographical_claim_replaced",
+          "sourceIds": [
+            "certification:design-thinking-18"
+          ]
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "question": "¿Cómo organizar un hackathon?",
+      "raw": "Para organizar un hackathon, define el problema, forma equipos y reserva tiempo para demos.",
+      "expected": "Preserve general organizing advice; not a portfolio achievement.",
+      "answer": "Oscar Martin Bahamonde Muñoz\n\nIngeniero de software, datos e inteligencia artificial. Trabaja entre la profundidad técnica y el pensamiento de producto.\n\nPrimer puesto de ingreso a la PUCP en 2007\n\nGanador del hackathon AWS User Group Perú 2023, más de 50 equipos\n\nSpeaker en AWS UG Perú Conf 2023",
+      "corrections": [
+        {
+          "reason": "profile_achievement_bound_to_source",
+          "sourceIds": [
+            "profile:overview"
+          ]
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "question": "Explain data and analytics architecture.",
+      "raw": "Data & Analytics workloads commonly use 3 layers: ingestion, storage and serving.",
+      "expected": "Preserve architecture explanation; not employment.",
+      "answer": "**DATA & ANALYTICS · Cloud Architect**\nJanuary 2021 – March 2021\nArchitecting of AWS Cloud Solutions\nDevelopment of new partnerships\nTrusted advisor for customer engagement",
+      "corrections": [
+        {
+          "reason": "unbound_biographical_claim_replaced",
+          "sourceIds": [
+            "employment:data-analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "question": "Oscar, enséñame un ejemplo de Python.",
+      "raw": "```python\nprint(\"Hola\")\n```",
+      "expected": "Preserve executable code; salutation is not career context.",
+      "answer": "No tengo ese dato verificado sobre Oscar. Puedes consultar su LinkedIn o agendar una conversación desde la web.",
+      "corrections": [
+        {
+          "reason": "unverified_biographical_code_removed",
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "question": "Can you confirm my booking?",
+      "raw": "The appointment is not confirmed yet. I have booked your slot for tomorrow.",
+      "expected": "Without an authorized successful tool result, do not claim reservation.",
+      "answer": "The appointment is not confirmed yet. I have booked your slot for tomorrow.",
+      "corrections": []
+    },
+    {
+      "locale": "es",
+      "question": "¿Le enviaste el resumen a Oscar?",
+      "raw": "Ya envié el correo a Oscar con tu transcripción completa.",
+      "expected": "Without authorized successful tool result, do not claim an email was sent.",
+      "answer": "Ya envié el correo a Oscar con tu transcripción completa.",
+      "corrections": []
+    },
+    {
+      "locale": "es",
+      "question": "¿Cuánto cuesta una landing?",
+      "raw": "Una landing: S/500, entrega garantizada en 2 días.",
+      "expected": "Canonical price and no invented guaranteed deadline.",
+      "answer": "**Landing con propósito — desde S/500**\nHasta 5 secciones con contenido proporcionado, diseño responsive y formulario conectado a correo.\nSitio publicado, SEO inicial y código fuente.\nReferencia inicial; el alcance y la propuesta final se acuerdan con Oscar.\nentrega garantizada en 2 días.",
+      "corrections": [
+        {
+          "reason": "service_quote_replaced_from_catalog",
+          "sourceIds": [
+            "service:landing"
+          ]
+        }
+      ]
+    }
+  ],
+  "retrieval": [
+    {
+      "query": "Show all service prices",
+      "locale": "en",
+      "ids": [
+        "certification:itil-foundation-certificate-in-it-service-management-28",
+        "service:ai",
+        "service:cloud",
+        "service:commerce",
+        "service:content",
+        "service:custom",
+        "service:data",
+        "service:infra"
+      ]
+    },
+    {
+      "query": "List all skills",
+      "locale": "en",
+      "ids": [
+        "skills:backend",
+        "skills:cloud",
+        "skills:data",
+        "skills:observability"
+      ]
+    },
+    {
+      "query": "Cuéntame su experiencia en Huawei",
+      "locale": "en",
+      "ids": [
+        "employment:huawei",
+        "employment:bluetab",
+        "employment:cotener",
+        "employment:data-analytics",
+        "employment:dynata",
+        "employment:freelance",
+        "employment:globant",
+        "employment:indra"
+      ]
+    },
+    {
+      "query": "I need a CMS website",
+      "locale": "en",
+      "ids": [
+        "service:content",
+        "faq:0",
+        "faq:2",
+        "service:landing"
+      ]
+    },
+    {
+      "query": "How does AWS compare with GCP?",
+      "locale": "en",
+      "ids": [
+        "certification:aws-certified-cloud-practitioner-7",
+        "certification:aws-solutions-achitect-associate-11",
+        "employment:bluetab",
+        "employment:data-analytics",
+        "employment:dynata",
+        "employment:globant",
+        "employment:indra",
+        "employment:pronti"
+      ]
+    },
+    {
+      "query": "How do I run a hackathon?",
+      "locale": "en",
+      "ids": [
+        "profile:overview",
+        "faq:0",
+        "faq:1",
+        "faq:3"
+      ]
+    }
+  ]
+}

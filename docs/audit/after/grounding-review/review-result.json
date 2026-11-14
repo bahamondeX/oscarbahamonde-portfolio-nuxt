@@ -1,0 +1,20 @@
+{
+  "reviewedAt": "2026-11-14T23:14:14.036Z",
+  "artifact": "attempt-04.json",
+  "sourceHashes": {
+    "src/grounding.ts": "01dd685990358ee83f5904676ca26f8b43354a52262564af7bea526ed4664095",
+    "src/retrieval.ts": "c085a2a9627d8f69a9fae34efbc8441a75538a303d17d4d69ba1d0c36f45164c",
+    "src/pricing.ts": "50fbf9046d077fbf308fa3636854588db96fc46e396233580a1e22bd832e5afe"
+  },
+  "unitProbes": {
+    "total": 8,
+    "passed": 8
+  },
+  "catalogRanking": "All top-eight entries are services; nine-service complete catalog remains provided by full source context/get_services, not by claiming top-eight contains nine records.",
+  "scope": "Deterministic mocked draft validation; no Bedrock/production/model accuracy claim. Historical failed attempts 02 and 03 retained.",
+  "residualLimits": [
+    "Arbitrary natural-language factual truth is not universally decidable by lexical fallback. Source-reference slots are deterministic; live model 36-question and held-out evaluation still required.",
+    "ConverseStream output is buffered until the round is validated; user-visible SSE deltas follow completion of that round, increasing first-token latency.",
+    "Action execution remains controlled by server tools and confirmation. This review does not substitute for real mail/payment/calendar validation."
+  ]
+}

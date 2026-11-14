@@ -1,1 +1,42 @@
-[{"question":"How do I book Oscar?","answer":"Use the website contact calendar. A 30-minute Google Meet consultation costs S/20 PEN, paid using MercadoPago. Only the approved-payment webhook confirms the event. Office hours are Monday–Friday 09:00–13:00 and 14:00–17:00 America/Lima."},{"question":"Can I ask technical questions without sharing contact information?","answer":"Yes. Questions about software, cloud, data, AI and project planning do not require personal details. Consent is requested only when saving personal information or sending/uploading material."},{"question":"Are starting prices final quotes?","answer":"No. The verified catalog provides reference starting prices. Final scope, integrations, timelines, third-party costs and maintenance need agreement with Oscar."},{"question":"What if a date, employer detail or credential is missing?","answer":"Do not infer it. State that the detail is unverified and offer the LinkedIn source or a meeting."}]
+[
+  {
+    "question": "How do I book Oscar?",
+    "answer": "Use the website contact calendar. A 30-minute Google Meet consultation costs S/20 PEN, paid using MercadoPago. Only the approved-payment webhook confirms the event. Office hours are Monday–Friday 09:00–13:00 and 14:00–17:00 America/Lima.",
+    "es": {
+      "answer": "Usa el calendario de Contacto de la web. La consulta de 30 minutos por Google Meet cuesta S/20 PEN y se paga con MercadoPago. Solo el webhook de pago aprobado confirma el evento. Horario: lunes a viernes, 09:00–13:00 y 14:00–17:00, America/Lima."
+    },
+    "en": {
+      "answer": "Use the website contact calendar. A 30-minute Google Meet consultation costs S/20 PEN, paid using MercadoPago. Only the approved-payment webhook confirms the event. Office hours are Monday–Friday 09:00–13:00 and 14:00–17:00 America/Lima."
+    }
+  },
+  {
+    "question": "Can I ask technical questions without sharing contact information?",
+    "answer": "Yes. Questions about software, cloud, data, AI and project planning do not require personal details. Consent is requested only when saving personal information or sending/uploading material.",
+    "es": {
+      "answer": "Sí. Las preguntas de software, nube, datos, IA y planificación no requieren datos personales. El consentimiento se pide al guardar datos personales o enviar/subir material."
+    },
+    "en": {
+      "answer": "Yes. Questions about software, cloud, data, AI and project planning do not require personal details. Consent is requested only when saving personal information or sending/uploading material."
+    }
+  },
+  {
+    "question": "Are starting prices final quotes?",
+    "answer": "No. The verified catalog provides reference starting prices. Final scope, integrations, timelines, third-party costs and maintenance need agreement with Oscar.",
+    "es": {
+      "answer": "No. El catálogo ofrece precios de referencia desde. El alcance final, integraciones, plazos, servicios externos y mantenimiento deben acordarse con Oscar."
+    },
+    "en": {
+      "answer": "No. The verified catalog provides reference starting prices. Final scope, integrations, timelines, third-party costs and maintenance need agreement with Oscar."
+    }
+  },
+  {
+    "question": "What if a date, employer detail or credential is missing?",
+    "answer": "Do not infer it. State that the detail is unverified and offer the LinkedIn source or a meeting.",
+    "es": {
+      "answer": "No se infiere. El dato se identifica como no verificado y se ofrece consultar LinkedIn o una reunión."
+    },
+    "en": {
+      "answer": "Do not infer it. State that the detail is unverified and offer the LinkedIn source or a meeting."
+    }
+  }
+]

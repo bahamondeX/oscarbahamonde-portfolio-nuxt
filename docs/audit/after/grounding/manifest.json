@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-14T23:13:50.072043+00:00",
+  "backendTests": {
+    "passed": 57,
+    "failed": 0,
+    "log": "unit-tests.txt"
+  },
+  "typescript": "passed",
+  "build": "passed",
+  "scope": "Unit/integration mocks only; not a real model or deployed endpoint evaluation.",
+  "sourceSha256": {
+    "assistant/src/agent.ts": "f1094fc6b989b236d862b8f54d8deffe652473c24b3491b674b12368942b6d34",
+    "assistant/src/knowledge.ts": "771db18f8e5c2ad2eb44421532e0525bba200af807c6a2572be824f0f7a21fff",
+    "assistant/src/pricing.ts": "50fbf9046d077fbf308fa3636854588db96fc46e396233580a1e22bd832e5afe",
+    "assistant/src/grounding.ts": "01dd685990358ee83f5904676ca26f8b43354a52262564af7bea526ed4664095",
+    "assistant/src/retrieval.ts": "c085a2a9627d8f69a9fae34efbc8441a75538a303d17d4d69ba1d0c36f45164c",
+    "knowledge/faqs.json": "c796779d1da58432dd38b40c14bb7e61ce16a0865887fd04fe8cbc8e42874384"
+  },
+  "limits": [
+    "Source-record rendering is deterministic; prose fallback detects bounded classes of contradictions and is not a universal semantic checker.",
+    "Complete model rounds are buffered before validated SSE chunks, increasing first-content latency.",
+    "Technical model accuracy and current/held-out real evaluations remain unverified until AWS authentication is restored."
+  ],
+  "reviewAttempts": [
+    "Initial renderer test exposed Credly URLs falsely matching currency S/: fixed URL handling and currency boundary.",
+    "Independent review exposed achievement/year misassociation, unknown credentials, current-employer inversions, fabricated confirmation and multi-service line loss: fixed and added regressions.",
+    "Next independent review exposed ambiguous source-name false positives and unverified delivery commitments: added subject/context checks and clause-level policy replacement.",
+    "Final independent review found booked-slot phrasing after an unrelated negation; added slot/reservation subjects and regression assertion."
+  ]
+}

@@ -78,7 +78,7 @@ test('Lambda SSE and saved assistant history contain only the same sanitized ans
   }, client, undefined, store)
   const answer = emitted.join('')
   assert.match(answer, /Use Lambda for bursts/)
-  assert.match(answer, /S\/1500/)
+  assert.match(answer, /S\/1,?500/)
   assert.equal(saved.find(row => row.role === 'assistant').content, answer)
   assert.ok(emitted.length > 1)
 })

@@ -1,22 +1,26 @@
 import type { Locale } from './knowledge.js'
+import catalog from '../../knowledge/services.json' with { type: 'json' }
+import faqs from '../../knowledge/faqs.json' with { type: 'json' }
+const consultationPrice = Number(faqs[0]!.answer.match(/costs S\/(\d+)/)![1])
+const price = (id: string) => catalog.services.find(s => s.id === id)!.from
 
 // This is an output accuracy check, not a topic filter. Keep technical prose and code;
 // suppress monetary claims that have no source in the published catalog or visitor budget.
 const amount = String.raw`\d+(?:[.,]\d+)*`
 const currency = String.raw`(?:S\/\.?|PEN|US\$|USD|\$|EUR|€|GBP|£)`
 const range = String.raw`(?:\s*(?:[–—-]|to\b|a\b)\s*(?:${currency}\s*)?${amount})?`
-const moneyPattern = new RegExp(String.raw`${currency}\s*${amount}${range}|${amount}${range}\s*(?:PEN|USD|EUR|GBP|soles|d[oó]lares|dollars|euros)\b`, 'gi')
+const moneyPattern = new RegExp(String.raw`(?<![a-z0-9_])${currency}\s*${amount}${range}|${amount}${range}\s*(?:PEN|USD|EUR|GBP|soles|d[oó]lares|dollars|euros)\b`, 'gi')
 const categories: [number, RegExp][] = [
-  [500, /landing(?:\s+page)?/gi],
-  [1500, /CMS|contenido(?:\s+(?:con\s+panel|bajo\s+tu\s+control))?|content\s+(?:you\s+control|management|panel)|panel\s+de\s+administraci[oó]n|website\s+with\s+(?:an?\s+)?(?:admin\s+panel|content\s+panel|CMS)/gi],
-  [3500, /e[ -]?commerce|comercio\s+electr[oó]nico/gi],
-  [4500, /plataforma|platform|SaaS|PaaS/gi],
-  [1500, /asistentes?\s+(?:de\s+)?IA|AI\s+assistants?|chatbots?/gi],
-  [3500, /integraci[oó]n\s+de\s+sistemas|systems?\s+integration|sistemas\s+que\s+conversan|systems\s+that\s+talk/gi],
-  [5000, /modernizaci[oó]n\s+(?:cloud|de\s+nube)|cloud\s+modernization/gi],
-  [1800, /auditor[ií]a\s+de\s+datos|data\s+(?:platform\s+)?audit/gi],
-  [1200, /infraestructura|infrastructure/gi],
-  [20, /consulta|consultation|reuni[oó]n|\bcitas?\b|meeting|agendar|booking|30\s*(?:min|minute)/gi],
+  [price('landing'), /landing(?:\s+page)?/gi],
+  [price('content'), /CMS|contenido(?:\s+(?:con\s+panel|bajo\s+tu\s+control))?|content\s+(?:you\s+control|management|panel)|panel\s+de\s+administraci[oó]n|website\s+with\s+(?:an?\s+)?(?:admin\s+panel|content\s+panel|CMS)/gi],
+  [price('commerce'), /e[ -]?commerce|comercio\s+electr[oó]nico/gi],
+  [price('custom'), /plataforma|platform|SaaS|PaaS/gi],
+  [price('ai'), /asistentes?\s+(?:de\s+)?IA|AI\s+assistants?|chatbots?/gi],
+  [price('integration'), /integraci[oó]n\s+de\s+sistemas|systems?\s+integration|sistemas\s+que\s+conversan|systems\s+that\s+talk/gi],
+  [price('cloud'), /modernizaci[oó]n\s+(?:cloud|de\s+nube)|cloud\s+modernization/gi],
+  [price('data'), /auditor[ií]a\s+de\s+datos|data\s+(?:platform\s+)?audit/gi],
+  [price('infra'), /infraestructura|infrastructure/gi],
+  [consultationPrice, /consulta|consultation|reuni[oó]n|\bcitas?\b|meeting|agendar|booking|30\s*(?:min|minute)/gi],
 ]
 function value(raw: string) {
   const digits = raw.match(/\d+(?:[.,]\d+)*/)?.[0] || ''
@@ -49,7 +53,7 @@ export function createPricingFilter(locale: Locale, visitorText: string) {
     // Code is data, not a price quotation. In particular preserve shell $1/$HOME.
     if (/^\s*(```|~~~)/.test(raw)) { inFence = !inFence; return raw }
     if (inFence) return raw
-    const codeSpans = [...raw.matchAll(/`+[^`]*`+/g)].map(m => [m.index!, m.index! + m[0].length])
+    const codeSpans = [...raw.matchAll(/`+[^`]*`+|https?:\/\/[^\s)]+/g)].map(m => [m.index!, m.index! + m[0].length])
     const cleaned = raw.replace(moneyPattern, (claim: string, offset: number) => {
       if (codeSpans.some(([start, end]) => offset >= start && offset < end)) return claim
       const budgetContext = budgetBefore(raw.slice(0, offset), false)

@@ -41,7 +41,6 @@ export const knowledgeContexts: Record<Locale, string> = {
   es: JSON.stringify(projectKnowledge('es')),
   en: JSON.stringify(projectKnowledge('en')),
 }
-export const servicePriceMapping: Record<Locale, string> = {
-  es: 'Landing S/500; Contenido con panel S/1500; E-commerce S/3500; Plataforma/MVP SaaS S/4500; Asistentes de IA S/1500; Integración de sistemas S/3500; Modernización cloud S/5000; Auditoría de datos S/1800; Infraestructura S/1200. Todos son precios desde. Consulta de 30 min S/20.',
-  en: 'Landing page S/500; Website with CMS S/1500; E-commerce S/3500; Platform/SaaS MVP S/4500; AI assistant S/1500; Systems integration S/3500; Cloud modernization S/5000; Data audit S/1800; Infrastructure review S/1200. All are starting prices. 30-minute consultation S/20.',
-}
+export const servicePriceMapping = Object.fromEntries((['es', 'en'] as const).map(locale => [
+  locale, services.services.map(s => `${s[locale].title}: S/${s.from}`).join('; ') + (locale === 'es' ? '. Todos son precios desde.' : '. All are starting prices.') + ' ' + faqs[0]![locale].answer,
+])) as Record<Locale, string>

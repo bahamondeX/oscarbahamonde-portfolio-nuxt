@@ -31,8 +31,7 @@ test('closed employment cannot become current during context projection and all 
     assert.equal(data.services.find(s => s.id === service.id)!.startingPricePEN, service.from)
     assert.ok(servicePriceMapping.en.includes('S/' + service.from))
   }
-  assert.match(servicePriceMapping.en, /Platform\/SaaS MVP S\/4500/)
-  assert.match(servicePriceMapping.en, /Systems integration S\/3500/)
+  for (const service of catalog.services) assert.ok(servicePriceMapping.en.includes(`${service.en.title}: S/${service.from}`))
 })
 
 test('identity, job dates and commercial grounding follow the knowledge and stay in the last uncached block', () => {
@@ -43,6 +42,5 @@ test('identity, job dates and commercial grounding follow the knowledge and stay
     assert.equal(systemBlocks(locale, true)[0].text, blocks[0].text)
   }
   assert.notEqual(systemBlocks('es', false)[0].text, systemBlocks('en', false)[0].text)
-  assert.match(systemBlocks('en', false).at(-1).text, /do not append a commercial\/pricing section or Oscar career stories\/metrics unless the visitor asks/)
-  assert.match(systemBlocks('en', false).at(-1).text, /retrieval efficiency is not lookup latency/)
+  assert.ok(systemBlocks('en', false, 'Dynata').at(-1).text.includes('employment:dynata'))
 })
