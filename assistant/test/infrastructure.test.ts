@@ -19,3 +19,10 @@ test('lead stream has durable failures and TTL/KMS storage is enabled', () => {
     assert.equal(r[tool].Properties.FunctionUrlConfig, undefined)
   assert.equal(r.Chat.Properties.Environment.Variables.FREE_INTRO_CALL_ENABLED, 'false')
 })
+
+test('lead validation can query only the message table', () => {
+  const statements = r.LeadTool.Properties.Policies.flatMap((p: any) => p.Statement || [])
+  const query = statements.filter((s: any) => s.Action?.includes('dynamodb:Query'))
+  assert.equal(query.length, 1)
+  assert.deepEqual(query[0].Resource, { 'Fn::GetAtt': ['Messages', 'Arn'] })
+})
