@@ -832,6 +832,13 @@ Resources:
                     - Arn
             - Effect: Allow
               Action:
+                - dynamodb:Query
+              Resource:
+                Fn::GetAtt:
+                  - Messages
+                  - Arn
+            - Effect: Allow
+              Action:
                 - kms:Decrypt
                 - kms:Encrypt
                 - kms:GenerateDataKey
