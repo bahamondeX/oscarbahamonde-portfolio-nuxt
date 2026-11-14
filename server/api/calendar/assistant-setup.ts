@@ -7,7 +7,7 @@ export default defineEventHandler(async event => {
   setHeader(event, 'Cache-Control', 'private, no-store')
   setHeader(event, 'Referrer-Policy', 'no-referrer')
   setHeader(event, 'X-Robots-Tag', 'noindex, nofollow')
-  setHeader(event, 'Content-Security-Policy', "default-src 'none'; form-action 'self'; frame-ancestors 'none'")
+  setHeader(event, 'Content-Security-Policy', "default-src 'none'; form-action 'self' https://accounts.google.com; frame-ancestors 'none'")
   const gate = process.env.NUXT_ASSISTANT_SETUP_KEY_HASH || ''
   const match = /^v1:([0-9]{13}):([a-f0-9]{64})$/.exec(gate)
   if (!match || Date.now() >= Number(match[1]) || Number(match[1]) > Date.now() + 30 * 60000) {
