@@ -1,0 +1,239 @@
+{
+  "nav": {
+    "home": "Home",
+    "bio": "Bio",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "certifications": "Credentials",
+    "contact": "Contact",
+    "blog": "Blog",
+    "label": "Explore the portfolio",
+    "skip": "Skip to content",
+    "theme": "Change theme",
+    "language": "Change language",
+    "top": "Back to top"
+  },
+  "common": {
+    "from": "From",
+    "explore": "Explore",
+    "read": "Read article",
+    "original": "Read on Medium",
+    "back": "Back to home",
+    "loading": "Loading…",
+    "retry": "Try again",
+    "close": "Close",
+    "cancel": "Cancel",
+    "send": "Send",
+    "previous": "Previous",
+    "next": "Next",
+    "open": "Open",
+    "optional": "optional"
+  },
+  "seo": {
+    "title": "Oscar Bahamonde — AI, Data & Cloud Engineering",
+    "description": "Software engineer based in Peru. Applied AI, data platforms, cloud architecture and 1:1 consulting. Explore my work and let’s build your next project."
+  },
+  "hero": {
+    "eyebrow": "OSCAR BAHAMONDE · SOFTWARE ENGINEER",
+    "line1": "Ambitious ideas.",
+    "line2": "Real systems.",
+    "intro": "I design and build software, data platforms and artificial intelligence. From the first idea to the infrastructure that makes it possible.",
+    "cta": "Let’s explore your idea",
+    "work": "Explore my work",
+    "note": "Based in Peru. Building globally.",
+    "photo": "Portrait of Oscar Bahamonde",
+    "caption": "Engineering with a product mindset.",
+    "scroll": "Keep exploring",
+    "pill": "AI · DATA · CLOUD"
+  },
+  "bio": {
+    "eyebrow": "01 / A LITTLE ABOUT ME",
+    "title": "Curious by nature.",
+    "accent": "An engineer at heart.",
+    "body": "I’m Oscar, a software, data and artificial intelligence engineer. I work at the intersection of technical depth and product thinking, from the first prototype to the infrastructure behind it.",
+    "body2": "I’ve worked with global teams in backend, data and reliability. Today I help turn business needs into useful, maintainable technology.",
+    "achievement1": "First place in PUCP admissions",
+    "detail1": "General computing · 2007",
+    "achievement2": "AWS User Group Peru hackathon winner",
+    "detail2": "2023 · Over 50 teams · A developer platform powered by ChatGPT.",
+    "speaker": "AWS Speaker",
+    "profile": "My background on LinkedIn"
+  },
+  "experience": {
+    "eyebrow": "02 / EXPERIENCE",
+    "title": "From code",
+    "accent": "to production.",
+    "intro": "Backend, data platforms and reliability with global teams.",
+    "dynata": "Kubernetes infrastructure on AWS, deployment automation and observability for production systems.",
+    "globant": "Data platforms and applied AI, AWS pipelines and solutions for enterprise teams.",
+    "pronti": "Migration from Flask to FastAPI and integration of Milvus, RabbitMQ and Firebase for an AI fashion platform.",
+    "more": "More experience on LinkedIn",
+    "trust": "Experience at"
+  },
+  "skills": {
+    "eyebrow": "03 / MY TOOLKIT",
+    "title": "The right tool.",
+    "accent": "For the right problem.",
+    "intro": "Technologies connecting product, data and infrastructure."
+  },
+  "projects": {
+    "eyebrow": "04 / SELECTED WORK",
+    "title": "Designed to help.",
+    "accent": "Built to grow.",
+    "voz": "Voice agents connecting businesses and people. A platform in development with conversational AI and enterprise integrations.",
+    "quipubase": "An API to explore AI, embeddings, vector search, real-time collections and storage.",
+    "aiofauna": "A backend framework for building Python applications and exploring serverless architectures.",
+    "product": "Explore product",
+    "repo": "View repository",
+    "development": "In development"
+  },
+  "services": {
+    "eyebrow": "05 / LET’S BUILD",
+    "title": "From your next step",
+    "accent": "to your next product.",
+    "intro": "Clear scope. Concrete deliverables. Prices in Peruvian soles.",
+    "web": "Web development",
+    "automation": "Automation & integrations",
+    "audit": "Data & infrastructure",
+    "cta": "Discuss this service",
+    "note": "Starting scope estimates. Final proposals depend on requirements, integrations and timelines; third-party services, infrastructure and maintenance are quoted separately.",
+    "landing": {
+      "title": "A purposeful landing page",
+      "scope": "Up to 5 sections with client-provided content, responsive design and an email-connected contact form.",
+      "delivery": "Published website, initial SEO and source code."
+    },
+    "content": {
+      "title": "Content you control",
+      "scope": "A website with an admin panel, one editorial role, Calendar and email integration.",
+      "delivery": "Configured CMS, integration and user guide."
+    },
+    "commerce": {
+      "title": "Connected e-commerce",
+      "scope": "A physical or digital catalog MVP, database, API, authentication, one checkout and basic CRM.",
+      "delivery": "Purchase flow, basic dashboard and payment integration."
+    },
+    "custom": {
+      "title": "Your next platform",
+      "scope": "First phase of a SaaS, PaaS, streaming or multi-API cloud MVP. Scope agreed together.",
+      "delivery": "Discovery, architecture and the first agreed release."
+    },
+    "ai": {
+      "title": "AI assistants",
+      "scope": "One assistant or chatbot using client data and one scoped integration.",
+      "delivery": "Conversation flow, knowledge base and technical handover."
+    },
+    "integration": {
+      "title": "Systems that talk",
+      "scope": "Integrations for isolated systems, including legacy. Scope depends on available APIs.",
+      "delivery": "API, data mapping, error handling and documentation."
+    },
+    "cloud": {
+      "title": "Cloud modernization",
+      "scope": "Assessment and the first migration phase for one legacy or on-premise workload.",
+      "delivery": "Plan, architecture and an agreed pilot migration."
+    },
+    "data": {
+      "title": "Data platform audit",
+      "scope": "Review of one data platform, its observability, pipelines and modernization opportunities.",
+      "delivery": "Assessment and a prioritized roadmap."
+    },
+    "infra": {
+      "title": "Efficient infrastructure",
+      "scope": "Review of one cloud environment: cost, reliability, observability and deployments.",
+      "delivery": "Findings report and an optimization plan."
+    }
+  },
+  "certifications": {
+    "eyebrow": "06 / ALWAYS LEARNING",
+    "title": "Learning",
+    "accent": "never stops.",
+    "body": "Explore my credentials and their verification information on LinkedIn.",
+    "cta": "View credentials on LinkedIn"
+  },
+  "blog": {
+    "eyebrow": "07 / OPEN IDEAS",
+    "title": "Notes from",
+    "accent": "engineering.",
+    "intro": "Articles on software, data and artificial intelligence. Originally published on Medium.",
+    "empty": "Articles are unavailable right now. You can read them directly on Medium.",
+    "visit": "Visit my Medium",
+    "stale": "Showing the last available copy.",
+    "excerpt": "An excerpt from the original article",
+    "page": "Page"
+  },
+  "contact": {
+    "eyebrow": "08 / START A CONVERSATION",
+    "title": "Your next idea",
+    "accent": "starts here.",
+    "intro": "Tell me what you want to build, or book a session to work through a specific question.",
+    "chat": "Let’s talk about your project",
+    "meeting": "One conversation. A next step.",
+    "duration": "30 minutes · Google Meet",
+    "schedule": "Monday–Friday · 09:00–13:00 and 14:00–17:00 · Lima (UTC−5)",
+    "email": "You can also email me",
+    "social": "Find me on"
+  },
+  "booking": {
+    "step1": "1 · Choose your time",
+    "date": "Date · Lima time (UTC−5)",
+    "checking": "Checking Google Calendar…",
+    "error": "We couldn’t check the calendar. Availability must be verified before booking.",
+    "empty": "No times are available on this day. Try another date.",
+    "slots": "30-minute sessions. Busy times are blocked.",
+    "step2": "2 · Your details and payment",
+    "name": "Name",
+    "email": "Email for your invitation",
+    "processing": "Checking and holding your time…",
+    "pay": "Reserve and pay S/20",
+    "failed": "We couldn’t start your reservation. Please check available times again.",
+    "note": "We hold your time for 15 minutes while you complete secure payment on MercadoPago. Once approved, we confirm your session and send a Calendar invitation with Google Meet. Without payment, the slot becomes available again."
+  },
+  "chat": {
+    "title": "Your idea starts here.",
+    "intro": "Tell me about your project. I’ll help you explore the scope and the next step.",
+    "privacy": "With your consent, we’ll store this conversation, files and audio to answer your inquiry and email it to Oscar. We use AI providers to respond and transcribe. Please avoid sensitive information. Retention: {days} days.",
+    "consent": "I agree to the processing of my data for this inquiry.",
+    "start": "Start conversation",
+    "placeholder": "Tell me what you have in mind…",
+    "attach": "Attach a file",
+    "record": "Record audio",
+    "stop": "Stop recording",
+    "preview": "Listen to your recording before sending",
+    "sendAudio": "Send audio",
+    "recording": "Recording",
+    "drop": "Drop files here",
+    "limits": "PDF, images, DOCX, ZIP and audio · up to {mb} MB · {count} files",
+    "end": "Finish and send to Oscar",
+    "closed": "Thank you. Your inquiry has been saved for delivery to Oscar.",
+    "unavailable": "The chat is being prepared. For now, email me or book a 1:1 session.",
+    "error": "We couldn’t complete that action. Please try again or contact us by email.",
+    "audioError": "We couldn’t access your microphone. Check your browser permissions.",
+    "thinking": "Preparing a reply…",
+    "file": "File",
+    "audio": "Audio",
+    "verify": "Complete the verification to begin.",
+    "assistant": "Oscar’s assistant",
+    "you": "You",
+    "open": "Open project chat",
+    "privacyLink": "Privacy",
+    "delete": "Delete this conversation",
+    "deleted": "Conversation deleted. Emails already delivered cannot be recalled.",
+    "clearAudio": "Discard audio",
+    "audioFollowup": "Please respond to my transcribed audio message."
+  },
+  "footer": {
+    "line": "Purposeful software. Thoughtful engineering.",
+    "rights": "Oscar Bahamonde · Peru",
+    "privacy": "Privacy"
+  },
+  "privacy": {
+    "title": "Privacy for your inquiries",
+    "body": "The chat asks for consent before storing information. Messages and files are used to answer your inquiry and send it to Oscar Bahamonde, with the contact details you choose to share.",
+    "providers": "Messages are processed by the configured AI provider; audio is sent to the transcription provider. Files are kept in private storage and download links expire.",
+    "retention": "The configured retention period is shown when you start the chat. You can delete the conversation while you still have its session, or request access or deletion by emailing oscar.bahamonde.dev@gmail.com. Delivered emails require manual removal by the recipient.",
+    "booking": "Reservations are processed through Google Calendar and MercadoPago under their privacy policies. Card details are entered on MercadoPago.",
+    "cookies": "We store language and theme preferences, a chat session cookie, and the cookie needed to verify payments. Turnstile runs an abuse check when you start a chat."
+  }
+}

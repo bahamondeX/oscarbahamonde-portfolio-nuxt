@@ -21,7 +21,7 @@ export async function hold(start:string,name:string,email:string) {
  if(!await free(start,id)) {await calendar('/'+id,{method:'PATCH',headers:{'If-Match':saved.etag},body:{transparency:'transparent',extendedProperties:{private:{...props(saved),expires:'0'}}}});throw createError({statusCode:409,message:'Tu agenda cambió. Elige otro horario.'})}
  return saved
 }
-export async function finalize(paymentID:string) {
+export async function finalize(paymentID:string): Promise<{approved:boolean;confirmed:boolean;review?:boolean;start?:string;meet?:string}> {
  const token=useRuntimeConfig().mercadoPagoAccessToken
  const payment=await $fetch<any>(`https://api.mercadopago.com/v1/payments/${paymentID}`,{headers:{Authorization:`Bearer ${token}`},retry:0,timeout:15000})
  const reference=payment.external_reference||''

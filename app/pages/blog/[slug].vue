@@ -1,0 +1,9 @@
+<script setup lang="ts">
+const localeTag = useLocaleTag()
+const {t,locale}=useI18n(),route=useRoute(),localePath=useLocalePath(),head=useLocaleHead()
+const {data:post,error}=await useFetch(`/api/blog/${route.params.slug}`)
+if(error.value||!post.value)throw createError({statusCode:404,statusMessage:'Article not found'})
+useHead(()=>({htmlAttrs:head.value.htmlAttrs,link:head.value.link,meta:head.value.meta,script:[{type:'application/ld+json',innerHTML:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:post.value!.title,datePublished:post.value!.date,description:post.value!.excerpt,image:post.value!.image||'https://oscarbahamonde.com/images/og.png',author:{'@type':'Person',name:'Oscar Bahamonde',url:'https://oscarbahamonde.com'},isBasedOn:post.value!.url,url:`https://oscarbahamonde.com/${locale.value}/blog/${post.value!.slug}`}).replace(/</g,'\\u003c')}]}))
+useSeoMeta({title:()=>`${post.value!.title} — Oscar Bahamonde`,description:()=>post.value!.excerpt,ogTitle:()=>post.value!.title,ogDescription:()=>post.value!.excerpt,ogImage:()=>post.value!.image||'https://oscarbahamonde.com/images/og.png',ogType:'article'})
+</script>
+<template><SiteHeader /><main v-if="post" id="content" class="shell section blog-detail"><NuxtLink :to="`${localePath('/')}#blog`" class="text-link">← {{ t('nav.blog') }}</NuxtLink><p class="eyebrow">{{ t('blog.excerpt') }} · Medium</p><h1>{{ post.title }}</h1><time :datetime="post.date">{{ new Intl.DateTimeFormat(localeTag,{dateStyle:'long',timeZone:'UTC'}).format(new Date(post.date)) }}</time><NuxtImg v-if="post.image" :src="post.image" :alt="post.title" width="960" height="540" format="webp" /><p>{{ post.excerpt }}</p><a :href="post.url" class="button primary">{{ t('common.original') }} ↗</a></main><SiteFooter /><MacDock /></template>

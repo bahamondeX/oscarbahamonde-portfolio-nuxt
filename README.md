@@ -1,57 +1,61 @@
 # Oscar Bahamonde · Nuxt portfolio
 
-Independent source repository, rebuilt from scratch on 2026-11-13. Nuxt 4, Vue, TypeScript and responsive CSS. This repository does not replace the older React/Vite repository.
+Nuxt 4.6.4 + Vue + TypeScript. Fuente de https://oscarbahamonde.com, en el repositorio independiente `bahamondeX/oscarbahamonde-portfolio-nuxt`. No usa el repositorio antiguo de React.
 
-## Development
+## Ejecutar
 
-Requires Node 22.21+ and npm.
+Node 24, npm y `.env.example` como referencia (no guardar secretos en Git).
 
 ```sh
-npm install
-npm test
+npm ci
 npm run dev
+npm test
+npm run typecheck
 npm run build
 npm run preview
 ```
 
-Nuxt renders the portfolio on the server and prerenders the home page. SEO files are in `public/`. CSS respects reduced-motion preferences. No API credentials are needed for the current site.
+El sitio público funciona sin credenciales del chatbot. Las reservas requieren las variables existentes de Calendar/MercadoPago. El chat muestra un estado de preparación hasta configurar su DB, LLM, Turnstile y correo. Los archivos y audio se habilitan cuando sus proveedores están configurados.
 
-## Booking and payment
+## Arquitectura
 
-- Calendar: https://calendar.app.google/kDqLmVtrnZ8nWfgKA
-- Mercado Pago: https://mpago.la/1PGrFn1
-- PEN 20 / 30 minutes, weekdays 09:00–13:00 and 14:00–17:00 in America/Lima.
-- Google Calendar handles availability, booking and Meet invitations.
-- The two links are independent. Payment verification is manual. This repository does not claim automatic payment validation.
+- `app/`: nueve secciones, dock, tema persistente, reserva y chat. `i18n/locales/{es,en}.json`: textos. Añadir idioma y metadatos en `shared/locales.mjs` sin cambiar componentes.
+- `server/api/blog`: RSS Medium, caché Nitro, paginación y copia de respaldo con extractos verificados. Postgres acumula artículos si está configurado. El feed no garantiza todo el histórico.
+- `server/api/chat`: sesión con consentimiento, streaming, archivos, audio, cierre, descarga privada y eliminación.
+- `migrations/001_leads.sql`: leads, mensajes, archivos, cola de notificación, límites de uso y archivo de Medium.
+- Sitemap multilingüe dinámico, robots y llms.txt. Medium externo se enlaza desde llms y páginas de extractos: un sitemap no puede declarar URLs ajenas como loc.
+- Logo original y tamaños derivados en public; scripts/assets.mjs permite regenerarlos. Foto actual conservada. Fuentes y pendientes en docs y TODO.md.
 
-For a future paid booking flow, implement Checkout Pro with server-side payment lookup, signature validation, amount/currency checks, persistent booking state, slot holds and idempotent Calendar event creation. Never trust checkout return parameters as proof of payment. Store all secrets only in deployment environment variables.
+## Reservas: integración existente preservada
 
-## Deployment
+`GET /api/availability`, `POST /api/checkout`, `GET /api/payment`, `POST /api/payment-webhook`, `POST /api/calendar/connect`, `GET /api/calendar/callback`, `/pago`, `/conectar`.
 
-Import this repository into Vercel with framework Nuxt and build command `npm run build`. Connecting it to the existing production project is a separate operation. This repository has not been deployed automatically by its creation.
+Calendar es el registro persistente de reservas. Sesiones de 30min a S/20, lunes a viernes 09–13 y 14–17 America/Lima, con 4h de anticipación y horizonte de 60 días. Eventos personales, recurrentes, de día completo e incluso marcados como libres bloquean disponibilidad; cancelados y declinados por el propietario no. Sin acceso a Calendar, no ofrece horarios.
 
-## Validation status
+El backend retiene un horario por 15min con ID determinista y control ETag. MercadoPago recibe PEN20 y la referencia del hold. La vuelta del navegador y el webhook consultan el pago real, verifican estado/importe/moneda/referencia y confirman Calendar con Meet. No se confía en parámetros del retorno. Conflictos o pagos tardíos requieren revisión manual; no se reemplazan eventos personales. Los holds vencidos pueden seguir visibles hasta reutilizar el horario. Esta limitación previa se conserva.
 
-The dependency-free source checks can run locally with `npm test`. A full Nuxt build requires network access to npm. The Lighthouse scores from the previous portfolio do not apply to this rebuild.
+Se añadieron únicamente anotaciones de tipos en dos utilidades antiguas: la prueba de hash compara el JavaScript compilado de ocho archivos críticos con la versión anterior y verifica que su comportamiento ejecutable no cambió.
 
-## Portrait
+## Activar leads
 
-The portrait in `public/images/oscar-portrait.jpg` is an AI-assisted retouch of Oscar's photograph: lighting, color and subtle skin cleanup. It is included with the owner's authorization.
+1. Configurar Postgres persistente con URL de conexión agrupada/TLS y ejecutar `npm run db:migrate`.
+2. Completar LLM compatible con OpenAI (streaming y respuesta JSON), transcripción, secreto de sesión y Turnstile (`lead-chat`, hostname real).
+3. Crear/configurar bucket privado S3/R2; claves con acceso limitado a `leads/*`. Nunca usar archivos públicos para consultas.
+4. Gmail API con OAuth `gmail.send` **separado de Calendar**, o SMTP Gmail con app password. Destinatario fijo por entorno.
+5. Un scheduler cada 5min llama `GET /api/chat/cron` con `Authorization: Bearer <NUXT_CRON_SECRET>`. La demora de inactividad es N minutos más hasta un intervalo del scheduler. No se incluye cron de pago automáticamente.
 
-## Mercado Pago Checkout Pro
+El correo contiene campos captados, resumen marcado como generado por IA, conversación íntegra, archivos y audios. Por debajo de 18MB de contenido se adjuntan; por encima se usan enlaces firmados de 7 días (margen para base64 frente al límite de Gmail). Descargas del visitante: sesión propietaria y enlaces de 15min. Reintentos con backoff, hasta 5 intentos; revisar `lead_outbox` con state=failed y error_code. Se procesa una notificación por ejecución para mantener el límite de 60s. Ante un fallo ambiguo después de enviar, un reintento puede repetir correo: se mantiene Message-ID estable, sin prometer entrega exactamente una vez.
 
-Set `NUXT_MERCADO_PAGO_ACCESS_TOKEN` as a sensitive production environment variable in Vercel, then redeploy. Without it, `/api/checkout` redirects to the existing S/20 payment link and verification remains manual. With it, the server creates a PEN 20 preference and verifies the payment through Mercado Pago, matching a browser order cookie, currency, amount, live mode and approved state. `/pago` never trusts query-string status. Calendar reservations still occur through Google Calendar; no webhook or automatic event creation has been implemented. Do not claim a fully automated paid booking flow.
+Límites por IP persistidos, sesión HttpOnly/Secure/SameSite, consentimiento antes de guardar, Turnstile, límite de mensajes y de adjuntos. Se valida MIME por firma, PDF activo, rutas/ejecutables dentro de ZIP y tamaños descomprimidos. Este escaneo básico no sustituye un antivirus completo. Máximo de archivo predeterminado 3MB (techo 3.5MB por el límite de cuerpo de Vercel); grabación de hasta 60s. Retención 90 días configurable y borrado por cron. Un correo ya entregado no puede retirarse mediante borrar conversación.
 
-## Booking flow (current)
-The home page embeds the real Google Calendar appointment schedule (30 minutes, weekdays 09–13 and 14–17, Lima). Guests complete a Calendar booking before using the separate checkout. A client-side checkbox acknowledges booking but does not verify it. A paid order is NOT automatically associated with a Calendar event. Do not describe this as an atomic paid booking system. Full coupling requires dedicated Calendar API authorization, persistent booking records, slot holds and idempotent payment/event handling.
+## Pruebas
 
-## Unified booking
-The site queries the owner's Google Calendar (recurring instances and all-day events included), offers Mon–Fri 09–13 / 14–17 America/Lima, 30-minute slots, four-hour notice and 60-day window. No availability is offered when Calendar cannot be read.
+`npm test`: reglas de agenda/pago, invariancia del runtime, extracción limitada, ZIP/MIME y RSS. `npm run typecheck` y `npm run build`.
 
-An event with deterministic slot ID and conditional ETag updates coordinates competing requests from this application. Holds last 15 minutes; expired holds do not block this application's availability. Calendar remains the durable order record; expired temporary entries may remain visible to the owner until reused. This does not provide a distributed transaction against unrelated clients editing Google Calendar: availability is rechecked before checkout and confirmation; conflicts or late payments require manual review/refund, never automatic replacement of personal events.
+`node scripts/integration.mjs`: API real compilada, Postgres WASM efímero y mocks de LLM/Turnstile/S3/transcripción/Gmail; verifica persistencia, consentimiento, streaming, aislamiento de archivos, adjuntos, inactividad e idempotencia. No envía correos ni cobra. Usa puertos locales 3188, 3189 y 54579 y los cierra al terminar. No es una prueba de credenciales reales.
 
-Mercado Pago checkout uses PEN20 and the hold UUID as external reference. The browser return and webhook independently retrieve and validate the payment before confirming the same hold. A verified payment finalizes the Calendar event, invitation and Meet; duplicate notifications are idempotent through the event version and confirmed state. Test payment completion with merchant test accounts before collecting real payments. Webhook notifications are untrusted triggers; the API always retrieves the actual payment with the merchant credential. Rate limiting and signature validation are recommended before higher traffic.
+`npm run audit -- https://oscarbahamonde.com/es`: Lighthouse móvil/escritorio con Chrome instalado, resultados en reports/. `node scripts/inspect-ui.mjs` inspecciona un navegador de prueba aislado. Resultados finales y límites en docs/VALIDATION.md.
 
-Private runtime variables: NUXT_MERCADO_PAGO_ACCESS_TOKEN, NUXT_GOOGLE_CLIENT_ID, NUXT_GOOGLE_CLIENT_SECRET, NUXT_GOOGLE_REFRESH_TOKEN, NUXT_GOOGLE_CALENDAR_ID (primary), NUXT_BOOKING_SECRET (random 32+ bytes). Never commit their values. Enable Calendar API in the Google project. `/conectar` starts owner-only setup with the booking secret; callback verifies the owner email and displays the refresh token once for secure Vercel configuration. Keep Google OAuth in production rather than testing for durable refresh tokens, and inspect the application's consent branding/scopes before authorizing. No client-side credentials.
+## Vercel
 
-Personal Calendar events marked Free also block consultation slots, as requested by the owner. Cancelled and self-declined events are ignored.
+Proyecto `oscarbahamonde-premium-nuxt`, framework Nuxt, Node 24, `npm ci`, `npm run build`. Mantener las variables existentes; añadir nuevas solo en servidor. No cambiar DNS/nameservers, correo ni otros subdominios. Nunca copiar tokens de Calendar a Gmail. Se conserva el dominio raíz y redirección www. Si Vercel no tiene una conexión Git autorizada, desplegar la misma revisión de Git mediante archivos fuente; no publicar una compilación macOS en Linux (Sharp debe compilarse en Vercel).

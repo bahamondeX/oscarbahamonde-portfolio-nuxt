@@ -1,0 +1,239 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "bio": "Bio",
+    "experience": "Experiencia",
+    "skills": "Skills",
+    "projects": "Proyectos",
+    "services": "Servicios",
+    "certifications": "Credenciales",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "label": "Explorar el portafolio",
+    "skip": "Saltar al contenido",
+    "theme": "Cambiar tema",
+    "language": "Cambiar idioma",
+    "top": "Volver arriba"
+  },
+  "common": {
+    "from": "Desde",
+    "explore": "Explorar",
+    "read": "Leer artículo",
+    "original": "Leer en Medium",
+    "back": "Volver al inicio",
+    "loading": "Cargando…",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "cancel": "Cancelar",
+    "send": "Enviar",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "open": "Abrir",
+    "optional": "opcional"
+  },
+  "seo": {
+    "title": "Oscar Bahamonde — Ingeniería de IA, datos y cloud",
+    "description": "Ingeniero de software en Perú. IA aplicada, plataformas de datos, arquitectura cloud y consultoría 1:1. Conoce mi trabajo y construyamos tu próximo proyecto."
+  },
+  "hero": {
+    "eyebrow": "OSCAR BAHAMONDE · SOFTWARE ENGINEER",
+    "line1": "Ideas ambiciosas.",
+    "line2": "Sistemas reales.",
+    "intro": "Diseño y construyo software, datos e inteligencia artificial. De la primera idea a la infraestructura que la hace posible.",
+    "cta": "Exploremos tu idea",
+    "work": "Ver mi trabajo",
+    "note": "Desde Perú. Con visión global.",
+    "photo": "Retrato de Oscar Bahamonde",
+    "caption": "Ingeniería con visión de producto.",
+    "scroll": "Sigue explorando",
+    "pill": "AI · DATA · CLOUD"
+  },
+  "bio": {
+    "eyebrow": "01 / UN POCO SOBRE MÍ",
+    "title": "Curioso por naturaleza.",
+    "accent": "Ingeniero por vocación.",
+    "body": "Soy Oscar. Ingeniero de software, datos e inteligencia artificial. Me muevo entre la profundidad técnica y la visión de producto: del primer prototipo a la infraestructura que lo sostiene.",
+    "body2": "He trabajado con equipos globales en backend, datos y confiabilidad. Hoy ayudo a convertir necesidades de negocio en tecnología útil y mantenible.",
+    "achievement1": "Primer puesto de ingreso a la PUCP",
+    "detail1": "Computación general · 2007",
+    "achievement2": "Ganador del hackathon AWS User Group Perú",
+    "detail2": "2023 · Más de 50 equipos · Plataforma para desarrolladores potenciada por ChatGPT.",
+    "speaker": "AWS Speaker",
+    "profile": "Mi trayectoria en LinkedIn"
+  },
+  "experience": {
+    "eyebrow": "02 / EXPERIENCIA",
+    "title": "Del código",
+    "accent": "a producción.",
+    "intro": "Backend, plataformas de datos y confiabilidad en equipos globales.",
+    "dynata": "Infraestructura Kubernetes en AWS, automatización de despliegues y observabilidad de sistemas en producción.",
+    "globant": "Plataformas de datos e IA aplicada, pipelines en AWS y soluciones para equipos empresariales.",
+    "pronti": "Migración de Flask a FastAPI e integración de Milvus, RabbitMQ y Firebase para una plataforma de moda con IA.",
+    "more": "Más trayectoria en LinkedIn",
+    "trust": "Experiencia en"
+  },
+  "skills": {
+    "eyebrow": "03 / MI CAJA DE HERRAMIENTAS",
+    "title": "La herramienta correcta.",
+    "accent": "Para el problema correcto.",
+    "intro": "Tecnologías que conectan producto, datos e infraestructura."
+  },
+  "projects": {
+    "eyebrow": "04 / TRABAJO SELECCIONADO",
+    "title": "Pensados para servir.",
+    "accent": "Construidos para crecer.",
+    "voz": "Agentes de voz para conectar negocios y personas. Plataforma en desarrollo con IA conversacional e integraciones empresariales.",
+    "quipubase": "Una API para explorar IA, embeddings, búsqueda vectorial, colecciones en tiempo real y almacenamiento.",
+    "aiofauna": "Un framework de backend para construir aplicaciones Python y explorar arquitecturas serverless.",
+    "product": "Explorar producto",
+    "repo": "Ver repositorio",
+    "development": "En desarrollo"
+  },
+  "services": {
+    "eyebrow": "05 / CONSTRUYAMOS ALGO",
+    "title": "De tu próximo paso",
+    "accent": "a tu próximo producto.",
+    "intro": "Alcances claros. Entregables concretos. Precios en soles peruanos.",
+    "web": "Desarrollo web",
+    "automation": "Automatización e integraciones",
+    "audit": "Datos e infraestructura",
+    "cta": "Conversar sobre este servicio",
+    "note": "Referencias de alcance inicial. La propuesta final depende de requerimientos, integraciones y plazos; servicios de terceros, infraestructura y mantenimiento se cotizan por separado.",
+    "landing": {
+      "title": "Landing con propósito",
+      "scope": "Hasta 5 secciones con contenido proporcionado, diseño responsive y formulario conectado a correo.",
+      "delivery": "Sitio publicado, SEO inicial y código fuente."
+    },
+    "content": {
+      "title": "Contenido bajo tu control",
+      "scope": "Sitio con panel de administración, un rol editorial e integración de Calendar y correo.",
+      "delivery": "CMS configurado, integración y guía de uso."
+    },
+    "commerce": {
+      "title": "E-commerce conectado",
+      "scope": "MVP de catálogo físico o digital, base de datos, API, autenticación, un checkout y CRM básico.",
+      "delivery": "Flujo de compra, panel básico e integración de pagos."
+    },
+    "custom": {
+      "title": "Tu siguiente plataforma",
+      "scope": "Primera fase de un MVP SaaS, PaaS, streaming o producto con múltiples APIs y nube. Alcance a negociar.",
+      "delivery": "Descubrimiento, arquitectura y primera entrega acordada."
+    },
+    "ai": {
+      "title": "Asistentes de IA",
+      "scope": "Un asistente o chatbot con datos del cliente y una integración acotada.",
+      "delivery": "Flujo conversacional, base de conocimiento y entrega técnica."
+    },
+    "integration": {
+      "title": "Sistemas que conversan",
+      "scope": "Integración de sistemas aislados, incluido legacy. Alcance definido según las APIs disponibles.",
+      "delivery": "API, mapeo de datos, manejo de errores y documentación."
+    },
+    "cloud": {
+      "title": "Modernización cloud",
+      "scope": "Diagnóstico y primera fase de migración de una carga legacy u on-premise.",
+      "delivery": "Plan, arquitectura y migración piloto acordada."
+    },
+    "data": {
+      "title": "Auditoría de datos",
+      "scope": "Revisión de una plataforma de datos, observabilidad, pipelines y oportunidades de modernización.",
+      "delivery": "Diagnóstico y hoja de ruta priorizada."
+    },
+    "infra": {
+      "title": "Infraestructura eficiente",
+      "scope": "Revisión de un entorno cloud: costos, confiabilidad, observabilidad y despliegues.",
+      "delivery": "Informe de hallazgos y plan de optimización."
+    }
+  },
+  "certifications": {
+    "eyebrow": "06 / APRENDIZAJE CONTINUO",
+    "title": "El aprendizaje",
+    "accent": "no se detiene.",
+    "body": "Consulta mis credenciales y su información de verificación en LinkedIn.",
+    "cta": "Ver credenciales en LinkedIn"
+  },
+  "blog": {
+    "eyebrow": "07 / IDEAS EN ABIERTO",
+    "title": "Notas desde",
+    "accent": "la ingeniería.",
+    "intro": "Artículos sobre software, datos e inteligencia artificial. Publicados originalmente en Medium.",
+    "empty": "Los artículos no están disponibles en este momento. Puedes leerlos directamente en Medium.",
+    "visit": "Visitar mi Medium",
+    "stale": "Mostrando la última copia disponible.",
+    "excerpt": "Extracto del artículo original",
+    "page": "Página"
+  },
+  "contact": {
+    "eyebrow": "08 / EMPECEMOS UNA CONVERSACIÓN",
+    "title": "Tu próxima idea",
+    "accent": "empieza aquí.",
+    "intro": "Cuéntame qué quieres construir o reserva una sesión para resolver una duda concreta.",
+    "chat": "Hablemos de tu proyecto",
+    "meeting": "Una conversación. Un siguiente paso.",
+    "duration": "30 minutos · Google Meet",
+    "schedule": "Lunes a viernes · 09:00–13:00 y 14:00–17:00 · Lima (UTC−5)",
+    "email": "También puedes escribirme",
+    "social": "Encuéntrame en"
+  },
+  "booking": {
+    "step1": "1 · Elige tu horario",
+    "date": "Fecha · hora de Lima (UTC−5)",
+    "checking": "Consultando Google Calendar…",
+    "error": "No pudimos consultar la agenda. Necesitamos validar la disponibilidad antes de reservar.",
+    "empty": "No hay espacios disponibles para este día. Prueba otra fecha.",
+    "slots": "Sesiones de 30 minutos. Los espacios ocupados están bloqueados.",
+    "step2": "2 · Tus datos y pago",
+    "name": "Nombre",
+    "email": "Email para la invitación",
+    "processing": "Validando y reteniendo el horario…",
+    "pay": "Reservar y pagar S/20",
+    "failed": "No pudimos iniciar la reserva. Consulta nuevamente los horarios.",
+    "note": "Retenemos el horario 15 minutos para completar el pago seguro en MercadoPago. Al aprobarse, confirmamos la cita y enviamos la invitación de Calendar con Google Meet. Sin pago, el espacio vuelve a estar disponible."
+  },
+  "chat": {
+    "title": "Tu idea, en buenas manos.",
+    "intro": "Describe tu proyecto. Te ayudaré a explorar el alcance y el siguiente paso.",
+    "privacy": "Con tu consentimiento guardaremos esta conversación, sus archivos y audios para atender tu consulta y enviarla a Oscar por correo. Usamos proveedores de IA para responder y transcribir. Evita compartir datos sensibles. Conservación: {days} días.",
+    "consent": "Acepto el tratamiento de mis datos para esta consulta.",
+    "start": "Iniciar conversación",
+    "placeholder": "Cuéntame qué tienes en mente…",
+    "attach": "Adjuntar archivo",
+    "record": "Grabar audio",
+    "stop": "Detener grabación",
+    "preview": "Escucha tu audio antes de enviarlo",
+    "sendAudio": "Enviar audio",
+    "recording": "Grabando",
+    "drop": "Arrastra archivos aquí",
+    "limits": "PDF, imágenes, DOCX, ZIP y audio · hasta {mb} MB · {count} archivos",
+    "end": "Terminar y enviar a Oscar",
+    "closed": "Gracias. Tu consulta quedó registrada para enviarla a Oscar.",
+    "unavailable": "El chat está en preparación. Por ahora, escríbeme o reserva una sesión 1:1.",
+    "error": "No se pudo completar la operación. Inténtalo de nuevo o escríbenos por email.",
+    "audioError": "No se pudo acceder al micrófono. Revisa los permisos del navegador.",
+    "thinking": "Preparando respuesta…",
+    "file": "Archivo",
+    "audio": "Audio",
+    "verify": "Completa la verificación para comenzar.",
+    "assistant": "Asistente de Oscar",
+    "you": "Tú",
+    "open": "Abrir chat de proyectos",
+    "privacyLink": "Privacidad",
+    "delete": "Borrar esta conversación",
+    "deleted": "Conversación eliminada. Los correos ya enviados no se pueden retirar.",
+    "clearAudio": "Descartar audio",
+    "audioFollowup": "Responde a mi mensaje de audio transcrito, por favor."
+  },
+  "footer": {
+    "line": "Software con propósito. Ingeniería con criterio.",
+    "rights": "Oscar Bahamonde · Perú",
+    "privacy": "Privacidad"
+  },
+  "privacy": {
+    "title": "Privacidad de tus consultas",
+    "body": "El chat solicita consentimiento antes de guardar información. Los mensajes y archivos se usan para responder tu consulta y enviarla a Oscar Bahamonde, junto con los datos de contacto que elijas compartir.",
+    "providers": "Los mensajes se procesan mediante el proveedor de IA configurado; los audios se envían al proveedor de transcripción. Los archivos se guardan en almacenamiento privado y los enlaces de descarga expiran.",
+    "retention": "La retención configurada se muestra al iniciar el chat. Puedes borrar la conversación desde el chat mientras conserves su sesión, o solicitar acceso o eliminación escribiendo a oscar.bahamonde.dev@gmail.com. Los correos enviados requieren eliminación manual del destinatario.",
+    "booking": "Las reservas se procesan por Google Calendar y MercadoPago con sus políticas de privacidad. Los datos de tarjeta se introducen en MercadoPago.",
+    "cookies": "Se guardan preferencias de idioma y tema, una cookie de sesión del chat y la cookie necesaria para verificar el pago. Turnstile realiza la comprobación antiabuso al iniciar el chat."
+  }
+}

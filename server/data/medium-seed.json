@@ -1,0 +1,47 @@
+[
+  {
+    "id": "5a4fecfd18c7",
+    "slug": "quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+    "title": "Quipubase: Una base de datos semántica inspirada en el quipu andino",
+    "date": "2025-08-04T08:33:37.000Z",
+    "excerpt": "Por Oscar Bahamonde “El futuro de los datos puede aprender del pasado.” Vivimos en una era donde los datos están en todas partes: APIs, bases vectoriales, LLMs, flujos JSON, modelos multimodales… pero ¿y si pensáramos nuestras estructuras de datos como redes vivas, narrativas, jerárquicas y culturalmente conscientes? De esa intuición nace Quipubase , una plataforma…",
+    "url": "https://medium.com/@obahamonde/quipubase-una-base-de-datos-sem%C3%A1ntica-inspirada-en-el-quipu-andino-5a4fecfd18c7",
+    "image": ""
+  },
+  {
+    "id": "22943f84d25a",
+    "slug": "memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a",
+    "title": "Memory Safety Meets Performance: The Power of Modern Programming Languages",
+    "date": "2025-03-26T04:45:41.000Z",
+    "excerpt": "In the world of programming, the eternal quest for balance between performance and safety has led to the development of numerous languages, each with its own strengths and weaknesses. However, one language has been making waves in recent years with its unique approach to memory management, offering the best of both worlds: high-level simplicity with…",
+    "url": "https://medium.com/@obahamonde/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a",
+    "image": ""
+  },
+  {
+    "id": "3d729d316f13",
+    "slug": "evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13",
+    "title": "Evaluación Comparativa: ChatGPT vs Llama 3 para Empresas y Creadores de Contenido",
+    "date": "2024-12-14T11:21:26.000Z",
+    "excerpt": "En un mundo donde la IA se vuelve cada vez más crucial para el trabajo intelectual, realizamos un análisis exhaustivo de dos modelos líderes: ChatGPT y Llama 3. El objetivo: determinar sus fortalezas y casos de uso óptimos. Metodología Desarrollamos un test de 10 preguntas enfocadas en: - Análisis estratégico - Resolución de problemas -…",
+    "url": "https://medium.com/@obahamonde/evaluaci%C3%B3n-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13",
+    "image": ""
+  },
+  {
+    "id": "fa6f4a62e624",
+    "slug": "setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624",
+    "title": "Setting up DNS Caching with Flask, Google Cloud Run and C",
+    "date": "2023-12-08T22:22:43.000Z",
+    "excerpt": "Setting up DNS Caching with Flask, Google Cloud Run and Cloudflare This guide will cover the essentials for deploying a Python application on Google Cloud Run, configuring DNS settings with Cloudflare, and ensuring that DNS caching is properly utilized for your application. Prerequisites A Google Cloud account A Cloudflare account Domain name registered and controlled…",
+    "url": "https://medium.com/@obahamonde/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624",
+    "image": ""
+  },
+  {
+    "id": "cb06429f196d",
+    "slug": "the-plain-text-team-cb06429f196d",
+    "title": "The Plain-Text Team",
+    "date": "2023-10-14T11:32:04.000Z",
+    "excerpt": "The Plain-Text Team AI Reacts to Youtube: The Plain-Text Team https://medium.com/media/2f1bf5c450c936c878c268681f1e6187/href Disclaimer: This is an AI generated article, it’s error prone and it’s not meant to be taken as a source of truth. The Ulysses Pact: A Solution to the Challenges of Managing a Tech Team Opinionated Article In his video titled “The Ulysses Pact:…",
+    "url": "https://medium.com/@obahamonde/the-plain-text-team-cb06429f196d",
+    "image": ""
+  }
+]
