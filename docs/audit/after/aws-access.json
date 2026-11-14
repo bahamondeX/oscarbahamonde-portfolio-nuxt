@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-11-14T23:18:27.085582+00:00",
+  "operation": "sts:GetCallerIdentity",
+  "region": "us-east-1",
+  "exitCode": 255,
+  "status": "blocked",
+  "error": "aws: [ERROR]: Your session has expired. Please reauthenticate using 'aws login'.",
+  "lambdaArtifactCompared": false,
+  "rollbackVersionCreated": false,
+  "deploymentPerformed": false
+}

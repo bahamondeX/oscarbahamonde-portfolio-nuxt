@@ -1,0 +1,7 @@
+{
+  "createdAt": "2026-11-14T22:58:24.464513+00:00",
+  "questions": 44,
+  "sha256": "498945f082c34c1c4f9387f7faf3780441f7960001bf09e8a6e2a59130775512",
+  "path": "assistant/test/questions-heldout.json",
+  "policy": "Sealed before grounding changes. No held-out question or answer shared with implementation agent. Execute once after implementation is frozen; preserve every outcome. A later deployed confirmation uses the same frozen set but is explicitly a post-deployment run, not a fresh held-out score."
+}

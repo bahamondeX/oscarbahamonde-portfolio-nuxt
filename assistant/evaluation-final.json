@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "blocked-status-not-evaluation-result",
+  "status": "blocked",
+  "generatedAt": "2026-11-14T23:15:18.973435+00:00",
+  "sourceState": "Working tree under review; no final source freeze or deployed revision asserted.",
+  "acceptanceSatisfied": false,
+  "newEvaluationCalls": 0,
+  "scores": {
+    "current": null,
+    "heldout": null
+  },
+  "suites": [
+    {
+      "suite": "current",
+      "questionsFile": "assistant/test/questions.json",
+      "questionsSha256": "25abd57d478038fa3e2ce4a3682c50f191fc6ee2bfd1e0e05a6cae9dd19c15de",
+      "total": 36,
+      "requiredUsefulPasses": 35,
+      "requiredUsefulPercent": 95,
+      "status": "pending",
+      "executed": 0,
+      "usefulPasses": null,
+      "usefulPercent": null,
+      "semanticReviewCompleted": false,
+      "local": {
+        "status": "blocked",
+        "executed": 0,
+        "score": null,
+        "blockerIds": [
+          "aws-session-expired"
+        ]
+      },
+      "deployedEndpoint": {
+        "status": "blocked",
+        "executed": 0,
+        "score": null,
+        "blockerIds": [
+          "aws-session-expired",
+          "deployed-version-unverified",
+          "endpoint-session-capacity"
+        ]
+      },
+      "criteriaFile": "assistant/test/criteria-current.json",
+      "results": []
+    },
+    {
+      "suite": "heldout",
+      "questionsFile": "assistant/test/questions-heldout.json",
+      "questionsSha256": "498945f082c34c1c4f9387f7faf3780441f7960001bf09e8a6e2a59130775512",
+      "total": 44,
+      "requiredUsefulPasses": 42,
+      "requiredUsefulPercent": 95,
+      "status": "pending",
+      "executed": 0,
+      "usefulPasses": null,
+      "usefulPercent": null,
+      "semanticReviewCompleted": false,
+      "local": {
+        "status": "blocked",
+        "executed": 0,
+        "score": null,
+        "blockerIds": [
+          "aws-session-expired"
+        ]
+      },
+      "deployedEndpoint": {
+        "status": "blocked",
+        "executed": 0,
+        "score": null,
+        "blockerIds": [
+          "aws-session-expired",
+          "deployed-version-unverified",
+          "endpoint-session-capacity"
+        ]
+      },
+      "criteriaFile": "assistant/test/questions-heldout.json",
+      "results": []
+    }
+  ],
+  "heldoutSeal": {
+    "createdAt": "2026-11-14T22:58:24.464513+00:00",
+    "sha256": "498945f082c34c1c4f9387f7faf3780441f7960001bf09e8a6e2a59130775512",
+    "questions": 44,
+    "intact": true,
+    "executed": false,
+    "sharedWithImplementationAgent": false,
+    "claimFilesCreated": false
+  },
+  "historicalEvidence": {
+    "path": "assistant/evaluation-results.json",
+    "sha256": "43093ead50922716cea61dc751dcda31be73894e590b15b23333188d0ff0df08",
+    "timestamp": "2026-11-14T21:43:38.624Z",
+    "total": 36,
+    "usefulPasses": 34,
+    "usefulPercent": 94.44444444444444,
+    "failedCaseIds": [
+      "es-rag",
+      "en-lambda"
+    ],
+    "scope": "Prior local model evaluation with simulated external tools, before the current grounding changes. Not a measurement of the pending source or deployed endpoint.",
+    "modifiedByThisReport": false
+  },
+  "productionDiagnosis": {
+    "path": "docs/audit/after/endpoint-diagnosis/reproduction.md",
+    "scope": "Two real browser messages in an existing anonymous production session. Contains prior context, so not an isolated full-suite run. Reproduced unsourced monetary and technical claims. Exact deployed Lambda code/version unavailable.",
+    "countsTowardFinalScore": false
+  },
+  "blockers": [
+    {
+      "id": "aws-session-expired",
+      "reason": "The current AWS authentication session expired; root observed the exact error \"Your session has expired\". Real Bedrock runs, Lambda version/hash comparison, rollback-version creation and final deployment cannot proceed until normal AWS login is renewed.",
+      "evidence": "docs/audit/after/endpoint-diagnosis/reproduction.md",
+      "action": "Renew AWS authentication through the normal login flow; do not paste credentials into the repository or report."
+    },
+    {
+      "id": "deployed-version-unverified",
+      "reason": "No authorized AWS session is currently available to identify the production Lambda artifact/version or deploy the reviewed changes. Browser responses alone do not establish a code hash.",
+      "action": "After authentication and source freeze, record prior rollback version, compare deployed artifact, run local evaluation, then deploy only if required gates pass."
+    },
+    {
+      "id": "endpoint-session-capacity",
+      "reason": "A repeatable automated public-endpoint suite needs genuine open anonymous sessions issued after Turnstile. No private token pool with sufficient normal session token/rate capacity is available. A previous browser conversation is not proof that 80 isolated cases ran.",
+      "action": "Obtain valid sessions through normal Turnstile flow and provide a private mode-600 token file. Do not mint tokens, bypass captcha or change production limits."
+    }
+  ],
+  "scoring": {
+    "currentMinimum": "35/36 useful and zero false prices/dates/certifications",
+    "heldoutMinimum": "42/44 useful (95.45%) and zero false prices/dates/certifications",
+    "automaticChecksAreNotSemanticReview": true,
+    "denominatorIncludesErrors": true,
+    "heldoutPolicy": "Execute once after adjustment/source freeze. Preserve every result. Do not tune against held-out outcomes and still claim it is unseen. A separate post-deployment confirmation run must be explicitly labeled, as required by the task."
+  },
+  "reproduction": {
+    "documentation": "assistant/evaluations/README.md",
+    "localCommand": "cd assistant && EVAL_MODE=local EVAL_SUITE=current EVAL_CREDENTIALS=aws-cli EVAL_SOURCE_REVISION=<frozen-commit> node --import tsx scripts/evaluate.mjs",
+    "localEnvironment": [
+      "AWS_REGION",
+      "BEDROCK_MODEL_ID",
+      "BEDROCK_GUARDRAIL_ID",
+      "BEDROCK_GUARDRAIL_VERSION"
+    ],
+    "heldoutCommand": "Use the same frozen code/config and EVAL_SUITE=heldout exactly once after current-suite review.",
+    "endpointCommand": "cd assistant && EVAL_MODE=endpoint EVAL_SUITE=current EVAL_ENDPOINT=<deployed-function-url> EVAL_TOKEN_FILE=<private-token-file> EVAL_DEPLOYMENT_ID=<lambda-version> node --import tsx scripts/evaluate.mjs",
+    "endpointHeldoutCommand": "Repeat the post-deployment phase with EVAL_SUITE=heldout; this is the separately labeled deployed confirmation, not a new unseen score.",
+    "rawAttemptPolicy": "Runner writes unique timestamped files and per-case attempt journals under assistant/evaluations. It refuses overwrite and never writes this consolidated evaluation-final.json directly."
+  },
+  "replacementPolicy": "After real execution and semantic review, replace this status document with a consolidated report referencing immutable raw attempt files. Preserve this blocked status in Git history. Never copy historical passes into pending scores."
+}
