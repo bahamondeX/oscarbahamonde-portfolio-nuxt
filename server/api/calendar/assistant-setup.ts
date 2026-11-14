@@ -5,7 +5,7 @@ import { SITE, nonce, sign } from '../../utils/calendar'
 // Optional, owner-only setup entry point. Does not modify the paid booking callback.
 export default defineEventHandler(async event => {
   setHeader(event, 'Cache-Control', 'private, no-store')
-  setHeader(event, 'Referrer-Policy', 'no-referrer')
+  setHeader(event, 'Referrer-Policy', 'same-origin')
   setHeader(event, 'X-Robots-Tag', 'noindex, nofollow')
   setHeader(event, 'Content-Security-Policy', "default-src 'none'; form-action 'self' https://accounts.google.com; frame-ancestors 'none'")
   const gate = process.env.NUXT_ASSISTANT_SETUP_KEY_HASH || ''
