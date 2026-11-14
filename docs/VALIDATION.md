@@ -10,3 +10,14 @@
 - La consulta de disponibilidad se inicia al acercarse a Contact para evitar llamadas de agenda innecesarias. El flujo de selección→datos→MercadoPago mantiene los mismos endpoints.
 
 Prueba de navegador final: nueve secciones/dock, magnificación, cambio de idioma sin recarga, tema persistente, reserva por teclado y manejo de conflicto, móvil sin desbordamiento, sección activa y movimiento reducido. Cero errores de consola no esperados. Checkout interceptado para evitar cargos.
+
+## AWS assistant — 2026-11-14
+
+- 15 assistant tests passed (Bedrock stream/tool mocks, confirmation gates, Google freebusy mock, Stream INSERT/MODIFY/duplicate/Gmail failure, MIME/header validation, SAM storage/event configuration).
+- 8 existing tests passed, including unchanged executable hashes for MercadoPago and Calendar booking handlers.
+- TypeScript checks passed for Nuxt and assistant. Production Nuxt build and Lambda bundles passed.
+- AWS CloudFormation ValidateTemplate accepted the SAM template; cfn-lint completed with no findings. No resources were deployed.
+- AWS Login authenticated through a private temporary copy of its cache; no credentials were printed or committed. Secret inventory in us-east-1 contained no Google/Turnstile assistant secrets.
+- Local robots.txt and llms.txt responded; sitemap.xml redirects to sitemap_index.xml. Medium originals remain in llms.txt and blog links; sitemap contains local bilingual post pages, as required by same-host sitemap rules.
+- Headless Chrome failed to launch in the managed environment. No new Lighthouse score, CLS measurement, or visual/accessibility browser pass is claimed.
+- Real Gmail, audio transcription, freebusy, event creation and paid checkout remain pending live configuration and end-to-end verification. Existing runtime hash checks are regression protection, not a live payment test.

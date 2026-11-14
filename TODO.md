@@ -24,3 +24,19 @@
 - [ ] Limitación previa conservada: holds vencidos dejan evento temporal visible hasta reutilizar horario; API los ignora para disponibilidad.
 - [ ] No incluir URLs externas Medium como loc del sitemap: protocolo exige mismo host. Páginas locales /es/blog/* y /en/blog/*; originales en llms.txt y enlaces visibles.
 - [ ] Consultar mediciones reales Lighthouse en docs/VALIDATION.md. Toda categoría inferior a95 sigue pendiente hasta corregir y medir nuevamente.
+
+## Asistente AWS Bedrock (2026-11-14)
+
+- [x] Código TypeScript, SAM, cinco tools Lambda, SSE, DynamoDB/KMS/S3 y notificaciones Stream con DLQ/alarma.
+- [x] Catálogo versionado con precios y alcances existentes; sin inventar credenciales ni certificaciones.
+- [x] Widget bilingüe reutiliza la estética actual; implementación previa disponible hasta configurar la URL AWS.
+- [x] Tests mock de Bedrock/Google/Gmail y eventos Stream; tests originales de agendamiento sin regresiones.
+- [x] Google OAuth guardado en AWS Secrets Manager tras consentimiento del propietario: refresh validado, scopes calendar.events/calendar.freebusy/gmail.send comprobados y consulta real freebusy correcta. No se enviaron correos de prueba.
+- [x] Turnstile Managed creado para oscarbahamonde.com, sin pre-clearance. Clave privada en AWS Secrets Manager y site key público en Vercel. Sin secretos en el repositorio.
+- [x] CloudFormation/SAM desplegado en us-east-1. Bedrock respondió con Claude Haiku 4.5; Lambda entregó SSE completo con precios correctos. Se confirmó la suscripción SNS y se rechazaron origen y captcha inválidos.
+- [ ] Fusionar PR #1 en main y configurar la URL pública de Lambda en Vercel para activar el widget. La revisión automática exige autorización explícita del propietario para esta fusión.
+- [ ] Ejecutar pruebas reales AWS/Google/Transcribe y prueba de pago autorizada; no se simuló un despliegue completado.
+- [ ] Gmail no ofrece exactamente-una-vez con DynamoDB. Revisar el límite de entrega ambigua en assistant/README.md antes de exigir cero duplicados bajo cualquier caída.
+- [ ] Lighthouse ≥95 y navegación de teclado en navegador: intento local bloqueado al arrancar Chrome. No se afirma un puntaje medido nuevo.
+- [ ] Certificaciones verificadas con logos: faltan nombres, emisores y URLs de evidencia.
+- [ ] PDF/DOCX/ZIP se aceptan y remiten como adjuntos; análisis automático del contenido no implementado. Audio sí se transcribe en servidor.

@@ -9,3 +9,7 @@ node_modules
 *.log
 
 reports/
+
+assistant/dist/
+assistant/.aws-sam/
+assistant/packaged.yaml

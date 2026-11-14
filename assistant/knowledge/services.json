@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "currency": "PEN",
+  "source": "shared/services.mjs and existing localized service copy",
+  "conditions": {
+    "es": "Referencias de alcance inicial. La propuesta final depende de requerimientos, integraciones y plazos; servicios de terceros, infraestructura y mantenimiento se cotizan por separado.",
+    "en": "Starting scope estimates. Final proposals depend on requirements, integrations and timelines; third-party services, infrastructure and maintenance are quoted separately."
+  },
+  "services": [
+    {
+      "id": "landing",
+      "category": "web",
+      "from": 500,
+      "es": {
+        "title": "Landing con propósito",
+        "scope": "Hasta 5 secciones con contenido proporcionado, diseño responsive y formulario conectado a correo.",
+        "delivery": "Sitio publicado, SEO inicial y código fuente."
+      },
+      "en": {
+        "title": "A purposeful landing page",
+        "scope": "Up to 5 sections with client-provided content, responsive design and an email-connected contact form.",
+        "delivery": "Published website, initial SEO and source code."
+      }
+    },
+    {
+      "id": "content",
+      "category": "web",
+      "from": 1500,
+      "es": {
+        "title": "Contenido bajo tu control",
+        "scope": "Sitio con panel de administración, un rol editorial e integración de Calendar y correo.",
+        "delivery": "CMS configurado, integración y guía de uso."
+      },
+      "en": {
+        "title": "Content you control",
+        "scope": "A website with an admin panel, one editorial role, Calendar and email integration.",
+        "delivery": "Configured CMS, integration and user guide."
+      }
+    },
+    {
+      "id": "commerce",
+      "category": "web",
+      "from": 3500,
+      "es": {
+        "title": "E-commerce conectado",
+        "scope": "MVP de catálogo físico o digital, base de datos, API, autenticación, un checkout y CRM básico.",
+        "delivery": "Flujo de compra, panel básico e integración de pagos."
+      },
+      "en": {
+        "title": "Connected e-commerce",
+        "scope": "A physical or digital catalog MVP, database, API, authentication, one checkout and basic CRM.",
+        "delivery": "Purchase flow, basic dashboard and payment integration."
+      }
+    },
+    {
+      "id": "custom",
+      "category": "web",
+      "from": 4500,
+      "es": {
+        "title": "Tu siguiente plataforma",
+        "scope": "Primera fase de un MVP SaaS, PaaS, streaming o producto con múltiples APIs y nube. Alcance a negociar.",
+        "delivery": "Descubrimiento, arquitectura y primera entrega acordada."
+      },
+      "en": {
+        "title": "Your next platform",
+        "scope": "First phase of a SaaS, PaaS, streaming or multi-API cloud MVP. Scope agreed together.",
+        "delivery": "Discovery, architecture and the first agreed release."
+      }
+    },
+    {
+      "id": "ai",
+      "category": "automation",
+      "from": 1500,
+      "es": {
+        "title": "Asistentes de IA",
+        "scope": "Un asistente o chatbot con datos del cliente y una integración acotada.",
+        "delivery": "Flujo conversacional, base de conocimiento y entrega técnica."
+      },
+      "en": {
+        "title": "AI assistants",
+        "scope": "One assistant or chatbot using client data and one scoped integration.",
+        "delivery": "Conversation flow, knowledge base and technical handover."
+      }
+    },
+    {
+      "id": "integration",
+      "category": "automation",
+      "from": 3500,
+      "es": {
+        "title": "Sistemas que conversan",
+        "scope": "Integración de sistemas aislados, incluido legacy. Alcance definido según las APIs disponibles.",
+        "delivery": "API, mapeo de datos, manejo de errores y documentación."
+      },
+      "en": {
+        "title": "Systems that talk",
+        "scope": "Integrations for isolated systems, including legacy. Scope depends on available APIs.",
+        "delivery": "API, data mapping, error handling and documentation."
+      }
+    },
+    {
+      "id": "cloud",
+      "category": "automation",
+      "from": 5000,
+      "es": {
+        "title": "Modernización cloud",
+        "scope": "Diagnóstico y primera fase de migración de una carga legacy u on-premise.",
+        "delivery": "Plan, arquitectura y migración piloto acordada."
+      },
+      "en": {
+        "title": "Cloud modernization",
+        "scope": "Assessment and the first migration phase for one legacy or on-premise workload.",
+        "delivery": "Plan, architecture and an agreed pilot migration."
+      }
+    },
+    {
+      "id": "data",
+      "category": "audit",
+      "from": 1800,
+      "es": {
+        "title": "Auditoría de datos",
+        "scope": "Revisión de una plataforma de datos, observabilidad, pipelines y oportunidades de modernización.",
+        "delivery": "Diagnóstico y hoja de ruta priorizada."
+      },
+      "en": {
+        "title": "Data platform audit",
+        "scope": "Review of one data platform, its observability, pipelines and modernization opportunities.",
+        "delivery": "Assessment and a prioritized roadmap."
+      }
+    },
+    {
+      "id": "infra",
+      "category": "audit",
+      "from": 1200,
+      "es": {
+        "title": "Infraestructura eficiente",
+        "scope": "Revisión de un entorno cloud: costos, confiabilidad, observabilidad y despliegues.",
+        "delivery": "Informe de hallazgos y plan de optimización."
+      },
+      "en": {
+        "title": "Efficient infrastructure",
+        "scope": "Review of one cloud environment: cost, reliability, observability and deployments.",
+        "delivery": "Findings report and an optimization plan."
+      }
+    }
+  ]
+}

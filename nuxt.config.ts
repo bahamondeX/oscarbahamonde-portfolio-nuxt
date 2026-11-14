@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     chatIdleMinutes: 15, chatRetentionDays: 90, cronSecret: '',
     gmailClientId: '', gmailClientSecret: '', gmailRefreshToken: '',
     smtpHost: 'smtp.gmail.com', smtpPort: 465, smtpUser: '', smtpPassword: '', leadNotificationTo: 'oscar.bahamonde.dev@gmail.com',
-    public: { siteUrl: 'https://oscarbahamonde.com' }
+    public: { siteUrl: 'https://oscarbahamonde.com', assistantUrl: '', turnstileSiteKey: '', assistantMaxBytes: 5000000, assistantRetentionDays: 90 }
   },
   site: { url: 'https://oscarbahamonde.com', name: 'Oscar Bahamonde', defaultLocale: 'es' },
   i18n: {
