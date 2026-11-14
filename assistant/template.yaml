@@ -221,18 +221,18 @@ Resources:
             Action: ANONYMIZE
       TopicPolicyConfig:
         TopicsConfig:
-          - Name: OutOfScope
+          - Name: UnrelatedAdviceAndEntertainment
             Type: DENY
-            Definition: Requests unrelated to Oscar Bahamonde’s professional services, software, data, cloud, AI project scoping, pricing, contact or scheduling.
+            Definition: Clinical diagnoses, prescriptions, personal legal advice, investment recommendations, political campaign persuasion, erotic material, and recreational fiction or jokes.
             Examples:
               - Write a political campaign speech.
               - Diagnose my illness.
-  GuardrailVersion:
-    Type: AWS::Bedrock::GuardrailVersion
+  GuardrailVersionV2:
+    Type: AWS::Bedrock::GuardrailVersionV2
     Properties:
       GuardrailIdentifier:
         Ref: Guardrail
-      Description: Versioned assistant guardrail
+      Description: Explicit denied topics with all HIGH security filters unchanged
   Chat:
     Type: AWS::Serverless::Function
     Properties:
@@ -254,7 +254,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersion
+              - GuardrailVersionV2
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -423,7 +423,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersion
+              - GuardrailVersionV2
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -503,7 +503,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersion
+              - GuardrailVersionV2
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -588,7 +588,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersion
+              - GuardrailVersionV2
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -682,7 +682,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersion
+              - GuardrailVersionV2
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -781,7 +781,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersion
+              - GuardrailVersionV2
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -870,7 +870,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersion
+              - GuardrailVersionV2
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -1010,7 +1010,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersion
+              - GuardrailVersionV2
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -1126,7 +1126,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersion
+              - GuardrailVersionV2
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -1291,5 +1291,5 @@ Outputs:
   GuardrailVersion:
     Value:
       Fn::GetAtt:
-        - GuardrailVersion
+        - GuardrailVersionV2
         - Version
