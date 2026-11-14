@@ -1,0 +1,2 @@
+<script setup>useHead({title:'Conectar Calendar',meta:[{name:'robots',content:'noindex,nofollow'}]})</script>
+<template><main class="shell section"><h1>Conectar Google Calendar</h1><p>Configuración privada del propietario.</p><form action="/api/calendar/connect" method="post"><label>Clave de configuración <input name="key" type="password" required autocomplete="off"></label><button class="button primary">Conectar mi calendario</button></form></main></template>

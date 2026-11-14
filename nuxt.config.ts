@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-11-13',
   css: ['~/assets/main.css'],
-  runtimeConfig: { mercadoPagoAccessToken: '' },
+  runtimeConfig: { mercadoPagoAccessToken: '', googleClientId: '', googleClientSecret: '', googleRefreshToken: '', googleCalendarId: 'primary', bookingSecret: '' },
   devtools: { enabled: false },
   app: { head: {
     htmlAttrs: { lang: 'es' },
