@@ -105,7 +105,7 @@ export async function executeTool(name: ToolName, input: any, s: any, operationI
           price: 20,
           currency: 'PEN',
           duration: 30,
-          url: cfg.origin + '/es#contact',
+          url: cfg.origin + (s.locale === 'en' ? '/en#contact' : '/es#contact'),
           start: args.start,
           note: 'Use the existing booking form to select this slot and pay MercadoPago. Only its approved-payment webhook confirms Google Meet.',
         }
@@ -183,10 +183,7 @@ export async function executeTool(name: ToolName, input: any, s: any, operationI
         }),
       )
       // The model cannot inject arbitrary body text into outbound email.
-      const html =
-        '<h1>Servicios de Oscar / Oscar’s services</h1>' +
-        kb.services.map((x) => `<p>${x.es.title} / ${x.en.title}: desde S/${x.from}</p>`).join('') +
-        `<p><a href="${cfg.origin}/es#contact">Agendar / Book</a></p><p>Enviado por el asistente de IA de Oscar / Sent by Oscar’s AI assistant.</p>`
+      const { html } = serviceEmailTemplate()
       const { attachments, links } = await import('./mail.js').then((m) =>
         m.sessionAttachments(s.id, args.attachments || []),
       )
@@ -204,8 +201,20 @@ export async function executeTool(name: ToolName, input: any, s: any, operationI
     }
   }
 }
+export function serviceEmailTemplate() {
+  const lines = kb.services.map((x) => `${x.es.title} / ${x.en.title}: desde S/${x.from}`)
+  const signature = 'Enviado por el asistente de IA de Oscar / Sent by Oscar’s AI assistant.'
+  return {
+    subject: 'Servicios de Oscar · Services',
+    body: ['Servicios de Oscar / Oscar’s services', ...lines, `Agendar / Book: ${cfg.origin}/es#contact`, signature].join('\n'),
+    html: '<h1>Servicios de Oscar / Oscar’s services</h1>' + lines.map(line => `<p>${line}</p>`).join('') + `<p><a href="${cfg.origin}/es#contact">Agendar / Book</a></p><p>${signature}</p>`,
+  }
+}
 export async function pendingAction(s: any, name: ToolName, args: any) {
   const id = randomUUID()
-  await update(cfg.table, s.id, { pending: { id, name, args, expires: Date.now() + 600000 } })
-  return { confirmationRequired: true, id, name, args }
+  const template = name === 'send_email' ? serviceEmailTemplate() : null
+  const preview = template ? { to: args.to, subject: template.subject, body: template.body, attachmentCount: args.attachments?.length || 0 } : undefined
+  const pending = { id, name, args, ...(preview ? { preview } : {}), expires: Date.now() + 600000 }
+  await update(cfg.table, s.id, { pending })
+  return { confirmationRequired: true, ...pending }
 }

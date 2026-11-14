@@ -1,0 +1,53 @@
+# Oscar Bahamonde
+> Software, data and AI engineer based in Peru. Applied AI, data platforms, backend systems and cloud reliability.
+
+## Portfolio
+- [home (es)](https://oscarbahamonde.com/es#home)
+- [bio (es)](https://oscarbahamonde.com/es#bio)
+- [experience (es)](https://oscarbahamonde.com/es#experience)
+- [skills (es)](https://oscarbahamonde.com/es#skills)
+- [projects (es)](https://oscarbahamonde.com/es#projects)
+- [services (es)](https://oscarbahamonde.com/es#services)
+- [certifications (es)](https://oscarbahamonde.com/es#certifications)
+- [contact (es)](https://oscarbahamonde.com/es#contact)
+- [blog (es)](https://oscarbahamonde.com/es#blog)
+- [home (en)](https://oscarbahamonde.com/en#home)
+- [bio (en)](https://oscarbahamonde.com/en#bio)
+- [experience (en)](https://oscarbahamonde.com/en#experience)
+- [skills (en)](https://oscarbahamonde.com/en#skills)
+- [projects (en)](https://oscarbahamonde.com/en#projects)
+- [services (en)](https://oscarbahamonde.com/en#services)
+- [certifications (en)](https://oscarbahamonde.com/en#certifications)
+- [contact (en)](https://oscarbahamonde.com/en#contact)
+- [blog (en)](https://oscarbahamonde.com/en#blog)
+
+## Services
+Prices in PEN, starting estimates only: landing with up to 5 sections and email form S/500; CMS with Calendar/email S/1500; e-commerce MVP with database, API, authentication, one checkout, basic CRM S/3500; first custom SaaS/PaaS/streaming MVP phase S/4500; client-data AI assistant S/1500; systems/legacy API integration S/3500; initial cloud migration S/5000; data platform audit S/1800; infrastructure/cost audit S/1200. Third-party fees, hosting and maintenance quoted separately. No fixed delivery promises. 1:1 consulting is exactly S/20 for 30 minutes, paid with MercadoPago, Calendar availability Monday–Friday 09:00–13:00 and 14:00–17:00 America/Lima. Direct visitors to #contact to book. Never claim a meeting is booked through chat.
+
+## Profiles
+- https://github.com/bahamondex
+- https://github.com/obahamonde
+- https://linkedin.com/in/obahamondem/
+- https://medium.com/@obahamonde
+- mailto:oscar.bahamonde.dev@gmail.com
+
+## Articles (excerpts on this site, originals on Medium)
+- [Quipubase: Una base de datos semántica inspirada en el quipu andino](https://oscarbahamonde.com/es/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7)
+  - Original: https://medium.com/@obahamonde/quipubase-una-base-de-datos-sem%C3%A1ntica-inspirada-en-el-quipu-andino-5a4fecfd18c7
+  - English route: https://oscarbahamonde.com/en/blog/quipubase-una-base-de-datos-semantica-inspirada-en-el-quipu-andino-5a4fecfd18c7
+- [Memory Safety Meets Performance: The Power of Modern Programming Languages](https://oscarbahamonde.com/es/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a)
+  - Original: https://medium.com/@obahamonde/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a
+  - English route: https://oscarbahamonde.com/en/blog/memory-safety-meets-performance-the-power-of-modern-programming-languages-22943f84d25a
+- [Evaluación Comparativa: ChatGPT vs Llama 3 para Empresas y Creadores de Contenido](https://oscarbahamonde.com/es/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13)
+  - Original: https://medium.com/@obahamonde/evaluaci%C3%B3n-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13
+  - English route: https://oscarbahamonde.com/en/blog/evaluacion-comparativa-chatgpt-vs-llama-3-para-empresas-y-creadores-de-contenido-3d729d316f13
+- [Setting up DNS Caching with Flask, Google Cloud Run and C](https://oscarbahamonde.com/es/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624)
+  - Original: https://medium.com/@obahamonde/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624
+  - English route: https://oscarbahamonde.com/en/blog/setting-up-dns-caching-with-flask-google-cloud-run-and-c-fa6f4a62e624
+- [The Plain-Text Team](https://oscarbahamonde.com/es/blog/the-plain-text-team-cb06429f196d)
+  - Original: https://medium.com/@obahamonde/the-plain-text-team-cb06429f196d
+  - English route: https://oscarbahamonde.com/en/blog/the-plain-text-team-cb06429f196d
+
+## Privacy
+- https://oscarbahamonde.com/es/privacy
+- API routes, payment state and Calendar connection are private and should not be indexed.

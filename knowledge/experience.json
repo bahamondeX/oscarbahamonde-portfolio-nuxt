@@ -1,0 +1,465 @@
+{
+  "entries": [
+    {
+      "id": "dynata",
+      "company": "Dynata",
+      "logo": "/logos/dynata.png",
+      "logoTone": "color",
+      "role": {
+        "es": "Site Reliability Engineer",
+        "en": "Site Reliability Engineer"
+      },
+      "start": "2025-01",
+      "end": "2026-03",
+      "current": false,
+      "location": "En remoto",
+      "description": {
+        "es": "Administración de más de 30 clústeres AWS EKS en producción. Autoscaling de GPU con Karpenter: mejora del 40% en utilización de recursos. Pipelines CI/CD con TeamCity, Kotlin DSL y GitLab: reducción del 75% en tiempos de despliegue. Observabilidad centralizada con OpenTelemetry: reducción del 50% en MTTR. Automatización con Terraform y Ansible: ahorro de 150 horas mensuales de operación manual.",
+        "en": "Engineered and maintained 30+ production AWS EKS clusters for enterprise clients, implementing GPU autoscaling with Karpenter to improve resource utilization by 40%.\nDeveloped CI/CD pipelines using TeamCity, Kotlin DSL, and GitLab webhooks, reducing deployment times by 75% through automated GitOps workflows.\nBuilt a centralized observability platform using OpenTelemetry, reducing mean time to resolution (MTTR) by 50% and improving incident detection across distributed services.\nAutomated infrastructure provisioning and configuration management using Terraform and Ansible, reducing manual operations by 150 hours/month and improving deployment consistency."
+      },
+      "stack": [
+        "AWS EKS",
+        "Kubernetes",
+        "Karpenter",
+        "TeamCity",
+        "Kotlin",
+        "GitLab",
+        "OpenTelemetry",
+        "Terraform",
+        "Ansible"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#ffffff"
+    },
+    {
+      "id": "globant",
+      "company": "Globant",
+      "logo": "/logos/globant.png",
+      "logoTone": "color",
+      "role": {
+        "es": "Senior Data Engineer",
+        "en": "Senior Data Engineer"
+      },
+      "start": "2023-09",
+      "end": "2024-12",
+      "current": false,
+      "location": "En remoto",
+      "description": {
+        "es": "Plataforma de desarrollo con onboarding automatizado, Sphinx y RAG sobre PostgreSQL/pgvector: reducción del 80% en tiempo de incorporación. Automatización de pruebas de UI con Python: reducción del 60% en creación de tests. Pipelines de datos para Disney con CDK, Kinesis, S3, DynamoDB y Redshift. IA conversacional y RAG seguro con Dialogflow, Cognito y Microsoft SSO, y pipelines de entrenamiento ML con SageMaker, Glue, Lambda y Step Functions.",
+        "en": "Engineered an AI-powered developer platform with automated onboarding, Sphinx, and RAG using PostgreSQL/pgvector, reducing developer onboarding time by 80%; automated UI testing with Python, cutting test creation time by 60%.\nDesigned and deployed AWS data pipelines for Disney using CDK, Kinesis, S3, DynamoDB, and Redshift, processing 5K+ million records daily and reducing data processing latency by 25%.\nDeveloped enterprise conversational AI and secure RAG solutions using Google Dialogflow, AWS Cognito, and Microsoft SSO, automating 30+ business workflows and improving document retrieval efficiency by 25%.\nBuilt cloud-native ML training pipelines using SageMaker, Glue, Lambda, and Step Functions, reducing model training time by 40% and automating 30% of construction material pricing workflows."
+      },
+      "stack": [
+        "Python",
+        "PostgreSQL",
+        "pgvector",
+        "AWS CDK",
+        "Kinesis",
+        "Redshift",
+        "SageMaker",
+        "Dialogflow"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#111827"
+    },
+    {
+      "id": "plainenglish",
+      "company": "In Plain English",
+      "logo": "/logos/plainenglish.png",
+      "logoTone": "color",
+      "role": {
+        "es": "Freelance Technical Writer",
+        "en": "Freelance Technical Writer"
+      },
+      "start": "2023-06",
+      "end": "2024-11",
+      "current": false,
+      "location": "Remote",
+      "description": {
+        "es": "Publicaciones técnicas sobre Python, inteligencia artificial y JavaScript.",
+        "en": "Technical writer on Python, AI and Javascript publications."
+      },
+      "stack": [
+        "Python",
+        "AI",
+        "JavaScript"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#111827"
+    },
+    {
+      "id": "pronti",
+      "company": "Pronti AI",
+      "logo": "/logos/pronti.png",
+      "logoTone": "color",
+      "role": {
+        "es": "Back End Engineer",
+        "en": "Back End Engineer"
+      },
+      "start": "2023-01",
+      "end": "2023-03",
+      "current": false,
+      "location": "En remoto",
+      "description": {
+        "es": "Migración del backend Flask a FastAPI para una plataforma de prueba virtual de ropa con IA, usando Python, PostgreSQL y Milvus. Procesamiento asíncrono con RabbitMQ y Firebase Realtime Database para generación paralela de imágenes y actualizaciones en tiempo real. Despliegue en Kubernetes sobre GCP e integración con Cloud Functions. Optimización conjunta con ingenieros de IA de embeddings, generación de imágenes y pipelines de datos.",
+        "en": "Migrated a Flask-based backend to FastAPI, implementing scalable, event-driven microservices for an AI-powered virtual try-on platform using Python, PostgreSQL, and Milvus Vector Database.\nDesigned asynchronous processing pipelines using RabbitMQ and Firebase Realtime Database, eliminating blocking API requests and enabling parallel AI image generation with real-time frontend updates.\nDeployed and managed containerized applications on Kubernetes (GCP), integrating Google Cloud Functions to automate event-driven workflows, improve scalability, and reduce application response latency.\nCollaborated with AI engineers to optimize vector embeddings, AI image generation, and data processing pipelines, ensuring backend reliability, infrastructure performance, and seamless integration of Generative AI services."
+      },
+      "stack": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Milvus",
+        "RabbitMQ",
+        "Firebase",
+        "Kubernetes",
+        "GCP"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#ffffff"
+    },
+    {
+      "id": "freelance",
+      "company": "Autónomo",
+      "logo": null,
+      "logoTone": "color",
+      "role": {
+        "es": "Freelance Consultant",
+        "en": "Freelance Consultant"
+      },
+      "start": "2022-07",
+      "end": "2023-01",
+      "current": false,
+      "location": "Global",
+      "description": {
+        "es": null,
+        "en": null
+      },
+      "stack": [
+        "Django",
+        "Cybersecurity"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin"
+    },
+    {
+      "id": "bluetab",
+      "company": "Bluetab América, an IBM Company",
+      "logo": "/logos/bluetab.png",
+      "logoTone": "color",
+      "role": {
+        "es": "Data Developer",
+        "en": "Data Developer"
+      },
+      "start": "2022-02",
+      "end": "2022-07",
+      "current": false,
+      "location": "Lima, Perú",
+      "description": {
+        "es": "Pipelines PySpark para reportes regulatorios del sector financiero. Procesamiento de datos bancarios bajo requisitos de seguridad relacionados con PCI. Modernización y migración de infraestructura a AWS; transformación, validación y reporting distribuido.",
+        "en": "Developed and maintained PySpark data pipelines for financial-sector regulatory and compliance reporting.\nProcessed sensitive banking datasets under PCI-related security requirements.\nContributed to data platform modernization and migration from legacy infrastructure to AWS.\nSupported distributed data processing, transformation, validation, and reporting workflows.\nTechnologies: Python, PySpark, Apache Spark, SQL, AWS, Data Engineering."
+      },
+      "stack": [
+        "Python",
+        "PySpark",
+        "SQL",
+        "AWS"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#ffffff"
+    },
+    {
+      "id": "indra",
+      "company": "Indra",
+      "logo": "/logos/indra.png",
+      "logoTone": "color",
+      "role": {
+        "es": "Big Data Developer",
+        "en": "Big Data Developer"
+      },
+      "start": "2021-04",
+      "end": "2021-12",
+      "current": false,
+      "location": null,
+      "description": {
+        "es": "Automatización de pipelines para banca y seguros con Python, PySpark, Hadoop y SQL. Soluciones analíticas y data marts con Redshift, Athena y S3. Componentes reutilizables para mejorar la integración y el procesamiento de datos.",
+        "en": "Developed and automated enterprise data pipelines for banking and insurance industry clients.\nBuilt data processing workflows using Python, PySpark, Hadoop, and SQL.\nWorked with AWS Redshift, Athena, and S3 to support data mart and analytics solutions.\nImproved data integration workflows through reusable processing components and automation.\nTechnologies: Python, PySpark, Hadoop, SQL, AWS Redshift, Athena, S3."
+      },
+      "stack": [
+        "Python",
+        "PySpark",
+        "Hadoop",
+        "SQL",
+        "Redshift",
+        "Athena",
+        "S3"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#ffffff"
+    },
+    {
+      "id": "rayke",
+      "company": "Rayke",
+      "logo": null,
+      "logoTone": "color",
+      "role": {
+        "es": "DevOps Engineer",
+        "en": "DevOps Engineer"
+      },
+      "start": "2021-03",
+      "end": "2021-07",
+      "current": false,
+      "location": "Lima, Perú",
+      "description": {
+        "es": "Desarrollo backend con Node.js/Express y Python/Flask. Frontend con Vue.js e implementación de GitOps sobre AWS con Amplify y Serverless Framework.",
+        "en": "Backend development with Node.js/Python using Express/Flask Framework\nFrontend development using Vue.js Framework\nGitOps implementation over AWS using Amplify and SLS Framework"
+      },
+      "stack": [
+        "Node.js",
+        "Express",
+        "Python",
+        "Flask",
+        "Vue.js",
+        "AWS Amplify"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin"
+    },
+    {
+      "id": "data-analytics",
+      "company": "DATA & ANALYTICS",
+      "logo": "/logos/data-analytics.png",
+      "logoTone": "color",
+      "role": {
+        "es": "Cloud Architect",
+        "en": "Cloud Architect"
+      },
+      "start": "2021-01",
+      "end": "2021-03",
+      "current": false,
+      "location": "Perú",
+      "description": {
+        "es": "Arquitectura de soluciones AWS, desarrollo de alianzas y asesoría técnica para clientes.",
+        "en": "Architecting of AWS Cloud Solutions\nDevelopment of new partnerships\nTrusted advisor for customer engagement"
+      },
+      "stack": [
+        "AWS"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#ffffff"
+    },
+    {
+      "id": "valtx",
+      "company": "Valtx Perú",
+      "logo": "/logos/valtx.png",
+      "logoTone": "color",
+      "role": {
+        "es": "IT Analyst",
+        "en": "IT Analyst"
+      },
+      "start": "2020-02",
+      "end": "2020-12",
+      "current": false,
+      "location": "Perú",
+      "description": {
+        "es": "Diseño y desarrollo de soluciones TIC, gestión de licitaciones y soluciones integradas, Agile Inception y mejora de procesos.",
+        "en": "Design and Development of ITC solutions\nBidding manager for big deals and cross solutions\nAgile Inception and processes improvement"
+      },
+      "stack": [],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#111827"
+    },
+    {
+      "id": "telefonica",
+      "company": "Telefónica",
+      "logo": "/logos/telefonica.png",
+      "logoTone": "light",
+      "role": {
+        "es": "Presales Engineer",
+        "en": "Presales Engineer"
+      },
+      "start": "2017-08",
+      "end": "2019-11",
+      "current": false,
+      "location": "Perú",
+      "description": {
+        "es": "Diseño integral de telecomunicaciones y redes empresariales para clientes corporativos y de gobierno. Dimensionamiento y arquitectura con Cisco, Fortinet y AudioCodes. Propuestas técnicas y comerciales para proyectos y licitaciones, coordinando ingeniería y equipos comerciales.",
+        "en": "Designed end-to-end telecommunications and enterprise networking solutions for corporate and government customers.\nPerformed technical sizing and architecture design involving Cisco, Fortinet, and AudioCodes technologies.\nPrepared technical and commercial proposals for enterprise projects and public-sector tenders.\nCollaborated with engineering and commercial teams to translate complex customer requirements into feasible technology solutions."
+      },
+      "stack": [
+        "Cisco",
+        "Fortinet",
+        "AudioCodes"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#111827"
+    },
+    {
+      "id": "cotener",
+      "company": "COTENER",
+      "logo": "/logos/cotener.png",
+      "logoTone": "color",
+      "role": {
+        "es": "Account Manager",
+        "en": "Account Manager"
+      },
+      "start": "2017-06",
+      "end": "2017-08",
+      "current": false,
+      "location": "San Isidro, Perú",
+      "description": {
+        "es": "Gestión de relaciones B2B y desarrollo de negocios en telecomunicaciones. Ventas técnicas del portafolio JDSU/VIAVI; coordinación de requerimientos, demostraciones y propuestas comerciales.",
+        "en": "Managed B2B customer relationships and business development opportunities in the telecommunications sector.\nSupported technical sales and solution positioning for the JDSU/VIAVI product portfolio.\nCoordinated customer requirements, product demonstrations, and commercial proposals."
+      },
+      "stack": [
+        "JDSU",
+        "VIAVI"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#ffffff"
+    },
+    {
+      "id": "huawei",
+      "company": "Huawei Technologies",
+      "logo": "/logos/huawei.png",
+      "logoTone": "color",
+      "role": {
+        "es": "Service Sales Engineer",
+        "en": "Service Sales Engineer"
+      },
+      "start": "2014-02",
+      "end": "2016-11",
+      "current": false,
+      "location": "Perú",
+      "description": {
+        "es": "Propuestas de servicios técnicos y licitaciones para infraestructura de telecomunicaciones. Pruebas de concepto y validación técnica con ingeniería. Respuestas a RFP/RFQ de proyectos llave en mano y servicios gestionados, con soluciones de redes inalámbricas, core y modernización.",
+        "en": "Managed technical service proposals and bid activities for telecommunications infrastructure projects.\nCollaborated with engineering teams on product proof-of-concepts and technical solution validation.\nPrepared responses to RFPs and RFQs for turnkey telecommunications and managed services projects.\nSupported solutions involving wireless networks, core infrastructure, professional services, and network modernization."
+      },
+      "stack": [
+        "Telecommunications",
+        "Wireless",
+        "Core networks"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#ffffff"
+    },
+    {
+      "id": "netcor",
+      "company": "NETCORPERU",
+      "logo": null,
+      "logoTone": "color",
+      "role": {
+        "es": "Network Engineer",
+        "en": "Network Engineer"
+      },
+      "start": "2013-07",
+      "end": "2014-02",
+      "current": false,
+      "location": "Provincia de Lima, Perú",
+      "description": {
+        "es": "Gestión del despliegue WiMAX Airspan para Telefónica. Diseño y despliegue de fibra óptica empresarial para BCP. Casos de uso y operación de la plataforma Oracle PCRF de Claro.",
+        "en": "Project manager of Airspan's Wimax Telefonica's project rollout\nDesign and rollout of BCP's Fibernet optics enterprise solution\nDevelopment of use cases and operations on Claro's Oracle PCRF platform"
+      },
+      "stack": [
+        "Airspan WiMAX",
+        "Fiber optics",
+        "Oracle PCRF"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin"
+    },
+    {
+      "id": "osc",
+      "company": "OSC Telecoms & Security Solutions",
+      "logo": "/logos/osc.png",
+      "logoTone": "color",
+      "role": {
+        "es": "NOC Engineer",
+        "en": "NOC Engineer"
+      },
+      "start": "2013-01",
+      "end": "2013-07",
+      "current": false,
+      "location": "Provincia de Lima, Perú",
+      "description": {
+        "es": "Monitoreo de infraestructura móvil y servicios de valor agregado en el entorno 3G de Nextel. Soporte de incidentes de primer nivel, clasificación, diagnóstico y escalamiento. Coordinación de técnicos de campo y drive testing; operación preventiva y reactiva de redes.",
+        "en": "Monitored mobile network infrastructure and value-added services for Nextel's 3G environment.\nProvided first-level incident support, ticket classification, troubleshooting, and escalation.\nCoordinated field technicians and supported mobile network drive-testing activities.\nPerformed proactive and reactive network operations monitoring."
+      },
+      "stack": [
+        "3G",
+        "Network operations"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#ffffff"
+    },
+    {
+      "id": "telefonica-trainee",
+      "company": "Telefónica",
+      "logo": "/logos/telefonica-trainee.png",
+      "logoTone": "light",
+      "role": {
+        "es": "Telecommunications Engineering Trainee",
+        "en": "Telecommunications Engineering Trainee"
+      },
+      "start": "2011-02",
+      "end": "2011-12",
+      "current": false,
+      "location": "Lima, Perú · Presencial",
+      "description": {
+        "es": "Mantenimiento de aplicaciones internas de analítica y reporting con LAMP. Integración de hojas de cálculo con MySQL. Soporte a KPIs operativos, dashboards y procesamiento de datos.",
+        "en": "Maintained internal analytics and reporting applications using the LAMP stack.\nIntegrated spreadsheet-based business information with MySQL databases.\nSupported operational KPI monitoring, reporting dashboards, and data processing workflows."
+      },
+      "stack": [
+        "LAMP",
+        "MySQL",
+        "Excel"
+      ],
+      "sources": [
+        "https://linkedin.com/in/obahamondem/details/experience/"
+      ],
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#111827"
+    }
+  ],
+  "note": "Public LinkedIn profile, retrieved 2026-11-14. Impact metrics are self-reported on that profile."
+}

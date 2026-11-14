@@ -55,10 +55,16 @@ export const schemas = {
 export type ToolName = keyof typeof schemas
 export const toolNames = Object.keys(schemas) as ToolName[]
 export const actionSchema = z.object({ id: z.uuid(), approved: z.boolean() }).strict()
+export const historySchema = z.array(z.object({
+  role: z.enum(['user', 'assistant']),
+  content: z.string().min(1).max(4000),
+}).strict()).max(24).refine((items) => items.reduce((n, m) => n + m.content.length, 0) <= 24000, 'history_too_large')
+export const consentSchema = z.object({ consent: z.literal(true), history: historySchema.default([]) }).strict()
 export const requestSchema = z
   .object({
     message: z.string().trim().min(1).max(4000).optional(),
     locale: z.enum(['es', 'en']).default('es'),
+    history: historySchema.optional(),
     action: actionSchema.optional(),
     requestId: z.uuid(),
   })

@@ -185,54 +185,31 @@ Resources:
     Properties:
       Name:
         Fn::Sub: ${AWS::StackName}-guardrail
-      BlockedInputMessaging: Solo puedo ayudarte con los servicios y la agenda de Oscar. / I can help with Oscar’s services and booking.
-      BlockedOutputsMessaging: No puedo compartir esa información. Contacta a Oscar. / Please contact Oscar.
+      BlockedInputMessaging: Puedo ayudarte a reformular esa consulta de forma segura. / I can help reframe that question safely.
+      BlockedOutputsMessaging: Reformulemos la respuesta de forma segura. / Let’s reframe the answer safely.
       ContentPolicyConfig:
         FiltersConfig:
           - Type: HATE
-            InputStrength: HIGH
-            OutputStrength: HIGH
+            InputStrength: MEDIUM
+            OutputStrength: MEDIUM
           - Type: INSULTS
-            InputStrength: HIGH
-            OutputStrength: HIGH
+            InputStrength: MEDIUM
+            OutputStrength: MEDIUM
           - Type: SEXUAL
-            InputStrength: HIGH
-            OutputStrength: HIGH
+            InputStrength: MEDIUM
+            OutputStrength: MEDIUM
           - Type: VIOLENCE
-            InputStrength: HIGH
-            OutputStrength: HIGH
+            InputStrength: MEDIUM
+            OutputStrength: MEDIUM
           - Type: MISCONDUCT
-            InputStrength: HIGH
-            OutputStrength: HIGH
-          - Type: PROMPT_ATTACK
-            InputStrength: HIGH
-            OutputStrength: NONE
-      SensitiveInformationPolicyConfig:
-        PiiEntitiesConfig:
-          - Type: EMAIL
-            Action: ANONYMIZE
-          - Type: PHONE
-            Action: ANONYMIZE
-          - Type: CREDIT_DEBIT_CARD_NUMBER
-            Action: ANONYMIZE
-          - Type: AWS_ACCESS_KEY
-            Action: ANONYMIZE
-          - Type: AWS_SECRET_KEY
-            Action: ANONYMIZE
-      TopicPolicyConfig:
-        TopicsConfig:
-          - Name: UnrelatedAdviceAndEntertainment
-            Type: DENY
-            Definition: Clinical diagnoses, prescriptions, personal legal advice, investment recommendations, political campaign persuasion, erotic material, and recreational fiction or jokes.
-            Examples:
-              - Write a political campaign speech.
-              - Diagnose my illness.
-  GuardrailVersionV2:
-    Type: AWS::Bedrock::GuardrailVersionV2
+            InputStrength: MEDIUM
+            OutputStrength: MEDIUM
+  GuardrailVersionV3:
+    Type: AWS::Bedrock::GuardrailVersion
     Properties:
       GuardrailIdentifier:
         Ref: Guardrail
-      Description: Explicit denied topics with all HIGH security filters unchanged
+      Description: Standard harmful-content filtering; topic restrictions removed by owner request
   Chat:
     Type: AWS::Serverless::Function
     Properties:
@@ -254,7 +231,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersionV2
+              - GuardrailVersionV3
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -276,9 +253,11 @@ Resources:
             Ref: RetentionDays
           MAX_FILE_BYTES: '5000000'
           MAX_FILES: '5'
-          MAX_TOKENS: '800'
-          MAX_TURNS: '30'
-          MAX_SESSION_TOKENS: '60000'
+          MAX_TOKENS: '2000'
+          MODEL_TEMPERATURE: '0.5'
+          BEDROCK_PROMPT_CACHE: 'true'
+          MAX_TURNS: '60'
+          MAX_SESSION_TOKENS: '120000'
           CALENDAR_BUFFER_MINUTES: '15'
           FREE_INTRO_CALL_ENABLED: 'false'
           LEADS_DLQ_URL:
@@ -423,7 +402,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersionV2
+              - GuardrailVersionV3
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -445,9 +424,11 @@ Resources:
             Ref: RetentionDays
           MAX_FILE_BYTES: '5000000'
           MAX_FILES: '5'
-          MAX_TOKENS: '800'
-          MAX_TURNS: '30'
-          MAX_SESSION_TOKENS: '60000'
+          MAX_TOKENS: '2000'
+          MODEL_TEMPERATURE: '0.5'
+          BEDROCK_PROMPT_CACHE: 'true'
+          MAX_TURNS: '60'
+          MAX_SESSION_TOKENS: '120000'
           CALENDAR_BUFFER_MINUTES: '15'
           FREE_INTRO_CALL_ENABLED: 'false'
           LEADS_DLQ_URL:
@@ -503,7 +484,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersionV2
+              - GuardrailVersionV3
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -525,9 +506,11 @@ Resources:
             Ref: RetentionDays
           MAX_FILE_BYTES: '5000000'
           MAX_FILES: '5'
-          MAX_TOKENS: '800'
-          MAX_TURNS: '30'
-          MAX_SESSION_TOKENS: '60000'
+          MAX_TOKENS: '2000'
+          MODEL_TEMPERATURE: '0.5'
+          BEDROCK_PROMPT_CACHE: 'true'
+          MAX_TURNS: '60'
+          MAX_SESSION_TOKENS: '120000'
           CALENDAR_BUFFER_MINUTES: '15'
           FREE_INTRO_CALL_ENABLED: 'false'
           LEADS_DLQ_URL:
@@ -588,7 +571,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersionV2
+              - GuardrailVersionV3
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -610,9 +593,11 @@ Resources:
             Ref: RetentionDays
           MAX_FILE_BYTES: '5000000'
           MAX_FILES: '5'
-          MAX_TOKENS: '800'
-          MAX_TURNS: '30'
-          MAX_SESSION_TOKENS: '60000'
+          MAX_TOKENS: '2000'
+          MODEL_TEMPERATURE: '0.5'
+          BEDROCK_PROMPT_CACHE: 'true'
+          MAX_TURNS: '60'
+          MAX_SESSION_TOKENS: '120000'
           CALENDAR_BUFFER_MINUTES: '15'
           FREE_INTRO_CALL_ENABLED: 'false'
           LEADS_DLQ_URL:
@@ -682,7 +667,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersionV2
+              - GuardrailVersionV3
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -704,9 +689,11 @@ Resources:
             Ref: RetentionDays
           MAX_FILE_BYTES: '5000000'
           MAX_FILES: '5'
-          MAX_TOKENS: '800'
-          MAX_TURNS: '30'
-          MAX_SESSION_TOKENS: '60000'
+          MAX_TOKENS: '2000'
+          MODEL_TEMPERATURE: '0.5'
+          BEDROCK_PROMPT_CACHE: 'true'
+          MAX_TURNS: '60'
+          MAX_SESSION_TOKENS: '120000'
           CALENDAR_BUFFER_MINUTES: '15'
           FREE_INTRO_CALL_ENABLED: 'false'
           LEADS_DLQ_URL:
@@ -781,7 +768,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersionV2
+              - GuardrailVersionV3
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -803,9 +790,11 @@ Resources:
             Ref: RetentionDays
           MAX_FILE_BYTES: '5000000'
           MAX_FILES: '5'
-          MAX_TOKENS: '800'
-          MAX_TURNS: '30'
-          MAX_SESSION_TOKENS: '60000'
+          MAX_TOKENS: '2000'
+          MODEL_TEMPERATURE: '0.5'
+          BEDROCK_PROMPT_CACHE: 'true'
+          MAX_TURNS: '60'
+          MAX_SESSION_TOKENS: '120000'
           CALENDAR_BUFFER_MINUTES: '15'
           FREE_INTRO_CALL_ENABLED: 'false'
           LEADS_DLQ_URL:
@@ -877,7 +866,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersionV2
+              - GuardrailVersionV3
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -899,9 +888,11 @@ Resources:
             Ref: RetentionDays
           MAX_FILE_BYTES: '5000000'
           MAX_FILES: '5'
-          MAX_TOKENS: '800'
-          MAX_TURNS: '30'
-          MAX_SESSION_TOKENS: '60000'
+          MAX_TOKENS: '2000'
+          MODEL_TEMPERATURE: '0.5'
+          BEDROCK_PROMPT_CACHE: 'true'
+          MAX_TURNS: '60'
+          MAX_SESSION_TOKENS: '120000'
           CALENDAR_BUFFER_MINUTES: '15'
           FREE_INTRO_CALL_ENABLED: 'false'
           LEADS_DLQ_URL:
@@ -1017,7 +1008,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersionV2
+              - GuardrailVersionV3
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -1039,9 +1030,11 @@ Resources:
             Ref: RetentionDays
           MAX_FILE_BYTES: '5000000'
           MAX_FILES: '5'
-          MAX_TOKENS: '800'
-          MAX_TURNS: '30'
-          MAX_SESSION_TOKENS: '60000'
+          MAX_TOKENS: '2000'
+          MODEL_TEMPERATURE: '0.5'
+          BEDROCK_PROMPT_CACHE: 'true'
+          MAX_TURNS: '60'
+          MAX_SESSION_TOKENS: '120000'
           CALENDAR_BUFFER_MINUTES: '15'
           FREE_INTRO_CALL_ENABLED: 'false'
           LEADS_DLQ_URL:
@@ -1133,7 +1126,7 @@ Resources:
             Ref: Guardrail
           BEDROCK_GUARDRAIL_VERSION:
             Fn::GetAtt:
-              - GuardrailVersionV2
+              - GuardrailVersionV3
               - Version
           SESSIONS_TABLE:
             Ref: Sessions
@@ -1155,9 +1148,11 @@ Resources:
             Ref: RetentionDays
           MAX_FILE_BYTES: '5000000'
           MAX_FILES: '5'
-          MAX_TOKENS: '800'
-          MAX_TURNS: '30'
-          MAX_SESSION_TOKENS: '60000'
+          MAX_TOKENS: '2000'
+          MODEL_TEMPERATURE: '0.5'
+          BEDROCK_PROMPT_CACHE: 'true'
+          MAX_TURNS: '60'
+          MAX_SESSION_TOKENS: '120000'
           CALENDAR_BUFFER_MINUTES: '15'
           FREE_INTRO_CALL_ENABLED: 'false'
           LEADS_DLQ_URL:
@@ -1298,5 +1293,5 @@ Outputs:
   GuardrailVersion:
     Value:
       Fn::GetAtt:
-        - GuardrailVersionV2
+        - GuardrailVersionV3
         - Version

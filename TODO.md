@@ -1,42 +1,29 @@
-# Pendientes verificables
+# Pendientes verificables · 14 noviembre 2026
 
-## Implementación anterior (Postgres; sustituida por AWS en producción)
+## Aceptación que requiere evidencia adicional
 
-- [ ] Postgres persistente: URL/TLS y ejecutar npm run db:migrate. No se creó infraestructura de pago.
-- [ ] Secreto de sesión, proveedor/modelo LLM, transcripción, Turnstile y bucket privado S3/R2; ver .env.example.
-- [ ] Gmail API requiere consentimiento gmail.send separado de Calendar, o SMTP con app password. No se reutiliza token Calendar.
-- [ ] NUXT_CRON_SECRET y scheduler cada 5min con Bearer a /api/chat/cron: inactividad, reintentos y retención. No se compró suscripción ni cron de pago.
-- [ ] Probar texto/streaming, audio, archivos, persistencia y Gmail con credenciales reales. Mientras falte configuración chat/correo, la UI muestra preparación sin simular respuestas.
-- [ ] Revisar privacidad, proveedores contratados y condiciones comerciales finales con el propietario.
+- [ ] Lighthouse ≥95 en las cuatro categorías, móvil y desktop: Chromium aislado no puede arrancar en este entorno macOS (crashpad/Mach Permission denied1100). No se declara un puntaje nuevo. Ejecutar `npm run audit -- https://oscarbahamonde.com/es` en un entorno compatible.
+- [ ] Suite Playwright completa: los tests están implementados; el mismo bloqueo de Chromium impide ejecutar el navegador. Las comprobaciones manuales y capturas se registran en `AUDIT.md` y no se presentan como una ejecución automatizada.
+- [ ] Transacción real S/20 → webhook → invitación Meet. Se preservó el runtime de reservas y sus tests; no se realizó un cobro real en esta fase.
+- [ ] Grabación desde un micrófono y gesto de cierre en dispositivo móvil físico. La transcripción/adjuntos AWS se habían probado en la fase anterior; esto no verifica automáticamente la nueva interfaz.
 
-## Contenido
+## Contenido y fuentes
 
-- [ ] Fechas laborales de Dynata, Globant y Pronti AI, ausentes del sitio original.
-- [ ] Cargos/fechas/descripciones de Huawei y Telefónica antes de ampliar timeline.
-- [ ] Certificaciones: nombre, año, logo del emisor y enlace de verificación. No se inventaron credenciales.
-- [ ] Evidencias públicas de PUCP/hackathon/AWS Speaker: datos proporcionados por el propietario.
-- [ ] Histórico de Medium: RSS devolvió 5 artículos y no garantiza todo el archivo. Nuevas publicaciones se acumulan en Postgres cuando esté configurado.
-- [x] Logos de Dynata, Globant y Pronti recuperados de fuentes oficiales; ver docs/company-logo-sources.md.
+- [x] 16 puestos de LinkedIn con fechas y descripciones disponibles; 29 credenciales con emisión, vencimiento y enlaces disponibles; vencidas identificadas.
+- [x] Skills verificadas agrupadas, proyectos con capturas reales, catálogo con los nueve precios conservados.
+- [ ] Logos oficiales ausentes de Rayke y NETCORPERU; no se fabrican. Freelance se presenta por nombre.
+- [ ] Descripción no publicada de la etapa freelance y ubicación de Indra; enlaces públicos permanentes AZ-900/AWS Solutions Architect. Detalles en `docs/content-pending.md`.
+- [ ] Logos transparentes/alta resolución de algunos emisores. Los fondos intrínsecos originales se conservan cuando eliminarlos degradaría la marca; revisar mediciones de contraste, no solo media de luminancia.
+- [ ] Helm, Prometheus y Grafana no aparecen en la evidencia capturada; incorporarlos cuando exista una fuente verificable.
+- [ ] Evidencias públicas de primer puesto PUCP2007/hackathon2023/AWS Speaker: hechos proporcionados por Oscar, conservados sin inventar certificados.
+- [ ] Histórico completo de Medium más allá de los10 artículos disponibles en RSS. Todos los10 se muestran; un feed no garantiza toda la cuenta. Usar archivo verificable para ampliar.
 
-## Reserva y SEO
+## Límites operativos documentados
 
-- [ ] Pago real aprobado/recepción de Meet requiere prueba de transacción autorizada; no se cobró durante el rediseño.
-- [ ] Limitación previa conservada: holds vencidos dejan evento temporal visible hasta reutilizar horario; API los ignora para disponibilidad.
-- [ ] No incluir URLs externas Medium como loc del sitemap: protocolo exige mismo host. Páginas locales /es/blog/* y /en/blog/*; originales en llms.txt y enlaces visibles.
-- [ ] Consultar mediciones reales Lighthouse en docs/VALIDATION.md. Toda categoría inferior a95 sigue pendiente hasta corregir y medir nuevamente.
-
-## Asistente AWS Bedrock (2026-11-14)
-
-- [x] Código TypeScript, SAM, cinco tools Lambda, SSE, DynamoDB/KMS/S3 y notificaciones Stream con DLQ/alarma.
-- [x] Catálogo versionado con precios y alcances existentes; sin inventar credenciales ni certificaciones.
-- [x] Widget bilingüe reutiliza la estética actual; implementación previa disponible hasta configurar la URL AWS.
-- [x] Tests mock de Bedrock/Google/Gmail y eventos Stream; tests originales de agendamiento sin regresiones.
-- [x] Google OAuth guardado en AWS Secrets Manager tras consentimiento del propietario: refresh validado, scopes calendar.events/calendar.freebusy/gmail.send comprobados y consulta real freebusy correcta. No se enviaron correos de prueba.
-- [x] Turnstile Managed creado para oscarbahamonde.com, sin pre-clearance. Clave privada en AWS Secrets Manager y site key público en Vercel. Sin secretos en el repositorio.
-- [x] CloudFormation/SAM desplegado en us-east-1. Bedrock respondió con Claude Haiku 4.5; Lambda entregó SSE completo con precios correctos. Se confirmó la suscripción SNS y se rechazaron origen y captcha inválidos.
-- [x] PR #1 fusionado con autorización del propietario; producción Vercel READY y widget conectado a Lambda. Turnstile y chat en español comprobados en navegador.
-- [ ] Completar pruebas reales de audio/archivos, entrega Gmail y pago autorizado. Bedrock, SSE, Turnstile y consulta Google freebusy ya comprobados en producción.
-- [ ] Gmail no ofrece exactamente-una-vez con DynamoDB. Revisar el límite de entrega ambigua en assistant/README.md antes de exigir cero duplicados bajo cualquier caída.
-- [ ] Lighthouse ≥95 y navegación de teclado en navegador: intento local bloqueado al arrancar Chrome. No se afirma un puntaje medido nuevo.
-- [ ] Certificaciones verificadas con logos: faltan nombres, emisores y URLs de evidencia.
-- [ ] PDF/DOCX/ZIP se aceptan y remiten como adjuntos; análisis automático del contenido no implementado. Audio sí se transcribe en servidor.
+- Gmail no dispone de transacción conjunta con DynamoDB: tras aceptación remota y timeout ambiguo puede haber duplicados. Lease, hitos y Message-ID reducen repetición; no se promete exactamente una vez bajo cualquier caída.
+- TTL90d es eventual y los correos ya entregados tienen retención propia. La app rechaza sesiones vencidas; S3 expira objetos según ciclo de vida.
+- PDF/DOCX/ZIP se validan, almacenan y adjuntan; no se interpreta automáticamente su contenido. Audio sí se transcribe en servidor.
+- Sitemaps: URLs externas de Medium no se incluyen como `<loc>` porque no pertenecen a este host; aparecen en llms.txt/llms-full.txt y en las páginas locales bilingües indexadas.
+- Holds Calendar vencidos pueden quedar visibles hasta reutilizar horario; la API los ignora para disponibilidad. Comportamiento previo conservado.
+- Revisar requisitos de publicación OAuth Google y caducidad de tokens de apps en Testing. Secretos permanecen en Secrets Manager/Vercel.
+- Los límites de60 turnos y120000 tokens son independientes: conocimiento y contexto consumen el presupuesto y pueden terminar antes una sesión.

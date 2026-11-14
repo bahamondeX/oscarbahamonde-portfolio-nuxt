@@ -1,0 +1,39 @@
+{
+  "name": "Oscar Martin Bahamonde Muñoz",
+  "location": "Peru",
+  "roles": [
+    "Software Engineer",
+    "Data Architect"
+  ],
+  "bio": {
+    "es": "Ingeniero de software, datos e inteligencia artificial. Trabaja entre la profundidad técnica y el pensamiento de producto.",
+    "en": "Software, data and artificial intelligence engineer working at the intersection of technical depth and product thinking."
+  },
+  "achievements": [
+    {
+      "es": "Primer puesto de ingreso a la PUCP en 2007",
+      "en": "First place in PUCP admissions in 2007",
+      "source": "Owner-provided; preserved from production"
+    },
+    {
+      "es": "Ganador del hackathon AWS User Group Perú 2023, más de 50 equipos",
+      "en": "AWS User Group Peru 2023 hackathon winner, over 50 teams",
+      "source": "Owner-provided; preserved from production"
+    },
+    {
+      "es": "Speaker en AWS UG Perú Conf 2023",
+      "en": "Speaker at AWS UG Peru Conf 2023",
+      "source": "https://sessionize.com/obahamonde"
+    }
+  ],
+  "profiles": [
+    "https://linkedin.com/in/obahamondem/",
+    "https://github.com/bahamondex",
+    "https://github.com/obahamonde",
+    "https://medium.com/@obahamonde"
+  ],
+  "unknown": [
+    "Unverified project metrics",
+    "Work not listed in the public LinkedIn source"
+  ]
+}

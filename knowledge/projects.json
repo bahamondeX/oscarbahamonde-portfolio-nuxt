@@ -1,0 +1,99 @@
+[
+  {
+    "id": "voz",
+    "name": "VOZ",
+    "demo": "https://voz.oscarbahamonde.com",
+    "repo": null,
+    "stack": [
+      "Voice AI",
+      "Enterprise integrations"
+    ],
+    "image": "/images/projects/voz.webp",
+    "description": {
+      "es": "Agentes de voz para conectar negocios y personas. Plataforma en desarrollo.",
+      "en": "Voice agents connecting businesses and people. A platform in development."
+    },
+    "impact": {
+      "es": "Atención conversacional para empresas.",
+      "en": "Conversational customer service for businesses."
+    },
+    "source": "https://oscarbahamonde.com/es",
+    "stars": null,
+    "imageKind": {
+      "es": "Sitio del proyecto",
+      "en": "Project website"
+    },
+    "imageAlt": {
+      "es": "Captura real de VOZ en la web",
+      "en": "Actual screenshot of VOZ website"
+    },
+    "imageSource": "https://voz.oscarbahamonde.com",
+    "verifiedAt": "2026-11-14"
+  },
+  {
+    "id": "quipubase",
+    "name": "Quipubase",
+    "demo": null,
+    "repo": "https://github.com/bahamondeX/quipubase",
+    "stack": [
+      "RocksDB",
+      "JSON Schema",
+      "Vector search",
+      "Pub/sub"
+    ],
+    "image": "/images/projects/quipubase.webp",
+    "description": {
+      "es": "Almacenamiento semántico con esquemas, búsqueda vectorial y suscripciones a datos.",
+      "en": "Schema-driven semantic storage with vector search and data subscriptions."
+    },
+    "impact": {
+      "es": "Explora datos estructurados y semánticos desde una API.",
+      "en": "Explore structured and semantic data through an API."
+    },
+    "source": "https://github.com/bahamondeX/quipubase",
+    "stars": null,
+    "imageKind": {
+      "es": "Repositorio real · GitHub",
+      "en": "Actual repository · GitHub"
+    },
+    "imageAlt": {
+      "es": "Captura real de Quipubase en GitHub",
+      "en": "Actual screenshot of Quipubase on GitHub"
+    },
+    "imageSource": "https://github.com/bahamondeX/quipubase",
+    "verifiedAt": "2026-11-14"
+  },
+  {
+    "id": "aiofauna",
+    "name": "aiofauna",
+    "demo": null,
+    "repo": "https://github.com/obahamonde/aiofauna",
+    "stack": [
+      "Python",
+      "Aiohttp",
+      "Pydantic",
+      "FaunaDB"
+    ],
+    "image": "/images/projects/aiofauna.webp",
+    "description": {
+      "es": "Framework backend asíncrono para aplicaciones Python y arquitectura serverless.",
+      "en": "An asynchronous backend framework for Python applications and serverless architecture."
+    },
+    "impact": {
+      "es": "Integra modelos tipados, HTTP y datos.",
+      "en": "Connect typed models, HTTP and data."
+    },
+    "source": "https://github.com/obahamonde/aiofauna",
+    "stars": 8,
+    "imageKind": {
+      "es": "Repositorio real · GitHub",
+      "en": "Actual repository · GitHub"
+    },
+    "imageAlt": {
+      "es": "Captura real de aiofauna en GitHub",
+      "en": "Actual screenshot of aiofauna on GitHub"
+    },
+    "imageSource": "https://github.com/obahamonde/aiofauna",
+    "verifiedAt": "2026-11-14"
+  }
+]

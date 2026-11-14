@@ -230,10 +230,10 @@
   },
   "privacy": {
     "title": "Privacidad de tus consultas",
-    "body": "El chat solicita consentimiento antes de guardar información. Los mensajes y archivos se usan para responder tu consulta y enviarla a Oscar Bahamonde, junto con los datos de contacto que elijas compartir.",
-    "providers": "Los mensajes se procesan mediante el proveedor de IA configurado; los audios se envían al proveedor de transcripción. Los archivos se guardan en almacenamiento privado y los enlaces de descarga expiran.",
-    "retention": "La retención configurada se muestra al iniciar el chat. Puedes borrar la conversación desde el chat mientras conserves su sesión, o solicitar acceso o eliminación escribiendo a oscar.bahamonde.dev@gmail.com. Los correos enviados requieren eliminación manual del destinatario.",
+    "body": "Puedes conversar sin dejar tus datos de contacto. Antes de tu consentimiento, los mensajes se conservan solo en tu navegador durante esta sesión y se procesan para responderte, pero no se guardan como conversación en nuestros servidores. Evita compartir información personal o sensible en esta etapa.",
+    "providers": "Amazon Web Services procesa las respuestas de IA y las transcripciones. Cloudflare Turnstile ayuda a prevenir el abuso. Con tu consentimiento, guardamos la conversación y los datos que elijas compartir, junto con archivos y audios, en almacenamiento privado cifrado para atender tu consulta. Oscar recibe las consultas guardadas por Gmail, con su transcripción y adjuntos o enlaces de descarga que expiran.",
+    "retention": "Las conversaciones, datos de contacto, archivos y audios guardados se conservan durante 90 días. Puedes solicitar su eliminación desde el chat mientras mantengas la sesión, o pedir acceso o eliminación escribiendo a oscar.bahamonde.dev{'@'}gmail.com. La eliminación automática puede tardar en completarse. Los correos ya entregados a Oscar se eliminan por separado cuando lo solicites.",
     "booking": "Las reservas se procesan por Google Calendar y MercadoPago con sus políticas de privacidad. Los datos de tarjeta se introducen en MercadoPago.",
-    "cookies": "Se guardan preferencias de idioma y tema, una cookie de sesión del chat y la cookie necesaria para verificar el pago. Turnstile realiza la comprobación antiabuso al iniciar el chat."
+    "cookies": "El navegador conserva tus preferencias de idioma y tema, el estado del saludo y la sesión del chat. La conversación anónima permanece en el almacenamiento de esa pestaña; puedes borrarla desde el chat. La reserva utiliza además una cookie necesaria para verificar el pago. Turnstile realiza una comprobación antiabuso al abrir el asistente."
   }
 }

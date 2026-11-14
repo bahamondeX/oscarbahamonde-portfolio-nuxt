@@ -20,8 +20,13 @@ export async function sessionAttachments(sessionId: string, ids?: string[]) {
   for (const f of files) {
     const cmd = new GetObjectCommand({ Bucket: cfg.bucket, Key: f.key })
     if (total + f.size < 17000000) {
-      const obj = await s3.send(cmd),
-        bytes = Buffer.from(await obj.Body!.transformToByteArray())
+      let obj
+      try { obj = await s3.send(cmd) }
+      catch (e: any) {
+        if (['NoSuchKey', 'NotFound'].includes(e.name)) { links += `<p>${escapeHtml(f.name)}: el archivo ya no está disponible; no se adjuntó.</p>`; continue }
+        throw e
+      }
+      const bytes = Buffer.from(await obj.Body!.transformToByteArray())
       total += bytes.length
       attachments.push({ name: f.name, type: f.mime, bytes })
     } else

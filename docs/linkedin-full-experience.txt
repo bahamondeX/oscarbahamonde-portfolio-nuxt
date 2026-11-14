@@ -1,0 +1,229 @@
+Experiencia
+
+Site Reliability Engineer
+
+Dynata · Jornada completa
+
+ene. de 2025 - mar. de 2026 · 1 año 3 meses
+
+En remoto
+
+Engineered and maintained 30+ production AWS EKS clusters for enterprise clients, implementing GPU autoscaling with Karpenter to improve resource utilization by 40%.
+Developed CI/CD pipelines using TeamCity, Kotlin DSL, and GitLab webhooks, reducing deployment times by 75% through automated GitOps workflows.
+Built a centralized observability platform using OpenTelemetry, reducing mean time to resolution (MTTR) by 50% and improving incident detection across distributed services.
+Automated infrastructure provisioning and configuration management using Terraform and Ansible, reducing manual operations by 150 hours/month and improving deployment consistency.
+
+ Kubernetes, TeamCity y 15 aptitudes más
+
+Mejorar con la IA
+
+Senior Data Engineer
+
+Globant · Jornada completa
+
+sept. de 2023 - dic. de 2024 · 1 año 4 meses
+
+En remoto
+
+Engineered an AI-powered developer platform with automated onboarding, Sphinx, and RAG using PostgreSQL/pgvector, reducing developer onboarding time by 80%; automated UI testing with Python, cutting test creation time by 60%.
+Designed and deployed AWS data pipelines for Disney using CDK, Kinesis, S3, DynamoDB, and Redshift, processing 5K+ million records daily and reducing data processing latency by 25%.
+Developed enterprise conversational AI and secure RAG solutions using Google Dialogflow, AWS Cognito, and Microsoft SSO, automating 30+ business workflows and improving document retrieval efficiency by 25%.
+Built cloud-native ML training pipelines using SageMaker, Glue, Lambda, and Step Functions, reducing model training time by 40% and automating 30% of construction material pricing workflows.
+
+ PyTorch, SQL y 25 aptitudes más
+
+Freelance Technical Writer
+
+In Plain English · Jornada parcial
+
+jun. de 2023 - nov. de 2024 · 1 año 6 meses
+
+Remote
+
+LinkedIn me ayudó a conseguir este empleo
+ me ayudó a conseguir este empleo
+
+Technical writer on Python, AI and Javascript publications.
+
+ Ingeniería del conocimiento
+
+Back End Engineer
+
+Pronti AI · Jornada completa
+
+ene. de 2023 - mar. de 2023 · 3 meses
+
+En remoto
+
+Migrated a Flask-based backend to FastAPI, implementing scalable, event-driven microservices for an AI-powered virtual try-on platform using Python, PostgreSQL, and Milvus Vector Database.
+Designed asynchronous processing pipelines using RabbitMQ and Firebase Realtime Database, eliminating blocking API requests and enabling parallel AI image generation with real-time frontend updates.
+Deployed and managed containerized applications on Kubernetes (GCP), integrating Google Cloud Functions to automate event-driven workflows, improve scalability, and reduce application response latency.
+Collaborated with AI engineers to optimize vector embeddings, AI image generation, and data processing pipelines, ensuring backend reliability, infrastructure performance, and seamless integration of Generative AI services.
+
+ Amazon RDS, IA generativa y 3 aptitudes más
+
+Freelance Consultant
+
+Autónomo · Autónomo
+
+jul. de 2022 - ene. de 2023 · 7 meses
+
+Global
+
+ Django, Ciberseguridad y 9 aptitudes más
+
+Data Developer
+
+Bluetab América, an IBM Company · Jornada completa
+
+feb. de 2022 - jul. de 2022 · 6 meses
+
+Lima, Perú
+
+Developed and maintained PySpark data pipelines for financial-sector regulatory and compliance reporting.
+Processed sensitive banking datasets under PCI-related security requirements.
+Contributed to data platform modernization and migration from legacy infrastructure to AWS.
+Supported distributed data processing, transformation, validation, and reporting workflows.
+Technologies: Python, PySpark, Apache Spark, SQL, AWS, Data Engineering.
+
+ Ciberseguridad, Linux y 7 aptitudes más
+
+Big Data Developer
+
+Indra · Jornada completa
+
+abr. de 2021 - dic. de 2021 · 9 meses
+
+Developed and automated enterprise data pipelines for banking and insurance industry clients.
+Built data processing workflows using Python, PySpark, Hadoop, and SQL.
+Worked with AWS Redshift, Athena, and S3 to support data mart and analytics solutions.
+Improved data integration workflows through reusable processing components and automation.
+Technologies: Python, PySpark, Hadoop, SQL, AWS Redshift, Athena, S3.
+
+ Ciberseguridad, Linux y 8 aptitudes más
+
+DevOps Engineer
+
+Rayke · Profesional independiente
+
+mar. de 2021 - jul. de 2021 · 5 meses
+
+Lima, Perú
+
+Backend development with Node.js/Python using Express/Flask Framework
+Frontend development using Vue.js Framework
+GitOps implementation over AWS using Amplify and SLS Framework
+
+ Ciberseguridad, Node.js y 9 aptitudes más
+
+Cloud Architect
+
+DATA & ANALYTICS · Jornada completa
+
+ene. de 2021 - mar. de 2021 · 3 meses
+
+Perú
+
+Architecting of AWS Cloud Solutions
+Development of new partnerships
+Trusted advisor for customer engagement
+
+ Ciberseguridad, Node.js y 8 aptitudes más
+
+IT Analyst
+
+Valtx Perú · Jornada completa
+
+feb. de 2020 - dic. de 2020 · 11 meses
+
+Perú
+
+Design and Development of ITC solutions
+Bidding manager for big deals and cross solutions
+Agile Inception and processes improvement
+
+ Ciberseguridad, Linux y 4 aptitudes más
+
+Presales Engineer
+
+Telefónica · Jornada completa
+
+ago. de 2017 - nov. de 2019 · 2 años 4 meses
+
+Perú
+
+Designed end-to-end telecommunications and enterprise networking solutions for corporate and government customers.
+Performed technical sizing and architecture design involving Cisco, Fortinet, and AudioCodes technologies.
+Prepared technical and commercial proposals for enterprise projects and public-sector tenders.
+Collaborated with engineering and commercial teams to translate complex customer requirements into feasible technology solutions.
+
+ Ciberseguridad, SQL y 2 aptitudes más
+
+Mejorar con la IA
+
+Account Manager
+
+COTENER  · Jornada completa
+
+jun. de 2017 - ago. de 2017 · 3 meses
+
+San Isidro, Perú
+
+Managed B2B customer relationships and business development opportunities in the telecommunications sector.
+Supported technical sales and solution positioning for the JDSU/VIAVI product portfolio.
+Coordinated customer requirements, product demonstrations, and commercial proposals.
+
+Service Sales Engineer
+
+Huawei Technologies · Jornada completa
+
+feb. de 2014 - nov. de 2016 · 2 años 10 meses
+
+Perú
+
+Managed technical service proposals and bid activities for telecommunications infrastructure projects.
+Collaborated with engineering teams on product proof-of-concepts and technical solution validation.
+Prepared responses to RFPs and RFQs for turnkey telecommunications and managed services projects.
+Supported solutions involving wireless networks, core infrastructure, professional services, and network modernization.
+
+ SQL, IA generativa y 1 aptitud más
+
+Network Engineer
+
+NETCORPERU · Jornada completa
+
+jul. de 2013 - feb. de 2014 · 8 meses
+
+Provincia de Lima, Perú
+
+Project manager of Airspan's Wimax Telefonica's project rollout
+Design and rollout of BCP's Fibernet optics enterprise solution
+Development of use cases and operations on Claro's Oracle PCRF platform
+
+NOC Engineer
+
+OSC Telecoms & Security Solutions · Jornada completa
+
+ene. de 2013 - jul. de 2013 · 7 meses
+
+Provincia de Lima, Perú
+
+Monitored mobile network infrastructure and value-added services for Nextel's 3G environment.
+Provided first-level incident support, ticket classification, troubleshooting, and escalation.
+Coordinated field technicians and supported mobile network drive-testing activities.
+Performed proactive and reactive network operations monitoring.
+
+Telecommunications Engineering Trainee
+
+Telefónica · Contrato de prácticas
+
+feb. de 2011 - dic. de 2011 · 11 meses
+
+Lima, Perú · Presencial
+
+Maintained internal analytics and reporting applications using the LAMP stack.
+Integrated spreadsheet-based business information with MySQL databases.
+Supported operational KPI monitoring, reporting dashboards, and data processing workflows.
+
+ Microsoft Excel, MySQL y 2 aptitudes más
+[{"alt":"Logotipo de Dynata","src":"https://media.licdn.com/dms/image/v2/D4E0BAQEQE4doHpouTw/company-logo_100_100/B4EZg.C6LlHoAY-/0/1753387607116/dynataglobal_logo"},{"alt":"Logotipo de Globant","src":"https://media.licdn.com/dms/image/v2/D4D0BAQHupr1U3gIQKA/company-logo_100_100/company-logo_100_100/0/1719839010650/globant_logo"},{"alt":"Logotipo de In Plain English","src":"https://media.licdn.com/dms/image/v2/C4D0BAQGV9HF79OB_sg/company-logo_100_100/company-logo_100_100/0/1649543117894/inplainenglish_logo"},{"alt":"Logotipo de Pronti AI","src":"https://media.licdn.com/dms/image/v2/D560BAQGQo2V3jfsyzA/company-logo_100_100/company-logo_100_100/0/1720201868167/pronti_ai_logo"},{"alt":null,"src":null},{"alt":"Logotipo de Bluetab América, an IBM Company","src":"https://media.licdn.com/dms/image/v2/D4E0BAQHIXxuiEkgyNw/company-logo_100_100/company-logo_100_100/0/1720841999373"},{"alt":"Logotipo de Indra","src":"https://media.licdn.com/dms/image/v2/D4E0BAQHd18DYpdQeFQ/company-logo_100_100/B4EaGbkjhUI8AI-/0/1793611413801/indragroupglobal_logo"},{"alt":null,"src":null},{"alt":"Logotipo de DATA & ANALYTICS","src":"https://media.licdn.com/dms/image/v2/D4D0BAQGvFitEDWXzLg/company-logo_100_100/B4DaB3rgCSGkAQ-/0/1788714287496/data_y_analytics_innovacion_y_tecnologia_logo"},{"alt":"Logotipo de Valtx Perú","src":"https://media.licdn.com/dms/image/v2/D4D0BAQHEJnXC-P5J_A/company-logo_100_100/B4DZ_Ej_vfHQAI-/0/1785709198523/valtx_peru_logo"},{"alt":"Logotipo de Telefónica","src":"https://media.licdn.com/dms/image/v2/D4E0BAQFQ1OjwQ2rVbw/company-logo_100_100/company-logo_100_100/0/1727681140503/telefonica_logo"},{"alt":"Logotipo de COTENER ","src":"https://media.licdn.com/dms/image/v2/D4E0BAQH6AtdSIvvAIA/company-logo_100_100/B4EZVs7rdBH0Ac-/0/1741289339497/cotener_com_logo"},{"alt":"Logotipo de Huawei Technologies","src":"https://media.licdn.com/dms/image/v2/D560BAQGIGS-v44hw8w/company-logo_100_100/B56aCoBoIOGwAI-/0/1789525394357/huawei_logo"},{"alt":null,"src":null},{"alt":"Logotipo de OSC Telecoms & Security Solutions","src":"https://media.licdn.com/dms/image/v2/C560BAQEdi6LynLUlpA/company-logo_100_100/company-logo_100_100/0/1630572533530/osc_telecoms_logo"},{"alt":"Logotipo de Telefónica","src":"https://media.licdn.com/dms/image/v2/D4E0BAQFQ1OjwQ2rVbw/company-logo_100_100/company-logo_100_100/0/1727681140503/telefonica_logo"}]

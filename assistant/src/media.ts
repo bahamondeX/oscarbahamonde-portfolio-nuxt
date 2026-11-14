@@ -38,8 +38,11 @@ export async function handler(event: { sessionId: string; fileId: string }) {
   if (!ttlActive(s)) return
   const file = (s!.files || []).find((x: any) => x.id === event.fileId)
   if (!file || file.processed) return
+  const attempt = Number(file.attempts || 0) + 1
+  file.attempts = attempt
   try {
     await validateObject({ ...file, sessionId: s!.id })
+    file.validated = true
     if (file.kind === 'audio') {
       const job = 'oscar-' + event.fileId,
         output = s!.id + '/' + file.id + '.transcript.json'
@@ -80,6 +83,7 @@ export async function handler(event: { sessionId: string; fileId: string }) {
       file.transcriptKey = output
       file.transcription = text
     }
+    file.status = 'completed'
     file.processed = true
     file.validated = true
     const latest = await get(cfg.table, s!.id)
@@ -87,7 +91,10 @@ export async function handler(event: { sessionId: string; fileId: string }) {
     await update(cfg.table, s!.id, {
       files: (latest!.files || []).map((f: any) => (f.id === file.id ? file : f)),
     })
-  } catch {
+  } catch (error: any) {
+    const terminal = attempt >= 3 || ['ownership','invalid_file_size_or_type','mime_mismatch','transcription_failed','empty_transcription'].includes(error.message)
+    const latest = await get(cfg.table, s!.id)
+    if (ttlActive(latest)) await update(cfg.table, s!.id, { files: (latest!.files || []).map((f: any) => f.id === file.id ? { ...f, ...file, attempts: attempt, status: terminal ? 'failed' : 'processing', processed: terminal } : f) })
     metric('MediaErrors')
     throw Error('media_processing_failed')
   }

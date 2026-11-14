@@ -1,0 +1,153 @@
+[
+  {
+    "id": "backend",
+    "title": {
+      "es": "Lenguajes y backend",
+      "en": "Languages & backend"
+    },
+    "skills": [
+      {
+        "name": "Python",
+        "icon": "/icons/python.svg",
+        "custom": false
+      },
+      {
+        "name": "TypeScript",
+        "icon": "/icons/typescript.svg",
+        "custom": false
+      },
+      {
+        "name": "JavaScript",
+        "icon": "/icons/javascript.svg",
+        "custom": false
+      },
+      {
+        "name": "Vue.js",
+        "icon": "/icons/vuejs.svg",
+        "custom": false
+      },
+      {
+        "name": "FastAPI",
+        "icon": "/icons/fastapi.svg",
+        "custom": false
+      },
+      {
+        "name": "Flask",
+        "icon": "/icons/flask.svg",
+        "custom": false
+      },
+      {
+        "name": "Node.js",
+        "icon": "/icons/nodejs.svg",
+        "custom": false
+      }
+    ]
+  },
+  {
+    "id": "data",
+    "title": {
+      "es": "Datos e IA",
+      "en": "Data & AI"
+    },
+    "skills": [
+      {
+        "name": "PostgreSQL",
+        "icon": "/icons/postgresql.svg",
+        "custom": false
+      },
+      {
+        "name": "Apache Spark",
+        "icon": "/icons/apachespark.svg",
+        "custom": false
+      },
+      {
+        "name": "Hadoop",
+        "icon": "/icons/hadoop.svg",
+        "custom": false
+      },
+      {
+        "name": "Milvus",
+        "icon": "/icons/milvus.svg",
+        "custom": false
+      },
+      {
+        "name": "Firebase",
+        "icon": "/icons/firebase.svg",
+        "custom": false
+      },
+      {
+        "name": "Agentic AI & RAG",
+        "icon": "/icons/ai.svg",
+        "custom": true
+      }
+    ]
+  },
+  {
+    "id": "cloud",
+    "title": {
+      "es": "Cloud e infraestructura",
+      "en": "Cloud & infrastructure"
+    },
+    "skills": [
+      {
+        "name": "AWS",
+        "icon": "/icons/amazonwebservices.svg",
+        "custom": false
+      },
+      {
+        "name": "Google Cloud",
+        "icon": "/icons/googlecloud.svg",
+        "custom": false
+      },
+      {
+        "name": "Docker",
+        "icon": "/icons/docker.svg",
+        "custom": false
+      },
+      {
+        "name": "Kubernetes",
+        "icon": "/icons/kubernetes.svg",
+        "custom": false
+      },
+      {
+        "name": "Terraform",
+        "icon": "/icons/terraform.svg",
+        "custom": false
+      },
+      {
+        "name": "Ansible",
+        "icon": "/icons/ansible.svg",
+        "custom": false
+      }
+    ]
+  },
+  {
+    "id": "observability",
+    "title": {
+      "es": "Observabilidad y mensajería",
+      "en": "Observability & messaging"
+    },
+    "skills": [
+      {
+        "name": "OpenTelemetry",
+        "icon": "/icons/opentelemetry.svg",
+        "custom": false
+      },
+      {
+        "name": "RabbitMQ",
+        "icon": "/icons/rabbitmq.svg",
+        "custom": false
+      },
+      {
+        "name": "GitLab",
+        "icon": "/icons/gitlab.svg",
+        "custom": false
+      },
+      {
+        "name": "TeamCity",
+        "icon": "/icons/teamcity.svg",
+        "custom": false
+      }
+    ]
+  }
+]

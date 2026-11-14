@@ -1,8 +1,6 @@
 <script setup lang="ts">
-const config = useRuntimeConfig()
-const chat = ref<{ focus: () => void }>()
-defineExpose({ focus: () => chat.value?.focus() })
+const panel = useAssistantPanel()
+const { locale } = useI18n()
+defineExpose({ focus: () => panel.open() })
 </script>
-<template>
-  <BedrockChat v-if="config.public.assistantUrl" ref="chat" /><LegacyLeadChat v-else ref="chat" />
-</template>
+<template><button class="button primary" @click="panel.open()">{{ locale === 'es' ? 'Hablar con el asistente' : 'Talk to the assistant' }}</button></template>

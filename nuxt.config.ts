@@ -28,9 +28,9 @@ export default defineNuxtConfig({
   image: { format: ['avif', 'webp'], quality: 85, domains: ['cdn-images-1.medium.com', 'miro.medium.com'] },
   sitemap: { sources: ['/api/__sitemap__/urls'], exclude: ['/pago', '/conectar', '/api/**'] },
   robots: { groups: [{ userAgent: '*', allow: '/', disallow: ['/api/', '/pago', '/conectar'] }], sitemap: ['https://oscarbahamonde.com/sitemap.xml'] },
-  app: { head: {
+  app: { viewTransition: true, head: {
     title: 'Oscar Bahamonde — AI, Data & Cloud',
-    meta: [{ name: 'theme-color', content: '#f5f6f8' }, { name: 'twitter:card', content: 'summary_large_image' }],
+    meta: [{ name: 'theme-color', content: '#f5f6f8', media: '(prefers-color-scheme: light)' }, { name: 'theme-color', content: '#0b1118', media: '(prefers-color-scheme: dark)' }, { name: 'twitter:card', content: 'summary_large_image' }],
     link: [
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }, { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }, { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },

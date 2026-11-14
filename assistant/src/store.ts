@@ -37,14 +37,28 @@ export async function sessionCreate(locale: string) {
     id,
     secretHash: hash(secret),
     locale,
-    consentAt: new Date().toISOString(),
+    consentAt: null,
     turns: 0,
     tokens: 0,
     lastActivity: Date.now(),
     status: 'open',
-    ttl: expires(),
+    ttl: Math.floor(Date.now() / 1000) + 86400,
   })
   return { id, token: `${id}.${secret}` }
+}
+export async function consentSession(s: any, items: { role: string; content: string }[], client = db) {
+  const at = new Date().toISOString(), ttl = expires()
+  await client.send(new TransactWriteCommand({ TransactItems: [
+    { Update: { TableName: cfg.table, Key: { id: s.id },
+      UpdateExpression: 'SET consentAt=:at, #ttl=:ttl',
+      ConditionExpression: 'attribute_not_exists(consentAt) OR consentAt=:none',
+      ExpressionAttributeNames: { '#ttl': 'ttl' },
+      ExpressionAttributeValues: { ':at': at, ':ttl': ttl, ':none': null } } },
+    ...items.map((m, index) => ({ Put: { TableName: cfg.messages, Item: {
+      sessionId: s.id, sort: at + '#consent-' + String(index).padStart(2, '0'),
+      role: m.role, content: m.content, ttl,
+    } } })),
+  ] }))
 }
 export async function authenticate(header: string) {
   const [id, secret] = header.replace(/^Bearer /, '').split('.')

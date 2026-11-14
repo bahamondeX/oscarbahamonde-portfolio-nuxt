@@ -230,10 +230,10 @@
   },
   "privacy": {
     "title": "Privacy for your inquiries",
-    "body": "The chat asks for consent before storing information. Messages and files are used to answer your inquiry and send it to Oscar Bahamonde, with the contact details you choose to share.",
-    "providers": "Messages are processed by the configured AI provider; audio is sent to the transcription provider. Files are kept in private storage and download links expire.",
-    "retention": "The configured retention period is shown when you start the chat. You can delete the conversation while you still have its session, or request access or deletion by emailing oscar.bahamonde.dev@gmail.com. Delivered emails require manual removal by the recipient.",
+    "body": "You can chat without leaving contact details. Before you consent, messages remain only in your browser for this session and are processed to generate replies, but are not stored as a conversation on our servers. Avoid sharing personal or sensitive information at this stage.",
+    "providers": "Amazon Web Services processes AI replies and audio transcriptions. Cloudflare Turnstile helps prevent abuse. With your consent, we store the conversation and the details you choose to share, along with files and audio, in encrypted private storage to handle your inquiry. Oscar receives saved inquiries through Gmail, including the transcript and attachments or expiring download links.",
+    "retention": "Saved conversations, contact details, files and audio are retained for 90 days. You can request their deletion from the chat while you still have the session, or request access or deletion by emailing oscar.bahamonde.dev{'@'}gmail.com. Automatic deletion may take time to complete. Emails already delivered to Oscar are removed separately when you request it.",
     "booking": "Reservations are processed through Google Calendar and MercadoPago under their privacy policies. Card details are entered on MercadoPago.",
-    "cookies": "We store language and theme preferences, a chat session cookie, and the cookie needed to verify payments. Turnstile runs an abuse check when you start a chat."
+    "cookies": "Your browser stores language and theme preferences, the greeting state and your chat session. The anonymous conversation stays in that tab’s storage and can be deleted from the chat. Booking also uses a cookie required to verify payment. Turnstile runs an abuse check when you open the assistant."
   }
 }

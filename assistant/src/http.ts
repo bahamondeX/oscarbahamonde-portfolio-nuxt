@@ -11,6 +11,7 @@ import {
   db,
   authenticate,
   sessionCreate,
+  consentSession,
   rate,
   lock,
   update,
@@ -19,7 +20,7 @@ import {
   saveLead,
   get,
 } from './store.js'
-import { requestSchema, uploadSchema, email, mimeTypes } from './validation.js'
+import { requestSchema, uploadSchema, email, consentSchema } from './validation.js'
 import { runAgent, invokeTool } from './agent.js'
 import { validateObject } from './media.js'
 const s3 = new S3Client({}),
@@ -31,20 +32,21 @@ export async function route(event: any, emit: (type: string, data: any) => void)
     origin = event.headers?.origin
   if (origin !== cfg.origin) throw Error('forbidden_origin')
   const ip = event.requestContext?.http?.sourceIp || 'unknown'
-  await rate('ip#' + createHash('sha256').update(ip).digest('hex'), 30)
+  const readOnly = method === 'GET' && path === '/session'
+  await rate((readOnly ? 'ip-read#' : 'ip#') + createHash('sha256').update(ip).digest('hex'), readOnly ? 90 : 30)
   const raw = event.isBase64Encoded
     ? Buffer.from(event.body || '', 'base64').toString()
     : event.body || '{}'
-  if (Buffer.byteLength(raw) > 16000) throw Error('payload_too_large')
+  const bodyLimit = ['/messages', '/consent'].includes(path) ? 128000 : 16000
+  if (Buffer.byteLength(raw) > bodyLimit) throw Error('payload_too_large')
   const b = JSON.parse(raw)
   if (path === '/session' && method === 'POST') {
     if (
-      b.consent !== true ||
       !['es', 'en'].includes(b.locale) ||
       typeof b.token !== 'string' ||
       b.token.length > 2048
     )
-      throw Error('consent_captcha_required')
+      throw Error('captcha_required')
     const c = await secret(cfg.captchaSecret)
     const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
@@ -62,21 +64,38 @@ export async function route(event: any, emit: (type: string, data: any) => void)
     return sessionCreate(b.locale)
   }
   const s = await authenticate(event.headers?.authorization || '')
-  await rate('session#' + s!.id, 12)
+  await rate((readOnly ? 'session-read#' : 'session#') + s!.id, readOnly ? 60 : 12)
   await update(cfg.table, s!.id, { lastActivity: Date.now() })
   if (path === '/session' && method === 'GET')
     return {
       status: s!.status,
+      consent: !!s!.consentAt,
       verifiedEmail: s!.verifiedEmail,
       pending: s!.pending?.expires > Date.now() ? s!.pending : null,
-      messages: await history(s!.id),
+      messages: s!.consentAt ? await history(s!.id) : [],
       files: (s!.files || []).map((f: any) => ({
         id: f.id,
         name: f.name,
         processed: f.processed,
+        status: f.status,
+        error: f.status === 'failed' ? 'File processing failed; valid original retained when available.' : undefined,
         transcription: f.transcription,
       })),
     }
+  if (path === '/consent' && method === 'POST') {
+    if (s!.status !== 'open') throw Error('session_closed')
+    const input = consentSchema.parse(b)
+    await lock(s!.id)
+    try {
+      const fresh = await get(cfg.table, s!.id)
+      if (!fresh?.consentAt) {
+        await consentSession(s, input.history)
+      }
+      return { consent: true }
+    } finally { await update(cfg.table, s!.id, { lockUntil: 0 }) }
+  }
+  if (['/profile', '/upload', '/upload/complete', '/close'].includes(path) && !s!.consentAt)
+    throw Error('consent_required')
   if (path === '/profile' && method === 'POST') {
     if (b.confirmed !== true) throw Error('explicit_confirmation_required')
     const verifiedEmail = email.parse(b.email)
@@ -85,9 +104,10 @@ export async function route(event: any, emit: (type: string, data: any) => void)
     return { verifiedEmail }
   }
   if (path === '/close' && method === 'POST') {
-    if (await get(cfg.leads, s!.id)) await saveLead(s, { status: 'closed' })
+    if (!(await get(cfg.leads, s!.id))) await saveLead(s, { status: 'open' })
+    await saveLead(s, { status: 'closed' })
     await update(cfg.table, s!.id, { status: 'closed' })
-    return { closed: true }
+    return { closed: true, queued: true }
   }
   if (path === '/session' && method === 'DELETE') {
     // Revoke access first; remove the encrypted source records and objects as requested.
@@ -117,7 +137,7 @@ export async function route(event: any, emit: (type: string, data: any) => void)
       if ((fresh?.files || []).length >= cfg.maxFiles) throw Error('file_limit')
       const id = randomUUID(),
         key = s!.id + '/' + id,
-        file = { ...input, id, key, validated: false, processed: false }
+        file = { ...input, id, key, createdAt: Date.now(), status: 'awaiting_upload', validated: false, processed: false }
       const post = await createPresignedPost(s3, {
         Bucket: cfg.bucket,
         Key: key,
@@ -143,7 +163,14 @@ export async function route(event: any, emit: (type: string, data: any) => void)
   if (path === '/upload/complete' && method === 'POST') {
     const file = (s!.files || []).find((x: any) => x.id === b.id)
     if (!file) throw Error('file_not_found')
-    await validateObject({ ...file, sessionId: s!.id })
+    try { await validateObject({ ...file, sessionId: s!.id }) }
+    catch (error: any) {
+      if (['ownership','invalid_file_size_or_type','mime_mismatch'].includes(error.message)) {
+        await update(cfg.table, s!.id, { files: s!.files.map((f: any) => f.id === file.id ? { ...f, status: 'failed', processed: true, validated: false } : f) })
+      }
+      throw error
+    }
+    await update(cfg.table, s!.id, { files: s!.files.map((f: any) => f.id === file.id ? { ...f, status: 'processing', validated: true } : f) })
     await lambda.send(
       new InvokeCommand({
         FunctionName: process.env.MEDIA_FUNCTION!,
@@ -196,7 +223,7 @@ export async function route(event: any, emit: (type: string, data: any) => void)
         emit('done', { closed: false })
         return
       }
-      await runAgent({ ...s, locale: input.locale }, input.message!, emit)
+      await runAgent({ ...s, locale: input.locale, clientHistory: input.history || [] }, input.message!, emit)
     } finally {
       await update(cfg.table, s!.id, { lockUntil: 0 })
     }
@@ -230,7 +257,7 @@ export const handler =
           const status =
             e.message === 'unauthorized'
               ? 401
-              : e.message === 'forbidden_origin'
+              : ['forbidden_origin', 'consent_required'].includes(e.message)
                 ? 403
                 : e.message === 'rate_limit'
                   ? 429

@@ -1,565 +1,136 @@
 <script setup lang="ts">
-import { Sparkles, Send, Paperclip, Mic, Square, X, LoaderCircle } from 'lucide-vue-next'
-const { t, locale } = useI18n(),
-  localePath = useLocalePath(),
-  runtime = useRuntimeConfig()
+import { Send, Paperclip, Mic, Square, X, LoaderCircle, Bot, Mail, ShieldCheck, Check, ArrowUpRight } from 'lucide-vue-next'
+const { locale } = useI18n(), localePath = useLocalePath(), runtime = useRuntimeConfig()
+const es = computed(() => locale.value === 'es'), panel = useAssistantPanel()
 const base = String(runtime.public.assistantUrl).replace(/\/$/, '')
-const started = ref(false),
-  closed = ref(false),
-  busy = ref(false),
-  consent = ref(false),
-  captcha = ref(''),
-  error = ref(''),
-  draft = ref(''),
-  dragging = ref(false)
-const messages = ref<{ role: string; content: string }[]>([]),
-  files = ref<{ id: string; name: string; processed?: boolean; transcription?: string }[]>([])
-const pending = ref<any>(null),
-  emailDraft = ref(''),
-  confirmedEmail = ref(''),
-  audioUrl = ref(''),
-  audioBlob = shallowRef<Blob | null>(null),
-  recording = ref(false)
-const input = ref<HTMLTextAreaElement>(),
-  log = ref<HTMLElement>(),
-  fileInput = ref<HTMLInputElement>(),
-  captchaEl = ref<HTMLElement>()
-const uid = useId(),
-  es = computed(() => locale.value === 'es')
-let bearer = '',
-  widget: any,
-  recorder: MediaRecorder | undefined,
-  media: MediaStream | undefined,
-  timer: ReturnType<typeof setTimeout> | undefined
-const mime =
-  'application/pdf,image/png,image/jpeg,image/webp,application/zip,application/vnd.openxmlformats-officedocument.wordprocessingml.document,audio/webm,audio/ogg,audio/mp4'
+type Message = { role: 'user' | 'assistant'; content: string }
+type Uploaded = { id: string; name: string; processed?: boolean; transcription?: string; status?: 'awaiting_upload'|'processing'|'completed'|'failed'; error?: string }
+const messages = ref<Message[]>([]), files = ref<Uploaded[]>([]), cards = ref<any[]>([])
+const started = ref(false), closed = ref(false), busy = ref(false), consent = ref(false), privacyOpen = ref(false), captcha = ref(''), error = ref(''), draft = ref(''), dragging = ref(false), contactOpen = ref(false)
+const pending = ref<any>(null), emailDraft = ref(''), confirmedEmail = ref(''), audioUrl = ref(''), audioBlob = shallowRef<Blob | null>(null), recording = ref(false), seconds = ref(0)
+const input = ref<HTMLTextAreaElement>(), log = ref<HTMLElement>(), fileInput = ref<HTMLInputElement>(), captchaEl = ref<HTMLElement>()
+const uid = useId()
+let bearer = '', widget: string | undefined, recorder: MediaRecorder | undefined, media: MediaStream | undefined, timer: ReturnType<typeof setInterval> | undefined, greetingQueued = false, retryAfterConsent = false, deferred: (() => Promise<unknown>) | undefined, lastMessage = ''
+const acceptedTypes = 'application/pdf,image/png,image/jpeg,image/webp,application/zip,application/vnd.openxmlformats-officedocument.wordprocessingml.document,audio/webm,audio/ogg,audio/mp4'
+const suggestions = computed(() => es.value ? ['¿Qué servicios ofreces?', '¿Cuánto cuesta una landing?', 'Cuéntame sobre tu experiencia', 'Agendar una reunión'] : ['What services do you offer?', 'How much is a landing page?', 'Tell me about your experience', 'Schedule a meeting'])
+const fallback = () => es.value ? 'No pude completar la solicitud. Puedes intentarlo de nuevo o contactar a Oscar.' : 'I couldn’t complete that request. Try again or contact Oscar.'
+function history(source = messages.value) {
+  const out: Message[] = []; let length = 0
+  for (const m of source.slice(-24).reverse()) { const content = m.content.slice(0,4000); if (!content || length + content.length > 24000) continue; out.unshift({role:m.role, content}); length += content.length }
+  return out
+}
+function persist() { sessionStorage.setItem('oscar-chat-history', JSON.stringify({messages:history(),cards:cards.value.slice(-10)})) }
 async function request(path: string, body?: any, method = body ? 'POST' : 'GET') {
-  const r = await fetch(base + path, {
-    method,
-    headers: {
-      ...(body ? { 'Content-Type': 'application/json' } : {}),
-      ...(bearer ? { Authorization: 'Bearer ' + bearer } : {}),
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  })
-  const data = await r.json()
-  if (!r.ok || data.error) throw Error('request_failed')
-  return data
+  const r = await fetch(base + path, { method, headers: { ...(body ? {'Content-Type':'application/json'} : {}), ...(bearer ? {Authorization:'Bearer '+bearer} : {}) }, body:body ? JSON.stringify(body) : undefined })
+  const data = await r.json(); if (!r.ok || data.error) throw Error(String(r.status)); return data
 }
-async function scroll() {
-  await nextTick()
-  if (log.value) log.value.scrollTop = log.value.scrollHeight
-}
+async function scroll() { await nextTick(); if (log.value) log.value.scrollTop = log.value.scrollHeight }
+function resize() { if (input.value) { input.value.style.height = 'auto'; input.value.style.height = Math.min(input.value.scrollHeight,130)+'px' } }
 async function restore() {
-  const r = await request('/session')
-  messages.value = r.messages
-  files.value = r.files
-  confirmedEmail.value = r.verifiedEmail || ''
-  pending.value = r.pending || null
-  closed.value = r.status === 'closed'
-  started.value = true
-  await scroll()
+  const r = await request('/session'); consent.value = !!r.consent
+  if (r.consent || r.messages?.length) messages.value = (r.messages || []).map((m:any) => ({role:m.role,content:m.content}))
+  files.value = r.files || []; confirmedEmail.value = r.verifiedEmail || ''; pending.value = r.pending || null; closed.value = r.status === 'closed'; started.value = true; persist(); await scroll()
 }
 async function initCaptcha() {
-  if (!consent.value || started.value) return
+  if (started.value || !base || !runtime.public.turnstileSiteKey) return
   await nextTick()
   try {
-    if (!(window as any).turnstile)
-      await new Promise<void>((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
-        script.async = true
-        script.onload = () => resolve()
-        script.onerror = reject
-        document.head.appendChild(script)
-      })
-    const api = (window as any).turnstile
-    if (widget !== undefined) api.remove(widget)
-    widget = api.render(captchaEl.value, {
-      sitekey: runtime.public.turnstileSiteKey,
-      action: 'lead-chat',
-      language: locale.value,
-      theme: 'auto',
-      callback: (v: string) => {
-        captcha.value = v
-      },
-      'expired-callback': () => {
-        captcha.value = ''
-      },
+    if (!(window as any).turnstile) await new Promise<void>((resolve,reject) => {
+      const existing = document.querySelector<HTMLScriptElement>('script[data-oscar-turnstile]')
+      if (existing) { existing.addEventListener('load',()=>resolve(),{once:true}); existing.addEventListener('error',reject,{once:true}); return }
+      const script=document.createElement('script');script.dataset.oscarTurnstile='true';script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;script.onload=()=>resolve();script.onerror=reject;document.head.appendChild(script)
     })
-  } catch {
-    error.value = t('chat.error')
-  }
+    const api=(window as any).turnstile;if(widget!==undefined)api.remove(widget)
+    widget=api.render(captchaEl.value,{sitekey:runtime.public.turnstileSiteKey,action:'lead-chat',language:locale.value,theme:'auto',size:'flexible',callback:(value:string)=>{captcha.value=value;if(greetingQueued){greetingQueued=false;void send()}},'expired-callback':()=>{captcha.value=''},'error-callback':()=>{error.value=fallback()}})
+  } catch { error.value=fallback() }
 }
-watch(consent, initCaptcha)
-onMounted(async () => {
-  bearer = sessionStorage.getItem('oscar-aws-chat') || ''
-  if (bearer)
-    try {
-      await restore()
-    } catch {
-      sessionStorage.removeItem('oscar-aws-chat')
-      bearer = ''
-    }
-})
-async function start() {
-  if (!consent.value || !captcha.value) return
-  busy.value = true
-  error.value = ''
-  try {
-    const r = await request('/session', {
-      consent: true,
-      token: captcha.value,
-      locale: locale.value,
-    })
-    bearer = r.token
-    sessionStorage.setItem('oscar-aws-chat', bearer)
-    started.value = true
-    await nextTick()
-    input.value?.focus()
-  } catch {
-    error.value = t('chat.error')
-    captcha.value = ''
-    ;(window as any).turnstile?.reset(widget)
-  } finally {
-    busy.value = false
-  }
+async function ensureSession() {
+  if(started.value)return true
+  if(!captcha.value){greetingQueued=true;error.value=es.value?'Verificando la conexión segura… Tu mensaje está listo.':'Checking the secure connection… Your message is ready.';return false}
+  const r=await request('/session',{token:captcha.value,locale:locale.value});bearer=r.token;sessionStorage.setItem('oscar-aws-chat',bearer);started.value=true;consent.value=false;return true
 }
-async function send(action?: { id: string; approved: boolean }) {
-  if (busy.value || closed.value || (!action && !draft.value.trim())) return
-  busy.value = true
-  error.value = ''
-  const text = draft.value
-  draft.value = ''
-  if (!action) messages.value.push({ role: 'user', content: text })
-  messages.value.push({ role: 'assistant', content: '' })
-  const index = messages.value.length - 1
+async function send(action?: {id:string;approved:boolean}) {
+  if(busy.value||closed.value||(!action&&!draft.value.trim()))return
+  if(!base){error.value=fallback();return}
+  busy.value=true;error.value=''
+  let index=-1
   try {
-    const r = await fetch(base + '/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + bearer },
-      body: JSON.stringify({
-        ...(action ? { action } : { message: text }),
-        locale: locale.value,
-        requestId: crypto.randomUUID(),
-      }),
-    })
-    if (!r.ok || !r.body) throw Error('stream')
-    const reader = r.body.getReader(),
-      decoder = new TextDecoder()
-    let buffer = '',
-      done = false
-    while (true) {
-      const part = await reader.read()
-      if (part.done) break
-      buffer += decoder.decode(part.value, { stream: true }).replace(/\r\n/g, '\n')
-      const blocks = buffer.split('\n\n')
-      buffer = blocks.pop() || ''
-      for (const block of blocks) {
-        const type = block
-            .split('\n')
-            .find((l) => l.startsWith('event:'))
-            ?.slice(6)
-            .trim(),
-          data = block
-            .split('\n')
-            .filter((l) => l.startsWith('data:'))
-            .map((l) => l.slice(5).trim())
-            .join('\n')
-        if (!data) continue
-        const v = JSON.parse(data)
-        if (type === 'delta') {
-          messages.value[index]!.content += v.text
-          await scroll()
-        }
-        if (type === 'action') pending.value = v
-        if (type === 'result') {
-          messages.value[index]!.content = JSON.stringify(v)
-          pending.value = null
-        }
-        if (type === 'error') throw Error('server')
-        if (type === 'done') done = true
+    if(!await ensureSession())return
+    const text=draft.value.trim(), prior=history();if(!action){lastMessage=text;draft.value='';messages.value.push({role:'user',content:text})}
+    messages.value.push({role:'assistant',content:''});index=messages.value.length-1;resize();await scroll()
+    const r=await fetch(base+'/messages',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+bearer},body:JSON.stringify({...(action?{action}:{message:text}),locale:locale.value,requestId:crypto.randomUUID(),...(!consent.value?{history:prior}:{})})})
+    if(!r.ok||!r.body)throw Error('stream')
+    const reader=r.body.getReader(),decoder=new TextDecoder();let buffer='',done=false
+    while(true){const part=await reader.read();if(part.done)break;buffer+=decoder.decode(part.value,{stream:true}).replace(/\r\n/g,'\n');const blocks=buffer.split('\n\n');buffer=blocks.pop()||''
+      for(const block of blocks){const type=block.split('\n').find(l=>l.startsWith('event:'))?.slice(6).trim(),raw=block.split('\n').filter(l=>l.startsWith('data:')).map(l=>l.slice(5).trim()).join('\n');if(!raw)continue;const v=JSON.parse(raw)
+        if(type==='delta'){messages.value[index]!.content+=v.text;await scroll()}
+        if(type==='card')cards.value.push(v)
+        if(type==='action')pending.value=v
+        if(type==='consent'){privacyOpen.value=true;retryAfterConsent=true;deferred=async()=>{draft.value=lastMessage;await send()}}
+        if(type==='result'){cards.value.push(v);pending.value=null;if(!messages.value[index]!.content)messages.value[index]!.content=v.sent?(es.value?'Correo enviado.':'Email sent.'):(es.value?'Aquí tienes el siguiente paso.':'Here’s the next step.')}
+        if(type==='error')throw Error('server');if(type==='done')done=true
       }
     }
-    if (!done) throw Error('interrupted')
-  } catch {
-    error.value = t('chat.error')
-  } finally {
-    busy.value = false
-    await scroll()
-  }
+    if(!done)throw Error('interrupted')
+  }catch{error.value=fallback();if(index>=0&&!messages.value[index]!.content)messages.value.splice(index,1)}finally{busy.value=false;persist();await scroll();input.value?.focus()}
 }
-async function confirmEmail() {
-  busy.value = true
-  error.value = ''
-  try {
-    const r = await request('/profile', { email: emailDraft.value, confirmed: true })
-    confirmedEmail.value = r.verifiedEmail
-  } catch {
-    error.value = t('chat.error')
-  } finally {
-    busy.value = false
-  }
+function requireConsent(next:()=>Promise<unknown>){retryAfterConsent=false;if(consent.value)void next();else{deferred=next;privacyOpen.value=true;void scroll()}}
+async function allowConsent(){busy.value=true;error.value='';try{if(!await ensureSession())return;await request('/consent',{consent:true,history:history(retryAfterConsent ? messages.value.slice(0,-2) : messages.value)});if(retryAfterConsent){messages.value.splice(-2);retryAfterConsent=false;}consent.value=true;privacyOpen.value=false;const next=deferred;deferred=undefined;busy.value=false;await next?.()}catch{error.value=fallback()}finally{busy.value=false}}
+function dismissConsent(){privacyOpen.value=false;deferred=undefined;retryAfterConsent=false;input.value?.focus()}
+async function confirmEmail(){requireConsent(async()=>{busy.value=true;try{const r=await request('/profile',{email:emailDraft.value,confirmed:true});confirmedEmail.value=r.verifiedEmail;contactOpen.value=false}catch{error.value=fallback()}finally{busy.value=false}})}
+async function upload(file:File,kind='file'){
+  if(file.size>Number(runtime.public.assistantMaxBytes)||files.value.length>=5){error.value=es.value?'Máximo 5 archivos, de hasta 5 MB cada uno.':'Up to 5 files, at most 5 MB each.';return false}
+  if(!consent.value){requireConsent(()=>upload(file,kind));return false}
+  busy.value=true;error.value=''
+  try{const type=file.type.split(';')[0]!,mime=type==='video/webm'?'audio/webm':type;if(!acceptedTypes.split(',').includes(mime))throw Error('mime')
+    const r=await request('/upload',{name:file.name,mime,size:file.size,kind});const form=new FormData();for(const[k,v]of Object.entries(r.post.fields))form.append(k,String(v));form.append('file',file)
+    const uploaded=await fetch(r.post.url,{method:'POST',body:form});if(!uploaded.ok)throw Error('upload');await request('/upload/complete',{id:r.id});files.value.push({id:r.id,name:file.name});await scroll()
+    for(let i=0;i<24;i++){await new Promise(r=>setTimeout(r,5000));await restore();const current=files.value.find(f=>f.id===r.id);if(current?.status==='failed'){error.value=es.value?'No se pudo procesar el archivo o transcribir el audio. Puedes escribir tu mensaje o subir otro archivo.':'The file could not be processed or the audio transcribed. You can type your message or upload another file.';return false}if(current?.processed)return true}throw Error('processing_timeout')
+  }catch{error.value=fallback();return false}finally{busy.value=false}
 }
-async function upload(file: File, kind = 'file') {
-  if (file.size > Number(runtime.public.assistantMaxBytes) || files.value.length >= 5) {
-    error.value = t('chat.limits', {
-      mb: Number(runtime.public.assistantMaxBytes) / 1000000,
-      count: 5,
-    })
-    return false
-  }
-  busy.value = true
-  error.value = ''
-  try {
-    const type = file.type.split(';')[0]!,
-      mimeType = type === 'video/webm' ? 'audio/webm' : type
-    const r = await request('/upload', { name: file.name, mime: mimeType, size: file.size, kind })
-    const form = new FormData()
-    for (const [k, v] of Object.entries(r.post.fields)) form.append(k, String(v))
-    form.append('file', file)
-    const result = await fetch(r.post.url, { method: 'POST', body: form })
-    if (!result.ok) throw Error('upload')
-    await request('/upload/complete', { id: r.id })
-    files.value.push({ id: r.id, name: file.name })
-    for (let i = 0; i < 50; i++) {
-      await new Promise((r) => setTimeout(r, 2000))
-      await restore()
-      if (files.value.find((f) => f.id === r.id)?.processed) return true
-    }
-    throw Error('processing_timeout')
-  } catch {
-    error.value = t('chat.error')
-    return false
-  } finally {
-    busy.value = false
-  }
-}
-async function onFile(event: Event) {
-  const el = event.target as HTMLInputElement
-  if (el.files?.[0]) await upload(el.files[0])
-  el.value = ''
-}
-async function onDrop(event: DragEvent) {
-  dragging.value = false
-  if (started.value && !busy.value && !closed.value && event.dataTransfer?.files[0])
-    await upload(event.dataTransfer.files[0])
-}
-async function download(id: string) {
-  try {
-    const r = await request('/download', { id })
-    window.location.assign(r.url)
-  } catch {
-    error.value = t('chat.error')
-  }
-}
-function clearAudio() {
-  if (audioUrl.value) URL.revokeObjectURL(audioUrl.value)
-  audioUrl.value = ''
-  audioBlob.value = null
-}
-function stop() {
-  if (recorder?.state === 'recording') recorder.stop()
-  media?.getTracks().forEach((t) => t.stop())
-  recording.value = false
-  clearTimeout(timer)
-}
-async function record() {
-  if (recording.value) {
-    stop()
-    return
-  }
-  clearAudio()
-  try {
-    media = await navigator.mediaDevices.getUserMedia({ audio: true })
-    const type = ['audio/webm;codecs=opus', 'audio/mp4', 'audio/ogg;codecs=opus'].find((x) =>
-      MediaRecorder.isTypeSupported(x),
-    )
-    recorder = new MediaRecorder(media, type ? { mimeType: type } : undefined)
-    const chunks: BlobPart[] = []
-    let bytes = 0
-    recorder.ondataavailable = (e) => {
-      chunks.push(e.data)
-      bytes += e.data.size
-      if (bytes > Number(runtime.public.assistantMaxBytes)) stop()
-    }
-    recorder.onstop = () => {
-      audioBlob.value = new Blob(chunks, { type: recorder?.mimeType || 'audio/webm' })
-      audioUrl.value = URL.createObjectURL(audioBlob.value)
-      media?.getTracks().forEach((t) => t.stop())
-    }
-    recorder.start(1000)
-    recording.value = true
-    timer = setTimeout(stop, 60000)
-  } catch {
-    media?.getTracks().forEach((t) => t.stop())
-    error.value = t('chat.audioError')
-  }
-}
-async function sendAudio() {
-  if (!audioBlob.value) return
-  const blob = audioBlob.value,
-    ext = blob.type.includes('mp4') ? 'm4a' : blob.type.includes('ogg') ? 'ogg' : 'webm'
-  if (await upload(new File([blob], 'audio.' + ext, { type: blob.type }), 'audio')) {
-    clearAudio()
-    draft.value = t('chat.audioFollowup')
-    await send()
-  }
-}
-async function close() {
-  busy.value = true
-  try {
-    await request('/close', {})
-    closed.value = true
-  } catch {
-    error.value = t('chat.error')
-  } finally {
-    busy.value = false
-  }
-}
-async function remove() {
-  busy.value = true
-  try {
-    await request('/session', undefined, 'DELETE')
-    sessionStorage.removeItem('oscar-aws-chat')
-    bearer = ''
-    started.value = false
-    messages.value = []
-    files.value = []
-    consent.value = false
-    pending.value = null
-  } catch {
-    error.value = t('chat.error')
-  } finally {
-    busy.value = false
-  }
-}
-defineExpose({
-  focus: () => {
-    nextTick(() => input.value?.focus())
-  },
-})
-onBeforeUnmount(() => {
-  stop()
-  clearAudio()
-  if (widget !== undefined) (window as any).turnstile?.remove(widget)
-})
+async function onFile(event:Event){const el=event.target as HTMLInputElement;const f=el.files?.[0];if(f)await upload(f,f.type.startsWith('audio/')?'audio':'file');el.value=''}
+function attach(){requireConsent(async()=>{fileInput.value?.click()})}
+async function onDrop(event:DragEvent){dragging.value=false;const f=event.dataTransfer?.files[0];if(!busy.value&&!closed.value&&f)await upload(f,f.type.startsWith('audio/')?'audio':'file')}
+async function download(id:string){try{const r=await request('/download',{id});window.location.assign(r.url)}catch{error.value=fallback()}}
+function clearAudio(){if(audioUrl.value)URL.revokeObjectURL(audioUrl.value);audioUrl.value='';audioBlob.value=null;seconds.value=0}
+function stop(){if(recorder?.state==='recording')recorder.stop();media?.getTracks().forEach(t=>t.stop());recording.value=false;clearInterval(timer)}
+async function record(){if(recording.value){stop();return}requireConsent(async()=>{clearAudio();try{media=await navigator.mediaDevices.getUserMedia({audio:true});const type=['audio/webm;codecs=opus','audio/mp4','audio/ogg;codecs=opus'].find(x=>MediaRecorder.isTypeSupported(x));recorder=new MediaRecorder(media,type?{mimeType:type}:undefined);const chunks:BlobPart[]=[];let bytes=0;recorder.ondataavailable=e=>{chunks.push(e.data);bytes+=e.data.size;if(bytes>Number(runtime.public.assistantMaxBytes))stop()};recorder.onstop=()=>{audioBlob.value=new Blob(chunks,{type:recorder?.mimeType||'audio/webm'});audioUrl.value=URL.createObjectURL(audioBlob.value);media?.getTracks().forEach(t=>t.stop())};recorder.start(1000);recording.value=true;timer=setInterval(()=>{seconds.value++;if(seconds.value>=60)stop()},1000)}catch{media?.getTracks().forEach(t=>t.stop());error.value=es.value?'No se pudo acceder al micrófono. Puedes escribir o adjuntar un audio.':'Microphone unavailable. You can type or attach an audio file.'}})}
+async function sendAudio(){if(!audioBlob.value)return;const blob=audioBlob.value,ext=blob.type.includes('mp4')?'m4a':blob.type.includes('ogg')?'ogg':'webm';if(await upload(new File([blob],'audio.'+ext,{type:blob.type}),'audio')){clearAudio();draft.value=es.value?'Responde a mi mensaje de audio, por favor.':'Please respond to my audio message.';await send()}}
+function finish(){requireConsent(async()=>{busy.value=true;try{await request('/close',{});closed.value=true}catch{error.value=fallback()}finally{busy.value=false}})}
+async function remove(){busy.value=true;try{if(bearer)await request('/session',undefined,'DELETE');sessionStorage.removeItem('oscar-aws-chat');sessionStorage.removeItem('oscar-chat-history');bearer='';started.value=false;closed.value=false;messages.value=[];files.value=[];cards.value=[];consent.value=false;pending.value=null;confirmedEmail.value='';await initCaptcha()}catch{error.value=fallback()}finally{busy.value=false}}
+function choose(text:string){draft.value=text;void send()}
+watch(()=>panel.contextVersion.value,()=>{if(panel.context.value){draft.value=(es.value?'Me interesa: ':'I’m interested in: ')+panel.context.value;nextTick(()=>{resize();input.value?.focus()})}})
+onMounted(async()=>{try{const saved=JSON.parse(sessionStorage.getItem('oscar-chat-history')||'{}');messages.value=Array.isArray(saved.messages)?saved.messages:[];cards.value=Array.isArray(saved.cards)?saved.cards:[]}catch{}bearer=sessionStorage.getItem('oscar-aws-chat')||'';if(bearer)try{await restore()}catch{sessionStorage.removeItem('oscar-aws-chat');bearer=''}if(!started.value)await initCaptcha();if(panel.context.value)draft.value=(es.value?'Me interesa: ':'I’m interested in: ')+panel.context.value;await scroll()})
+defineExpose({focus:()=>nextTick(()=>input.value?.focus()),pauseRecording:stop})
+onBeforeUnmount(()=>{stop();clearAudio();if(widget!==undefined)(window as any).turnstile?.remove(widget)})
+const actionTitle=(name:string)=>name==='send_email'?(es.value?'Vista previa de correo':'Email preview'):(es.value?'Confirmar reunión':'Confirm meeting')
+const cardUrl=(card:any)=>{const u=card.paymentUrl||card.payment_url||card.url||card.bookingUrl||card.booking_url;try{const parsed=new URL(u);return parsed.protocol==='https:'&&['oscarbahamonde.com','www.mercadopago.com.pe','www.mercadopago.com'].includes(parsed.hostname)?u:''}catch{return ''}}
 </script>
 <template>
-  <div>
-    <div class="chat-header">
-      <span class="chat-avatar"><Sparkles :size="23" /></span>
-      <div>
-        <h3>{{ t('chat.title') }}</h3>
-        <span>{{ t('chat.assistant') }}</span>
-      </div>
+  <div class="assistant-conversation" @dragover.prevent="dragging=true" @dragleave.prevent="dragging=false" @drop.prevent="onDrop">
+    <div ref="log" class="conversation-scroll" role="log" :aria-label="es?'Conversación con el asistente':'Assistant conversation'" aria-live="polite" aria-relevant="additions text">
+      <div class="welcome-message"><span class="welcome-symbol"><Bot :size="24"/></span><h3>{{es?'Una idea. Muchas posibilidades.':'One idea. So many possibilities.'}}</h3><p>{{es?'Soy la IA de Oscar. Puedo contarte sobre su trabajo, explorar tu proyecto o ayudarte con una pregunta técnica.':'I’m Oscar’s AI. Ask about his work, explore your project, or bring a technical question.'}}</p></div>
+      <div v-if="!messages.length" class="suggestion-grid"><button v-for="s in suggestions" :key="s" :disabled="busy" @click="choose(s)">{{s}}<ArrowUpRight :size="14"/></button></div>
+      <div v-for="(m,i) in messages" :key="i" class="bubble-row" :class="m.role"><span v-if="m.role==='assistant'" class="bubble-avatar" aria-hidden="true"><Bot :size="17"/></span><div class="bubble"><span class="sr-only">{{m.role==='user'?(es?'Tú':'You'):(es?'Asistente':'Assistant')}}: </span><AssistantMarkdown v-if="m.content" :text="m.content"/><span v-else class="typing" :aria-label="es?'Escribiendo':'Typing'"><i/><i/><i/></span></div></div>
+      <article v-for="(card,i) in cards" :key="'c'+i" class="action-card"><template v-if="card.slots?.length"><strong>{{es?'Horarios disponibles · Lima':'Available times · Lima'}}</strong><button v-for="slot in card.slots.slice(0,8)" :key="String(slot.start||slot)" @click="choose((es?'Quiero agendar el ':'I would like to book ')+(slot.start||slot))">{{new Date(slot.start||slot).toLocaleString(es?'es-PE':'en-US',{timeZone:'America/Lima',dateStyle:'medium',timeStyle:'short'})}}</button></template><template v-else-if="cardUrl(card)"><strong>{{es?'Consultoría · S/20':'Consultation · S/20'}}</strong><p>{{es?'30 minutos con Oscar. La cita se confirma después del pago.':'30 minutes with Oscar. Your meeting is confirmed after payment.'}}</p><a :href="cardUrl(card)" @click="panel.close()">{{es?'Elegir horario y pagar':'Choose a time and pay'}} <ArrowUpRight :size="15"/></a></template><p v-else-if="card.sent"><Check :size="16"/>{{es?'Correo enviado':'Email sent'}}</p></article>
+      <div v-if="files.length" class="file-chips"><button v-for="file in files" :key="file.id" :disabled="!file.processed||busy||file.status==='failed'" @click="download(file.id)"><Paperclip :size="13"/>{{file.name}}<span v-if="file.status==='failed'" class="file-failed">{{es?'No procesado':'Processing failed'}}</span><Check v-else-if="file.processed" :size="13"/><LoaderCircle v-else :size="13" class="spin"/></button></div>
+      <article v-if="pending" class="action-card"><strong>{{actionTitle(pending.name)}}</strong><dl><template v-for="(value,key) in (pending.preview || pending.args)" :key="key"><dt>{{key}}</dt><dd>{{value}}</dd></template></dl><div class="action-buttons"><button class="approve" :disabled="busy" @click="requireConsent(()=>send({id:pending.id,approved:true}))">{{es?'Confirmar':'Confirm'}}</button><button :disabled="busy" @click="send({id:pending.id,approved:false})">{{es?'Cancelar':'Cancel'}}</button></div></article>
+      <article v-if="privacyOpen" class="privacy-card" role="region" :aria-label="es?'Permiso para guardar datos':'Permission to store data'"><ShieldCheck :size="21"/><strong>{{es?'Tú decides qué compartir':'You choose what to share'}}</strong><p>{{es?'Para guardar tu contacto, conversación o archivos y enviarlos a Oscar, necesitamos tu permiso. Conservación: 90 días.':'We need your permission to store your contact, conversation or files and send them to Oscar. Retention: 90 days.'}} <NuxtLink :to="localePath('/privacy')">{{es?'Privacidad':'Privacy'}}</NuxtLink></p><div class="action-buttons"><button class="approve" :disabled="busy" @click="allowConsent">{{es?'Acepto y continúo':'Agree and continue'}}</button><button @click="dismissConsent">{{es?'Ahora no':'Not now'}}</button></div></article>
+      <form v-if="contactOpen&&!confirmedEmail" class="privacy-card" @submit.prevent="confirmEmail"><label :for="uid+'email'">{{es?'Tu correo de contacto':'Your contact email'}}</label><input :id="uid+'email'" v-model="emailDraft" type="email" autocomplete="email" maxlength="254" required/><p>{{es?'Confirma que este es el correo al que podemos responder.':'Confirm this is the address where we may reply.'}}</p><div class="action-buttons"><button class="approve" :disabled="busy">{{es?'Confirmo mi correo':'I confirm my email'}}</button><button type="button" @click="contactOpen=false">{{es?'Cancelar':'Cancel'}}</button></div></form>
+      <p v-if="closed" class="closed-notice">{{es?'Conversación guardada para enviar a Oscar. Gracias por compartir tu idea.':'Conversation saved for delivery to Oscar. Thanks for sharing your idea.'}}</p>
+      <p v-if="error" class="assistant-error" role="alert">{{error}} <a href="mailto:oscar.bahamonde.dev@gmail.com">Email</a></p>
     </div>
-    <p class="chat-intro">
-      {{ es ? 'Soy el asistente de IA de Oscar. ' : 'I’m Oscar’s AI assistant. '
-      }}{{ t('chat.intro') }}
-    </p>
-    <div v-if="!started" class="consent-box">
-      <p>
-        {{ t('chat.privacy', { days: runtime.public.assistantRetentionDays }) }}
-        <NuxtLink :to="localePath('/privacy')">{{ t('chat.privacyLink') }}</NuxtLink>
-      </p>
-      <label class="consent-label"
-        ><input v-model="consent" type="checkbox" />{{ t('chat.consent') }}</label
-      >
-      <div ref="captchaEl" />
-      <button class="button primary full" :disabled="busy || !consent || !captcha" @click="start">
-        {{ t('chat.start') }}
-      </button>
+    <div v-if="dragging" class="drop-overlay">{{es?'Suelta tu archivo aquí':'Drop your file here'}}</div>
+    <div class="conversation-bottom">
+      <div v-if="!started" ref="captchaEl" class="captcha-widget"/>
+      <div v-if="recording" class="recording-strip"><span class="wave" aria-hidden="true"><i v-for="n in 16" :key="n" :style="{'--delay':`${n*-.12}s`}"/></span><span>{{String(Math.floor(seconds/60)).padStart(2,'0')}}:{{String(seconds%60).padStart(2,'0')}}</span><button :aria-label="es?'Detener grabación':'Stop recording'" @click="stop"><Square :size="16"/></button></div>
+      <div v-if="audioUrl" class="audio-preview"><audio :src="audioUrl" controls :aria-label="es?'Vista previa del audio':'Audio preview'"/><button :disabled="busy" @click="sendAudio">{{es?'Enviar audio':'Send audio'}}</button><button :aria-label="es?'Descartar audio':'Discard audio'" @click="clearAudio"><X :size="16"/></button></div>
+      <form v-if="!closed" class="assistant-composer" @submit.prevent="send()"><label :for="uid+'message'" class="sr-only">{{es?'Escribe tu mensaje':'Type your message'}}</label><textarea :id="uid+'message'" ref="input" v-model="draft" maxlength="4000" rows="1" :placeholder="es?'Pregunta, imagina, conversemos…':'Ask, imagine, let’s talk…'" :disabled="busy||recording" @input="resize" @keydown.enter.exact.prevent="send()"/><div class="composer-actions"><div><button type="button" :aria-label="es?'Adjuntar archivo':'Attach file'" :disabled="busy||recording" @click="attach"><Paperclip :size="19"/></button><input ref="fileInput" type="file" hidden :accept="acceptedTypes" @change="onFile"/><button type="button" :aria-label="es?'Grabar audio':'Record audio'" :disabled="busy" @click="record"><Mic :size="19"/></button><button type="button" :aria-label="es?'Compartir correo de contacto':'Share contact email'" :disabled="busy" @click="contactOpen=!contactOpen"><Mail :size="18"/></button></div><button class="send" type="submit" :disabled="busy||recording||!draft.trim()" :aria-label="es?'Enviar mensaje':'Send message'"><LoaderCircle v-if="busy" :size="18" class="spin"/><Send v-else :size="17"/></button></div></form>
+      <div class="conversation-footer"><span>{{consent?(es?'Datos protegidos · 90 días':'Protected data · 90 days'):(es?'IA · Habla sin dejar tus datos':'AI · Chat without sharing contact details')}}</span><button v-if="started&&!closed" :disabled="busy||recording" @click="finish">{{es?'Enviar a Oscar':'Send to Oscar'}}</button><button v-if="started" :disabled="busy||recording" @click="remove">{{es?'Borrar':'Delete'}}</button></div>
+      <p v-if="!consent" class="privacy-note">{{es?'No guardamos la conversación en el servidor hasta que aceptes. Evita compartir datos personales por ahora.':'We do not store the conversation on the server until you agree. Avoid sharing personal details for now.'}} <NuxtLink :to="localePath('/privacy')">{{es?'Privacidad':'Privacy'}}</NuxtLink></p>
     </div>
-    <template v-else>
-      <div ref="log" class="chat-log" role="log" :aria-label="t('chat.title')" aria-live="polite">
-        <div v-for="(m, i) in messages" :key="i" :class="['message', m.role]">
-          <small>{{ t(m.role === 'user' ? 'chat.you' : 'chat.assistant') }}</small
-          >{{ m.content || t('chat.thinking') }}
-        </div>
-      </div>
-      <div class="file-list">
-        <button
-          v-for="file in files"
-          :key="file.id"
-          :disabled="!file.processed || busy"
-          @click="download(file.id)"
-        >
-          {{ file.name }} {{ file.processed ? '↗' : '…' }}
-        </button>
-      </div>
-      <form
-        v-if="!confirmedEmail && !closed"
-        class="assistant-email"
-        @submit.prevent="confirmEmail"
-      >
-        <label :for="uid + 'email'">{{
-          es ? 'Correo de contacto (opcional)' : 'Contact email (optional)'
-        }}</label
-        ><input
-          :id="uid + 'email'"
-          v-model="emailDraft"
-          type="email"
-          autocomplete="email"
-          maxlength="254"
-          required
-        /><button class="button" :disabled="busy">
-          {{ es ? 'Confirmo este correo' : 'I confirm this email' }}
-        </button>
-      </form>
-      <div
-        v-if="pending"
-        class="consent-box"
-        role="region"
-        :aria-label="es ? 'Confirmar acción' : 'Confirm action'"
-      >
-        <p>
-          {{
-            es
-              ? '¿Autorizas esta acción con estos datos?'
-              : 'Do you authorize this action with these details?'
-          }}
-        </p>
-        <strong>{{
-          pending.name === 'send_email'
-            ? es
-              ? 'Enviar correo'
-              : 'Send email'
-            : es
-              ? 'Crear reunión'
-              : 'Create meeting'
-        }}</strong>
-        <dl>
-          <template v-for="(value, key) in pending.args" :key="key"
-            ><dt>{{ key }}</dt>
-            <dd>{{ value }}</dd></template
-          >
-        </dl>
-        <button
-          class="button primary"
-          :disabled="busy"
-          @click="send({ id: pending.id, approved: true })"
-        >
-          {{ es ? 'Sí, confirmo' : 'Yes, confirm' }}</button
-        ><button class="button" :disabled="busy" @click="send({ id: pending.id, approved: false })">
-          {{ es ? 'Cancelar' : 'Cancel' }}
-        </button>
-      </div>
-      <p v-if="closed" role="status">{{ t('chat.closed') }}</p>
-      <form
-        v-else
-        class="chat-compose"
-        :class="{ dragging }"
-        @submit.prevent="send()"
-        @dragover.prevent="dragging = true"
-        @dragleave.prevent="dragging = false"
-        @drop.prevent="onDrop"
-      >
-        <label :for="uid + 'message'" class="sr-only">{{ t('chat.placeholder') }}</label
-        ><textarea
-          :id="uid + 'message'"
-          ref="input"
-          v-model="draft"
-          maxlength="4000"
-          :placeholder="t('chat.placeholder')"
-          :disabled="busy || recording"
-          @keydown.enter.exact.prevent="send()"
-        />
-        <div class="chat-tools">
-          <div>
-            <button
-              class="icon-button"
-              type="button"
-              :aria-label="t('chat.attach')"
-              :disabled="busy || recording"
-              @click="fileInput?.click()"
-            >
-              <Paperclip :size="18" /></button
-            ><input
-              ref="fileInput"
-              type="file"
-              class="sr-only"
-              tabindex="-1"
-              :accept="mime"
-              @change="onFile"
-            /><button
-              type="button"
-              class="icon-button"
-              :aria-label="t(recording ? 'chat.stop' : 'chat.record')"
-              :disabled="busy"
-              @click="record"
-            >
-              <Square v-if="recording" :size="16" /><Mic v-else :size="18" />
-            </button>
-          </div>
-          <button
-            type="submit"
-            class="send-button"
-            :aria-label="t('common.send')"
-            :disabled="busy || recording || !draft.trim()"
-          >
-            <LoaderCircle v-if="busy" :size="17" /><Send v-else :size="17" />
-          </button>
-        </div>
-      </form>
-      <div v-if="audioUrl" class="audio-preview">
-        <audio :src="audioUrl" controls /><button
-          class="button"
-          :disabled="busy"
-          @click="sendAudio"
-        >
-          {{ t('chat.sendAudio') }}</button
-        ><button class="icon-button" :aria-label="t('chat.clearAudio')" @click="clearAudio">
-          <X :size="17" />
-        </button>
-      </div>
-      <div class="chat-actions">
-        <button v-if="!closed" :disabled="busy || recording" @click="close">
-          {{ t('chat.end') }}</button
-        ><button :disabled="busy || recording" @click="remove">{{ t('chat.delete') }}</button>
-      </div>
-    </template>
-    <p v-if="error" class="chat-error" role="alert">
-      {{ error }} <a href="#contact">{{ es ? 'Agenda web' : 'Website calendar' }}</a> ·
-      <a href="mailto:oscar.bahamonde.dev@gmail.com">Email</a>
-    </p>
   </div>
 </template>
 <style scoped>
-.assistant-email {
-  display: grid;
-  gap: 8px;
-  margin-block: 16px;
-}
-.assistant-email input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--line, #888);
-  border-radius: 12px;
-  background: transparent;
-  color: inherit;
-}
-.file-list button {
-  font: inherit;
-  color: inherit;
-  background: none;
-  border: 0;
-  text-decoration: underline;
-  cursor: pointer;
-}
-dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 8px;
-  font-size: 0.85rem;
-}
-dd {
-  margin: 0;
-  overflow-wrap: anywhere;
-}
-button:focus-visible,
-input:focus-visible {
-  outline: 2px solid var(--accent, #0071e3);
-  outline-offset: 3px;
-}
+.assistant-conversation{display:flex;flex:1;flex-direction:column;min-height:0;position:relative;font-size:13px;color:var(--ink,#17202a)}.conversation-scroll{flex:1;overflow:auto;overscroll-behavior:contain;padding:22px 18px;scrollbar-width:thin}.welcome-message{padding:2px 5px 16px}.welcome-symbol{color:var(--accent,#3556b1);display:inline-grid;place-items:center;margin-bottom:12px}.welcome-message h3{font-size:21px;line-height:1.15;letter-spacing:-.8px;margin:0 0 10px;font-weight:650}.welcome-message p{font-size:12px;color:var(--muted,#647080);line-height:1.7;margin:0}.suggestion-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:6px 0 18px}.suggestion-grid button{display:flex;justify-content:space-between;gap:7px;align-items:center;border:1px solid var(--line,#dce3e9);background:transparent;border-radius:12px;padding:12px 10px;text-align:left;font:inherit;font-size:11px;line-height:1.45;color:inherit;cursor:pointer}.suggestion-grid button:hover{background:#319ebc0c;border-color:#329dbd80}.suggestion-grid svg{flex:none}.bubble-row{display:flex;gap:7px;margin:13px 0;align-items:flex-end}.bubble-avatar{flex:none;display:grid;place-items:center;width:25px;height:25px;border-radius:9px;background:#3e87b513;color:var(--accent,#3556b1)}.bubble{max-width:calc(100% - 32px);padding:12px 13px;border:1px solid var(--line,#e3e8ed);border-radius:17px 17px 17px 4px;background:color-mix(in srgb,var(--surface,#fff) 90%,#62bbc0 10%);font-size:12px;line-height:1.6}.bubble-row.user{justify-content:flex-end}.user .bubble{border-color:transparent;border-radius:17px 17px 4px 17px;color:white;background:#3558b4;max-width:90%}.user .bubble :deep(a){color:#d0f6ff}.typing{display:flex;gap:4px;padding:6px 1px}.typing i{width:5px;height:5px;border-radius:50%;background:var(--muted,#667);animation:typing 1.1s ease-in-out infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}.action-card,.privacy-card{border:1px solid var(--line,#dde4ea);background:#3b92b908;border-radius:16px;padding:14px;margin:14px 0;font-size:12px}.action-card>strong,.privacy-card>strong{display:block;margin-bottom:8px;font-size:13px}.privacy-card>svg{color:var(--accent);margin-bottom:8px}.action-card p,.privacy-card p{line-height:1.6;color:var(--muted,#657181);margin:5px 0 12px}.action-card a{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--accent)}.action-card>button{display:block;width:100%;margin-top:8px}.action-card dl{display:grid;grid-template-columns:auto 1fr;gap:5px 9px;font-size:11px}.action-card dt{color:var(--muted)}.action-card dd{margin:0;overflow-wrap:anywhere}.action-buttons{display:flex;gap:7px}.action-buttons button,.action-card>button,.audio-preview button{border:1px solid var(--line,#dce3e9);color:inherit;background:transparent;padding:8px 10px;border-radius:9px;font:inherit;font-size:11px;cursor:pointer}.action-buttons .approve{background:#3558b4;border-color:#3558b4;color:white}.privacy-card input{display:block;width:100%;padding:10px;margin:8px 0;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:inherit;font:inherit}.file-chips{display:flex;flex-wrap:wrap;gap:6px}.file-chips button{display:flex;align-items:center;gap:5px;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;border:1px solid var(--line);border-radius:9px;padding:7px;background:transparent;color:inherit;font-size:10px}.conversation-bottom{padding:10px 14px 12px;border-top:1px solid var(--line,#e0e5eb);background:var(--surface,#fff);flex:none}.assistant-composer{border:1px solid var(--line,#d9e1e9);border-radius:17px;padding:10px 11px 7px;background:color-mix(in srgb,var(--surface,#fff) 96%,#327cbd 4%);transition:box-shadow .2s}.assistant-composer:focus-within{box-shadow:0 0 0 3px #32b0bb15;border-color:#479cbb}.assistant-composer textarea{display:block;resize:none;width:100%;min-height:32px;max-height:130px;background:none;border:0;color:inherit;font:inherit;line-height:1.5;padding:2px;outline:none}.assistant-composer textarea::placeholder{color:var(--muted,#718092);font-size:12px}.composer-actions{display:flex;justify-content:space-between;align-items:center}.composer-actions>div{display:flex;gap:1px}.composer-actions button,.recording-strip button{border:0;color:var(--muted,#69788b);width:34px;height:34px;display:grid;place-items:center;background:none;border-radius:10px;cursor:pointer}.composer-actions button:hover{background:#40789b10}.composer-actions .send{color:white;background:#3558b4}.composer-actions .send:disabled{opacity:.45}.conversation-footer{display:flex;align-items:center;gap:9px;margin-top:9px;font-size:9px;color:var(--muted,#6c798a)}.conversation-footer span{flex:1}.conversation-footer button{padding:3px 0;color:inherit;background:none;border:0;font:inherit;text-decoration:underline;cursor:pointer}.privacy-note{font-size:9px;color:var(--muted,#6c798a);line-height:1.45;margin:8px 0 0}.privacy-note a,.privacy-card a{color:inherit;text-decoration:underline}.assistant-error{font-size:11px;line-height:1.5;color:#b34e36}.assistant-error a{color:inherit;text-decoration:underline}.closed-notice{padding:15px;border-radius:12px;background:#299d8110;line-height:1.6}.drop-overlay{position:absolute;inset:8px;background:color-mix(in srgb,var(--surface,#fff) 94%,transparent);border:2px dashed #369db5;border-radius:20px;display:grid;place-content:center;font-weight:600;z-index:2;pointer-events:none}.captcha-widget{overflow:hidden;max-width:100%;margin-bottom:6px}.audio-preview{display:flex;gap:5px;align-items:center;margin-bottom:10px}.audio-preview audio{height:32px;width:100%;min-width:0}.audio-preview button{flex:none;padding:7px}.recording-strip{display:flex;align-items:center;gap:12px;padding:8px 10px;margin-bottom:8px;background:#d1534210;border-radius:10px;font-variant-numeric:tabular-nums}.wave{height:25px;display:flex;align-items:center;gap:3px;flex:1}.wave i{width:3px;height:6px;border-radius:3px;background:#d45d49;animation:wave 1s var(--delay) ease-in-out infinite}.spin{animation:spin 1s linear infinite}button:disabled{cursor:default;opacity:.55}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #2baab5;outline-offset:3px}@keyframes wave{50%{height:23px}}@keyframes typing{50%{transform:translateY(-3px);opacity:.5}}@keyframes spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}@media(max-width:700px){.conversation-scroll{padding:20px}.welcome-message h3{font-size:25px}.welcome-message p,.bubble{font-size:13px}.conversation-bottom{padding-bottom:14px}.assistant-composer textarea{font-size:16px}.conversation-footer,.privacy-note{font-size:10px}.suggestion-grid button{font-size:12px}}
 </style>

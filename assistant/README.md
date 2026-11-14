@@ -31,8 +31,8 @@ Guarda client ID, secret y refresh token en el secreto Google. No reutilices el 
 
 ## Flujo y controles
 
-- Consentimiento + Turnstile → sesión aleatoria con Bearer de 256 bits. Se guarda el hash del token; TTL se verifica también al leer. Token de navegador solo en sessionStorage, no en URLs.
-- CORS y validación Origin exactos; IP de `requestContext`, nunca una cabecera del visitante. Contadores atómicos por IP/sesión, bloqueo de turno, máximo de turnos y presupuesto de tokens acumulado. Lambda tiene concurrencia reservada; el presupuesto AWS **avisa**, no corta gasto automáticamente.
+- Turnstile → sesión anónima aleatoria con Bearer de 256 bits (24 h); el texto permanece en sessionStorage del navegador y solo se transmite para responder, sin guardarse en DynamoDB antes del consentimiento. `/consent` guarda la aceptación y el historial acotado que el visitante autoriza; desde entonces aplica la retención de 90 días. Se guarda el hash del token; TTL se verifica también al leer. Token de navegador solo en sessionStorage, no en URLs.
+- CORS y validación Origin exactos; IP de `requestContext`, nunca una cabecera del visitante. Contadores atómicos por IP/sesión, bloqueo de turno, máximo de 60 turnos, 2.000 tokens por respuesta y 120.000 tokens acumulados. Son topes independientes: el contexto completo de conocimiento y los turnos previos cuentan en cada invocación, por lo que el presupuesto puede terminar la sesión antes de 60 turnos. La reserva conservadora de entrada incluye todos los bytes UTF-8 del sistema, historial y tools; se contabiliza el uso real incluso si falla una ronda posterior. Contexto reciente acotado a 48.000 caracteres. Lecturas de estado tienen cuota separada (60/min por sesión), evitando bloquear el procesamiento de audio. Lambda tiene concurrencia reservada; el presupuesto AWS **avisa**, no corta gasto automáticamente.
 - Cinco tools son Lambdas sin URL, invocables mediante el rol del orquestador. Esquemas JSON y validación Zod en ambas capas. Los argumentos no sustituyen sesión, destinatario ni consentimiento.
 - El perfil de correo se confirma explícitamente por el visitante en la UI. Es confirmación de dirección proporcionada, **no prueba OTP de propiedad del buzón**. Solo ese correo o `OWNER_EMAIL`, sin CC/BCC. Las plantillas ignoran texto libre generado por el modelo. Máximo tres intentos de envío por sesión.
 - Las llamadas intro gratuitas y los correos requieren un botón de confirmación cuyo ID y parámetros están guardados en servidor; texto como “ignore previous instructions” no lo autoriza.
@@ -44,9 +44,11 @@ Guarda client ID, secret y refresh token en el secreto Google. No reutilices el 
 
 ## Leads, correo y reintentos
 
-DynamoDB Streams `NEW_AND_OLD_IMAGES` → `notify-lead`. INSERT avisa inmediatamente. Primera transición a `qualified`/`closed` entrega resumen Bedrock, transcripción completa y adjuntos. El cierre no depende del navegador: EventBridge cierra leads inactivos tras 15 minutos, con barrido cada 5 minutos.
+DynamoDB Streams `NEW_AND_OLD_IMAGES` → `notify-lead`. INSERT avisa inmediatamente. Primera transición a `qualified`/`closed` entrega extractos seleccionados por Bedrock, transcripción completa y adjuntos. Los extractos deben existir literalmente en el transcript; se rechaza prosa inventada y no se bloquea la entrega del correo si falla el resumen. El cierre no depende del navegador: EventBridge cierra leads inactivos tras 15 minutos, con barrido cada 5 minutos.
 
 La clave `leadId + created/completed` tiene lease condicional y sello `notified_created`/`notified_completed`. Registros ya enviados no se reenvían en los tests de duplicados. Gmail 429/5xx usa backoff, después el stream reintenta con batch parcial, bisect y DLQ SQS con alarma SNS. Archivos hasta un total de ~17 MB binarios se adjuntan, dejando margen al base64; el resto usa enlaces S3 de 24 h. No se omiten audios del grupo validado.
+
+Los archivos tienen estado explícito: pendiente de carga, procesando, completado o fallido. El correo final espera como máximo tres reintentos de 30 s por media reciente; una carga abandonada durante más de cinco minutos ya no bloquea el envío. Un fallo permanente de transcripción conserva y adjunta el audio original validado. En el límite, se entrega todo el texto ya guardado y todos los originales válidos con una nota clara de qué procesamiento quedó pendiente o falló; nunca se adjunta un archivo sin validar. Un objeto S3 desaparecido se indica en el correo; errores transitorios de S3/Gmail siguen reintentándose y terminan en DLQ si persisten.
 
 **Límite de transporte:** Gmail `messages.send` no ofrece una clave de idempotencia transaccional con DynamoDB. Si Gmail acepta y la respuesta se pierde o Lambda muere antes del sello, un reintento puede duplicar el correo. Message-ID determinista facilita detectar el caso, pero no garantiza exactamente una entrega. No se afirma lo contrario. Reconciliar manualmente casos ambiguos antes de redrive si es indispensable evitar todo duplicado.
 
@@ -57,6 +59,17 @@ La DLQ de event source mappings contiene metadata de lote: recupera los registro
 `npm test` y `npm run typecheck` dentro de `assistant/`; desde la raíz, `npm test`, `npm run typecheck`, `npm run build`.
 Tests de Bedrock simulado (stream, tools y confirmación), validadores, freebusy simulado y Stream INSERT/MODIFY/duplicados/fallo Gmail. Los tests originales fijan los hashes del runtime de reservas.
 
-Prueba real pendiente hasta configurar secretos: captcha → chat es/en → tools → upload/audio → cierre de pestaña → correo inicial/final → Gmail fallando/DLQ → replay. Una compra real S/20 requiere una transacción de prueba explícitamente acordada con el propietario. No se envían correos ni invitaciones durante tests con mocks.
+Pruebas de aceptación reales: captcha → chat es/en → tools → upload/audio → cierre de pestaña → correo inicial/final → Gmail fallando/DLQ → replay. Una compra real S/20 requiere una transacción de prueba explícitamente acordada con el propietario. No se envían correos ni invitaciones durante tests con mocks.
 
 Fuentes: [Lambda streaming](https://docs.aws.amazon.com/lambda/latest/dg/config-rs-invoke-furls.html), [ConverseStream](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html), [Guardrails y tools](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use-converse-api.html), [DynamoDB event source](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-dynamodb.html).
+
+## Conocimiento y conversación
+
+El contexto versionado de `knowledge/` se empaqueta en Lambda y se cachea en memoria; un checkpoint Converse en el bloque de sistema permite reutilizarlo con Claude Haiku 4.5.
+Se elige contexto estático por el tamaño pequeño y verificable del portafolio, evitando el costo y operación de una base vectorial; otros modelos desactivan el checkpoint salvo adaptación explícita.
+
+Haiku 4.5 requiere un prefijo de al menos 4.096 tokens para un cache hit: los prefijos menores siguen funcionando sin cachearse. No rellenamos texto solo para alcanzar ese umbral. `BEDROCK_PROMPT_CACHE=false` lo desactiva. Fuente oficial: https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-haiku-4-5.html.
+
+La versión 3 de Guardrails usa filtros estándar MEDIUM de contenido dañino, sin temas denegados ni anonimización del contenido conversacional. Los logs siguen redactados; aislamiento de sesiones, validación de tools, consentimiento, CAPTCHA y confirmaciones se imponen en servidor. El system prompt permite preguntas técnicas, de negocio y del perfil, sin exigir datos personales.
+
+`node --import tsx scripts/evaluate.mjs` ejecuta 36 preguntas con Bedrock real y guarda `evaluation-results.json`. Requiere variables de modelo/Guardrail/región y AWS CLI autenticado. Solo consulta el catálogo; los efectos externos se simulan y jamás envía correo, crea eventos ni guarda leads. Las comprobaciones automáticas no sustituyen la revisión humana de utilidad/fidelidad; ver `TESTS.md` en raíz.
