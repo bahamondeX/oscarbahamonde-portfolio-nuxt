@@ -33,7 +33,8 @@
 - [x] Tests mock de Bedrock/Google/Gmail y eventos Stream; tests originales de agendamiento sin regresiones.
 - [x] Google OAuth guardado en AWS Secrets Manager tras consentimiento del propietario: refresh validado, scopes calendar.events/calendar.freebusy/gmail.send comprobados y consulta real freebusy correcta. No se enviaron correos de prueba.
 - [x] Turnstile Managed creado para oscarbahamonde.com, sin pre-clearance. Clave privada en AWS Secrets Manager y site key público en Vercel. Sin secretos en el repositorio.
-- [ ] Desplegar CloudFormation/SAM y habilitar URL Lambda + Turnstile público en Vercel; confirmar SNS y acceso real al modelo.
+- [x] CloudFormation/SAM desplegado en us-east-1. Bedrock respondió con Claude Haiku 4.5; Lambda entregó SSE completo con precios correctos. Se confirmó la suscripción SNS y se rechazaron origen y captcha inválidos.
+- [ ] Fusionar PR #1 en main y configurar la URL pública de Lambda en Vercel para activar el widget. La revisión automática exige autorización explícita del propietario para esta fusión.
 - [ ] Ejecutar pruebas reales AWS/Google/Transcribe y prueba de pago autorizada; no se simuló un despliegue completado.
 - [ ] Gmail no ofrece exactamente-una-vez con DynamoDB. Revisar el límite de entrega ambigua en assistant/README.md antes de exigir cero duplicados bajo cualquier caída.
 - [ ] Lighthouse ≥95 y navegación de teclado en navegador: intento local bloqueado al arrancar Chrome. No se afirma un puntaje medido nuevo.
