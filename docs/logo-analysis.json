@@ -312,6 +312,17 @@
       "foregroundMedianContrast": 1.47,
       "foreground10thPercentileContrast": 1.47,
       "opaquePixels": 10000
+    },
+    {
+      "path": "/logos/netcor.png",
+      "width": 177,
+      "height": 49,
+      "logoTone": "color",
+      "logoBackground": "#ffffff",
+      "opaqueMeanLuminance": 0.8007,
+      "opaquePixels": 8673,
+      "source": "https://pe.linkedin.com/company/netcorperu-s-a-c",
+      "note": "Source luminance only; rendered test determines foreground contrast."
     }
   ]
 }

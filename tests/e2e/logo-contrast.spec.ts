@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test'
 import { readFile, mkdir, writeFile } from 'node:fs/promises'
+import { readFileSync } from 'node:fs'
 import path from 'node:path'
-import entries from '../../data/experience.json'
 import { renderedLogoContrast } from '../../scripts/rendered-logo-contrast.mjs'
+const entries = JSON.parse(readFileSync(new URL('../../data/experience.json', import.meta.url), 'utf8')) as { logo: string | null }[]
 
 for (const locale of ['es', 'en']) for (const theme of ['light', 'dark']) {
   test(`${locale}/${theme}: rendered experience logo contrast`, async ({ page }, info) => {
@@ -17,8 +18,14 @@ for (const locale of ['es', 'en']) for (const theme of ['light', 'dark']) {
     expect(await logos.count()).toBe(entries.filter(item => item.logo).length)
     const results = []
     for (const logo of await logos.all()) {
-      await logo.scrollIntoViewIfNeeded()
+      // Center the image above the fixed dock; "if needed" can leave it occluded.
+      await logo.evaluate(el => el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' }))
       await expect(logo).toBeVisible()
+      await expect.poll(() => logo.evaluate(el => {
+        const box = el.getBoundingClientRect()
+        return [[.05, .05], [.95, .05], [.05, .95], [.95, .95], [.5, .5]].every(([x, y]) =>
+          document.elementFromPoint(box.x + box.width * x, box.y + box.height * y) === el)
+      })).toBe(true)
       await expect.poll(() => logo.evaluate(el => (el as HTMLImageElement).complete && (el as HTMLImageElement).naturalWidth > 0)).toBe(true)
       const src = (await logo.getAttribute('src'))!
       const name = (await logo.getAttribute('alt')) || src

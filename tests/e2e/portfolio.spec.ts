@@ -66,6 +66,8 @@ test('keyboard booking keeps 30 minute S/20 flow and explains occupied slot', as
   })
   await page.goto('/es')
   await page.locator('.dock-contact').click()
+  // Availability is lazy-loaded when the booking card enters the viewport.
+  await page.locator('.booking-flow').scrollIntoViewIfNeeded()
   const option = page.locator('.slot').first()
   await expect(option).toBeVisible()
   await option.focus()
