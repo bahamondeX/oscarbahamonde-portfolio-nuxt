@@ -40,3 +40,10 @@ Prueba de navegador final: nueve secciones/dock, magnificación, cambio de idiom
 - Existing 8 booking/payment regression tests passed; production payment webhook rejected malformed payment ID with HTTP400. No real charge or Meet creation performed.
 - Local proposed tree: 17 assistant tests passed (includes pending IAM regression); deployed main has the notifier regression fix. cfn-lint validation repeated on the proposed SAM template.
 - Lighthouse could not start local Chrome (dynamic debugging port timeout). Public PageSpeed API returned HTTP429/quota zero. No new production score or ≥95 claim.
+
+## Authorized IAM correction and live recheck
+- Owner explicitly authorized LeadToolRole dynamodb:Query on Messages. SAM change committed and deployed successfully; no wildcard resources or extra actions added.
+- 17 assistant tests, TypeScript and cfn-lint passed. Regression test verifies exactly one scoped Query statement for LeadTool.
+- Actual LeadTool Lambda invocation succeeded and saved a synthetic lead with name, service, scope and budget. HTTP close succeeded. DynamoDB Streams automatically delivered both created and completed notifications to OWNER_EMAIL; Gmail confirmed both arrived, completed mail included transcript.txt.
+- Bedrock summary generated for the ordinary scoping sample (HIGH unchanged), but added marketing claims and misinterpreted the synthetic name. Summary factual precision remains a follow-up; this test does not certify strict grounding.
+- Previous blocked IAM status is resolved. Browser microphone/file-picker and Lighthouse environment limitations plus real payment/Meet test remain pending as documented.
