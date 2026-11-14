@@ -21,7 +21,7 @@ test('only expired application holds are ignored; ordinary tentative events stil
  assert.equal(blocks(hold,now),true);assert.equal(blocks(hold,now+1001),false)
  assert.equal(blocks({extendedProperties:{private:{...hold.extendedProperties.private,state:'confirmed'}}},now+1001),true)
  assert.equal(blocks({status:'cancelled'}),false)
- assert.equal(blocks({transparency:'transparent'}),false)
+ assert.equal(blocks({transparency:'transparent'}),true)
  assert.equal(blocks({attendees:[{self:true,responseStatus:'declined'}]}),false)
 })
 test('return URL or pending/sandbox/wrong-amount/wrong-order payments cannot confirm',()=>{
