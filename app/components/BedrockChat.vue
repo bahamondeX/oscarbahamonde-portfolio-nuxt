@@ -31,6 +31,13 @@ async function restore() {
   if (r.consent || r.messages?.length) messages.value = (r.messages || []).map((m:any) => ({role:m.role,content:m.content}))
   files.value = r.files || []; confirmedEmail.value = r.verifiedEmail || ''; pending.value = r.pending || null; closed.value = r.status === 'closed'; started.value = true; persist(); await scroll()
 }
+function removeCaptcha() {
+  // Release Cloudflare's instance while its container still exists; v-if removes it next.
+  const id = widget
+  widget = undefined
+  captcha.value = ''
+  if (id !== undefined) (window as any).turnstile?.remove(id)
+}
 async function initCaptcha() {
   if (started.value || !base || !runtime.public.turnstileSiteKey) return
   await nextTick()
@@ -40,14 +47,14 @@ async function initCaptcha() {
       if (existing) { existing.addEventListener('load',()=>resolve(),{once:true}); existing.addEventListener('error',reject,{once:true}); return }
       const script=document.createElement('script');script.dataset.oscarTurnstile='true';script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;script.onload=()=>resolve();script.onerror=reject;document.head.appendChild(script)
     })
-    const api=(window as any).turnstile;if(widget!==undefined)api.remove(widget)
+    const api=(window as any).turnstile;removeCaptcha()
     widget=api.render(captchaEl.value,{sitekey:runtime.public.turnstileSiteKey,action:'lead-chat',language:locale.value,theme:'auto',size:'flexible',callback:(value:string)=>{captcha.value=value;if(greetingQueued){greetingQueued=false;void send()}},'expired-callback':()=>{captcha.value=''},'error-callback':()=>{error.value=fallback()}})
   } catch { error.value=fallback() }
 }
 async function ensureSession() {
   if(started.value)return true
   if(!captcha.value){greetingQueued=true;error.value=es.value?'Verificando la conexión segura… Tu mensaje está listo.':'Checking the secure connection… Your message is ready.';return false}
-  const r=await request('/session',{token:captcha.value,locale:locale.value});bearer=r.token;sessionStorage.setItem('oscar-aws-chat',bearer);started.value=true;consent.value=false;return true
+  const r=await request('/session',{token:captcha.value,locale:locale.value});bearer=r.token;sessionStorage.setItem('oscar-aws-chat',bearer);removeCaptcha();started.value=true;consent.value=false;return true
 }
 async function send(action?: {id:string;approved:boolean}) {
   if(busy.value||closed.value||(!action&&!draft.value.trim()))return
@@ -102,7 +109,7 @@ function choose(text:string){draft.value=text;void send()}
 watch(()=>panel.contextVersion.value,()=>{if(panel.context.value){draft.value=(es.value?'Me interesa: ':'I’m interested in: ')+panel.context.value;nextTick(()=>{resize();input.value?.focus()})}})
 onMounted(async()=>{try{const saved=JSON.parse(sessionStorage.getItem('oscar-chat-history')||'{}');messages.value=Array.isArray(saved.messages)?saved.messages:[];cards.value=Array.isArray(saved.cards)?saved.cards:[]}catch{}bearer=sessionStorage.getItem('oscar-aws-chat')||'';if(bearer)try{await restore()}catch{sessionStorage.removeItem('oscar-aws-chat');bearer=''}if(!started.value)await initCaptcha();if(panel.context.value)draft.value=(es.value?'Me interesa: ':'I’m interested in: ')+panel.context.value;await scroll()})
 defineExpose({focus:()=>nextTick(()=>input.value?.focus()),pauseRecording:stop})
-onBeforeUnmount(()=>{stop();clearAudio();if(widget!==undefined)(window as any).turnstile?.remove(widget)})
+onBeforeUnmount(()=>{stop();clearAudio();removeCaptcha()})
 const actionTitle=(name:string)=>name==='send_email'?(es.value?'Vista previa de correo':'Email preview'):(es.value?'Confirmar reunión':'Confirm meeting')
 const cardUrl=(card:any)=>{const u=card.paymentUrl||card.payment_url||card.url||card.bookingUrl||card.booking_url;try{const parsed=new URL(u);return parsed.protocol==='https:'&&['oscarbahamonde.com','www.mercadopago.com.pe','www.mercadopago.com'].includes(parsed.hostname)?u:''}catch{return ''}}
 </script>

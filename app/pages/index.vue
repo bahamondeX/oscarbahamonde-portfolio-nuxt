@@ -6,7 +6,7 @@ const localeTag = useLocaleTag()
 const head = useLocaleHead()
 const assistant = useAssistantPanel()
 useHead(() => ({ htmlAttrs: head.value.htmlAttrs, link: head.value.link, meta: head.value.meta }))
-useSeoMeta({ title: () => t('seo.title'), description: () => t('seo.description'), ogTitle: () => t('seo.title'), ogDescription: () => t('seo.description'), ogType: 'website', ogImage: 'https://oscarbahamonde.com/images/og.png', twitterCard: 'summary_large_image' })
+useSeoMeta({ title: () => t('seo.title'), description: () => t('seo.description'), ogTitle: () => t('seo.title'), ogDescription: () => t('seo.description'), ogType: 'website', ogImage: 'https://oscarbahamonde.com/images/og.png', twitterImage: 'https://oscarbahamonde.com/images/og.png', twitterCard: 'summary_large_image' })
 useHead({ script: [{ type: 'application/ld+json', innerHTML: JSON.stringify({ '@context': 'https://schema.org', '@graph': [
   { '@type': 'Person', '@id': 'https://oscarbahamonde.com/#oscar', name: 'Oscar Bahamonde', jobTitle: 'Software Engineer', url: 'https://oscarbahamonde.com', image: 'https://oscarbahamonde.com/images/oscar-portrait.jpg', sameAs: ['https://github.com/bahamondex', 'https://github.com/obahamonde', 'https://linkedin.com/in/obahamondem/', 'https://medium.com/@obahamonde'] },
   ...services.map(s => ({ '@type': 'Service', name: s.id, provider: { '@id': 'https://oscarbahamonde.com/#oscar' }, offers: { '@type': 'Offer', priceCurrency: 'PEN', price: s.price, description: 'Starting estimate. Final scope quoted separately.' } }))

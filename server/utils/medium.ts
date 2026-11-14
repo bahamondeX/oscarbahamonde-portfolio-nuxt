@@ -15,4 +15,4 @@ export const getMedium = defineCachedFunction(async()=>{
  if(useRuntimeConfig().databaseUrl)try{const rows=await db()`SELECT data FROM medium_posts ORDER BY published_at DESC`;posts=rows.map(r=>completeMediumMetadata(r.data) as MediumPost)}catch{stale=true}
  const all=Array.from(new Map([...lastGood,...posts].map(p=>[p.id,p])).values()).sort((a,b)=>Date.parse(b.date)-Date.parse(a.date))
  return {posts:all,stale,updatedAt:new Date().toISOString()}
-},{maxAge:1800,swr:true,name:'medium-feed-v2'})
+},{maxAge:1800,swr:true,name:'medium-feed-v3'})

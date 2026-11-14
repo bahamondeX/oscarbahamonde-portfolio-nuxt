@@ -3,14 +3,13 @@ const mediaHosts = new Set(['cdn-images-1.medium.com', 'miro.medium.com'])
 // Medium publications in this author's verified RSS. Do not accept arbitrary external links.
 const publicationHosts = new Set(['medium.com', 'www.medium.com', 'python.plainenglish.io', 'ai.plainenglish.io', 'blog.gopenai.com'])
 const plain = text => String(text || '')
-  .replace(/<(script|style|iframe)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
+  .replace(/<(script|style|iframe|figcaption)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
   .replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&#160;/g, ' ').replace(/&amp;/g, '&')
   .replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>')
   .replace(/https?:\/\/\S+/g, '').replace(/\s+/g, ' ').trim()
 const cleanExcerpt = (html, title) => {
   let text = plain(html).replace(/^(?:Por|By)\s+Oscar(?: Martin)? Bahamonde(?: Muñoz)?\s*/i, '')
   if (text.toLowerCase().startsWith(title.toLowerCase())) text = text.slice(title.length).trim()
-  text = text.replace(/^(?:Generated (?:by|via)|Art by)\s+[^.!?]{1,60}(?:[.!?]|(?=\sIntroduction))/i, '').trim()
   const words = text.split(/\s+/)
   return words.slice(0, 55).join(' ') + (words.length > 55 ? '…' : '')
 }
