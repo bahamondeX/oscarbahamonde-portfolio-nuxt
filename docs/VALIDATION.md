@@ -29,3 +29,14 @@ Prueba de navegador final: nueve secciones/dock, magnificación, cambio de idiom
 - Browser: real managed Turnstile passed, consent/start-session succeeded, Spanish Bedrock response returned the verified service catalog and prices. No test lead, email, Calendar event or payment was intentionally created.
 - An English service question exposed a false positive in the original negatively worded denied-topic definition. Isolated candidate tests passed for service/tool output, English input, blocked medical/political requests and prompt injection; HIGH filters retained.
 - All 15 assistant tests and cfn-lint passed again after the topic correction. CloudFormation update completed successfully with guardrail version 2. The production browser returned the English AI assistant scope and verified starting price S/1,500 after correction; Spanish had already passed. Prompt injection input strength remains HIGH.
+
+## Live acceptance tests — 2026-11-14
+- Synthetic authenticated backend fixture; production CAPTCHA configuration was not changed. Browser file selection was blocked by extension access; microphone capture/MediaRecorder preview remain unverified.
+- PDF and WebM: production HTTP upload endpoint, signed S3 POST, server MIME/size validation and async media processing passed. Stored WebM transcription matched the generated speech. WAV was rejected as an unsupported upload format (expected).
+- Lead tool failed with AccessDenied for dynamodb:Query on Messages. A narrowly scoped SAM fix and regression test are prepared locally but publication/deployment were blocked by automatic approval review pending explicit owner authorization. Production role is unchanged.
+- Found and fixed notifier entry point: AWS Context was being interpreted as injected test dependencies. Published correction and updated only the notifier Lambda code; no IAM changes applied.
+- Replayed the known synthetic INSERT/MODIFY records: no batch failures. Gmail confirmed two delivered messages (initial/final), final HTML, Reply-To, transcript.txt, test.pdf and test.webm. Replaying again left exactly two matching messages.
+- The AI summary of the synthetic meta-test transcript was blocked by Guardrails and the rejection text appeared under Resumen IA. This is not a passing useful-summary test; retain HIGH and improve safe handling/verify a normal business conversation.
+- Existing 8 booking/payment regression tests passed; production payment webhook rejected malformed payment ID with HTTP400. No real charge or Meet creation performed.
+- Local proposed tree: 17 assistant tests passed (includes pending IAM regression); deployed main has the notifier regression fix. cfn-lint validation repeated on the proposed SAM template.
+- Lighthouse could not start local Chrome (dynamic debugging port timeout). Public PageSpeed API returned HTTP429/quota zero. No new production score or ≥95 claim.
