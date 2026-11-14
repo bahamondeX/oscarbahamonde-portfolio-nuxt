@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { marshall } from '@aws-sdk/util-dynamodb'
-import { processRecords, milestone } from '../src/notify-lead.js'
+import { processRecords, milestone, handler, defaults } from '../src/notify-lead.js'
 function record(eventName: string, status = 'open', old = 'open') {
   return {
     eventName,
@@ -79,3 +79,14 @@ test('Gmail failure returns sequence number for retries and DLQ, never acknowled
 })
 test('TTL deletes never send notifications', () =>
   assert.equal(milestone({ eventName: 'REMOVE' }), null))
+
+test('AWS Lambda Context cannot replace notification dependencies', async () => {
+  const original = { ...defaults }
+  const { deps, sent } = mock()
+  Object.assign(defaults, deps)
+  try {
+    const invoke: any = handler
+    assert.deepEqual(await invoke({ Records: [record('INSERT')] }, { awsRequestId: 'lambda-context' }), { batchItemFailures: [] })
+    assert.equal(sent.length, 1)
+  } finally { Object.assign(defaults, original) }
+})
