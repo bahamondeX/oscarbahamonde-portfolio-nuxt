@@ -1,0 +1,5 @@
+{
+  "status": "not-verified",
+  "reason": "Connected-browser clip coordinates produced misaligned logo captures; visual inspection rejected numeric output. Playwright PNG test remains pending because isolated Chromium launch is blocked.",
+  "sourcePreflight": "Source-only measurements led to monochrome Data & Analytics and contrast(1.25) Valtx adjustments; Valtx 3.43:1 is a source simulation, not rendered browser proof."
+}

@@ -1,0 +1,39 @@
+{
+  "deployment": "4a4769e96e2b8372acb295d16b36b27798a7eb84",
+  "testedLocales": [
+    "es",
+    "en"
+  ],
+  "cssViewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "horizontalOverflow": false,
+  "themeAndLocalePersistAfterReload": true,
+  "nineSectionsPresent": true,
+  "contactTextareas": 0,
+  "assistantHistoryPersistsAcrossCloseAndLocaleChange": true,
+  "realLambdaResponses": [
+    "Spanish landing S/500",
+    "English ETL vs ELT"
+  ],
+  "consentDeferredUntilSaving": true,
+  "consoleErrors": [],
+  "warning": "Turnstile stale widget cleanup warning found; source fix pending final deployment verification.",
+  "notVerified": [
+    "Physical microphone recording",
+    "Physical mobile swipe",
+    "Real S/20 payment",
+    "Rendered PNG logo contrast assertion"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-11-14T21:26:23Z",
+  "url": "https://oscarbahamonde.com/es",
+  "method": "Manual UI interactions through connected Chrome with CUA; read-only DOM observations after actions. No standalone Playwright test execution.",
+  "viewport": { "width": 1406, "height": 722, "documentWidth": 1391, "changedByThisCheck": false },
+  "dock": {
+    "count": 9,
+    "method": "Clicked each accessible link; verified resulting hash and target section/heading in the rendered DOM.",
+    "results": [
+      { "label": "Inicio", "hash": "#home", "sectionPresent": true, "pass": true },
+      { "label": "Bio", "hash": "#bio", "sectionPresent": true, "pass": true },
+      { "label": "Experiencia", "hash": "#experience", "sectionPresent": true, "pass": true },
+      { "label": "Skills", "hash": "#skills", "sectionPresent": true, "pass": true },
+      { "label": "Proyectos", "hash": "#projects", "sectionPresent": true, "pass": true },
+      { "label": "Servicios", "hash": "#services", "sectionPresent": true, "pass": true },
+      { "label": "Credenciales", "hash": "#certifications", "sectionPresent": true, "pass": true },
+      { "label": "Contacto", "hash": "#contact", "sectionPresent": true, "pass": true },
+      { "label": "Blog", "hash": "#blog", "sectionPresent": true, "pass": true }
+    ]
+  },
+  "credentials": { "before": 6, "afterExpand": 29, "ariaExpanded": "true", "pass": true },
+  "blog": { "before": 6, "afterLoadMore": 10, "counter": "10 / 10 · Artículos disponibles en el RSS", "pass": true },
+  "assistant": {
+    "service": "Landing con propósito",
+    "prefilledDraft": "Me interesa: Landing con propósito",
+    "textareaEnabledWithoutConsent": true,
+    "typedDraft": "Quisiera explorar una landing para mi proyecto.",
+    "messagesSent": 0,
+    "escapeCloses": true,
+    "escapeObservation": "After the close transition settled, the dialog was hidden and launcher aria-expanded was false.",
+    "firstCloseReturnedFocusTo": "Conversar sobre este servicio",
+    "keyboardEnterReopensLauncher": true,
+    "draftRetainedAfterReopen": true,
+    "tabFromComposer": { "label": "Adjuntar archivo", "insideDialog": true, "outlineStyle": "solid", "outlineWidth": "2px" },
+    "finalCloseReturnedFocusTo": "Hablar con el asistente de Oscar",
+    "pass": true
+  },
+  "consoleWarningsAndErrors": [],
+  "limitations": [
+    "No chat request, upload, email, calendar event, payment or lead submission was performed.",
+    "This report covers the Spanish production page at the existing desktop viewport; responsive/theme screenshots and model checks are separate audit artifacts.",
+    "Dock checks confirm functional anchors and rendered target sections, not a numeric scroll-animation performance measurement."
+  ],
+  "cleanup": "Only the newly created QA tab was closed. No existing tabs or viewport settings were changed."
+}

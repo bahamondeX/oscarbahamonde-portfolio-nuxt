@@ -1,0 +1,32 @@
+{
+  "/es": {
+    "status": 200,
+    "bytes": 112142,
+    "mediumLinks": 7
+  },
+  "/en": {
+    "status": 200,
+    "bytes": 113810,
+    "mediumLinks": 7
+  },
+  "/robots.txt": {
+    "status": 200,
+    "bytes": 371,
+    "mediumLinks": 0
+  },
+  "/sitemap.xml": {
+    "status": 200,
+    "bytes": 471,
+    "mediumLinks": 0
+  },
+  "/llms.txt": {
+    "status": 200,
+    "bytes": 7071,
+    "mediumLinks": 16
+  },
+  "/llms-full.txt": {
+    "status": 200,
+    "bytes": 11699,
+    "mediumLinks": 16
+  }
+}

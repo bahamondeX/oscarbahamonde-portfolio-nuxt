@@ -1,0 +1,122 @@
+{
+  "timestamp": "2026-11-14T21:11:10.628Z",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "guardrailVersion": "3",
+  "total": 6,
+  "automatedPasses": 6,
+  "manualReviewCompleted": true,
+  "results": [
+    {
+      "id": "es-bio",
+      "language": "es",
+      "question": "¿Quién es Oscar Bahamonde?",
+      "expected": [
+        "Oscar"
+      ],
+      "category": "profile",
+      "answer": "Oscar Martín Bahamonde Muñoz es un **ingeniero de software, datos e inteligencia artificial** basado en Perú. Su perfil combina profundidad técnica con pensamiento de producto.\n\n## Trayectoria destacada\n\n**Logros académicos y competitivos:**\n- Primer puesto de ingreso a la PUCP en 2007\n- Ganador del hackathon AWS User Group Perú 2023 (más de 50 equipos)\n- Speaker en AWS UG Perú Conf 2023\n\n**Experiencia reciente:**\n- **Dynata** (Ene 2025 – Mar 2026): Site Reliability Engineer. Administró más de 30 clústeres AWS EKS en producción, implementó autoscaling de GPU con Karpenter (40% de mejora en utilización), optimizó pipelines CI/CD (75% reducción en tiempos) y observabilidad centralizada con OpenTelemetry.\n- **Globant** (Sep 2023 – Dic 2024): Senior Data Engineer. Desarrolló plataformas con RAG sobre PostgreSQL/pgvector, automatizó pruebas de UI y construyó pipelines de datos para Disney con AWS CDK, Kinesis, Redshift y SageMaker.\n- **Pronti AI** (Ene 2023 – Mar 2023): Back End Engineer. Migró backend Flask a FastAPI para plataforma de prueba virtual con IA, integrando Milvus, RabbitMQ y Kubernetes.\n\n## Especialidades\n\n**Lenguajes y backend:** Python, TypeScript, JavaScript, FastAPI, Flask, Node.js  \n**Datos e IA:** PostgreSQL, Apache Spark, Hadoop, Milvus, Agentic AI & RAG  \n**Cloud e infraestructura:** AWS, Google Cloud, Docker, Kubernetes, Terraform, Ansible  \n**Observabilidad:** OpenTelemetry, RabbitMQ, GitLab, TeamCity\n\n## Proyectos personales\n\n- **VOZ**: Agentes de voz para conectar negocios y personas\n- **Quipubase**: Almacenamiento semántico con búsqueda vectorial\n- **aiofauna**: Framework backend asíncrono para Python\n\nPuedes conocer más en su [LinkedIn](https://linkedin.com/in/obahamondem/), [GitHub](https://github.com/bahamondex) o [Medium](https://medium.com/@obahamonde).\n\n¿Hay algo específico sobre su experiencia o servicios que te interese?",
+      "toolCalls": [],
+      "usage": 11087,
+      "blocked": false,
+      "automatedPass": true,
+      "manualReviewRequired": false,
+      "manualPass": true,
+      "manualReviewNote": "Previously identified identity, employment-date or price-category error corrected; full answer manually reviewed. Lambda answer still uses overly broad cost crossover/latency heuristics, which should be qualified."
+    },
+    {
+      "id": "es-experience",
+      "language": "es",
+      "question": "¿Qué experiencia tiene Oscar en Globant y Dynata?",
+      "expected": [
+        "Globant",
+        "Dynata"
+      ],
+      "category": "profile",
+      "answer": "# Experiencia de Oscar\n\n## En Globant (Septiembre 2023 – Diciembre 2024)\n\nOscar fue **Senior Data Engineer** en remoto. Su trabajo incluyó:\n\n- **Plataforma de desarrollo con onboarding automatizado**: Implementó Sphinx y RAG sobre PostgreSQL/pgvector, logrando una **reducción del 80% en tiempo de incorporación**.\n- **Automatización de pruebas de UI**: Con Python, redujo en un **60% el tiempo de creación de tests**.\n- **Pipelines de datos para Disney**: Utilizó AWS CDK, Kinesis, S3, DynamoDB y Redshift.\n- **IA conversacional y RAG seguro**: Integró Dialogflow, Cognito y Microsoft SSO.\n- **Pipelines de entrenamiento ML**: Con SageMaker, Glue, Lambda y Step Functions.\n\n**Stack**: Python, PostgreSQL, pgvector, AWS CDK, Kinesis, Redshift, SageMaker, Dialogflow.\n\n---\n\n## En Dynata (Enero 2025 – Marzo 2026)\n\nOscar fue **Site Reliability Engineer** en remoto. Sus logros:\n\n- **Administración de infraestructura**: Más de 30 clústeres AWS EKS en producción.\n- **Autoscaling de GPU con Karpenter**: **40% de mejora** en utilización de recursos.\n- **Pipelines CI/CD**: Con TeamCity, Kotlin DSL y GitLab, logró una **reducción del 75% en tiempos de despliegue**.\n- **Observabilidad centralizada**: OpenTelemetry redujo el **MTTR en un 50%**.\n- **Automatización con infraestructura como código**: Terraform y Ansible ahorraron **150 horas mensuales** de operación manual.\n\n**Stack**: AWS EKS, Kubernetes, Karpenter, TeamCity, Kotlin, GitLab, OpenTelemetry, Terraform, Ansible.\n\n---\n\n¿Te interesa conocer más sobre alguna tecnología específica o proyecto?",
+      "toolCalls": [],
+      "usage": 10969,
+      "blocked": false,
+      "automatedPass": true,
+      "manualReviewRequired": false,
+      "manualPass": true,
+      "manualReviewNote": "Previously identified identity, employment-date or price-category error corrected; full answer manually reviewed. Lambda answer still uses overly broad cost crossover/latency heuristics, which should be qualified."
+    },
+    {
+      "id": "en-platform",
+      "language": "en",
+      "question": "What is the starting price of a platform MVP?",
+      "expected": [
+        "4,500",
+        "4500"
+      ],
+      "anyExpected": true,
+      "category": "services",
+      "answer": "The starting price for a platform/SaaS MVP is **S/4,500 PEN**.\n\nThis covers the first phase of a SaaS, PaaS, streaming, or multi-API cloud MVP with scope agreed together. The deliverable includes discovery, architecture, and the first agreed release.\n\nKeep in mind this is a starting estimate—final proposals depend on your specific requirements, integrations, and timelines. Third-party services, infrastructure, and maintenance are quoted separately.\n\nWould you like to discuss your project in more detail, or would you prefer to book a 30-minute consultation (S/20) with Oscar?",
+      "toolCalls": [],
+      "usage": 10258,
+      "blocked": false,
+      "automatedPass": true,
+      "manualReviewRequired": false,
+      "manualPass": true,
+      "manualReviewNote": "Previously identified identity, employment-date or price-category error corrected; full answer manually reviewed. Lambda answer still uses overly broad cost crossover/latency heuristics, which should be qualified."
+    },
+    {
+      "id": "es-rag",
+      "language": "es",
+      "question": "Explica RAG y cuándo conviene usarlo en una pyme.",
+      "expected": [
+        "RAG"
+      ],
+      "category": "technical",
+      "answer": "# RAG: Retrieval-Augmented Generation\n\n**RAG** es una arquitectura que combina búsqueda de información con generación de texto. En lugar de que un modelo de IA responda solo con lo que \"memoriza\" durante el entrenamiento, RAG le permite:\n\n1. **Buscar** documentos o datos relevantes en una base de conocimiento (PDFs, bases de datos, wikis internas)\n2. **Recuperar** los fragmentos más pertinentes\n3. **Generar** respuestas basadas en esa información fresca y específica\n\n**Ejemplo práctico:** Un chatbot de soporte que busca en tu base de tickets, documentación y políticas, luego responde con información actual y verificable.\n\n---\n\n## Cuándo conviene para una Pyme\n\n### ✅ **Casos ideales:**\n\n- **Soporte al cliente repetitivo:** Preguntas sobre políticas, productos, procesos que ya están documentados\n- **Onboarding de empleados:** Reducir tiempo de incorporación con acceso a procedimientos internos\n- **Consultas sobre datos propios:** Análisis de ventas, reportes, información de clientes sin exponer datos sensibles\n- **Documentación técnica o legal:** Responder preguntas sobre términos de servicio, manuales, regulaciones\n\n### ❌ **Casos donde RAG no es la solución:**\n\n- Decisiones estratégicas que requieren análisis profundo\n- Información que cambia constantemente y no está documentada\n- Problemas que necesitan contexto humano complejo\n\n---\n\n## Factores de costo y arquitectura\n\n**Componentes típicos:**\n\n- **Vector database** (Milvus, Pinecone, pgvector en PostgreSQL): almacena representaciones semánticas de tus documentos\n- **Embeddings**: convertir texto a vectores (OpenAI, Hugging Face, modelos locales)\n- **LLM**: el modelo que genera respuestas (OpenAI, Llama, Mistral)\n- **Orquestación**: código que conecta búsqueda + generación\n\n**Variables de costo:**\n- Volumen de documentos y actualizaciones\n- Frecuencia de consultas\n- Modelo de IA elegido (APIs de terceros vs. modelos locales)\n- Latencia requerida\n\n---\n\n## Servicio de Oscar\n\nOscar ofrece **Asistentes de IA** a partir de **S/1500**, que incluyen un asistente o chatbot con datos del cliente y una integración acotada. El alcance específico (RAG, integraciones, número de documentos, modelo) se evalúa en una propuesta personalizada.\n\n¿Te interesa explorar RAG para un caso concreto en tu pyme? Puedo ayudarte a evaluar si es la mejor opción o si otra solución se ajusta mejor. También puedes agendar una **consulta de 30 minutos por S/20** para discutir arquitectura y costos en detalle.",
+      "toolCalls": [],
+      "usage": 11192,
+      "blocked": false,
+      "automatedPass": true,
+      "manualReviewRequired": false,
+      "manualPass": true,
+      "manualReviewNote": "Previously identified identity, employment-date or price-category error corrected; full answer manually reviewed. Lambda answer still uses overly broad cost crossover/latency heuristics, which should be qualified."
+    },
+    {
+      "id": "en-lambda",
+      "language": "en",
+      "question": "When should I choose Lambda over Kubernetes for a small API?",
+      "expected": [
+        "Lambda",
+        "Kubernetes"
+      ],
+      "category": "technical",
+      "answer": "Great question. Here's a practical breakdown:\n\n**Choose Lambda if:**\n- **Low, unpredictable traffic** – You pay only for execution time; idle time costs nothing. Kubernetes requires you to pay for running nodes even when unused.\n- **Simple, stateless functions** – Single API endpoints that don't need persistent connections or complex orchestration.\n- **Minimal ops overhead** – No cluster management, patching, or scaling configuration. AWS handles everything.\n- **Cost-sensitive early stage** – For sporadic or bursty workloads, Lambda's pay-per-use model is cheaper than maintaining a Kubernetes cluster.\n- **Fast time-to-market** – Deploy in minutes without infrastructure setup.\n\n**Choose Kubernetes if:**\n- **Consistent, high traffic** – Reserved capacity becomes cheaper than Lambda's per-invocation costs at scale.\n- **Complex requirements** – Multiple services, sidecar patterns, custom networking, or advanced scheduling.\n- **Long-running processes** – Lambda has a 15-minute timeout; Kubernetes handles indefinite workloads.\n- **Vendor lock-in concerns** – Kubernetes runs on AWS, GCP, Azure or on-premise; Lambda is AWS-only.\n- **Strict latency needs** – Lambda has cold-start overhead (100–500ms); Kubernetes keeps containers warm.\n\n**A practical hybrid:** Start with Lambda for the API. If you hit cost inflection points (typically 1M+ monthly requests), or need features Lambda doesn't support, migrate to Kubernetes or ECS.\n\nOscar has hands-on experience with both—he engineered 30+ production EKS clusters at Dynata and built serverless pipelines with Lambda at Globant. If you're evaluating infrastructure for a specific workload, a **S/20 consultation** could help you model costs and architecture trade-offs for your use case. Would that be useful?",
+      "toolCalls": [],
+      "usage": 10546,
+      "blocked": false,
+      "automatedPass": true,
+      "manualReviewRequired": false,
+      "manualPass": true,
+      "manualReviewNote": "Previously identified identity, employment-date or price-category error corrected; full answer manually reviewed. Lambda answer still uses overly broad cost crossover/latency heuristics, which should be qualified."
+    },
+    {
+      "id": "en-vector",
+      "language": "en",
+      "question": "Explain vector search and embeddings for a product catalog.",
+      "expected": [
+        "vector",
+        "embedding"
+      ],
+      "category": "technical",
+      "answer": "# Vector Search & Embeddings for Product Catalogs\n\n## The Core Idea\n\n**Embeddings** convert text, images, or other data into numerical vectors (lists of numbers) that capture semantic meaning. **Vector search** finds similar items by comparing these vectors in a high-dimensional space, rather than matching exact keywords.\n\n### Why It Matters for Catalogs\n\nTraditional search (keyword matching) fails when:\n- A customer searches \"comfortable shoes\" but your catalog uses \"ergonomic footwear\"\n- You want to recommend \"similar products\" without hardcoding rules\n- Product descriptions vary widely across suppliers\n\nVector search handles these naturally because it understands *meaning*, not just words.\n\n---\n\n## How It Works\n\n### 1. **Embedding Generation**\nEach product (title, description, category, attributes) is converted to a vector using an embedding model:\n\n```\nProduct: \"Blue running sneaker with cushioned sole\"\n↓ (embedding model)\nVector: [0.23, -0.15, 0.89, 0.12, ..., -0.34]  (e.g., 1536 dimensions)\n```\n\nModels like OpenAI's `text-embedding-3-small`, Hugging Face's `all-MiniLM-L6-v2`, or specialized ones like Cohere handle this.\n\n### 2. **Storage**\nVectors are stored in a vector database alongside product metadata:\n- **PostgreSQL + pgvector** (open-source, scales well)\n- **Milvus** (specialized, high-performance)\n- **Pinecone** (managed, serverless)\n- **Weaviate** (cloud-native)\n\n### 3. **Search Query**\nUser searches \"comfy athletic shoes\" → converted to the same vector space → nearest neighbors found:\n\n```\nQuery vector: [0.21, -0.14, 0.88, 0.13, ..., -0.33]\n↓ (similarity search)\nTop 3 matches: [Product A, Product B, Product C]  (by cosine similarity)\n```\n\n---\n\n## Practical Example: E-Commerce Catalog\n\n**Setup:**\n- 50,000 products (shoes, apparel, accessories)\n- PostgreSQL with pgvector extension\n- Embedding model: `text-embedding-3-small` (1536 dims)\n\n**Workflow:**\n1. **Indexing** (one-time or incremental):\n   ```python\n   from openai import OpenAI\n   \n   client = OpenAI()\n   \n   for product in catalog:\n       text = f\"{product['name']} {product['description']} {product['category']}\"\n       embedding = client.embeddings.create(\n           model=\"text-embedding-3-small\",\n           input=text\n       ).data[0].embedding\n       \n       db.insert(product_id, embedding, product_metadata)\n   ```\n\n2. **Search**:\n   ```python\n   query = \"lightweight running shoes for marathons\"\n   query_embedding = client.embeddings.create(\n       model=\"text-embedding-3-small\",\n       input=query\n   ).data[0].embedding\n   \n   results = db.vector_search(query_embedding, limit=10)\n   ```\n\n3. **Results** include products semantically close to the query, ranked by similarity.\n\n---\n\n## Key Tradeoffs\n\n| Aspect | Benefit | Cost |\n|--------|---------|------|\n| **Semantic matching** | Finds intent, not just keywords | Embedding API calls (per product, per update) |\n| **Recommendations** | \"Similar products\" without rules | Vector storage overhead (~1-2 KB per product) |\n| **Typo tolerance** | \"runing shoes\" still works | Model quality varies by domain |\n| **Speed** | Fast retrieval with indexing | Latency from embedding generation |\n\n---\n\n## Cost Drivers for Your Catalog\n\n1. **Embedding model**\n   - OpenAI `text-embedding-3-small`: ~$0.02 per 1M tokens\n   - Open-source (Hugging Face): free but self-hosted\n   \n2. **Vector database**\n   - PostgreSQL + pgvector: infrastructure cost only\n   - Pinecone/Weaviate: per-query or subscription pricing\n\n3. **Update frequency**\n   - New products → new embeddings (batch or real-time)\n   - Seasonal catalog changes → re-indexing\n\n4. **Scale**\n   - 10K products: minimal overhead\n   - 1M+ products: consider specialized vector DB and batch processing\n\n---\n\n## Oscar's Related Work\n\nOscar has built **RAG (Retrieval-Augmented Generation)** systems using PostgreSQL/pgvector at Globant, automating document retrieval and reducing lookup latency by 25%. He's also designed AI-powered platforms with semantic search for enterprise data.\n\nIf you're building a catalog with vector search, a **data platform audit** (starting at S/1800) or **AI assistant** integration (starting at S/1500) could assess your architecture, embedding strategy, and cost optimization. A **30-minute consultation** (S/20) is also available to discuss your specific use case.\n\nWhat's your catalog size and search use case?",
+      "toolCalls": [],
+      "usage": 11350,
+      "blocked": false,
+      "automatedPass": true,
+      "manualReviewRequired": false,
+      "manualPass": false,
+      "manualReviewNote": "Still quotes unverified provider rate $0.02 per1Mtokens and rewrites document-retrieval efficiency25% as lookup latency25%."
+    }
+  ],
+  "manualReviewedAt": "2026-11-14T21:12:27.086945+00:00",
+  "manualPasses": 5,
+  "manualPassRate": 83.33,
+  "acceptance95PercentMet": false,
+  "scope": "Focused regression check of six failed cases; not the full36-case acceptance battery."
+}

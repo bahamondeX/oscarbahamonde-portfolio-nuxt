@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-14T21:09:59Z",
+  "marker": "QA-PORTFOLIO-1411",
+  "consentShownOnlyOnSend": true,
+  "ownerInboxConfirmed": true,
+  "completeConversationInBody": true,
+  "messages": 4,
+  "attachments": [
+    {
+      "name": "transcript.txt",
+      "bytes": 1987
+    }
+  ],
+  "containsPersonalVisitorData": false,
+  "scope": "Synthetic anonymous conversation submitted to owner through the public assistant UI; no calendar event or payment created."
+}

@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-11-14T21:13:44.126Z",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "guardrailVersion": "3",
+  "total": 1,
+  "automatedPasses": 1,
+  "manualReviewCompleted": true,
+  "results": [
+    {
+      "id": "en-vector",
+      "language": "en",
+      "question": "Explain vector search and embeddings for a product catalog.",
+      "expected": [
+        "vector",
+        "embedding"
+      ],
+      "category": "technical",
+      "answer": "# Vector Search & Embeddings for Product Catalogs\n\n## Core Concept\n\n**Embeddings** convert text (product names, descriptions, attributes) into high-dimensional numerical vectors that capture semantic meaning. **Vector search** finds similar products by comparing these vectors in that space, rather than matching exact keywords.\n\n### How It Works\n\n1. **Embedding generation**: Each product description is passed through an embedding model (e.g., OpenAI's `text-embedding-3-small`, open-source models like `all-MiniLM-L6-v2`), producing a vector of 384–3072 dimensions depending on the model.\n\n2. **Storage**: Vectors are stored in a vector database (PostgreSQL with `pgvector`, Milvus, Pinecone, Weaviate) alongside product metadata (ID, name, price, category).\n\n3. **Query**: A customer's search query is embedded using the same model, then compared to all product vectors using distance metrics (cosine similarity, L2 distance). The closest matches are returned.\n\n## Practical Example\n\n```python\nfrom openai import OpenAI\nimport psycopg2\nfrom pgvector.psycopg2 import register_vector\n\nclient = OpenAI()\n\n# Embed a product description\ndef embed_product(description):\n    response = client.embeddings.create(\n        model=\"text-embedding-3-small\",\n        input=description\n    )\n    return response.data[0].embedding\n\n# Store in PostgreSQL with pgvector\nconn = psycopg2.connect(\"dbname=catalog user=postgres\")\nregister_vector(conn)\ncur = conn.cursor()\n\n# Create table\ncur.execute(\"\"\"\n    CREATE TABLE products (\n        id SERIAL PRIMARY KEY,\n        name TEXT,\n        description TEXT,\n        embedding vector(1536),\n        price DECIMAL\n    )\n\"\"\")\n\n# Insert a product with its embedding\ndesc = \"Lightweight hiking boots with waterproof membrane and ankle support\"\nemb = embed_product(desc)\ncur.execute(\n    \"INSERT INTO products (name, description, embedding, price) VALUES (%s, %s, %s, %s)\",\n    (\"Trail Pro Boots\", desc, emb, 129.99)\n)\nconn.commit()\n\n# Search: find similar products\nquery = \"waterproof boots for hiking\"\nquery_embedding = embed_product(query)\n\ncur.execute(\"\"\"\n    SELECT id, name, price, 1 - (embedding <=> %s) as similarity\n    FROM products\n    ORDER BY embedding <=> %s\n    LIMIT 5\n\"\"\", (query_embedding, query_embedding))\n\nresults = cur.fetchall()\nfor row in results:\n    print(f\"{row[1]} (${row[2]}) - Similarity: {row[3]:.2%}\")\n```\n\n## Key Tradeoffs\n\n| Aspect | Vector Search | Keyword Search |\n|--------|---------------|---|\n| **Semantic understanding** | Finds \"waterproof boots\" when you search \"dry hiking shoes\" | Requires exact keyword match |\n| **Speed** | Slower for very large catalogs (millions of products) without indexing | Fast exact matching |\n| **Cost** | Embedding API calls + vector DB storage | Minimal |\n| **Relevance** | Better for discovery and typo tolerance | Better for known product names |\n| **Setup** | Requires embedding model choice and vector DB | Simple full-text search |\n\n## Cost Drivers for a Catalog\n\n- **Embedding model**: OpenAI charges per token; open-source models (self-hosted) have no per-query cost but require infrastructure.\n- **Vector database**: Managed services (Pinecone, Weaviate Cloud) charge by storage/query volume; PostgreSQL + pgvector is self-hosted (server cost only).\n- **Dimensionality**: Larger embeddings (1536 vs. 384 dims) use more storage and memory but may improve relevance.\n- **Indexing**: HNSW or IVFFlat indexes speed up search but add build time and storage overhead.\n\n## When to Use\n\n✓ **Product discovery** (fashion, e-commerce, marketplaces)  \n✓ **Typo tolerance** and synonym matching  \n✓ **Multi-attribute search** (combine color, material, use case in one query)  \n✓ **Recommendations** (find related products)  \n\n✗ **Exact SKU lookups** (use keyword search instead)  \n✗ **Real-time, high-volume queries** without indexing (latency risk)\n\n---\n\nWould you like guidance on choosing an embedding model, setting up a specific vector database, or integrating this into a product platform?",
+      "toolCalls": [],
+      "usage": 11417,
+      "blocked": false,
+      "automatedPass": true,
+      "manualReviewRequired": false,
+      "manualPass": true,
+      "manualReviewNote": "Useful explanation; no invented provider prices or Oscar career claims. Product amount129.99 is visibly synthetic example data. Code sample requires installed pgvector/schema setup and appropriate parameter adaptation before execution."
+    }
+  ],
+  "manualPasses": 1,
+  "scope": "Single regression case; not global acceptance."
+}

@@ -2,10 +2,11 @@
 
 ## Aceptación que requiere evidencia adicional
 
-- [ ] Lighthouse ≥95 en las cuatro categorías, móvil y desktop: Chromium aislado no puede arrancar en este entorno macOS (crashpad/Mach Permission denied1100). No se declara un puntaje nuevo. Ejecutar `npm run audit -- https://oscarbahamonde.com/es` en un entorno compatible.
+- [x] Lighthouse remoto en producción `/es`: móvil97/100/100/100 y desktop100/100/100/100, CLS0. Informes y capturas en AUDIT.md. El ejecutor local sigue bloqueado por crashpad/Mach; la medición no cubre todas las rutas/estados.
 - [ ] Suite Playwright completa: los tests están implementados; el mismo bloqueo de Chromium impide ejecutar el navegador. Las comprobaciones manuales y capturas se registran en `AUDIT.md` y no se presentan como una ejecución automatizada.
 - [ ] Transacción real S/20 → webhook → invitación Meet. Se preservó el runtime de reservas y sus tests; no se realizó un cobro real en esta fase.
 - [ ] Grabación desde un micrófono y gesto de cierre en dispositivo móvil físico. La transcripción/adjuntos AWS se habían probado en la fase anterior; esto no verifica automáticamente la nueva interfaz.
+- [ ] Nueva sesión tras corregir el desmontaje de Turnstile: Cloudflare solicita desafío humano en el navegador de prueba. El chat real ES/EN y envío a Gmail sí se comprobaron antes de esa corrección; no se omite el captcha para repetirlo.
 
 ## Contenido y fuentes
 
