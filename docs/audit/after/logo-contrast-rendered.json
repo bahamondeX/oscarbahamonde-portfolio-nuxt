@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-11-14T23:00:02.914Z",
+  "status": "incomplete",
+  "threshold": 3,
+  "statistic": "p10 of eroded solid foreground pixels",
+  "expectedVariants": 8,
+  "expectedLogosPerVariant": 14,
+  "missingVariants": [
+    "es-light-desktop",
+    "es-light-mobile",
+    "es-dark-desktop",
+    "es-dark-mobile",
+    "en-light-desktop",
+    "en-light-mobile",
+    "en-dark-desktop",
+    "en-dark-mobile"
+  ],
+  "measuredLogos": 0,
+  "failures": [],
+  "limitation": "Brand contrast metric is not an exhaustive WCAG conformance audit. Missing variants never count as passed.",
+  "variants": []
+}

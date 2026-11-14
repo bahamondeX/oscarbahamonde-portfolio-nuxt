@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-11-14",
+  "playwright": "1.65.1",
+  "chromium": "159.0.8154.6",
+  "isolatedLaunch": "failed before navigation",
+  "flags": [
+    "--no-sandbox",
+    "--disable-crashpad",
+    "--disable-crash-reporter"
+  ],
+  "error": "SIGABRT before navigation; local managed macOS restriction remains",
+  "docker": "daemon socket connect operation not permitted",
+  "chosenRuntime": "GitHub Actions Ubuntu",
+  "renderedContrast": "pending CI; no local pass claimed"
+}

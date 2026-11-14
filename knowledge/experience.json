@@ -381,7 +381,7 @@
     {
       "id": "netcor",
       "company": "NETCORPERU",
-      "logo": null,
+      "logo": "/logos/netcor.png",
       "logoTone": "color",
       "role": {
         "es": "Network Engineer",
@@ -403,7 +403,9 @@
       "sources": [
         "https://linkedin.com/in/obahamondem/details/experience/"
       ],
-      "verification": "owner-public-linkedin"
+      "verification": "owner-public-linkedin",
+      "logoBackground": "#ffffff",
+      "logoSource": "https://pe.linkedin.com/company/netcorperu-s-a-c"
     },
     {
       "id": "osc",
