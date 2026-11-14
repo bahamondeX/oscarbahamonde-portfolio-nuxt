@@ -32,7 +32,7 @@
 - [x] Widget bilingüe reutiliza la estética actual; implementación previa disponible hasta configurar la URL AWS.
 - [x] Tests mock de Bedrock/Google/Gmail y eventos Stream; tests originales de agendamiento sin regresiones.
 - [x] Google OAuth guardado en AWS Secrets Manager tras consentimiento del propietario: refresh validado, scopes calendar.events/calendar.freebusy/gmail.send comprobados y consulta real freebusy correcta. No se enviaron correos de prueba.
-- [ ] Crear secreto y site key de Turnstile. Las credenciales Google están listas; los valores permanecen fuera del repositorio.
+- [x] Turnstile Managed creado para oscarbahamonde.com, sin pre-clearance. Clave privada en AWS Secrets Manager y site key público en Vercel. Sin secretos en el repositorio.
 - [ ] Desplegar CloudFormation/SAM y habilitar URL Lambda + Turnstile público en Vercel; confirmar SNS y acceso real al modelo.
 - [ ] Ejecutar pruebas reales AWS/Google/Transcribe y prueba de pago autorizada; no se simuló un despliegue completado.
 - [ ] Gmail no ofrece exactamente-una-vez con DynamoDB. Revisar el límite de entrega ambigua en assistant/README.md antes de exigir cero duplicados bajo cualquier caída.
