@@ -1,6 +1,6 @@
 # Pendientes verificables
 
-## Activar chatbot
+## Implementación anterior (Postgres; sustituida por AWS en producción)
 
 - [ ] Postgres persistente: URL/TLS y ejecutar npm run db:migrate. No se creó infraestructura de pago.
 - [ ] Secreto de sesión, proveedor/modelo LLM, transcripción, Turnstile y bucket privado S3/R2; ver .env.example.
@@ -34,8 +34,8 @@
 - [x] Google OAuth guardado en AWS Secrets Manager tras consentimiento del propietario: refresh validado, scopes calendar.events/calendar.freebusy/gmail.send comprobados y consulta real freebusy correcta. No se enviaron correos de prueba.
 - [x] Turnstile Managed creado para oscarbahamonde.com, sin pre-clearance. Clave privada en AWS Secrets Manager y site key público en Vercel. Sin secretos en el repositorio.
 - [x] CloudFormation/SAM desplegado en us-east-1. Bedrock respondió con Claude Haiku 4.5; Lambda entregó SSE completo con precios correctos. Se confirmó la suscripción SNS y se rechazaron origen y captcha inválidos.
-- [ ] Fusionar PR #1 en main y configurar la URL pública de Lambda en Vercel para activar el widget. La revisión automática exige autorización explícita del propietario para esta fusión.
-- [ ] Ejecutar pruebas reales AWS/Google/Transcribe y prueba de pago autorizada; no se simuló un despliegue completado.
+- [x] PR #1 fusionado con autorización del propietario; producción Vercel READY y widget conectado a Lambda. Turnstile y chat en español comprobados en navegador.
+- [ ] Completar pruebas reales de audio/archivos, entrega Gmail y pago autorizado. Bedrock, SSE, Turnstile y consulta Google freebusy ya comprobados en producción.
 - [ ] Gmail no ofrece exactamente-una-vez con DynamoDB. Revisar el límite de entrega ambigua en assistant/README.md antes de exigir cero duplicados bajo cualquier caída.
 - [ ] Lighthouse ≥95 y navegación de teclado en navegador: intento local bloqueado al arrancar Chrome. No se afirma un puntaje medido nuevo.
 - [ ] Certificaciones verificadas con logos: faltan nombres, emisores y URLs de evidencia.
