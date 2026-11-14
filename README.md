@@ -59,3 +59,9 @@ Límites por IP persistidos, sesión HttpOnly/Secure/SameSite, consentimiento an
 ## Vercel
 
 Proyecto `oscarbahamonde-premium-nuxt`, framework Nuxt, Node 24, `npm ci`, `npm run build`. Mantener las variables existentes; añadir nuevas solo en servidor. No cambiar DNS/nameservers, correo ni otros subdominios. Nunca copiar tokens de Calendar a Gmail. Se conserva el dominio raíz y redirección www. Si Vercel no tiene una conexión Git autorizada, desplegar la misma revisión de Git mediante archivos fuente; no publicar una compilación macOS en Linux (Sharp debe compilarse en Vercel).
+
+## Asistente AWS Bedrock
+
+Implementación y despliegue: [assistant/README.md](assistant/README.md). Catálogo versionado: `assistant/knowledge/services.json`.
+`cd assistant && npm ci && npm run deploy` con las variables y secretos indicados. Después habilita `NUXT_PUBLIC_ASSISTANT_URL` y `NUXT_PUBLIC_TURNSTILE_SITE_KEY` en Vercel.
+Los endpoints de MercadoPago y Calendar conservan su runtime original. La URL AWS vacía mantiene el proveedor anterior hasta validar la infraestructura nueva.

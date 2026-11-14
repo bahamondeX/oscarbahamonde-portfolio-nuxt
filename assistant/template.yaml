@@ -1,0 +1,1295 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform:
+  - AWS::LanguageExtensions
+  - AWS::Serverless-2016-10-31
+Description: Oscar Bedrock streaming assistant; existing MercadoPago webhooks remain in Nuxt.
+Parameters:
+  SiteOrigin:
+    Type: String
+    Default: https://oscarbahamonde.com
+  OwnerEmail:
+    Type: String
+  ModelId:
+    Type: String
+  ModelArn:
+    Type: CommaDelimitedList
+  GoogleSecretArn:
+    Type: String
+  TurnstileSecretArn:
+    Type: String
+  TurnstileSiteKey:
+    Type: String
+  RetentionDays:
+    Type: String
+    Default: '90'
+  MonthlyBudgetUsd:
+    Type: String
+    Default: '10'
+Resources:
+  DataKey:
+    Type: AWS::KMS::Key
+    Properties:
+      EnableKeyRotation: true
+      KeyPolicy:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS:
+                Fn::Sub: arn:${AWS::Partition}:iam::${AWS::AccountId}:root
+            Action: kms:*
+            Resource: '*'
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+  Sessions:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+        KMSMasterKeyId:
+          Ref: DataKey
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+  Messages:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: sessionId
+          AttributeType: S
+        - AttributeName: sort
+          AttributeType: S
+      KeySchema:
+        - AttributeName: sessionId
+          KeyType: HASH
+        - AttributeName: sort
+          KeyType: RANGE
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+        KMSMasterKeyId:
+          Ref: DataKey
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+  Leads:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+        KMSMasterKeyId:
+          Ref: DataKey
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+  Uploads:
+    Type: AWS::S3::Bucket
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - BucketKeyEnabled: true
+            ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+              KMSMasterKeyID:
+                Fn::GetAtt:
+                  - DataKey
+                  - Arn
+      CorsConfiguration:
+        CorsRules:
+          - AllowedOrigins:
+              - Ref: SiteOrigin
+            AllowedMethods:
+              - POST
+            AllowedHeaders:
+              - '*'
+            MaxAge: 120
+      LifecycleConfiguration:
+        Rules:
+          - Id: Retention
+            Status: Enabled
+            ExpirationInDays:
+              Ref: RetentionDays
+            AbortIncompleteMultipartUpload:
+              DaysAfterInitiation: 1
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+  UploadPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket:
+        Ref: Uploads
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Deny
+            Principal: '*'
+            Action: s3:*
+            Resource:
+              - Fn::GetAtt:
+                  - Uploads
+                  - Arn
+              - Fn::Sub: ${Uploads.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: 'false'
+  DLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 1209600
+      SqsManagedSseEnabled: true
+  Alerts:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription:
+        - Endpoint:
+            Ref: OwnerEmail
+          Protocol: email
+  Guardrail:
+    Type: AWS::Bedrock::Guardrail
+    Properties:
+      Name:
+        Fn::Sub: ${AWS::StackName}-guardrail
+      BlockedInputMessaging: Solo puedo ayudarte con los servicios y la agenda de Oscar. / I can help with Oscar’s services and booking.
+      BlockedOutputsMessaging: No puedo compartir esa información. Contacta a Oscar. / Please contact Oscar.
+      ContentPolicyConfig:
+        FiltersConfig:
+          - Type: HATE
+            InputStrength: HIGH
+            OutputStrength: HIGH
+          - Type: INSULTS
+            InputStrength: HIGH
+            OutputStrength: HIGH
+          - Type: SEXUAL
+            InputStrength: HIGH
+            OutputStrength: HIGH
+          - Type: VIOLENCE
+            InputStrength: HIGH
+            OutputStrength: HIGH
+          - Type: MISCONDUCT
+            InputStrength: HIGH
+            OutputStrength: HIGH
+          - Type: PROMPT_ATTACK
+            InputStrength: HIGH
+            OutputStrength: NONE
+      SensitiveInformationPolicyConfig:
+        PiiEntitiesConfig:
+          - Type: EMAIL
+            Action: ANONYMIZE
+          - Type: PHONE
+            Action: ANONYMIZE
+          - Type: CREDIT_DEBIT_CARD_NUMBER
+            Action: ANONYMIZE
+          - Type: AWS_ACCESS_KEY
+            Action: ANONYMIZE
+          - Type: AWS_SECRET_KEY
+            Action: ANONYMIZE
+      TopicPolicyConfig:
+        TopicsConfig:
+          - Name: OutOfScope
+            Type: DENY
+            Definition: Requests unrelated to Oscar Bahamonde’s professional services, software, data, cloud, AI project scoping, pricing, contact or scheduling.
+            Examples:
+              - Write a political campaign speech.
+              - Diagnose my illness.
+  GuardrailVersion:
+    Type: AWS::Bedrock::GuardrailVersion
+    Properties:
+      GuardrailIdentifier:
+        Ref: Guardrail
+      Description: Versioned assistant guardrail
+  Chat:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: http.handler
+      Runtime: nodejs22.x
+      MemorySize: 512
+      Timeout: 120
+      ReservedConcurrentExecutions: 3
+      Environment:
+        Variables:
+          SITE_ORIGIN:
+            Ref: SiteOrigin
+          OWNER_EMAIL:
+            Ref: OwnerEmail
+          BEDROCK_MODEL_ID:
+            Ref: ModelId
+          BEDROCK_GUARDRAIL_ID:
+            Ref: Guardrail
+          BEDROCK_GUARDRAIL_VERSION:
+            Fn::GetAtt:
+              - GuardrailVersion
+              - Version
+          SESSIONS_TABLE:
+            Ref: Sessions
+          MESSAGES_TABLE:
+            Ref: Messages
+          LEADS_TABLE:
+            Ref: Leads
+          UPLOAD_BUCKET:
+            Ref: Uploads
+          KMS_KEY_ARN:
+            Fn::GetAtt:
+              - DataKey
+              - Arn
+          GOOGLE_SECRET_ARN:
+            Ref: GoogleSecretArn
+          TURNSTILE_SECRET_ARN:
+            Ref: TurnstileSecretArn
+          RETENTION_DAYS:
+            Ref: RetentionDays
+          MAX_FILE_BYTES: '5000000'
+          MAX_FILES: '5'
+          MAX_TOKENS: '800'
+          MAX_TURNS: '30'
+          MAX_SESSION_TOKENS: '60000'
+          CALENDAR_BUFFER_MINUTES: '15'
+          FREE_INTRO_CALL_ENABLED: 'false'
+          LEADS_DLQ_URL:
+            Ref: DLQ
+          TOOL_FUNCTIONS:
+            Fn::ToJsonString:
+              get_services:
+                Ref: ServicesTool
+              check_availability:
+                Ref: AvailabilityTool
+              schedule_meeting:
+                Ref: MeetingTool
+              send_email:
+                Ref: EmailTool
+              save_lead:
+                Ref: LeadTool
+          MEDIA_FUNCTION:
+            Ref: Media
+      Policies:
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+                - dynamodb:DeleteItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+                - Fn::GetAtt:
+                    - Leads
+                    - Arn
+            - Effect: Allow
+              Action:
+                - dynamodb:PutItem
+                - dynamodb:Query
+                - dynamodb:DeleteItem
+              Resource:
+                - Fn::GetAtt:
+                    - Messages
+                    - Arn
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource:
+                - Ref: TurnstileSecretArn
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:PutObject
+                - s3:DeleteObject
+              Resource:
+                Fn::Sub: ${Uploads.Arn}/*
+            - Effect: Allow
+              Action:
+                - bedrock:InvokeModel
+                - bedrock:InvokeModelWithResponseStream
+              Resource:
+                Ref: ModelArn
+            - Effect: Allow
+              Action:
+                - bedrock:ApplyGuardrail
+              Resource:
+                Fn::GetAtt:
+                  - Guardrail
+                  - GuardrailArn
+            - Effect: Allow
+              Action:
+                - lambda:InvokeFunction
+              Resource:
+                - Fn::GetAtt:
+                    - ServicesTool
+                    - Arn
+                - Fn::GetAtt:
+                    - AvailabilityTool
+                    - Arn
+                - Fn::GetAtt:
+                    - MeetingTool
+                    - Arn
+                - Fn::GetAtt:
+                    - EmailTool
+                    - Arn
+                - Fn::GetAtt:
+                    - LeadTool
+                    - Arn
+                - Fn::GetAtt:
+                    - Media
+                    - Arn
+            - Effect: Allow
+              Action:
+                - kms:Decrypt
+                - kms:Encrypt
+                - kms:GenerateDataKey
+              Resource:
+                Fn::GetAtt:
+                  - DataKey
+                  - Arn
+      LoggingConfig:
+        LogFormat: JSON
+      FunctionName:
+        Fn::Sub: ${AWS::StackName}-chat
+      FunctionUrlConfig:
+        AuthType: NONE
+        InvokeMode: RESPONSE_STREAM
+        Cors:
+          AllowOrigins:
+            - Ref: SiteOrigin
+          AllowMethods:
+            - GET
+            - POST
+            - DELETE
+          AllowHeaders:
+            - content-type
+            - authorization
+          MaxAge: 120
+  ChatLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${AWS::StackName}-chat
+      RetentionInDays: 14
+  ServicesTool:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: tool.handler
+      Runtime: nodejs22.x
+      MemorySize: 512
+      Timeout: 120
+      ReservedConcurrentExecutions: 3
+      Environment:
+        Variables:
+          SITE_ORIGIN:
+            Ref: SiteOrigin
+          OWNER_EMAIL:
+            Ref: OwnerEmail
+          BEDROCK_MODEL_ID:
+            Ref: ModelId
+          BEDROCK_GUARDRAIL_ID:
+            Ref: Guardrail
+          BEDROCK_GUARDRAIL_VERSION:
+            Fn::GetAtt:
+              - GuardrailVersion
+              - Version
+          SESSIONS_TABLE:
+            Ref: Sessions
+          MESSAGES_TABLE:
+            Ref: Messages
+          LEADS_TABLE:
+            Ref: Leads
+          UPLOAD_BUCKET:
+            Ref: Uploads
+          KMS_KEY_ARN:
+            Fn::GetAtt:
+              - DataKey
+              - Arn
+          GOOGLE_SECRET_ARN:
+            Ref: GoogleSecretArn
+          TURNSTILE_SECRET_ARN:
+            Ref: TurnstileSecretArn
+          RETENTION_DAYS:
+            Ref: RetentionDays
+          MAX_FILE_BYTES: '5000000'
+          MAX_FILES: '5'
+          MAX_TOKENS: '800'
+          MAX_TURNS: '30'
+          MAX_SESSION_TOKENS: '60000'
+          CALENDAR_BUFFER_MINUTES: '15'
+          FREE_INTRO_CALL_ENABLED: 'false'
+          LEADS_DLQ_URL:
+            Ref: DLQ
+          TOOL_NAME: get_services
+      Policies:
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+            - Effect: Allow
+              Action:
+                - kms:Decrypt
+                - kms:Encrypt
+                - kms:GenerateDataKey
+              Resource:
+                Fn::GetAtt:
+                  - DataKey
+                  - Arn
+      LoggingConfig:
+        LogFormat: JSON
+      FunctionName:
+        Fn::Sub: ${AWS::StackName}-servicestool
+  ServicesToolLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${AWS::StackName}-servicestool
+      RetentionInDays: 14
+  AvailabilityTool:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: tool.handler
+      Runtime: nodejs22.x
+      MemorySize: 512
+      Timeout: 120
+      ReservedConcurrentExecutions: 3
+      Environment:
+        Variables:
+          SITE_ORIGIN:
+            Ref: SiteOrigin
+          OWNER_EMAIL:
+            Ref: OwnerEmail
+          BEDROCK_MODEL_ID:
+            Ref: ModelId
+          BEDROCK_GUARDRAIL_ID:
+            Ref: Guardrail
+          BEDROCK_GUARDRAIL_VERSION:
+            Fn::GetAtt:
+              - GuardrailVersion
+              - Version
+          SESSIONS_TABLE:
+            Ref: Sessions
+          MESSAGES_TABLE:
+            Ref: Messages
+          LEADS_TABLE:
+            Ref: Leads
+          UPLOAD_BUCKET:
+            Ref: Uploads
+          KMS_KEY_ARN:
+            Fn::GetAtt:
+              - DataKey
+              - Arn
+          GOOGLE_SECRET_ARN:
+            Ref: GoogleSecretArn
+          TURNSTILE_SECRET_ARN:
+            Ref: TurnstileSecretArn
+          RETENTION_DAYS:
+            Ref: RetentionDays
+          MAX_FILE_BYTES: '5000000'
+          MAX_FILES: '5'
+          MAX_TOKENS: '800'
+          MAX_TURNS: '30'
+          MAX_SESSION_TOKENS: '60000'
+          CALENDAR_BUFFER_MINUTES: '15'
+          FREE_INTRO_CALL_ENABLED: 'false'
+          LEADS_DLQ_URL:
+            Ref: DLQ
+          TOOL_NAME: check_availability
+      Policies:
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource:
+                - Ref: GoogleSecretArn
+            - Effect: Allow
+              Action:
+                - kms:Decrypt
+                - kms:Encrypt
+                - kms:GenerateDataKey
+              Resource:
+                Fn::GetAtt:
+                  - DataKey
+                  - Arn
+      LoggingConfig:
+        LogFormat: JSON
+      FunctionName:
+        Fn::Sub: ${AWS::StackName}-availabilitytool
+  AvailabilityToolLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${AWS::StackName}-availabilitytool
+      RetentionInDays: 14
+  MeetingTool:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: tool.handler
+      Runtime: nodejs22.x
+      MemorySize: 512
+      Timeout: 120
+      ReservedConcurrentExecutions: 3
+      Environment:
+        Variables:
+          SITE_ORIGIN:
+            Ref: SiteOrigin
+          OWNER_EMAIL:
+            Ref: OwnerEmail
+          BEDROCK_MODEL_ID:
+            Ref: ModelId
+          BEDROCK_GUARDRAIL_ID:
+            Ref: Guardrail
+          BEDROCK_GUARDRAIL_VERSION:
+            Fn::GetAtt:
+              - GuardrailVersion
+              - Version
+          SESSIONS_TABLE:
+            Ref: Sessions
+          MESSAGES_TABLE:
+            Ref: Messages
+          LEADS_TABLE:
+            Ref: Leads
+          UPLOAD_BUCKET:
+            Ref: Uploads
+          KMS_KEY_ARN:
+            Fn::GetAtt:
+              - DataKey
+              - Arn
+          GOOGLE_SECRET_ARN:
+            Ref: GoogleSecretArn
+          TURNSTILE_SECRET_ARN:
+            Ref: TurnstileSecretArn
+          RETENTION_DAYS:
+            Ref: RetentionDays
+          MAX_FILE_BYTES: '5000000'
+          MAX_FILES: '5'
+          MAX_TOKENS: '800'
+          MAX_TURNS: '30'
+          MAX_SESSION_TOKENS: '60000'
+          CALENDAR_BUFFER_MINUTES: '15'
+          FREE_INTRO_CALL_ENABLED: 'false'
+          LEADS_DLQ_URL:
+            Ref: DLQ
+          TOOL_NAME: schedule_meeting
+      Policies:
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource:
+                - Ref: GoogleSecretArn
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+            - Effect: Allow
+              Action:
+                - kms:Decrypt
+                - kms:Encrypt
+                - kms:GenerateDataKey
+              Resource:
+                Fn::GetAtt:
+                  - DataKey
+                  - Arn
+      LoggingConfig:
+        LogFormat: JSON
+      FunctionName:
+        Fn::Sub: ${AWS::StackName}-meetingtool
+  MeetingToolLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${AWS::StackName}-meetingtool
+      RetentionInDays: 14
+  EmailTool:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: tool.handler
+      Runtime: nodejs22.x
+      MemorySize: 512
+      Timeout: 120
+      ReservedConcurrentExecutions: 3
+      Environment:
+        Variables:
+          SITE_ORIGIN:
+            Ref: SiteOrigin
+          OWNER_EMAIL:
+            Ref: OwnerEmail
+          BEDROCK_MODEL_ID:
+            Ref: ModelId
+          BEDROCK_GUARDRAIL_ID:
+            Ref: Guardrail
+          BEDROCK_GUARDRAIL_VERSION:
+            Fn::GetAtt:
+              - GuardrailVersion
+              - Version
+          SESSIONS_TABLE:
+            Ref: Sessions
+          MESSAGES_TABLE:
+            Ref: Messages
+          LEADS_TABLE:
+            Ref: Leads
+          UPLOAD_BUCKET:
+            Ref: Uploads
+          KMS_KEY_ARN:
+            Fn::GetAtt:
+              - DataKey
+              - Arn
+          GOOGLE_SECRET_ARN:
+            Ref: GoogleSecretArn
+          TURNSTILE_SECRET_ARN:
+            Ref: TurnstileSecretArn
+          RETENTION_DAYS:
+            Ref: RetentionDays
+          MAX_FILE_BYTES: '5000000'
+          MAX_FILES: '5'
+          MAX_TOKENS: '800'
+          MAX_TURNS: '30'
+          MAX_SESSION_TOKENS: '60000'
+          CALENDAR_BUFFER_MINUTES: '15'
+          FREE_INTRO_CALL_ENABLED: 'false'
+          LEADS_DLQ_URL:
+            Ref: DLQ
+          TOOL_NAME: send_email
+      Policies:
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource:
+                - Ref: GoogleSecretArn
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+              Resource:
+                Fn::Sub: ${Uploads.Arn}/*
+            - Effect: Allow
+              Action:
+                - kms:Decrypt
+                - kms:Encrypt
+                - kms:GenerateDataKey
+              Resource:
+                Fn::GetAtt:
+                  - DataKey
+                  - Arn
+      LoggingConfig:
+        LogFormat: JSON
+      FunctionName:
+        Fn::Sub: ${AWS::StackName}-emailtool
+  EmailToolLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${AWS::StackName}-emailtool
+      RetentionInDays: 14
+  LeadTool:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: tool.handler
+      Runtime: nodejs22.x
+      MemorySize: 512
+      Timeout: 120
+      ReservedConcurrentExecutions: 3
+      Environment:
+        Variables:
+          SITE_ORIGIN:
+            Ref: SiteOrigin
+          OWNER_EMAIL:
+            Ref: OwnerEmail
+          BEDROCK_MODEL_ID:
+            Ref: ModelId
+          BEDROCK_GUARDRAIL_ID:
+            Ref: Guardrail
+          BEDROCK_GUARDRAIL_VERSION:
+            Fn::GetAtt:
+              - GuardrailVersion
+              - Version
+          SESSIONS_TABLE:
+            Ref: Sessions
+          MESSAGES_TABLE:
+            Ref: Messages
+          LEADS_TABLE:
+            Ref: Leads
+          UPLOAD_BUCKET:
+            Ref: Uploads
+          KMS_KEY_ARN:
+            Fn::GetAtt:
+              - DataKey
+              - Arn
+          GOOGLE_SECRET_ARN:
+            Ref: GoogleSecretArn
+          TURNSTILE_SECRET_ARN:
+            Ref: TurnstileSecretArn
+          RETENTION_DAYS:
+            Ref: RetentionDays
+          MAX_FILE_BYTES: '5000000'
+          MAX_FILES: '5'
+          MAX_TOKENS: '800'
+          MAX_TURNS: '30'
+          MAX_SESSION_TOKENS: '60000'
+          CALENDAR_BUFFER_MINUTES: '15'
+          FREE_INTRO_CALL_ENABLED: 'false'
+          LEADS_DLQ_URL:
+            Ref: DLQ
+          TOOL_NAME: save_lead
+      Policies:
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+              Resource:
+                - Fn::GetAtt:
+                    - Leads
+                    - Arn
+            - Effect: Allow
+              Action:
+                - kms:Decrypt
+                - kms:Encrypt
+                - kms:GenerateDataKey
+              Resource:
+                Fn::GetAtt:
+                  - DataKey
+                  - Arn
+      LoggingConfig:
+        LogFormat: JSON
+      FunctionName:
+        Fn::Sub: ${AWS::StackName}-leadtool
+  LeadToolLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${AWS::StackName}-leadtool
+      RetentionInDays: 14
+  NotifyLead:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: notify-lead.handler
+      Runtime: nodejs22.x
+      MemorySize: 512
+      Timeout: 120
+      ReservedConcurrentExecutions: 3
+      Environment:
+        Variables:
+          SITE_ORIGIN:
+            Ref: SiteOrigin
+          OWNER_EMAIL:
+            Ref: OwnerEmail
+          BEDROCK_MODEL_ID:
+            Ref: ModelId
+          BEDROCK_GUARDRAIL_ID:
+            Ref: Guardrail
+          BEDROCK_GUARDRAIL_VERSION:
+            Fn::GetAtt:
+              - GuardrailVersion
+              - Version
+          SESSIONS_TABLE:
+            Ref: Sessions
+          MESSAGES_TABLE:
+            Ref: Messages
+          LEADS_TABLE:
+            Ref: Leads
+          UPLOAD_BUCKET:
+            Ref: Uploads
+          KMS_KEY_ARN:
+            Fn::GetAtt:
+              - DataKey
+              - Arn
+          GOOGLE_SECRET_ARN:
+            Ref: GoogleSecretArn
+          TURNSTILE_SECRET_ARN:
+            Ref: TurnstileSecretArn
+          RETENTION_DAYS:
+            Ref: RetentionDays
+          MAX_FILE_BYTES: '5000000'
+          MAX_FILES: '5'
+          MAX_TOKENS: '800'
+          MAX_TURNS: '30'
+          MAX_SESSION_TOKENS: '60000'
+          CALENDAR_BUFFER_MINUTES: '15'
+          FREE_INTRO_CALL_ENABLED: 'false'
+          LEADS_DLQ_URL:
+            Ref: DLQ
+      Policies:
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+            - Effect: Allow
+              Action:
+                - dynamodb:Query
+              Resource:
+                - Fn::GetAtt:
+                    - Messages
+                    - Arn
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource:
+                - Ref: GoogleSecretArn
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+              Resource:
+                Fn::Sub: ${Uploads.Arn}/*
+            - Effect: Allow
+              Action:
+                - bedrock:InvokeModel
+                - bedrock:InvokeModelWithResponseStream
+              Resource:
+                Ref: ModelArn
+            - Effect: Allow
+              Action:
+                - bedrock:ApplyGuardrail
+              Resource:
+                Fn::GetAtt:
+                  - Guardrail
+                  - GuardrailArn
+            - Effect: Allow
+              Action:
+                - sqs:SendMessage
+              Resource:
+                Fn::GetAtt:
+                  - DLQ
+                  - Arn
+            - Effect: Allow
+              Action:
+                - kms:Decrypt
+                - kms:Encrypt
+                - kms:GenerateDataKey
+              Resource:
+                Fn::GetAtt:
+                  - DataKey
+                  - Arn
+      LoggingConfig:
+        LogFormat: JSON
+      FunctionName:
+        Fn::Sub: ${AWS::StackName}-notifylead
+      Events:
+        LeadStream:
+          Type: DynamoDB
+          Properties:
+            Stream:
+              Fn::GetAtt:
+                - Leads
+                - StreamArn
+            StartingPosition: TRIM_HORIZON
+            BatchSize: 1
+            MaximumRetryAttempts: 10
+            MaximumRecordAgeInSeconds: 86400
+            BisectBatchOnFunctionError: true
+            FunctionResponseTypes:
+              - ReportBatchItemFailures
+            DestinationConfig:
+              OnFailure:
+                Destination:
+                  Fn::GetAtt:
+                    - DLQ
+                    - Arn
+                Type: SQS
+  NotifyLeadLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${AWS::StackName}-notifylead
+      RetentionInDays: 14
+  Media:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: media.handler
+      Runtime: nodejs22.x
+      MemorySize: 512
+      Timeout: 120
+      ReservedConcurrentExecutions: 3
+      Environment:
+        Variables:
+          SITE_ORIGIN:
+            Ref: SiteOrigin
+          OWNER_EMAIL:
+            Ref: OwnerEmail
+          BEDROCK_MODEL_ID:
+            Ref: ModelId
+          BEDROCK_GUARDRAIL_ID:
+            Ref: Guardrail
+          BEDROCK_GUARDRAIL_VERSION:
+            Fn::GetAtt:
+              - GuardrailVersion
+              - Version
+          SESSIONS_TABLE:
+            Ref: Sessions
+          MESSAGES_TABLE:
+            Ref: Messages
+          LEADS_TABLE:
+            Ref: Leads
+          UPLOAD_BUCKET:
+            Ref: Uploads
+          KMS_KEY_ARN:
+            Fn::GetAtt:
+              - DataKey
+              - Arn
+          GOOGLE_SECRET_ARN:
+            Ref: GoogleSecretArn
+          TURNSTILE_SECRET_ARN:
+            Ref: TurnstileSecretArn
+          RETENTION_DAYS:
+            Ref: RetentionDays
+          MAX_FILE_BYTES: '5000000'
+          MAX_FILES: '5'
+          MAX_TOKENS: '800'
+          MAX_TURNS: '30'
+          MAX_SESSION_TOKENS: '60000'
+          CALENDAR_BUFFER_MINUTES: '15'
+          FREE_INTRO_CALL_ENABLED: 'false'
+          LEADS_DLQ_URL:
+            Ref: DLQ
+      Policies:
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+            - Effect: Allow
+              Action:
+                - dynamodb:PutItem
+              Resource:
+                - Fn::GetAtt:
+                    - Messages
+                    - Arn
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:PutObject
+              Resource:
+                Fn::Sub: ${Uploads.Arn}/*
+            - Effect: Allow
+              Action:
+                - transcribe:StartTranscriptionJob
+                - transcribe:GetTranscriptionJob
+              Resource:
+                Fn::Sub: arn:${AWS::Partition}:transcribe:${AWS::Region}:${AWS::AccountId}:transcription-job/oscar-*
+            - Effect: Allow
+              Action:
+                - sqs:SendMessage
+              Resource:
+                Fn::GetAtt:
+                  - DLQ
+                  - Arn
+            - Effect: Allow
+              Action:
+                - kms:Decrypt
+                - kms:Encrypt
+                - kms:GenerateDataKey
+              Resource:
+                Fn::GetAtt:
+                  - DataKey
+                  - Arn
+      LoggingConfig:
+        LogFormat: JSON
+      FunctionName:
+        Fn::Sub: ${AWS::StackName}-media
+      EventInvokeConfig:
+        MaximumRetryAttempts: 2
+        DestinationConfig:
+          OnFailure:
+            Type: SQS
+            Destination:
+              Fn::GetAtt:
+                - DLQ
+                - Arn
+  MediaLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${AWS::StackName}-media
+      RetentionInDays: 14
+  Sweep:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/
+      Handler: sweep.handler
+      Runtime: nodejs22.x
+      MemorySize: 512
+      Timeout: 120
+      ReservedConcurrentExecutions: 3
+      Environment:
+        Variables:
+          SITE_ORIGIN:
+            Ref: SiteOrigin
+          OWNER_EMAIL:
+            Ref: OwnerEmail
+          BEDROCK_MODEL_ID:
+            Ref: ModelId
+          BEDROCK_GUARDRAIL_ID:
+            Ref: Guardrail
+          BEDROCK_GUARDRAIL_VERSION:
+            Fn::GetAtt:
+              - GuardrailVersion
+              - Version
+          SESSIONS_TABLE:
+            Ref: Sessions
+          MESSAGES_TABLE:
+            Ref: Messages
+          LEADS_TABLE:
+            Ref: Leads
+          UPLOAD_BUCKET:
+            Ref: Uploads
+          KMS_KEY_ARN:
+            Fn::GetAtt:
+              - DataKey
+              - Arn
+          GOOGLE_SECRET_ARN:
+            Ref: GoogleSecretArn
+          TURNSTILE_SECRET_ARN:
+            Ref: TurnstileSecretArn
+          RETENTION_DAYS:
+            Ref: RetentionDays
+          MAX_FILE_BYTES: '5000000'
+          MAX_FILES: '5'
+          MAX_TOKENS: '800'
+          MAX_TURNS: '30'
+          MAX_SESSION_TOKENS: '60000'
+          CALENDAR_BUFFER_MINUTES: '15'
+          FREE_INTRO_CALL_ENABLED: 'false'
+          LEADS_DLQ_URL:
+            Ref: DLQ
+      Policies:
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:Scan
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+              Resource:
+                - Fn::GetAtt:
+                    - Leads
+                    - Arn
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+              Resource:
+                - Fn::GetAtt:
+                    - Sessions
+                    - Arn
+            - Effect: Allow
+              Action:
+                - kms:Decrypt
+                - kms:Encrypt
+                - kms:GenerateDataKey
+              Resource:
+                Fn::GetAtt:
+                  - DataKey
+                  - Arn
+      LoggingConfig:
+        LogFormat: JSON
+      FunctionName:
+        Fn::Sub: ${AWS::StackName}-sweep
+      Events:
+        IdleSessions:
+          Type: Schedule
+          Properties:
+            Schedule: rate(5 minutes)
+  SweepLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Sub: /aws/lambda/${AWS::StackName}-sweep
+      RetentionInDays: 14
+  ErrorsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: Assistant Lambda errors
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+      Dimensions:
+        - Name: FunctionName
+          Value:
+            Ref: Chat
+      AlarmActions:
+        - Ref: Alerts
+  NotificationAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      Namespace: OscarAssistant
+      MetricName: NotificationErrors
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - Ref: Alerts
+  DLQAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      Namespace: AWS/SQS
+      MetricName: ApproximateNumberOfMessagesVisible
+      Statistic: Maximum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+      Dimensions:
+        - Name: QueueName
+          Value:
+            Fn::GetAtt:
+              - DLQ
+              - QueueName
+      AlarmActions:
+        - Ref: Alerts
+  Budget:
+    Type: AWS::Budgets::Budget
+    Properties:
+      Budget:
+        BudgetName:
+          Fn::Sub: ${AWS::StackName}-monthly
+        BudgetType: COST
+        TimeUnit: MONTHLY
+        BudgetLimit:
+          Amount:
+            Ref: MonthlyBudgetUsd
+          Unit: USD
+      NotificationsWithSubscribers:
+        - Notification:
+            NotificationType: ACTUAL
+            ComparisonOperator: GREATER_THAN
+            Threshold: 80
+            ThresholdType: PERCENTAGE
+          Subscribers:
+            - SubscriptionType: EMAIL
+              Address:
+                Ref: OwnerEmail
+Outputs:
+  AssistantUrl:
+    Value:
+      Fn::GetAtt:
+        - ChatUrl
+        - FunctionUrl
+  LeadsDlqUrl:
+    Value:
+      Ref: DLQ
+  Bucket:
+    Value:
+      Ref: Uploads
+  GuardrailId:
+    Value:
+      Ref: Guardrail
+  GuardrailVersion:
+    Value:
+      Fn::GetAtt:
+        - GuardrailVersion
+        - Version

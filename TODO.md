@@ -24,3 +24,17 @@
 - [ ] Limitación previa conservada: holds vencidos dejan evento temporal visible hasta reutilizar horario; API los ignora para disponibilidad.
 - [ ] No incluir URLs externas Medium como loc del sitemap: protocolo exige mismo host. Páginas locales /es/blog/* y /en/blog/*; originales en llms.txt y enlaces visibles.
 - [ ] Consultar mediciones reales Lighthouse en docs/VALIDATION.md. Toda categoría inferior a95 sigue pendiente hasta corregir y medir nuevamente.
+
+## Asistente AWS Bedrock (2026-11-14)
+
+- [x] Código TypeScript, SAM, cinco tools Lambda, SSE, DynamoDB/KMS/S3 y notificaciones Stream con DLQ/alarma.
+- [x] Catálogo versionado con precios y alcances existentes; sin inventar credenciales ni certificaciones.
+- [x] Widget bilingüe reutiliza la estética actual; implementación previa disponible hasta configurar la URL AWS.
+- [x] Tests mock de Bedrock/Google/Gmail y eventos Stream; tests originales de agendamiento sin regresiones.
+- [ ] Crear secretos Google con scopes Calendar + Gmail y Turnstile. AWS Login funciona; en us-east-1 no existen estos secretos. Variables sensibles Vercel no se copiaron ni expusieron.
+- [ ] Desplegar CloudFormation/SAM y habilitar URL Lambda + Turnstile público en Vercel; confirmar SNS y acceso real al modelo.
+- [ ] Ejecutar pruebas reales AWS/Google/Transcribe y prueba de pago autorizada; no se simuló un despliegue completado.
+- [ ] Gmail no ofrece exactamente-una-vez con DynamoDB. Revisar el límite de entrega ambigua en assistant/README.md antes de exigir cero duplicados bajo cualquier caída.
+- [ ] Lighthouse ≥95 y navegación de teclado en navegador: intento local bloqueado al arrancar Chrome. No se afirma un puntaje medido nuevo.
+- [ ] Certificaciones verificadas con logos: faltan nombres, emisores y URLs de evidencia.
+- [ ] PDF/DOCX/ZIP se aceptan y remiten como adjuntos; análisis automático del contenido no implementado. Audio sí se transcribe en servidor.
