@@ -16,8 +16,16 @@ Prueba de navegador final: nueve secciones/dock, magnificación, cambio de idiom
 - 15 assistant tests passed (Bedrock stream/tool mocks, confirmation gates, Google freebusy mock, Stream INSERT/MODIFY/duplicate/Gmail failure, MIME/header validation, SAM storage/event configuration).
 - 8 existing tests passed, including unchanged executable hashes for MercadoPago and Calendar booking handlers.
 - TypeScript checks passed for Nuxt and assistant. Production Nuxt build and Lambda bundles passed.
-- AWS CloudFormation ValidateTemplate accepted the SAM template; cfn-lint completed with no findings. No resources were deployed.
-- AWS Login authenticated through a private temporary copy of its cache; no credentials were printed or committed. Secret inventory in us-east-1 contained no Google/Turnstile assistant secrets.
+- AWS CloudFormation ValidateTemplate accepted the SAM template; cfn-lint completed with no findings. SAM stack was subsequently deployed successfully in us-east-1.
+- AWS Login authenticated through a private temporary copy of its cache; no credentials were printed or committed. Google OAuth and Turnstile were subsequently configured in Secrets Manager without committing credentials.
 - Local robots.txt and llms.txt responded; sitemap.xml redirects to sitemap_index.xml. Medium originals remain in llms.txt and blog links; sitemap contains local bilingual post pages, as required by same-host sitemap rules.
 - Headless Chrome failed to launch in the managed environment. No new Lighthouse score, CLS measurement, or visual/accessibility browser pass is claimed.
-- Real Gmail, audio transcription, freebusy, event creation and paid checkout remain pending live configuration and end-to-end verification. Existing runtime hash checks are regression protection, not a live payment test.
+- Real Google freebusy and OAuth refresh/scopes passed. Gmail delivery, audio/file end-to-end flows, event creation and paid checkout remain pending verification. Existing runtime hash checks are regression protection, not a live payment test.
+
+## Production activation
+
+- PR #1 squash-merged with owner authorization; Vercel production deployment dpl_kRH7pH7SswFCZrKSrT85bQbbPNSs reached READY and serves oscarbahamonde.com.
+- Public Lambda URL and Turnstile site key configured in Vercel; private Turnstile/Google values remain in Secrets Manager. Temporary OAuth setup endpoint disabled and returned 404.
+- Browser: real managed Turnstile passed, consent/start-session succeeded, Spanish Bedrock response returned the verified service catalog and prices. No test lead, email, Calendar event or payment was intentionally created.
+- An English service question exposed a false positive in the original negatively worded denied-topic definition. Isolated candidate tests passed for service/tool output, English input, blocked medical/political requests and prompt injection; HIGH filters retained.
+- All 15 assistant tests and cfn-lint passed again after the topic correction. Final English browser check follows the infrastructure update.
