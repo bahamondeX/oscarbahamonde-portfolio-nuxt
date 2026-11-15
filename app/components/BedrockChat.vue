@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { recorderMime, normalizeAudioMime, audioFormat } from '../../shared/audio'
+import { captchaFresh, createVerifiedSession } from '../../shared/captcha-session.mjs'
 import { Send, Paperclip, Mic, Square, X, LoaderCircle, Bot, Mail, ShieldCheck, Check, ArrowUpRight } from 'lucide-vue-next'
 const { locale } = useI18n(), localePath = useLocalePath(), runtime = useRuntimeConfig()
 const es = computed(() => locale.value === 'es'), panel = useAssistantPanel()
@@ -13,6 +14,7 @@ const pending = ref<any>(null), emailDraft = ref(''), confirmedEmail = ref(''), 
 const input = ref<HTMLTextAreaElement>(), log = ref<HTMLElement>(), fileInput = ref<HTMLInputElement>(), captchaEl = ref<HTMLElement>()
 const uid = useId()
 let disposed = false
+let captchaIssuedAt = 0
 let bearer = '', widget: string | undefined, recorder: MediaRecorder | undefined, media: MediaStream | undefined, timer: ReturnType<typeof setInterval> | undefined, greetingQueued = false, retryAfterConsent = false, deferred: (() => Promise<unknown>) | undefined, lastMessage = ''
 const acceptedTypes = 'audio/x-m4a,audio/m4a,application/pdf,image/png,image/jpeg,image/webp,application/zip,application/vnd.openxmlformats-officedocument.wordprocessingml.document,audio/webm,audio/ogg,audio/mp4'
 const suggestions = computed(() => es.value ? ['¿Qué servicios ofreces?', '¿Cuánto cuesta una landing?', 'Cuéntame sobre tu experiencia', 'Agendar una reunión'] : ['What services do you offer?', 'How much is a landing page?', 'Tell me about your experience', 'Schedule a meeting'])
@@ -24,7 +26,7 @@ function history(source = messages.value) {
 }
 function persist() { sessionStorage.setItem('oscar-chat-history', JSON.stringify({messages:history(),cards:cards.value.slice(-10)})) }
 async function request(path: string, body?: any, method = body ? 'POST' : 'GET') {
-  const r = await fetch(base + path, { method, headers: { ...(body ? {'Content-Type':'application/json'} : {}), ...(bearer ? {Authorization:'Bearer '+bearer} : {}) }, body:body ? JSON.stringify(body) : undefined })
+  const r = await fetch(base + path, { method, headers: { ...(body ? {'Content-Type':'application/json'} : {}), ...(bearer ? {Authorization:'Bearer '+bearer} : {}) }, body:body ? JSON.stringify(body) : undefined, ...(path==='/session'&&method==='POST'?{signal:AbortSignal.timeout(20000)}:{}) })
   const data = await r.json(); if (!r.ok || data.error) throw Error(String(r.status)); return data
 }
 async function scroll() { await nextTick(); if (log.value) log.value.scrollTop = log.value.scrollHeight }
@@ -39,17 +41,22 @@ function removeCaptcha() {
   const id = widget
   widget = undefined
   captcha.value = ''
+  captchaIssuedAt = 0
   if (id !== undefined) (window as any).turnstile?.remove(id)
 }
 function captchaFailure() {
+  captchaIssuedAt=0
   captcha.value=''; captchaFailed.value=true; greetingQueued=false
   error.value=es.value?'No se pudo verificar la conexión. Reintenta la verificación o escribe a Oscar por correo.':'The connection could not be verified. Retry verification or email Oscar.'
 }
 async function retryCaptcha() {
+  if(busy.value || started.value || disposed)return
   captchaFailed.value=false; error.value=''; captcha.value=''
   const api=(window as any).turnstile
-  if(widget!==undefined && api) api.reset(widget)
-  else await initCaptcha()
+  try {
+    if(widget!==undefined && api) api.reset(widget)
+    else await initCaptcha()
+  } catch { captchaFailure() }
 }
 async function initCaptcha() {
   if (started.value || !base || !runtime.public.turnstileSiteKey) return
@@ -69,13 +76,16 @@ async function initCaptcha() {
     })
     if(disposed || !captchaEl.value)return
     const api=(window as any).turnstile;removeCaptcha()
-    widget=api.render(captchaEl.value,{sitekey:runtime.public.turnstileSiteKey,action:'lead-chat',language:locale.value,theme:'auto',size:'flexible',callback:(value:string)=>{captcha.value=value;captchaFailed.value=false;error.value='';if(greetingQueued){greetingQueued=false;void send()}},'expired-callback':captchaFailure,'timeout-callback':captchaFailure,'error-callback':captchaFailure,'unsupported-callback':captchaFailure})
+    widget=api.render(captchaEl.value,{sitekey:runtime.public.turnstileSiteKey,action:'lead-chat',language:locale.value,theme:'auto',size:'flexible',callback:(value:string)=>{if(disposed||started.value)return;captcha.value=value;captchaIssuedAt=Date.now();captchaFailed.value=false;error.value='';if(greetingQueued){greetingQueued=false;void send()}},'expired-callback':captchaFailure,'timeout-callback':captchaFailure,'error-callback':captchaFailure,'unsupported-callback':captchaFailure})
   } catch { if(!disposed)captchaFailure() }
 }
 async function ensureSession() {
   if(started.value)return true
-  if(!captcha.value){greetingQueued=true;error.value=es.value?'Verificando la conexión segura… Tu mensaje está listo.':'Checking the secure connection… Your message is ready.';return false}
-  const r=await request('/session',{token:captcha.value,locale:locale.value});bearer=r.token;sessionStorage.setItem('oscar-aws-chat',bearer);removeCaptcha();started.value=true;consent.value=false;return true
+  if(captcha.value && !captchaFresh(captcha.value,captchaIssuedAt)){captchaFailure();return false}
+  if(!captcha.value){if(captchaFailed.value){captchaFailure();return false}greetingQueued=true;error.value=es.value?'Verificando la conexión segura… Tu mensaje está listo.':'Checking the secure connection… Your message is ready.';return false}
+  const r=await createVerifiedSession({token:captcha.value,locale:locale.value,request,consume:()=>{captcha.value='';captchaIssuedAt=0},recover:captchaFailure})
+  if(!r)return false
+  bearer=r.token;sessionStorage.setItem('oscar-aws-chat',bearer);removeCaptcha();started.value=true;consent.value=false;return true
 }
 async function send(action?: {id:string;approved:boolean}) {
   if(busy.value||closed.value||(!action&&!draft.value.trim()))return
@@ -194,3 +204,4 @@ const cardUrl=(card:any)=>{const u=card.paymentUrl||card.payment_url||card.url||
 <style scoped>
 .assistant-conversation{display:flex;flex:1;flex-direction:column;min-height:0;position:relative;font-size:13px;color:var(--ink,#17202a)}.conversation-scroll{flex:1;overflow:auto;overscroll-behavior:contain;padding:22px 18px;scrollbar-width:thin}.welcome-message{padding:2px 5px 16px}.welcome-symbol{color:var(--accent,#3556b1);display:inline-grid;place-items:center;margin-bottom:12px}.welcome-message h3{font-size:21px;line-height:1.15;letter-spacing:-.8px;margin:0 0 10px;font-weight:650}.welcome-message p{font-size:12px;color:var(--muted,#647080);line-height:1.7;margin:0}.suggestion-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:6px 0 18px}.suggestion-grid button{display:flex;justify-content:space-between;gap:7px;align-items:center;border:1px solid var(--line,#dce3e9);background:transparent;border-radius:12px;padding:12px 10px;text-align:left;font:inherit;font-size:11px;line-height:1.45;color:inherit;cursor:pointer}.suggestion-grid button:hover{background:#319ebc0c;border-color:#329dbd80}.suggestion-grid svg{flex:none}.bubble-row{display:flex;gap:7px;margin:13px 0;align-items:flex-end}.bubble-avatar{flex:none;display:grid;place-items:center;width:25px;height:25px;border-radius:9px;background:#3e87b513;color:var(--accent,#3556b1)}.bubble{max-width:calc(100% - 32px);padding:12px 13px;border:1px solid var(--line,#e3e8ed);border-radius:17px 17px 17px 4px;background:color-mix(in srgb,var(--surface,#fff) 90%,#62bbc0 10%);font-size:12px;line-height:1.6}.bubble-row.user{justify-content:flex-end}.user .bubble{border-color:transparent;border-radius:17px 17px 4px 17px;color:white;background:#3558b4;max-width:90%}.user .bubble :deep(a){color:#d0f6ff}.typing{display:flex;gap:4px;padding:6px 1px}.typing i{width:5px;height:5px;border-radius:50%;background:var(--muted,#667);animation:typing 1.1s ease-in-out infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}.action-card,.privacy-card{border:1px solid var(--line,#dde4ea);background:#3b92b908;border-radius:16px;padding:14px;margin:14px 0;font-size:12px}.action-card>strong,.privacy-card>strong{display:block;margin-bottom:8px;font-size:13px}.privacy-card>svg{color:var(--accent);margin-bottom:8px}.action-card p,.privacy-card p{line-height:1.6;color:var(--muted,#657181);margin:5px 0 12px}.action-card a{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--accent)}.action-card>button{display:block;width:100%;margin-top:8px}.action-card dl{display:grid;grid-template-columns:auto 1fr;gap:5px 9px;font-size:11px}.action-card dt{color:var(--muted)}.action-card dd{margin:0;overflow-wrap:anywhere}.action-buttons{display:flex;gap:7px}.action-buttons button,.action-card>button,.audio-preview button{border:1px solid var(--line,#dce3e9);color:inherit;background:transparent;padding:8px 10px;border-radius:9px;font:inherit;font-size:11px;cursor:pointer}.action-buttons .approve{background:#3558b4;border-color:#3558b4;color:white}.privacy-card input{display:block;width:100%;padding:10px;margin:8px 0;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:inherit;font:inherit}.file-chips{display:flex;flex-wrap:wrap;gap:6px}.file-chips button{display:flex;align-items:center;gap:5px;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;border:1px solid var(--line);border-radius:9px;padding:7px;background:transparent;color:inherit;font-size:10px}.conversation-bottom{padding:10px 14px 12px;border-top:1px solid var(--line,#e0e5eb);background:var(--surface,#fff);flex:none}.assistant-composer{border:1px solid var(--line,#d9e1e9);border-radius:17px;padding:10px 11px 7px;background:color-mix(in srgb,var(--surface,#fff) 96%,#327cbd 4%);transition:box-shadow .2s}.assistant-composer:focus-within{box-shadow:0 0 0 3px #32b0bb15;border-color:#479cbb}.assistant-composer textarea{display:block;resize:none;width:100%;min-height:32px;max-height:130px;background:none;border:0;color:inherit;font:inherit;line-height:1.5;padding:2px;outline:none}.assistant-composer textarea::placeholder{color:var(--muted,#718092);font-size:12px}.composer-actions{display:flex;justify-content:space-between;align-items:center}.composer-actions>div{display:flex;gap:1px}.composer-actions button,.recording-strip button{border:0;color:var(--muted,#69788b);width:34px;height:34px;display:grid;place-items:center;background:none;border-radius:10px;cursor:pointer}.composer-actions button:hover{background:#40789b10}.composer-actions .send{color:white;background:#3558b4}.composer-actions .send:disabled{opacity:.45}.conversation-footer{display:flex;align-items:center;gap:9px;margin-top:9px;font-size:9px;color:var(--muted,#6c798a)}.conversation-footer span{flex:1}.conversation-footer button{padding:3px 0;color:inherit;background:none;border:0;font:inherit;text-decoration:underline;cursor:pointer}.privacy-note{font-size:9px;color:var(--muted,#6c798a);line-height:1.45;margin:8px 0 0}.privacy-note a,.privacy-card a{color:inherit;text-decoration:underline}.assistant-error{font-size:11px;line-height:1.5;color:#b34e36}.assistant-error a{color:inherit;text-decoration:underline}.closed-notice{padding:15px;border-radius:12px;background:#299d8110;line-height:1.6}.drop-overlay{position:absolute;inset:8px;background:color-mix(in srgb,var(--surface,#fff) 94%,transparent);border:2px dashed #369db5;border-radius:20px;display:grid;place-content:center;font-weight:600;z-index:2;pointer-events:none}.captcha-widget{overflow:hidden;max-width:100%;margin-bottom:6px}.audio-preview{display:flex;gap:5px;align-items:center;margin-bottom:10px}.audio-preview audio{height:32px;width:100%;min-width:0}.audio-preview button{flex:none;padding:7px}.recording-strip{display:flex;align-items:center;gap:12px;padding:8px 10px;margin-bottom:8px;background:#d1534210;border-radius:10px;font-variant-numeric:tabular-nums}.wave{height:25px;display:flex;align-items:center;gap:3px;flex:1}.wave i{width:3px;height:6px;border-radius:3px;background:#d45d49;animation:wave 1s var(--delay) ease-in-out infinite}.spin{animation:spin 1s linear infinite}button:disabled{cursor:default;opacity:.55}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #2baab5;outline-offset:3px}@keyframes wave{50%{height:23px}}@keyframes typing{50%{transform:translateY(-3px);opacity:.5}}@keyframes spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}@media(max-width:700px){.conversation-scroll{padding:20px}.welcome-message h3{font-size:25px}.welcome-message p,.bubble{font-size:13px}.conversation-bottom{padding-bottom:14px}.assistant-composer textarea{font-size:16px}.conversation-footer,.privacy-note{font-size:10px}.suggestion-grid button{font-size:12px}}
 </style>
+

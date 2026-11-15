@@ -6,6 +6,7 @@ import { createPresignedPost } from '@aws-sdk/s3-presigned-post'
 import { LambdaClient, InvokeCommand } from '@aws-sdk/client-lambda'
 import { cfg, metric } from './config.js'
 import { secret } from './google.js'
+import { verifyTurnstile, captchaStatus } from './turnstile.js'
 import {
   message,
   db,
@@ -44,23 +45,12 @@ export async function route(event: any, emit: (type: string, data: any) => void)
     if (
       !['es', 'en'].includes(b.locale) ||
       typeof b.token !== 'string' ||
+      !b.token.trim() ||
       b.token.length > 2048
     )
       throw Error('captcha_required')
     const c = await secret(cfg.captchaSecret)
-    const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-      method: 'POST',
-      body: new URLSearchParams({ secret: c.secret, response: b.token, remoteip: ip }),
-      signal: AbortSignal.timeout(10000),
-    })
-    const v = (await r.json()) as any
-    if (
-      !r.ok ||
-      !v.success ||
-      v.hostname !== new URL(cfg.origin).hostname ||
-      v.action !== 'lead-chat'
-    )
-      throw Error('captcha_failed')
+    await verifyTurnstile({ token: b.token, secret: c.secret, origin: cfg.origin, ip })
     return sessionCreate(b.locale)
   }
   const s = await authenticate(event.headers?.authorization || '')
@@ -254,7 +244,8 @@ export const handler =
           if (!streaming) begin().write(JSON.stringify(result ?? {}))
         } catch (e: any) {
           metric('HttpErrors')
-          const status =
+          const captchaError = ['captcha_required', 'captcha_failed', 'captcha_unavailable'].includes(e.message)
+          const status = captchaError ? captchaStatus(e.message) :
             e.message === 'unauthorized'
               ? 401
               : ['forbidden_origin', 'consent_required'].includes(e.message)
@@ -272,8 +263,9 @@ export const handler =
               : 'Request failed. Use the website calendar or email Oscar.'
           begin(status)
           if (streaming) emit('error', { message: error })
-          else stream.write(JSON.stringify({ error }))
+          else stream.write(JSON.stringify({ error, ...(captchaError ? { code: e.message } : {}) }))
         } finally {
           begin().end()
         }
       })
+
