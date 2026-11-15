@@ -10,8 +10,7 @@
   ],
   "error": "SIGABRT before navigation; local managed macOS restriction remains",
   "docker": "daemon socket connect operation not permitted",
-  "chosenRuntime": "GitHub Actions Ubuntu",
-  "renderedContrast": "pending CI; no local pass claimed",
+  "renderedContrast": "not measured by this local attempt; see the later isolated Linux browser report",
   "headlessShell": "Chromium159 defaultheadlessshell also fails: MachPortRendezvousServer bootstrap_check_in Permissiondenied1100 / SIGTRAP",
   "install": "officialPlaywrightinstall completed successfully in task-owned /tmp path"
 }

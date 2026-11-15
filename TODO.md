@@ -9,7 +9,6 @@ Este documento distingue implementación, pruebas con mocks y comprobaciones en 
 - [ ] **MercadoPago sandbox:** faltan credenciales/usuarios de prueba y Calendar aislado. Los25 tests locales usan mocks; producción rechaza live_mode=false. No introducir credenciales de prueba en producción.
 - [ ] **Pago real S/20:** requiere aprobación explícita de la transacción concreta, después de sandbox. Checklist, reembolso y destinatarios/evento en docs/payment-validation.md. Ningún cobro/evento real creado en esta fase.
 - [ ] **Firma de webhook:** HMAC disponible, pendiente configurar secreto en Vercel/MercadoPago y probar notificación del proveedor. La consulta API del pago aprobado sigue siendo obligatoria, nunca el retorno del navegador.
-- [ ] **CI GitHub:** el job reproducible está añadido, pero la cuenta bloquea runners por facturación. El fallback Linux sí pasó 24/24 y 112/112 contrastes; reactivar GitHub requiere resolver ese bloqueo de cuenta.
 
 - [ ] **Turnstile, fallo forzado:** sesión nueva y chat ES/EN verificados en producción; falta provocar controladamente un fallo del proveedor y comprobar el reintento. Hay mensajes/reintento implementados. Logs internos de Cloudflare conservados, sin warnings de aplicación.
 

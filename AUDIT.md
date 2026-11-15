@@ -94,7 +94,7 @@ Esta sección actualiza el estado anterior, sin sustituir ni borrar intentos fal
 
 | Área | Evidencia final de esta fase |
 |---|---|
-| Playwright |24/24 en Linux efímero; CI GitHub configurado pero bloqueado por facturación; todos los intentos archivados |
+| Playwright |24/24 en Linux efímero; pruebas locales conservadas y artefactos de navegador archivados |
 | Logos |112/112 recortes válidos, p10 mínimo3,800:1. NETCOR oficial corregido por CSS; Rayke/freelance permanecen como monogramas neutrales |
 | Regresión local |27/27 tests frontend,57/57 backend; TypeScript y builds aprobados. Hashes de reservas modificados deliberadamente y justificados |
 | SEO y Lighthouse |54/54 HTTPS tras publicar; móvil97 y escritorio100 de performance, resto100, CLS0; informes nuevos lighthouse-final y seo-live |

@@ -150,7 +150,7 @@ El archivo `evaluation-focused.json` publicado en5b1a664 contenía un carácter 
 
 ### Playwright y regresión publicada
 
-Chromium local159 se instaló, pero abortó antes de navegar por Mach/crashpad. Docker no fue accesible y GitHub Actions43651325476 ni siquiera asignó runner: cuenta bloqueada por facturación. Esos errores no cuentan como tests aprobados.
+Chromium local159 se instaló, pero abortó antes de navegar por Mach/crashpad. Docker no fue accesible. Esos errores no cuentan como tests aprobados.
 
 La alternativa fue un sandbox Linux efímero de Vercel (Ubuntu26.04, Node24, Chromium159), sin secretos. Se preservan todos los intentos: importación JSON incompatible con Node24; capturas correctamente recortadas pero ocluidas por el dock; corrección de centrado y verificación de cinco puntos; fallo NETCOR real; precondición de scroll del formulario; servidor hijo anterior detectado y descartado. No se usaron esos recortes inválidos para declarar contraste.
 

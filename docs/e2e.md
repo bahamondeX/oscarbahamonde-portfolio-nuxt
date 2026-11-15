@@ -12,7 +12,7 @@ Remote verification later succeeded via the official PageSpeed Insights UI: mobi
 
 ## Reproducible Ubuntu run (2026-11-14)
 
-The new task explicitly requests a browser CI job. `.github/workflows/playwright.yml` runs on Ubuntu on main pushes, pull requests and manual dispatch. It installs the lockfile's Chromium, builds Nuxt and starts an isolated local production build; no production secrets, email, calendar event or payment are used. The 24 cases include all eight locale/theme/viewport logo combinations. Artifacts preserve successes and failures for 30 days. This demonstrates the committed build; it is not a claim of a real payment, microphone device or production conversation.
+Browser checks run locally or in an explicitly requested isolated environment. Install dependencies and Chromium, then run `npm run test:e2e`; no hosted workflow is configured. Keep all test files and local reporting commands available.
 
 The local official installation was repeated into `/tmp/oscar-playwright-browsers` because the preinstalled Chromium1181 did not match Playwright1.65.1 (required1255). Chromium159 full headless launch with `--no-sandbox`, `--disable-crashpad` and `--disable-crash-reporter` still aborted before a page. Docker could not connect to the managed host socket (`operation not permitted`). No permissions or host protections were bypassed. Evidence is in `docs/audit/after/playwright-environment/`.
 
@@ -20,12 +20,9 @@ Each logo is captured with `locator.screenshot({scale:'css'})`, including a matc
 
 NETCORPERU now uses the company's LinkedIn logo (https://pe.linkedin.com/company/netcorperu-s-a-c), retrieved14November2026 and converted from the returned JPEG to PNG with empty white padding trimmed (177×49; brand artwork and colors retained). Its public website returned a certificate hostname mismatch and was not bypassed. Rayke has a neutral initial monogram; public searches found company listings but no verifiable official brand asset. A monogram is labeled by the adjacent company name and is not presented as an official logo.
 
-First Ubuntu attempt: commit `6f3c38a38907f44f7edfb22b17ea3ddd1de88af6`, run `43651325476`, job `132620217787`. GitHub refused to allocate a runner: **“The job was not started because your account is locked due to a billing issue.”** No steps ran, no screenshots or contrast measurements exist for this attempt. The check/annotations/job API responses are preserved in `docs/audit/after/playwright-environment/ci-43651325476/`. Resolving billing requires account-owner action; the test did not pass or fail its logo assertions.
-
-
 ## Vercel Sandbox fallback and screenshot corrections
 
-Because macOS Chromium could not launch and GitHub Actions could not allocate a runner, verification moved to one ephemeral Ubuntu 26.04.1 / Node 24.22.3 Vercel Sandbox (1 vCPU, 2 GB). Chromium 159 / Playwright 1.65.1 was installed from the official package. The source was commit `6f3c38`, with the final audio/payment frontend files taken from `fd52d4` and the documented visual/test corrections. No production secrets were loaded. This runs a local production build, not the deployed domain.
+Because macOS Chromium could not launch, verification moved to one ephemeral Ubuntu 26.04.1 / Node 24.22.3 Vercel Sandbox (1 vCPU, 2 GB). Chromium 159 / Playwright 1.65.1 was installed from the official package. The source was commit `6f3c38`, with the final audio/payment frontend files taken from `fd52d4` and the documented visual/test corrections. No production secrets were loaded. This runs a local production build, not the deployed domain.
 
 All attempts are preserved, including failures: (1) Node 24 rejected the test JSON import without an import attribute; the test now reads JSON explicitly. (2) The fixed dock overlapped some locator boxes after `scrollIntoViewIfNeeded`; those measurements are invalidated. Each image is now centered in the viewport and five hit-tested points must be unobstructed before capturing. (3) With valid captures, only NETCOR failed: p10 was 1.54–1.58 against its intrinsic white backing. A measured CSS brightness/contrast filter improves legibility while retaining the official asset and color channels. (4) A shell-managed server child survived termination and prevented replacement (EADDRINUSE), so that interrupted attempt is invalidated; the final Node server is directly managed on a fresh port.
 
